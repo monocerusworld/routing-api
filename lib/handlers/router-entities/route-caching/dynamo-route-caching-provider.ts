@@ -1,4 +1,4 @@
-import { CachedRoutes, CacheMode, ChainId, IRouteCachingProvider, log } from '@uniswap/smart-order-router'
+import { CachedRoutes, CacheMode, ChainId, IRouteCachingProvider, log } from '@tartz-one/smart-order-router'
 import { DynamoDB } from 'aws-sdk'
 import { Currency, CurrencyAmount, Token, TradeType } from '@uniswap/sdk-core'
 import { Protocol } from '@uniswap/router-sdk'
@@ -7,7 +7,6 @@ import { PairTradeTypeChainId } from './model/pair-trade-type-chain-id'
 import { CachedRoutesMarshaller } from './marshalling/cached-routes-marshaller'
 import { CachedRoutesStrategy } from './model/cached-routes-strategy'
 import { ProtocolsBucketBlockNumber } from './model/protocols-bucket-block-number'
-import { CachedRoutesBucket } from './model'
 
 interface ConstructorParams {
   /**
@@ -154,9 +153,9 @@ export class DynamoRouteCachingProvider extends IRouteCachingProvider {
    */
   protected async _setCachedRoute(cachedRoutes: CachedRoutes, amount: CurrencyAmount<Currency>): Promise<boolean> {
     const cachedRoutesStrategy = this.getCachedRoutesStrategyFromCachedRoutes(cachedRoutes)
-    const cachingBucket = cachedRoutesStrategy?.getCachingBucket(amount)
+    const cachingParameters = cachedRoutesStrategy?.getCachingBucket(amount)
 
-    if (cachingBucket && this.isAllowedInCache(cachingBucket, cachedRoutes)) {
+    if (cachingParameters) {
       // TTL is minutes from now. multiply ttlMinutes times 60 to convert to seconds, since ttl is in seconds.
       const ttl = Math.floor(Date.now() / 1000) + 60 * this.ttlMinutes
       // Marshal the CachedRoutes object in preparation for storing in DynamoDB
@@ -170,7 +169,7 @@ export class DynamoRouteCachingProvider extends IRouteCachingProvider {
       const partitionKey = PairTradeTypeChainId.fromCachedRoutes(cachedRoutes)
       const sortKey = new ProtocolsBucketBlockNumber({
         protocols: cachedRoutes.protocolsCovered,
-        bucket: cachingBucket.bucket,
+        bucket: cachingParameters.bucket,
         blockNumber: cachedRoutes.blockNumber,
       })
 
@@ -338,19 +337,5 @@ export class DynamoRouteCachingProvider extends IRouteCachingProvider {
     } else {
       return { tokenIn: quoteToken, tokenOut: amount.currency.wrapped }
     }
-  }
-
-  /**
-   * Helper function that based on the CachingBucket can determine if the route is allowed in cache.
-   * There are 2 conditions, currently:
-   * 1. `cachingBucket.maxSplits <= 0` indicate that any number of maxSplits is allowed
-   * 2. `cachedRoutes.routes.length <= maxSplits` to test that there are fewer splits than allowed
-   *
-   * @param cachingBucket
-   * @param cachedRoutes
-   * @private
-   */
-  private isAllowedInCache(cachingBucket: CachedRoutesBucket, cachedRoutes: CachedRoutes): boolean {
-    return cachingBucket.maxSplits <= 0 || cachedRoutes.routes.length <= cachingBucket.maxSplits
   }
 }

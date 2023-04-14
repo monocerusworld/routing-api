@@ -1,5 +1,5 @@
 import { Protocol } from '@uniswap/router-sdk'
-import { ChainId, V2SubgraphProvider, V3SubgraphProvider } from '@uniswap/smart-order-router'
+import { ChainId, V2SubgraphProvider, V3SubgraphProvider } from '@tartz-one/smart-order-router'
 
 export const chainProtocols = [
   // V3.

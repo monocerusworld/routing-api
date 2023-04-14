@@ -1,6 +1,6 @@
 import Joi from '@hapi/joi'
 import { Protocol } from '@uniswap/router-sdk'
-import { UNIVERSAL_ROUTER_ADDRESS } from '@uniswap/universal-router-sdk'
+import { UNIVERSAL_ROUTER_ADDRESS } from '@tartz-one/universal-router-sdk'
 import { PermitSingle } from '@uniswap/permit2-sdk'
 import { Currency, CurrencyAmount, TradeType } from '@uniswap/sdk-core'
 import {
@@ -14,7 +14,7 @@ import {
   SimulationStatus,
   IMetric,
   ChainId,
-} from '@uniswap/smart-order-router'
+} from '@tartz-one/smart-order-router'
 import { Pool } from '@uniswap/v3-sdk'
 import JSBI from 'jsbi'
 import _ from 'lodash'

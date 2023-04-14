@@ -59,65 +59,35 @@ export class CachedRoutesWidgetsFactory implements WidgetsFactory {
       {
         type: 'metric',
         width: 24,
-        height: 7,
+        height: 6,
         properties: {
           view: 'timeSeries',
           stacked: false,
           metrics: [
-            [{ expression: 'SUM(METRICS())', label: 'AllRequests', id: 'e1', visible: false }],
-            [{ expression: 'm1/e1 * 100', label: 'Cache Hit Rate', id: 'e2' }],
-            [{ expression: 'm2/e1 * 100', label: 'Cache Miss Rate', id: 'e3' }],
-            [
-              this.namespace,
-              'GetCachedRoute_hit_livemode',
-              'Service',
-              'RoutingAPI',
-              { label: 'Cache Hit', id: 'm1', visible: false },
-            ],
-            ['.', 'GetCachedRoute_miss_livemode', '.', '.', { label: 'Cache Miss', id: 'm2', visible: false }],
+            [this.namespace, 'GetCachedRoute_hit_livemode', 'Service', 'RoutingAPI', { label: 'Cache Hit' }],
+            ['.', 'GetCachedRoute_miss_livemode', '.', '.', { label: 'Cache Miss' }],
           ],
           region: this.region,
-          title: 'Cache Hit and Miss Rates of Cachemode.Livemode',
+          title: 'Cache Hit and Miss of Cachemode.Livemode',
           period: 300,
           stat: 'Sum',
-          yAxis: {
-            left: {
-              min: 0,
-              max: 100,
-            },
-          },
         },
       },
       {
         type: 'metric',
         width: 24,
-        height: 7,
+        height: 6,
         properties: {
           view: 'timeSeries',
           stacked: false,
           metrics: [
-            [{ expression: 'SUM(METRICS())', label: 'AllRequests', id: 'e1', visible: false }],
-            [{ expression: 'm1/e1 * 100', label: 'Cache Hit Rate', id: 'e2' }],
-            [{ expression: 'm2/e1 * 100', label: 'Cache Miss Rate', id: 'e3' }],
-            [
-              this.namespace,
-              'GetCachedRoute_hit_tapcompare',
-              'Service',
-              'RoutingAPI',
-              { label: 'Cache Hit', id: 'm1', visible: false },
-            ],
-            ['.', 'GetCachedRoute_miss_tapcompare', '.', '.', { label: 'Cache Miss', id: 'm2', visible: false }],
+            [this.namespace, 'GetCachedRoute_hit_tapcompare', 'Service', 'RoutingAPI', { label: 'Cache Hit' }],
+            ['.', 'GetCachedRoute_miss_tapcompare', '.', '.', { label: 'Cache Miss' }],
           ],
           region: this.region,
-          title: 'Cache Hit and Miss Rates of cachemode.Tapcompare',
+          title: 'Cache Hit and Miss of cachemode.Tapcompare',
           period: 300,
           stat: 'Sum',
-          yAxis: {
-            left: {
-              min: 0,
-              max: 100,
-            },
-          },
         },
       },
     ]
@@ -230,9 +200,9 @@ export class CachedRoutesWidgetsFactory implements WidgetsFactory {
         properties: {
           view: 'table',
           query: `SOURCE '/aws/lambda/${this.lambdaName}'
-            | fields @timestamp, pair, quoteGasAdjustedDiff as diffOf${tokenOut}, amount as amountOf${tokenIn}, quoteGasAdjustedDiff * (amount/quoteGasAdjustedFromChain) as diffIn${tokenIn}Terms, diffIn${tokenIn}Terms / amount * 100 as misquotePercent, originalAmount
+            | fields @timestamp, pair, quoteGasAdjustedDiff as diffOf${tokenOut}, amount as amountOf${tokenIn}
             | filter msg like 'Comparing quotes between Chain and Cache' and pair like /${escapedPairTradeTypeChainId}/ and quoteGasAdjustedDiff != 0 
-            | sort misquotePercent desc`,
+            | sort quoteGasAdjustedDiff desc`,
           region: this.region,
           title: `Quote Differences and Amounts for ${pairTradeTypeChainId}`,
         },

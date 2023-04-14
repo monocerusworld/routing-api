@@ -15,12 +15,12 @@ import {
   USDC_MAINNET,
   USDT_MAINNET,
   WBTC_MAINNET,
-} from '@uniswap/smart-order-router'
+} from '@tartz-one/smart-order-router'
 import {
   PERMIT2_ADDRESS,
   UNIVERSAL_ROUTER_ADDRESS as UNIVERSAL_ROUTER_ADDRESS_BY_CHAIN,
-} from '@uniswap/universal-router-sdk'
-import { MethodParameters } from '@uniswap/smart-order-router'
+} from '@tartz-one/universal-router-sdk'
+import { MethodParameters } from '@tartz-one/smart-order-router'
 import { fail } from 'assert'
 import axiosStatic, { AxiosResponse } from 'axios'
 import axiosRetry from 'axios-retry'
@@ -1905,6 +1905,8 @@ describe('quote', function () {
     [ChainId.GNOSIS]: null,
     [ChainId.ARBITRUM_GOERLI]: null,
     [ChainId.BSC]: USDC_ON(ChainId.BSC),
+    [ChainId.FANTOM]: USDC_ON(ChainId.FANTOM),
+    [ChainId.KLAYTN]: USDC_ON(ChainId.KLAYTN),
   }
 
   const TEST_ERC20_2: { [chainId in ChainId]: Token | null } = {
@@ -1926,6 +1928,8 @@ describe('quote', function () {
     [ChainId.GNOSIS]: null,
     [ChainId.ARBITRUM_GOERLI]: null,
     [ChainId.BSC]: USDT_ON(ChainId.BSC),
+    [ChainId.FANTOM]: USDT_ON(ChainId.FANTOM),
+    [ChainId.KLAYTN]: USDT_ON(ChainId.KLAYTN),
   }
 
   // TODO: Find valid pools/tokens on optimistic kovan and polygon mumbai. We skip those tests for now.

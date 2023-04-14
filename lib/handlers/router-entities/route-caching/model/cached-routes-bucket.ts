@@ -1,4 +1,4 @@
-import { CacheMode } from '@uniswap/smart-order-router'
+import { CacheMode } from '@tartz-one/smart-order-router'
 
 interface CachedRoutesBucketsArgs {
   /**
@@ -9,28 +9,21 @@ interface CachedRoutesBucketsArgs {
   /**
    * For the cached route associated to this bucket, how many blocks should the cached route be valid for.
    */
-  blocksToLive?: number
+  blocksToLive: number
   /**
    * The CacheMode associated to this bucket. Setting it to `Livemode` will enable caching the route for this bucket
    */
   cacheMode: CacheMode
-  /**
-   * Defines the max number of splits allowed for a route to be cached. A value of 0 indicates that any splits are allowed
-   * A value of 1 indicates that at most there can only be 1 split in the route in order to be cached.
-   */
-  maxSplits?: number
 }
 
 export class CachedRoutesBucket {
   public readonly bucket: number
   public readonly blocksToLive: number
   public readonly cacheMode: CacheMode
-  public readonly maxSplits: number
 
-  constructor({ bucket, blocksToLive = 1, cacheMode, maxSplits = 0 }: CachedRoutesBucketsArgs) {
+  constructor({ bucket, blocksToLive, cacheMode }: CachedRoutesBucketsArgs) {
     this.bucket = bucket
-    this.blocksToLive = blocksToLive // by default this value is 1, which means it's only cached in the current block.
+    this.blocksToLive = blocksToLive
     this.cacheMode = cacheMode
-    this.maxSplits = maxSplits // by default this value is 0, which means that any number of splits are allowed
   }
 }

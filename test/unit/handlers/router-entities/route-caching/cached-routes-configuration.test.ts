@@ -1,6 +1,6 @@
 import { expect } from 'chai'
 import { CurrencyAmount, Token, TradeType } from '@uniswap/sdk-core'
-import { ChainId } from '@uniswap/smart-order-router'
+import { CacheMode, ChainId } from '@tartz-one/smart-order-router'
 import {
   CACHED_ROUTES_CONFIGURATION,
   PairTradeTypeChainId,
@@ -25,6 +25,7 @@ describe('CachedRoutesConfiguration', () => {
     const cachingParameters = fetchedStrategy?.getCachingBucket(currencyAmount)
 
     expect(cachingParameters?.bucket).to.eq(1)
+    expect(cachingParameters?.cacheMode).to.eq(CacheMode.Livemode)
   })
 
   it('can find the strategy, even if token has different capitalization', () => {

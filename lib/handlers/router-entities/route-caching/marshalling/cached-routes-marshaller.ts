@@ -1,5 +1,5 @@
-import { CachedRoutes } from '@uniswap/smart-order-router'
-import { ChainId } from '@uniswap/smart-order-router/build/main/util'
+import { CachedRoutes } from '@tartz-one/smart-order-router'
+import { ChainId } from '@tartz-one/smart-order-router/build/main/util'
 import { TradeType } from '@uniswap/sdk-core'
 import { Protocol } from '@uniswap/router-sdk'
 import { MarshalledToken, TokenMarshaller } from './token-marshaller'
@@ -13,7 +13,6 @@ export interface MarshalledCachedRoutes {
   protocolsCovered: Protocol[]
   blockNumber: number
   tradeType: TradeType
-  originalAmount: string
   blocksToLive: number
 }
 
@@ -27,7 +26,6 @@ export class CachedRoutesMarshaller {
       protocolsCovered: cachedRoutes.protocolsCovered,
       blockNumber: cachedRoutes.blockNumber,
       tradeType: cachedRoutes.tradeType,
-      originalAmount: cachedRoutes.originalAmount,
       blocksToLive: cachedRoutes.blocksToLive,
     }
   }
@@ -41,7 +39,6 @@ export class CachedRoutesMarshaller {
       protocolsCovered: marshalledCachedRoutes.protocolsCovered,
       blockNumber: marshalledCachedRoutes.blockNumber,
       tradeType: marshalledCachedRoutes.tradeType,
-      originalAmount: marshalledCachedRoutes.originalAmount,
       blocksToLive: marshalledCachedRoutes.blocksToLive,
     })
   }

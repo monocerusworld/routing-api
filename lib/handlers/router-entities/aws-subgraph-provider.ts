@@ -6,7 +6,7 @@ import {
   log,
   V2SubgraphPool,
   V3SubgraphPool,
-} from '@uniswap/smart-order-router'
+} from '@tartz-one/smart-order-router'
 import { S3 } from 'aws-sdk'
 import NodeCache from 'node-cache'
 import { S3_POOL_CACHE_KEY } from '../../util/pool-cache-key'

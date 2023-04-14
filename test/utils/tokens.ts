@@ -42,7 +42,7 @@ import {
   USDT_RINKEBY,
   USDT_ROPSTEN,
   WRAPPED_NATIVE_CURRENCY,
-} from '@uniswap/smart-order-router'
+} from '@tartz-one/smart-order-router'
 import { ethers } from 'ethers'
 import NodeCache from 'node-cache'
 

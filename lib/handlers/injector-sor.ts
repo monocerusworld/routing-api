@@ -31,7 +31,7 @@ import {
   V2QuoteProvider,
   V3PoolProvider,
   IRouteCachingProvider,
-} from '@uniswap/smart-order-router'
+} from '@tartz-one/smart-order-router'
 import { TokenList } from '@uniswap/token-lists'
 import { default as bunyan, default as Logger } from 'bunyan'
 import { ethers } from 'ethers'
@@ -59,6 +59,10 @@ export const SUPPORTED_CHAINS: ChainId[] = [
   ChainId.CELO,
   ChainId.CELO_ALFAJORES,
   ChainId.BSC,
+  ChainId.FANTOM,
+  ChainId.GNOSIS,
+  ChainId.KLAYTN,
+
 ]
 const DEFAULT_TOKEN_LIST = 'https://gateway.ipfs.io/ipns/tokens.uniswap.org'
 
