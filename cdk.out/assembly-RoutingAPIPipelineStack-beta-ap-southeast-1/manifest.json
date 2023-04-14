@@ -1,0 +1,1003 @@
+{
+  "version": "31.0.0",
+  "artifacts": {
+    "RoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStack7B527832.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "RoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStack7B527832.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "RoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStack7B527832": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://557822834307/ap-southeast-1",
+      "properties": {
+        "templateFile": "RoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStack7B527832.template.json",
+        "validateOnSynth": true,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::557822834307:role/cdk-hnb659fds-deploy-role-557822834307-ap-southeast-1",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::557822834307:role/cdk-hnb659fds-cfn-exec-role-557822834307-ap-southeast-1",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-557822834307-ap-southeast-1/66d9df1e59035b89e237fd8b1af0272724c5c864b5fd5722d195a0fcb0c77842.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "RoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStack7B527832.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::557822834307:role/cdk-hnb659fds-lookup-role-557822834307-ap-southeast-1",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        },
+        "stackName": "beta-ap-southeast-1-RoutingAPIStack"
+      },
+      "dependencies": [
+        "RoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStack7B527832.assets"
+      ],
+      "metadata": {
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingCachingStack/PoolCacheBucket/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PoolCacheBucketD80D665F"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingCachingStack/PoolCacheBucket2/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PoolCacheBucket20A883DAA"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingCachingStack/RoutingLambdaRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RoutingLambdaRole270B0918"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingCachingStack/RoutingLambdaRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RoutingLambdaRoleDefaultPolicyB8EDD428"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingCachingStack/PoolCacheLambda-ChainId1-ProtocolV3/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PoolCacheLambdaChainId1ProtocolV32F9F3DC1"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingCachingStack/SchedulePoolCache-ChainId1-ProtocolV3/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SchedulePoolCacheChainId1ProtocolV3CB1BF387"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingCachingStack/SchedulePoolCache-ChainId1-ProtocolV3/AllowEventRuleRoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackPoolCacheLambdaChainId1ProtocolV319F8F4FE": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SchedulePoolCacheChainId1ProtocolV3AllowEventRuleRoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackPoolCacheLambdaChainId1ProtocolV319F8F4FE929C20C9"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingCachingStack/RoutingAPI-SEV4-PoolCacheToS3LambdaErrorRate-ChainId1-ProtocolV3/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RoutingAPISEV4PoolCacheToS3LambdaErrorRateChainId1ProtocolV3DC311576"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingCachingStack/RoutingAPI-PoolCacheToS3LambdaThrottles-ChainId1-ProtocolV3/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RoutingAPIPoolCacheToS3LambdaThrottlesChainId1ProtocolV3A224567C"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingCachingStack/PoolCacheLambda-ChainId42161-ProtocolV3/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PoolCacheLambdaChainId42161ProtocolV35CAC2D37"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingCachingStack/SchedulePoolCache-ChainId42161-ProtocolV3/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SchedulePoolCacheChainId42161ProtocolV32927DEA8"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingCachingStack/SchedulePoolCache-ChainId42161-ProtocolV3/AllowEventRuleRoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackPoolCacheLambdaChainId42161ProtocolV3F303F91B": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SchedulePoolCacheChainId42161ProtocolV3AllowEventRuleRoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackPoolCacheLambdaChainId42161ProtocolV3F303F91B630C9460"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingCachingStack/RoutingAPI-SEV4-PoolCacheToS3LambdaErrorRate-ChainId42161-ProtocolV3/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RoutingAPISEV4PoolCacheToS3LambdaErrorRateChainId42161ProtocolV3323E6937"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingCachingStack/RoutingAPI-PoolCacheToS3LambdaThrottles-ChainId42161-ProtocolV3/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RoutingAPIPoolCacheToS3LambdaThrottlesChainId42161ProtocolV32EFB0BF5"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingCachingStack/PoolCacheLambda-ChainId137-ProtocolV3/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PoolCacheLambdaChainId137ProtocolV3F9742D3A"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingCachingStack/SchedulePoolCache-ChainId137-ProtocolV3/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SchedulePoolCacheChainId137ProtocolV330E19FD9"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingCachingStack/SchedulePoolCache-ChainId137-ProtocolV3/AllowEventRuleRoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackPoolCacheLambdaChainId137ProtocolV33BD6738C": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SchedulePoolCacheChainId137ProtocolV3AllowEventRuleRoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackPoolCacheLambdaChainId137ProtocolV33BD6738C98EA52B6"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingCachingStack/RoutingAPI-SEV4-PoolCacheToS3LambdaErrorRate-ChainId137-ProtocolV3/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RoutingAPISEV4PoolCacheToS3LambdaErrorRateChainId137ProtocolV30A2E4059"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingCachingStack/RoutingAPI-PoolCacheToS3LambdaThrottles-ChainId137-ProtocolV3/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RoutingAPIPoolCacheToS3LambdaThrottlesChainId137ProtocolV3CB586736"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingCachingStack/PoolCacheLambda-ChainId42220-ProtocolV3/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PoolCacheLambdaChainId42220ProtocolV3A540BDE0"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingCachingStack/SchedulePoolCache-ChainId42220-ProtocolV3/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SchedulePoolCacheChainId42220ProtocolV35873DBAD"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingCachingStack/SchedulePoolCache-ChainId42220-ProtocolV3/AllowEventRuleRoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackPoolCacheLambdaChainId42220ProtocolV337D0859C": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SchedulePoolCacheChainId42220ProtocolV3AllowEventRuleRoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackPoolCacheLambdaChainId42220ProtocolV337D0859C6BFC42ED"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingCachingStack/RoutingAPI-SEV4-PoolCacheToS3LambdaErrorRate-ChainId42220-ProtocolV3/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RoutingAPISEV4PoolCacheToS3LambdaErrorRateChainId42220ProtocolV3931FC46F"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingCachingStack/RoutingAPI-PoolCacheToS3LambdaThrottles-ChainId42220-ProtocolV3/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RoutingAPIPoolCacheToS3LambdaThrottlesChainId42220ProtocolV3993A49F3"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingCachingStack/PoolCacheLambda-ChainId56-ProtocolV3/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PoolCacheLambdaChainId56ProtocolV3C5BFABFA"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingCachingStack/SchedulePoolCache-ChainId56-ProtocolV3/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SchedulePoolCacheChainId56ProtocolV326319471"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingCachingStack/SchedulePoolCache-ChainId56-ProtocolV3/AllowEventRuleRoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackPoolCacheLambdaChainId56ProtocolV35DEC5E47": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SchedulePoolCacheChainId56ProtocolV3AllowEventRuleRoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackPoolCacheLambdaChainId56ProtocolV35DEC5E47B26F6FC7"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingCachingStack/RoutingAPI-SEV4-PoolCacheToS3LambdaErrorRate-ChainId56-ProtocolV3/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RoutingAPISEV4PoolCacheToS3LambdaErrorRateChainId56ProtocolV3D719B73A"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingCachingStack/RoutingAPI-PoolCacheToS3LambdaThrottles-ChainId56-ProtocolV3/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RoutingAPIPoolCacheToS3LambdaThrottlesChainId56ProtocolV300C5F115"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingCachingStack/PoolCacheLambda-ChainId1-ProtocolV2/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PoolCacheLambdaChainId1ProtocolV2C4BB0AD5"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingCachingStack/SchedulePoolCache-ChainId1-ProtocolV2/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SchedulePoolCacheChainId1ProtocolV22F5DCD1A"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingCachingStack/SchedulePoolCache-ChainId1-ProtocolV2/AllowEventRuleRoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackPoolCacheLambdaChainId1ProtocolV21F6D61B7": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SchedulePoolCacheChainId1ProtocolV2AllowEventRuleRoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackPoolCacheLambdaChainId1ProtocolV21F6D61B785649587"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingCachingStack/RoutingAPI-SEV4-PoolCacheToS3LambdaErrorRate-ChainId1-ProtocolV2/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RoutingAPISEV4PoolCacheToS3LambdaErrorRateChainId1ProtocolV286E8E5A9"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingCachingStack/RoutingAPI-PoolCacheToS3LambdaThrottles-ChainId1-ProtocolV2/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RoutingAPIPoolCacheToS3LambdaThrottlesChainId1ProtocolV239B5EB22"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingCachingStack/IpfsPoolCacheLambda/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "IpfsPoolCacheLambdaD7B471A9"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingCachingStack/ScheduleIpfsPoolCache/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ScheduleIpfsPoolCacheE6AEC70F"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingCachingStack/ScheduleIpfsPoolCache/AllowEventRuleRoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackIpfsPoolCacheLambda5E8F012E": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ScheduleIpfsPoolCacheAllowEventRuleRoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackIpfsPoolCacheLambda5E8F012E224CBD00"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingCachingStack/CleanIpfsPoolCacheLambda/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CleanIpfsPoolCacheLambda23CDAA44"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingCachingStack/ScheduleCleanIpfsPoolCache/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ScheduleCleanIpfsPoolCache731B96F5"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingCachingStack/ScheduleCleanIpfsPoolCache/AllowEventRuleRoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackCleanIpfsPoolCacheLambda3DA11B63": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ScheduleCleanIpfsPoolCacheAllowEventRuleRoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackCleanIpfsPoolCacheLambda3DA11B63CBAC26E7"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingCachingStack/TokenListCacheBucket/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "TokenListCacheBucketB0AEA45C"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingCachingStack/TokenListCacheLambda/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "TokenListCacheLambda8F76F145"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingCachingStack/ScheduleTokenListCache/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ScheduleTokenListCacheC8724872"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingCachingStack/ScheduleTokenListCache/AllowEventRuleRoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackTokenListCacheLambda9E75BBE5": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ScheduleTokenListCacheAllowEventRuleRoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackTokenListCacheLambda9E75BBE5C815253C"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingCachingStack/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingCachingStack/RoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackPoolCacheBucketC165B781Arn": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackPoolCacheBucketC165B781Arn"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingCachingStack/RoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackPoolCacheBucket20679C5E4Arn": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackPoolCacheBucket20679C5E4Arn"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingCachingStack/RoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackTokenListCacheBucket9E7C4291Arn": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackTokenListCacheBucket9E7C4291Arn"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingCachingStack/RoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackPoolCacheBucketC165B781Ref": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackPoolCacheBucketC165B781Ref"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingCachingStack/RoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackPoolCacheBucket20679C5E4Ref": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackPoolCacheBucket20679C5E4Ref"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingCachingStack/RoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackTokenListCacheBucket9E7C4291Ref": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackTokenListCacheBucket9E7C4291Ref"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingCachingStack/RoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackPoolCacheLambdaChainId1ProtocolV3312E7A81Ref": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackPoolCacheLambdaChainId1ProtocolV3312E7A81Ref"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingCachingStack/RoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackPoolCacheLambdaChainId42161ProtocolV3B024458DRef": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackPoolCacheLambdaChainId42161ProtocolV3B024458DRef"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingCachingStack/RoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackPoolCacheLambdaChainId137ProtocolV3F1E1AE10Ref": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackPoolCacheLambdaChainId137ProtocolV3F1E1AE10Ref"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingCachingStack/RoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackPoolCacheLambdaChainId42220ProtocolV31B01180CRef": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackPoolCacheLambdaChainId42220ProtocolV31B01180CRef"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingCachingStack/RoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackPoolCacheLambdaChainId56ProtocolV3826D3791Ref": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackPoolCacheLambdaChainId56ProtocolV3826D3791Ref"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingCachingStack/RoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackPoolCacheLambdaChainId1ProtocolV2FFD53B79Ref": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackPoolCacheLambdaChainId1ProtocolV2FFD53B79Ref"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingCachingStack/RoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackIpfsPoolCacheLambda6F3C4B8FRef": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackIpfsPoolCacheLambda6F3C4B8FRef"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingCachingStack.NestedStack/RoutingCachingStack.NestedStackResource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RoutingCachingStackNestedStackRoutingCachingStackNestedStackResource5CAB1140"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingDatabaseStack/RouteCachingDB": [
+          {
+            "type": "aws:cdk:hasPhysicalName",
+            "data": {
+              "Ref": "RouteCachingDB1361CA88"
+            }
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingDatabaseStack/RouteCachingDB/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RouteCachingDB1361CA88"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingDatabaseStack/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingDatabaseStack/RoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingDatabaseStackRouteCachingDB9CBC8CC2Arn": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingDatabaseStackRouteCachingDB9CBC8CC2Arn"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingDatabaseStack/RoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingDatabaseStackRouteCachingDB9CBC8CC2Ref": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingDatabaseStackRouteCachingDB9CBC8CC2Ref"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingDatabaseStack.NestedStack/RoutingDatabaseStack.NestedStackResource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RoutingDatabaseStackNestedStackRoutingDatabaseStackNestedStackResource6A37F2CD"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingLambdaStack/RoutingLambdaRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RoutingLambdaRole270B0918"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingLambdaStack/RoutingLambdaRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RoutingLambdaRoleDefaultPolicyB8EDD428"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingLambdaStack/RoutingLambda2/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RoutingLambda2C4DF0900"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingLambdaStack/RoutingLambda2/CurrentVersion/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RoutingLambda2CurrentVersion49A1BB94c75981e56875fd94fbbcc7d2e73d0934"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingLambdaStack/RouteToRatioLambda2/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RouteToRatioLambda23FC7C21B"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingLambdaStack/RoutingAPI-LambdaErrorRate/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RoutingAPILambdaErrorRate660C8652"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingLambdaStack/RoutingAPI-LambdaThrottles/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RoutingAPILambdaThrottles43ABF291"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingLambdaStack/RoutingLiveAlias/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RoutingLiveAliasA636160D"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingLambdaStack/RoutingProvConcASG/Role/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RoutingProvConcASGRoleA0A3E236"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingLambdaStack/RoutingProvConcASG/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RoutingProvConcASG3019D49A"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingLambdaStack/RoutingProvConcASG/RoutingProvConcTracking/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RoutingProvConcASGRoutingProvConcTracking01F266A4"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingLambdaStack/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingLambdaStack/reference-to-RoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackNestedStackRoutingCachingStackNestedStackResource2194E320Outputs.RoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackPoolCacheBucketC165B781Arn": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoRoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackNestedStackRoutingCachingStackNestedStackResource2194E320OutputsRoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackPoolCacheBucketC165B781Arn"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingLambdaStack/reference-to-RoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackNestedStackRoutingCachingStackNestedStackResource2194E320Outputs.RoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackPoolCacheBucket20679C5E4Arn": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoRoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackNestedStackRoutingCachingStackNestedStackResource2194E320OutputsRoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackPoolCacheBucket20679C5E4Arn"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingLambdaStack/reference-to-RoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackNestedStackRoutingCachingStackNestedStackResource2194E320Outputs.RoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackTokenListCacheBucket9E7C4291Arn": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoRoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackNestedStackRoutingCachingStackNestedStackResource2194E320OutputsRoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackTokenListCacheBucket9E7C4291Arn"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingLambdaStack/reference-to-RoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingDatabaseStackNestedStackRoutingDatabaseStackNestedStackResourceDA913E78Outputs.RoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingDatabaseStackRouteCachingDB9CBC8CC2Arn": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoRoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingDatabaseStackNestedStackRoutingDatabaseStackNestedStackResourceDA913E78OutputsRoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingDatabaseStackRouteCachingDB9CBC8CC2Arn"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingLambdaStack/reference-to-RoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingDatabaseStackNestedStackRoutingDatabaseStackNestedStackResourceDA913E78Outputs.RoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingDatabaseStackRouteCachingDB9CBC8CC2Ref": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoRoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingDatabaseStackNestedStackRoutingDatabaseStackNestedStackResourceDA913E78OutputsRoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingDatabaseStackRouteCachingDB9CBC8CC2Ref"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingLambdaStack/reference-to-RoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackNestedStackRoutingCachingStackNestedStackResource2194E320Outputs.RoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackPoolCacheBucketC165B781Ref": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoRoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackNestedStackRoutingCachingStackNestedStackResource2194E320OutputsRoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackPoolCacheBucketC165B781Ref"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingLambdaStack/reference-to-RoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackNestedStackRoutingCachingStackNestedStackResource2194E320Outputs.RoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackPoolCacheBucket20679C5E4Ref": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoRoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackNestedStackRoutingCachingStackNestedStackResource2194E320OutputsRoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackPoolCacheBucket20679C5E4Ref"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingLambdaStack/reference-to-RoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackNestedStackRoutingCachingStackNestedStackResource2194E320Outputs.RoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackTokenListCacheBucket9E7C4291Ref": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoRoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackNestedStackRoutingCachingStackNestedStackResource2194E320OutputsRoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackTokenListCacheBucket9E7C4291Ref"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingLambdaStack/RoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingLambdaStackRoutingLiveAliasB22F3232Ref": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingLambdaStackRoutingLiveAliasB22F3232Ref"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingLambdaStack/RoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingLambdaStackRouteToRatioLambda23F7D3785Arn": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingLambdaStackRouteToRatioLambda23F7D3785Arn"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingLambdaStack/RoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingLambdaStackRoutingLambda22F6514ADRef": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingLambdaStackRoutingLambda22F6514ADRef"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingLambdaStack.NestedStack/RoutingLambdaStack.NestedStackResource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RoutingLambdaStackNestedStackRoutingLambdaStackNestedStackResource809DEBCF"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingAPIGAccessLogs/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RoutingAPIGAccessLogs5ADEDFA4"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/routing-api/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "routingapiA6A29457"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/routing-api/CloudWatchRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "routingapiCloudWatchRole760E6BC5"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/routing-api/Account": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "routingapiAccountE845D2BB"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/routing-api/Deployment/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "routingapiDeploymentB21C3ACB50448845d2e6f8017033c4b800d0d186"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/routing-api/DeploymentStage.prod/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "routingapiDeploymentStageprod8BE7ABCF"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/routing-api/Endpoint": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "routingapiEndpointD967541B"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/routing-api/Default/OPTIONS/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "routingapiOPTIONSC8A73B96"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/routing-api/Default/quote/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "routingapiquoteCE190E63"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/routing-api/Default/quote/OPTIONS/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "routingapiquoteOPTIONS5FC9C216"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/routing-api/Default/quote/GET/ApiPermission.RoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackroutingapi84F299B2.GET..quote": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "routingapiquoteGETApiPermissionRoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackroutingapi84F299B2GETquoteE8C30F2F"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/routing-api/Default/quote/GET/ApiPermission.Test.RoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackroutingapi84F299B2.GET..quote": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "routingapiquoteGETApiPermissionTestRoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackroutingapi84F299B2GETquote3CB5373E"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/routing-api/Default/quote/GET/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "routingapiquoteGETA533B14B"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/routing-api/Default/quoteToRatio/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "routingapiquoteToRatio040AC04F"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/routing-api/Default/quoteToRatio/OPTIONS/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "routingapiquoteToRatioOPTIONS87EF7538"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/routing-api/Default/quoteToRatio/GET/ApiPermission.RoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackroutingapi84F299B2.GET..quoteToRatio": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "routingapiquoteToRatioGETApiPermissionRoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackroutingapi84F299B2GETquoteToRatio3DE0A444"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/routing-api/Default/quoteToRatio/GET/ApiPermission.Test.RoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackroutingapi84F299B2.GET..quoteToRatio": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "routingapiquoteToRatioGETApiPermissionTestRoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackroutingapi84F299B2GETquoteToRatio67C16668"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/routing-api/Default/quoteToRatio/GET/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "routingapiquoteToRatioGET9A57B6E8"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingAPIIPThrottlingACL": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RoutingAPIIPThrottlingACL"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingAPIIPThrottlingAssociation": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RoutingAPIIPThrottlingAssociation"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingDashboardStack/QuoteContributorInsights": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuoteContributorInsights"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingDashboardStack/QuoteByChainContributorInsights": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuoteByChainContributorInsights"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingDashboardStack/RoutingAPIDashboard": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RoutingAPIDashboard"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingDashboardStack/RoutingAPITrackedPairsDashboard": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RoutingAPITrackedPairsDashboard"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingDashboardStack/CachedRoutesPerformanceDashboard": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CachedRoutesPerformanceDashboard"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingDashboardStack/RoutingAPIQuoteProviderDashboard": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RoutingAPIQuoteProviderDashboard"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingDashboardStack/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingDashboardStack/reference-to-RoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingLambdaStackNestedStackRoutingLambdaStackNestedStackResource086A685FOutputs.RoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingLambdaStackRoutingLambda22F6514ADRef": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoRoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingLambdaStackNestedStackRoutingLambdaStackNestedStackResource086A685FOutputsRoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingLambdaStackRoutingLambda22F6514ADRef"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingDashboardStack/reference-to-RoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackNestedStackRoutingCachingStackNestedStackResource2194E320Outputs.RoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackPoolCacheLambdaChainId1ProtocolV3312E7A81Ref": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoRoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackNestedStackRoutingCachingStackNestedStackResource2194E320OutputsRoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackPoolCacheLambdaChaiEE285F45"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingDashboardStack/reference-to-RoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackNestedStackRoutingCachingStackNestedStackResource2194E320Outputs.RoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackPoolCacheLambdaChainId42161ProtocolV3B024458DRef": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoRoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackNestedStackRoutingCachingStackNestedStackResource2194E320OutputsRoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackPoolCacheLambdaChai9BCAF7A4"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingDashboardStack/reference-to-RoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackNestedStackRoutingCachingStackNestedStackResource2194E320Outputs.RoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackPoolCacheLambdaChainId137ProtocolV3F1E1AE10Ref": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoRoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackNestedStackRoutingCachingStackNestedStackResource2194E320OutputsRoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackPoolCacheLambdaChai209C2A3C"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingDashboardStack/reference-to-RoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackNestedStackRoutingCachingStackNestedStackResource2194E320Outputs.RoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackPoolCacheLambdaChainId42220ProtocolV31B01180CRef": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoRoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackNestedStackRoutingCachingStackNestedStackResource2194E320OutputsRoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackPoolCacheLambdaChaiC03DEE34"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingDashboardStack/reference-to-RoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackNestedStackRoutingCachingStackNestedStackResource2194E320Outputs.RoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackPoolCacheLambdaChainId56ProtocolV3826D3791Ref": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoRoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackNestedStackRoutingCachingStackNestedStackResource2194E320OutputsRoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackPoolCacheLambdaChai22B8D509"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingDashboardStack/reference-to-RoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackNestedStackRoutingCachingStackNestedStackResource2194E320Outputs.RoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackPoolCacheLambdaChainId1ProtocolV2FFD53B79Ref": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoRoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackNestedStackRoutingCachingStackNestedStackResource2194E320OutputsRoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackPoolCacheLambdaChai52705C56"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingDashboardStack/reference-to-RoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackNestedStackRoutingCachingStackNestedStackResource2194E320Outputs.RoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackIpfsPoolCacheLambda6F3C4B8FRef": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoRoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackNestedStackRoutingCachingStackNestedStackResource2194E320OutputsRoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackIpfsPoolCacheLambda6F3C4B8FRef"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingDashboardStack.NestedStack/RoutingDashboardStack.NestedStackResource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RoutingDashboardStackNestedStackRoutingDashboardStackNestedStackResourceDF805217"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingAPI-SEV2-5XXAlarm/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RoutingAPISEV25XXAlarm44598BE4"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingAPI-SEV2-4XXAlarm/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RoutingAPISEV24XXAlarmEAC7EDAA"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingAPI-SEV2-Latency/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RoutingAPISEV2LatencyA6B1019A"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingAPI-SEV3-5XXAlarm/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RoutingAPISEV35XXAlarm1A98106B"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingAPI-SEV3-4XXAlarm/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RoutingAPISEV34XXAlarm90CADBEF"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingAPI-SEV3-Latency/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RoutingAPISEV3LatencyC60ADA63"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingAPI-SEV3-Simulation/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RoutingAPISEV3Simulation151B9C9C"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingAPI-SEV3-2XXAlarm-ChainId: 1/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RoutingAPISEV32XXAlarmChainId1825327DB"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingAPI-SEV3-2XXAlarm-ChainId: 10/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RoutingAPISEV32XXAlarmChainId10D37829BA"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingAPI-SEV3-2XXAlarm-ChainId: 420/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RoutingAPISEV32XXAlarmChainId420C57DC8EA"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingAPI-SEV3-2XXAlarm-ChainId: 42161/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RoutingAPISEV32XXAlarmChainId42161919834E2"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingAPI-SEV3-2XXAlarm-ChainId: 421613/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RoutingAPISEV32XXAlarmChainId4216130E4D6A5C"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingAPI-SEV3-2XXAlarm-ChainId: 137/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RoutingAPISEV32XXAlarmChainId13712713024"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingAPI-SEV3-2XXAlarm-ChainId: 44787/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RoutingAPISEV32XXAlarmChainId44787C4DC9019"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingAPI-SEV3-2XXAlarm-ChainId: 42220/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RoutingAPISEV32XXAlarmChainId42220936B7B77"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingAPI-SEV3-2XXAlarm-ChainId: 56/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RoutingAPISEV32XXAlarmChainId56D4CB0C35"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingAPI-SEV3-2XXAlarm-ChainId: 8217/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RoutingAPISEV32XXAlarmChainId82170C7BF7CF"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingAPI-SEV3-2XXAlarm-ChainId: 250/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RoutingAPISEV32XXAlarmChainId25019239F97"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingAPI-SEV3-2XXAlarm-ChainId: 100/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RoutingAPISEV32XXAlarmChainId100868843A8"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingAPI-SEV3-4XXAlarm-ChainId: 1/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RoutingAPISEV34XXAlarmChainId1450CBEAD"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingAPI-SEV3-4XXAlarm-ChainId: 10/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RoutingAPISEV34XXAlarmChainId10208DC15D"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingAPI-SEV3-4XXAlarm-ChainId: 420/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RoutingAPISEV34XXAlarmChainId420BEF766F0"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingAPI-SEV3-4XXAlarm-ChainId: 42161/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RoutingAPISEV34XXAlarmChainId42161C388D5B1"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingAPI-SEV3-4XXAlarm-ChainId: 421613/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RoutingAPISEV34XXAlarmChainId421613BF0BDC06"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingAPI-SEV3-4XXAlarm-ChainId: 137/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RoutingAPISEV34XXAlarmChainId137152B73B3"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingAPI-SEV3-4XXAlarm-ChainId: 44787/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RoutingAPISEV34XXAlarmChainId44787BB3A0A9D"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingAPI-SEV3-4XXAlarm-ChainId: 42220/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RoutingAPISEV34XXAlarmChainId42220A086E57A"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingAPI-SEV3-4XXAlarm-ChainId: 56/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RoutingAPISEV34XXAlarmChainId56135B294E"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingAPI-SEV3-4XXAlarm-ChainId: 8217/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RoutingAPISEV34XXAlarmChainId8217D12E0BEE"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingAPI-SEV3-4XXAlarm-ChainId: 250/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RoutingAPISEV34XXAlarmChainId2507EB94355"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingAPI-SEV3-4XXAlarm-ChainId: 100/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RoutingAPISEV34XXAlarmChainId100530A5EF6"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/Url": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Url"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack"
+    }
+  }
+}

@@ -1,0 +1,683 @@
+{
+ "Resources": {
+  "RoutingLambdaRole270B0918": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "lambda.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "ManagedPolicyArns": [
+     {
+      "Fn::Join": [
+       "",
+       [
+        "arn:",
+        {
+         "Ref": "AWS::Partition"
+        },
+        ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+       ]
+      ]
+     },
+     {
+      "Fn::Join": [
+       "",
+       [
+        "arn:",
+        {
+         "Ref": "AWS::Partition"
+        },
+        ":iam::aws:policy/CloudWatchLambdaInsightsExecutionRolePolicy"
+       ]
+      ]
+     },
+     {
+      "Fn::Join": [
+       "",
+       [
+        "arn:",
+        {
+         "Ref": "AWS::Partition"
+        },
+        ":iam::aws:policy/AWSXRayDaemonWriteAccess"
+       ]
+      ]
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "RoutingAPIStack/RoutingLambdaStack/RoutingLambdaRole/Resource"
+   }
+  },
+  "RoutingLambdaRoleDefaultPolicyB8EDD428": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": [
+        "s3:GetObject*",
+        "s3:GetBucket*",
+        "s3:List*"
+       ],
+       "Effect": "Allow",
+       "Resource": [
+        {
+         "Ref": "referencetoRoutingAPIStackRoutingCachingStackNestedStackRoutingCachingStackNestedStackResource3F7983BFOutputsRoutingAPIStackRoutingCachingStackPoolCacheBucket620A121AArn"
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           {
+            "Ref": "referencetoRoutingAPIStackRoutingCachingStackNestedStackRoutingCachingStackNestedStackResource3F7983BFOutputsRoutingAPIStackRoutingCachingStackPoolCacheBucket620A121AArn"
+           },
+           "/*"
+          ]
+         ]
+        }
+       ]
+      },
+      {
+       "Action": [
+        "s3:GetObject*",
+        "s3:GetBucket*",
+        "s3:List*"
+       ],
+       "Effect": "Allow",
+       "Resource": [
+        {
+         "Ref": "referencetoRoutingAPIStackRoutingCachingStackNestedStackRoutingCachingStackNestedStackResource3F7983BFOutputsRoutingAPIStackRoutingCachingStackPoolCacheBucket28CA80A17Arn"
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           {
+            "Ref": "referencetoRoutingAPIStackRoutingCachingStackNestedStackRoutingCachingStackNestedStackResource3F7983BFOutputsRoutingAPIStackRoutingCachingStackPoolCacheBucket28CA80A17Arn"
+           },
+           "/*"
+          ]
+         ]
+        }
+       ]
+      },
+      {
+       "Action": [
+        "s3:GetObject*",
+        "s3:GetBucket*",
+        "s3:List*"
+       ],
+       "Effect": "Allow",
+       "Resource": [
+        {
+         "Ref": "referencetoRoutingAPIStackRoutingCachingStackNestedStackRoutingCachingStackNestedStackResource3F7983BFOutputsRoutingAPIStackRoutingCachingStackTokenListCacheBucket5B090E54Arn"
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           {
+            "Ref": "referencetoRoutingAPIStackRoutingCachingStackNestedStackRoutingCachingStackNestedStackResource3F7983BFOutputsRoutingAPIStackRoutingCachingStackTokenListCacheBucket5B090E54Arn"
+           },
+           "/*"
+          ]
+         ]
+        }
+       ]
+      },
+      {
+       "Action": [
+        "dynamodb:BatchGetItem",
+        "dynamodb:GetRecords",
+        "dynamodb:GetShardIterator",
+        "dynamodb:Query",
+        "dynamodb:GetItem",
+        "dynamodb:Scan",
+        "dynamodb:ConditionCheckItem",
+        "dynamodb:BatchWriteItem",
+        "dynamodb:PutItem",
+        "dynamodb:UpdateItem",
+        "dynamodb:DeleteItem",
+        "dynamodb:DescribeTable"
+       ],
+       "Effect": "Allow",
+       "Resource": [
+        {
+         "Ref": "referencetoRoutingAPIStackRoutingDatabaseStackNestedStackRoutingDatabaseStackNestedStackResource3AE7BFDEOutputsRoutingAPIStackRoutingDatabaseStackRouteCachingDB3F557D78Arn"
+        },
+        {
+         "Ref": "AWS::NoValue"
+        }
+       ]
+      },
+      {
+       "Action": [
+        "xray:PutTraceSegments",
+        "xray:PutTelemetryRecords"
+       ],
+       "Effect": "Allow",
+       "Resource": "*"
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "RoutingLambdaRoleDefaultPolicyB8EDD428",
+    "Roles": [
+     {
+      "Ref": "RoutingLambdaRole270B0918"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "RoutingAPIStack/RoutingLambdaStack/RoutingLambdaRole/DefaultPolicy/Resource"
+   }
+  },
+  "RoutingLambda2C4DF0900": {
+   "Type": "AWS::Lambda::Function",
+   "Properties": {
+    "Code": {
+     "S3Bucket": {
+      "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
+     },
+     "S3Key": "f2641ad6baaef84d3170367fa2e4ee13e3777abb4d2054cb3d038ed0a874d34c.zip"
+    },
+    "Role": {
+     "Fn::GetAtt": [
+      "RoutingLambdaRole270B0918",
+      "Arn"
+     ]
+    },
+    "Description": "Routing Lambda",
+    "Environment": {
+     "Variables": {
+      "AWS_NODEJS_CONNECTION_REUSE_ENABLED": "1",
+      "CACHED_ROUTES_TABLE_NAME": {
+       "Ref": "referencetoRoutingAPIStackRoutingDatabaseStackNestedStackRoutingDatabaseStackNestedStackResource3AE7BFDEOutputsRoutingAPIStackRoutingDatabaseStackRouteCachingDB3F557D78Ref"
+      },
+      "NODE_OPTIONS": "--enable-source-maps",
+      "POOL_CACHE_BUCKET": {
+       "Ref": "referencetoRoutingAPIStackRoutingCachingStackNestedStackRoutingCachingStackNestedStackResource3F7983BFOutputsRoutingAPIStackRoutingCachingStackPoolCacheBucket620A121ARef"
+      },
+      "POOL_CACHE_BUCKET_2": {
+       "Ref": "referencetoRoutingAPIStackRoutingCachingStackNestedStackRoutingCachingStackNestedStackResource3F7983BFOutputsRoutingAPIStackRoutingCachingStackPoolCacheBucket28CA80A17Ref"
+      },
+      "POOL_CACHE_KEY": "poolCache.json",
+      "TOKEN_LIST_CACHE_BUCKET": {
+       "Ref": "referencetoRoutingAPIStackRoutingCachingStackNestedStackRoutingCachingStackNestedStackResource3F7983BFOutputsRoutingAPIStackRoutingCachingStackTokenListCacheBucket5B090E54Ref"
+      },
+      "VERSION": "5"
+     }
+    },
+    "Handler": "index.quoteHandler",
+    "Layers": [
+     {
+      "Fn::Join": [
+       "",
+       [
+        "arn:aws:lambda:",
+        {
+         "Ref": "AWS::Region"
+        },
+        ":580247275435:layer:LambdaInsightsExtension:14"
+       ]
+      ]
+     }
+    ],
+    "MemorySize": 1024,
+    "Runtime": "nodejs14.x",
+    "Timeout": 29,
+    "TracingConfig": {
+     "Mode": "Active"
+    }
+   },
+   "DependsOn": [
+    "RoutingLambdaRoleDefaultPolicyB8EDD428",
+    "RoutingLambdaRole270B0918"
+   ],
+   "Metadata": {
+    "aws:cdk:path": "RoutingAPIStack/RoutingLambdaStack/RoutingLambda2/Resource",
+    "aws:asset:path": "asset.f2641ad6baaef84d3170367fa2e4ee13e3777abb4d2054cb3d038ed0a874d34c",
+    "aws:asset:is-bundled": true,
+    "aws:asset:property": "Code"
+   }
+  },
+  "RoutingLambda2CurrentVersion49A1BB943dd910830f7158df575f8c898846f55d": {
+   "Type": "AWS::Lambda::Version",
+   "Properties": {
+    "FunctionName": {
+     "Ref": "RoutingLambda2C4DF0900"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "RoutingAPIStack/RoutingLambdaStack/RoutingLambda2/CurrentVersion/Resource"
+   }
+  },
+  "RouteToRatioLambda23FC7C21B": {
+   "Type": "AWS::Lambda::Function",
+   "Properties": {
+    "Code": {
+     "S3Bucket": {
+      "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
+     },
+     "S3Key": "f2641ad6baaef84d3170367fa2e4ee13e3777abb4d2054cb3d038ed0a874d34c.zip"
+    },
+    "Role": {
+     "Fn::GetAtt": [
+      "RoutingLambdaRole270B0918",
+      "Arn"
+     ]
+    },
+    "Description": "Route to Ratio Lambda",
+    "Environment": {
+     "Variables": {
+      "VERSION": "4",
+      "NODE_OPTIONS": "--enable-source-maps",
+      "POOL_CACHE_BUCKET": {
+       "Ref": "referencetoRoutingAPIStackRoutingCachingStackNestedStackRoutingCachingStackNestedStackResource3F7983BFOutputsRoutingAPIStackRoutingCachingStackPoolCacheBucket620A121ARef"
+      },
+      "POOL_CACHE_BUCKET_2": {
+       "Ref": "referencetoRoutingAPIStackRoutingCachingStackNestedStackRoutingCachingStackNestedStackResource3F7983BFOutputsRoutingAPIStackRoutingCachingStackPoolCacheBucket28CA80A17Ref"
+      },
+      "POOL_CACHE_KEY": "poolCache.json",
+      "TOKEN_LIST_CACHE_BUCKET": {
+       "Ref": "referencetoRoutingAPIStackRoutingCachingStackNestedStackRoutingCachingStackNestedStackResource3F7983BFOutputsRoutingAPIStackRoutingCachingStackTokenListCacheBucket5B090E54Ref"
+      },
+      "CACHED_ROUTES_TABLE_NAME": {
+       "Ref": "referencetoRoutingAPIStackRoutingDatabaseStackNestedStackRoutingDatabaseStackNestedStackResource3AE7BFDEOutputsRoutingAPIStackRoutingDatabaseStackRouteCachingDB3F557D78Ref"
+      },
+      "AWS_NODEJS_CONNECTION_REUSE_ENABLED": "1"
+     }
+    },
+    "Handler": "index.quoteToRatioHandler",
+    "Layers": [
+     {
+      "Fn::Join": [
+       "",
+       [
+        "arn:aws:lambda:",
+        {
+         "Ref": "AWS::Region"
+        },
+        ":580247275435:layer:LambdaInsightsExtension:14"
+       ]
+      ]
+     }
+    ],
+    "MemorySize": 1024,
+    "Runtime": "nodejs14.x",
+    "Timeout": 29,
+    "TracingConfig": {
+     "Mode": "Active"
+    }
+   },
+   "DependsOn": [
+    "RoutingLambdaRoleDefaultPolicyB8EDD428",
+    "RoutingLambdaRole270B0918"
+   ],
+   "Metadata": {
+    "aws:cdk:path": "RoutingAPIStack/RoutingLambdaStack/RouteToRatioLambda2/Resource",
+    "aws:asset:path": "asset.f2641ad6baaef84d3170367fa2e4ee13e3777abb4d2054cb3d038ed0a874d34c",
+    "aws:asset:is-bundled": true,
+    "aws:asset:property": "Code"
+   }
+  },
+  "RoutingAPILambdaErrorRate660C8652": {
+   "Type": "AWS::CloudWatch::Alarm",
+   "Properties": {
+    "ComparisonOperator": "GreaterThanOrEqualToThreshold",
+    "EvaluationPeriods": 3,
+    "Metrics": [
+     {
+      "Expression": "errors / invocations",
+      "Id": "expr_1"
+     },
+     {
+      "Id": "errors",
+      "MetricStat": {
+       "Metric": {
+        "Dimensions": [
+         {
+          "Name": "FunctionName",
+          "Value": {
+           "Ref": "RoutingLambda2C4DF0900"
+          }
+         }
+        ],
+        "MetricName": "Errors",
+        "Namespace": "AWS/Lambda"
+       },
+       "Period": 300,
+       "Stat": "Average"
+      },
+      "ReturnData": false
+     },
+     {
+      "Id": "invocations",
+      "MetricStat": {
+       "Metric": {
+        "Dimensions": [
+         {
+          "Name": "FunctionName",
+          "Value": {
+           "Ref": "RoutingLambda2C4DF0900"
+          }
+         }
+        ],
+        "MetricName": "Invocations",
+        "Namespace": "AWS/Lambda"
+       },
+       "Period": 300,
+       "Stat": "Average"
+      },
+      "ReturnData": false
+     }
+    ],
+    "Threshold": 0.05
+   },
+   "Metadata": {
+    "aws:cdk:path": "RoutingAPIStack/RoutingLambdaStack/RoutingAPI-LambdaErrorRate/Resource"
+   }
+  },
+  "RoutingAPILambdaThrottles43ABF291": {
+   "Type": "AWS::CloudWatch::Alarm",
+   "Properties": {
+    "ComparisonOperator": "GreaterThanOrEqualToThreshold",
+    "EvaluationPeriods": 3,
+    "Dimensions": [
+     {
+      "Name": "FunctionName",
+      "Value": {
+       "Ref": "RoutingLambda2C4DF0900"
+      }
+     }
+    ],
+    "MetricName": "Throttles",
+    "Namespace": "AWS/Lambda",
+    "Period": 300,
+    "Statistic": "Sum",
+    "Threshold": 10
+   },
+   "Metadata": {
+    "aws:cdk:path": "RoutingAPIStack/RoutingLambdaStack/RoutingAPI-LambdaThrottles/Resource"
+   }
+  },
+  "RoutingLiveAliasA636160D": {
+   "Type": "AWS::Lambda::Alias",
+   "Properties": {
+    "FunctionName": {
+     "Ref": "RoutingLambda2C4DF0900"
+    },
+    "FunctionVersion": {
+     "Fn::GetAtt": [
+      "RoutingLambda2CurrentVersion49A1BB943dd910830f7158df575f8c898846f55d",
+      "Version"
+     ]
+    },
+    "Name": "live"
+   },
+   "Metadata": {
+    "aws:cdk:path": "RoutingAPIStack/RoutingLambdaStack/RoutingLiveAlias/Resource"
+   }
+  },
+  "CDKMetadata": {
+   "Type": "AWS::CDK::Metadata",
+   "Properties": {
+    "Analytics": "v2:deflate64:H4sIAAAAAAAA/z2PwU7DMAyGn2X31FBAII7dpB0nVCSulZeY4TZNpDphQlXenSRlnL7P/uXYeYCXJ7jf4VUababG8hnWE0kg8x5QTyoHw8o4w9p7S+rw6SrfvGX9U8rNkrI4nw0OzhsaBU4Vx+h0YO+UPA4oQkGgK8g17KOeKOxR6G8U1vza/8QHLVKYezftLKOURpWktPXRXDHoL1g7i8u8ZVlSUj2Jj4smVRfmv1zYXer5tyD7wTvDZV1S5W4Y5e67fYb2FdrdKMzNEl3gmaDf+AuyEq8fLQEAAA=="
+   },
+   "Metadata": {
+    "aws:cdk:path": "RoutingAPIStack/RoutingLambdaStack/CDKMetadata/Default"
+   },
+   "Condition": "CDKMetadataAvailable"
+  }
+ },
+ "Conditions": {
+  "CDKMetadataAvailable": {
+   "Fn::Or": [
+    {
+     "Fn::Or": [
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "af-south-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-east-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-northeast-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-northeast-2"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-south-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-southeast-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-southeast-2"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ca-central-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "cn-north-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "cn-northwest-1"
+       ]
+      }
+     ]
+    },
+    {
+     "Fn::Or": [
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-central-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-north-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-south-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-west-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-west-2"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-west-3"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "me-south-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "sa-east-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "us-east-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "us-east-2"
+       ]
+      }
+     ]
+    },
+    {
+     "Fn::Or": [
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "us-west-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "us-west-2"
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "Parameters": {
+  "referencetoRoutingAPIStackRoutingCachingStackNestedStackRoutingCachingStackNestedStackResource3F7983BFOutputsRoutingAPIStackRoutingCachingStackPoolCacheBucket620A121AArn": {
+   "Type": "String"
+  },
+  "referencetoRoutingAPIStackRoutingCachingStackNestedStackRoutingCachingStackNestedStackResource3F7983BFOutputsRoutingAPIStackRoutingCachingStackPoolCacheBucket28CA80A17Arn": {
+   "Type": "String"
+  },
+  "referencetoRoutingAPIStackRoutingCachingStackNestedStackRoutingCachingStackNestedStackResource3F7983BFOutputsRoutingAPIStackRoutingCachingStackTokenListCacheBucket5B090E54Arn": {
+   "Type": "String"
+  },
+  "referencetoRoutingAPIStackRoutingDatabaseStackNestedStackRoutingDatabaseStackNestedStackResource3AE7BFDEOutputsRoutingAPIStackRoutingDatabaseStackRouteCachingDB3F557D78Arn": {
+   "Type": "String"
+  },
+  "referencetoRoutingAPIStackRoutingDatabaseStackNestedStackRoutingDatabaseStackNestedStackResource3AE7BFDEOutputsRoutingAPIStackRoutingDatabaseStackRouteCachingDB3F557D78Ref": {
+   "Type": "String"
+  },
+  "referencetoRoutingAPIStackRoutingCachingStackNestedStackRoutingCachingStackNestedStackResource3F7983BFOutputsRoutingAPIStackRoutingCachingStackPoolCacheBucket620A121ARef": {
+   "Type": "String"
+  },
+  "referencetoRoutingAPIStackRoutingCachingStackNestedStackRoutingCachingStackNestedStackResource3F7983BFOutputsRoutingAPIStackRoutingCachingStackPoolCacheBucket28CA80A17Ref": {
+   "Type": "String"
+  },
+  "referencetoRoutingAPIStackRoutingCachingStackNestedStackRoutingCachingStackNestedStackResource3F7983BFOutputsRoutingAPIStackRoutingCachingStackTokenListCacheBucket5B090E54Ref": {
+   "Type": "String"
+  }
+ },
+ "Outputs": {
+  "RoutingAPIStackRoutingLambdaStackRoutingLiveAliasC0D98E21Ref": {
+   "Value": {
+    "Ref": "RoutingLiveAliasA636160D"
+   }
+  },
+  "RoutingAPIStackRoutingLambdaStackRouteToRatioLambda2484E2198Arn": {
+   "Value": {
+    "Fn::GetAtt": [
+     "RouteToRatioLambda23FC7C21B",
+     "Arn"
+    ]
+   }
+  },
+  "RoutingAPIStackRoutingLambdaStackRoutingLambda21C774982Ref": {
+   "Value": {
+    "Ref": "RoutingLambda2C4DF0900"
+   }
+  }
+ }
+}

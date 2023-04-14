@@ -1,0 +1,64 @@
+{
+ "Resources": {
+  "RouteCachingDB1361CA88": {
+   "Type": "AWS::DynamoDB::Table",
+   "Properties": {
+    "KeySchema": [
+     {
+      "AttributeName": "pairTradeTypeChainId",
+      "KeyType": "HASH"
+     },
+     {
+      "AttributeName": "protocolsBucketBlockNumber",
+      "KeyType": "RANGE"
+     }
+    ],
+    "AttributeDefinitions": [
+     {
+      "AttributeName": "pairTradeTypeChainId",
+      "AttributeType": "S"
+     },
+     {
+      "AttributeName": "protocolsBucketBlockNumber",
+      "AttributeType": "S"
+     }
+    ],
+    "BillingMode": "PAY_PER_REQUEST",
+    "TableName": "RouteCachingDB",
+    "TimeToLiveSpecification": {
+     "AttributeName": "ttl",
+     "Enabled": true
+    }
+   },
+   "UpdateReplacePolicy": "Retain",
+   "DeletionPolicy": "Retain",
+   "Metadata": {
+    "aws:cdk:path": "RoutingAPIPipelineStack/prod-ap-southeast-1/RoutingAPIStack/RoutingDatabaseStack/RouteCachingDB/Resource"
+   }
+  },
+  "CDKMetadata": {
+   "Type": "AWS::CDK::Metadata",
+   "Properties": {
+    "Analytics": "v2:deflate64:H4sIAAAAAAAA/zPSMzfRM1BMLC/WTU7J1s3JTNKr9kstLklNCS5JTM7WAUrEp1TmJebmpwBlQhKTclJ1nNPywIxanaDU4vzSomSwEIxdq5OXn5Kql1WsX2ZopmdoqWeomFWcmalbVJpXkpmbqhcEoQHOLPgBeQAAAA=="
+   },
+   "Metadata": {
+    "aws:cdk:path": "RoutingAPIPipelineStack/prod-ap-southeast-1/RoutingAPIStack/RoutingDatabaseStack/CDKMetadata/Default"
+   }
+  }
+ },
+ "Outputs": {
+  "RoutingAPIPipelineStackprodapsoutheast1RoutingAPIStackRoutingDatabaseStackRouteCachingDBA49FA1FFArn": {
+   "Value": {
+    "Fn::GetAtt": [
+     "RouteCachingDB1361CA88",
+     "Arn"
+    ]
+   }
+  },
+  "RoutingAPIPipelineStackprodapsoutheast1RoutingAPIStackRoutingDatabaseStackRouteCachingDBA49FA1FFRef": {
+   "Value": {
+    "Ref": "RouteCachingDB1361CA88"
+   }
+  }
+ }
+}

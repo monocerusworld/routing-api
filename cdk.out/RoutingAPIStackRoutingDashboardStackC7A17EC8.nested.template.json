@@ -1,0 +1,639 @@
+{
+ "Resources": {
+  "QuoteContributorInsights": {
+   "Type": "AWS::CloudWatch::InsightRule",
+   "Properties": {
+    "RuleBody": {
+     "Fn::Join": [
+      "",
+      [
+       "{\"Schema\":{\"Name\":\"CloudWatchLogRule\",\"Version\":1},\"AggregateOn\":\"Count\",\"Contribution\":{\"Filters\":[{\"Match\":\"$.tokenPairSymbol\",\"IsPresent\":true}],\"Keys\":[\"$.tokenPairSymbol\"]},\"LogFormat\":\"JSON\",\"LogGroupNames\":[\"/aws/lambda/",
+       {
+        "Ref": "referencetoRoutingAPIStackRoutingLambdaStackNestedStackRoutingLambdaStackNestedStackResourceDEF5B513OutputsRoutingAPIStackRoutingLambdaStackRoutingLambda21C774982Ref"
+       },
+       "\"]}"
+      ]
+     ]
+    },
+    "RuleName": "RequestedQuotes",
+    "RuleState": "ENABLED"
+   },
+   "Metadata": {
+    "aws:cdk:path": "RoutingAPIStack/RoutingDashboardStack/QuoteContributorInsights"
+   }
+  },
+  "QuoteByChainContributorInsights": {
+   "Type": "AWS::CloudWatch::InsightRule",
+   "Properties": {
+    "RuleBody": {
+     "Fn::Join": [
+      "",
+      [
+       "{\"Schema\":{\"Name\":\"CloudWatchLogRule\",\"Version\":1},\"AggregateOn\":\"Count\",\"Contribution\":{\"Filters\":[{\"Match\":\"$.tokenPairSymbolChain\",\"IsPresent\":true}],\"Keys\":[\"$.tokenPairSymbolChain\"]},\"LogFormat\":\"JSON\",\"LogGroupNames\":[\"/aws/lambda/",
+       {
+        "Ref": "referencetoRoutingAPIStackRoutingLambdaStackNestedStackRoutingLambdaStackNestedStackResourceDEF5B513OutputsRoutingAPIStackRoutingLambdaStackRoutingLambda21C774982Ref"
+       },
+       "\"]}"
+      ]
+     ]
+    },
+    "RuleName": "RequestedQuotesByChain",
+    "RuleState": "ENABLED"
+   },
+   "Metadata": {
+    "aws:cdk:path": "RoutingAPIStack/RoutingDashboardStack/QuoteByChainContributorInsights"
+   }
+  },
+  "RoutingAPIDashboard": {
+   "Type": "AWS::CloudWatch::Dashboard",
+   "Properties": {
+    "DashboardBody": {
+     "Fn::Join": [
+      "",
+      [
+       "{\"periodOverride\":\"inherit\",\"widgets\":[{\"type\":\"metric\",\"x\":0,\"y\":66,\"width\":24,\"height\":9,\"properties\":{\"view\":\"timeSeries\",\"stacked\":false,\"metrics\":[[\"AWS/Lambda\",\"",
+       {
+        "Ref": "referencetoRoutingAPIStackRoutingCachingStackNestedStackRoutingCachingStackNestedStackResource3F7983BFOutputsRoutingAPIStackRoutingCachingStackPoolCacheLambdaChainId1ProtocolV3556BA5B9Ref"
+       },
+       "Errors\",\"FunctionName\",\"",
+       {
+        "Ref": "referencetoRoutingAPIStackRoutingCachingStackNestedStackRoutingCachingStackNestedStackResource3F7983BFOutputsRoutingAPIStackRoutingCachingStackPoolCacheLambdaChainId1ProtocolV3556BA5B9Ref"
+       },
+       "\"],[\".\",\"",
+       {
+        "Ref": "referencetoRoutingAPIStackRoutingCachingStackNestedStackRoutingCachingStackNestedStackResource3F7983BFOutputsRoutingAPIStackRoutingCachingStackPoolCacheLambdaChainId1ProtocolV3556BA5B9Ref"
+       },
+       "Invocations\",\".\",\".\"],[\"AWS/Lambda\",\"",
+       {
+        "Ref": "referencetoRoutingAPIStackRoutingCachingStackNestedStackRoutingCachingStackNestedStackResource3F7983BFOutputsRoutingAPIStackRoutingCachingStackPoolCacheLambdaChainId42161ProtocolV3A560094ARef"
+       },
+       "Errors\",\"FunctionName\",\"",
+       {
+        "Ref": "referencetoRoutingAPIStackRoutingCachingStackNestedStackRoutingCachingStackNestedStackResource3F7983BFOutputsRoutingAPIStackRoutingCachingStackPoolCacheLambdaChainId42161ProtocolV3A560094ARef"
+       },
+       "\"],[\".\",\"",
+       {
+        "Ref": "referencetoRoutingAPIStackRoutingCachingStackNestedStackRoutingCachingStackNestedStackResource3F7983BFOutputsRoutingAPIStackRoutingCachingStackPoolCacheLambdaChainId42161ProtocolV3A560094ARef"
+       },
+       "Invocations\",\".\",\".\"],[\"AWS/Lambda\",\"",
+       {
+        "Ref": "referencetoRoutingAPIStackRoutingCachingStackNestedStackRoutingCachingStackNestedStackResource3F7983BFOutputsRoutingAPIStackRoutingCachingStackPoolCacheLambdaChainId137ProtocolV38017E3D2Ref"
+       },
+       "Errors\",\"FunctionName\",\"",
+       {
+        "Ref": "referencetoRoutingAPIStackRoutingCachingStackNestedStackRoutingCachingStackNestedStackResource3F7983BFOutputsRoutingAPIStackRoutingCachingStackPoolCacheLambdaChainId137ProtocolV38017E3D2Ref"
+       },
+       "\"],[\".\",\"",
+       {
+        "Ref": "referencetoRoutingAPIStackRoutingCachingStackNestedStackRoutingCachingStackNestedStackResource3F7983BFOutputsRoutingAPIStackRoutingCachingStackPoolCacheLambdaChainId137ProtocolV38017E3D2Ref"
+       },
+       "Invocations\",\".\",\".\"],[\"AWS/Lambda\",\"",
+       {
+        "Ref": "referencetoRoutingAPIStackRoutingCachingStackNestedStackRoutingCachingStackNestedStackResource3F7983BFOutputsRoutingAPIStackRoutingCachingStackPoolCacheLambdaChainId42220ProtocolV3F1E89A58Ref"
+       },
+       "Errors\",\"FunctionName\",\"",
+       {
+        "Ref": "referencetoRoutingAPIStackRoutingCachingStackNestedStackRoutingCachingStackNestedStackResource3F7983BFOutputsRoutingAPIStackRoutingCachingStackPoolCacheLambdaChainId42220ProtocolV3F1E89A58Ref"
+       },
+       "\"],[\".\",\"",
+       {
+        "Ref": "referencetoRoutingAPIStackRoutingCachingStackNestedStackRoutingCachingStackNestedStackResource3F7983BFOutputsRoutingAPIStackRoutingCachingStackPoolCacheLambdaChainId42220ProtocolV3F1E89A58Ref"
+       },
+       "Invocations\",\".\",\".\"],[\"AWS/Lambda\",\"",
+       {
+        "Ref": "referencetoRoutingAPIStackRoutingCachingStackNestedStackRoutingCachingStackNestedStackResource3F7983BFOutputsRoutingAPIStackRoutingCachingStackPoolCacheLambdaChainId56ProtocolV391DB5ADARef"
+       },
+       "Errors\",\"FunctionName\",\"",
+       {
+        "Ref": "referencetoRoutingAPIStackRoutingCachingStackNestedStackRoutingCachingStackNestedStackResource3F7983BFOutputsRoutingAPIStackRoutingCachingStackPoolCacheLambdaChainId56ProtocolV391DB5ADARef"
+       },
+       "\"],[\".\",\"",
+       {
+        "Ref": "referencetoRoutingAPIStackRoutingCachingStackNestedStackRoutingCachingStackNestedStackResource3F7983BFOutputsRoutingAPIStackRoutingCachingStackPoolCacheLambdaChainId56ProtocolV391DB5ADARef"
+       },
+       "Invocations\",\".\",\".\"],[\"AWS/Lambda\",\"",
+       {
+        "Ref": "referencetoRoutingAPIStackRoutingCachingStackNestedStackRoutingCachingStackNestedStackResource3F7983BFOutputsRoutingAPIStackRoutingCachingStackPoolCacheLambdaChainId1ProtocolV21B153C9DRef"
+       },
+       "Errors\",\"FunctionName\",\"",
+       {
+        "Ref": "referencetoRoutingAPIStackRoutingCachingStackNestedStackRoutingCachingStackNestedStackResource3F7983BFOutputsRoutingAPIStackRoutingCachingStackPoolCacheLambdaChainId1ProtocolV21B153C9DRef"
+       },
+       "\"],[\".\",\"",
+       {
+        "Ref": "referencetoRoutingAPIStackRoutingCachingStackNestedStackRoutingCachingStackNestedStackResource3F7983BFOutputsRoutingAPIStackRoutingCachingStackPoolCacheLambdaChainId1ProtocolV21B153C9DRef"
+       },
+       "Invocations\",\".\",\".\"]],\"region\":\"",
+       {
+        "Ref": "AWS::Region"
+       },
+       "\",\"title\":\"Pool Cache Lambda Error/Invocations | 5min\",\"stat\":\"Sum\"}},{\"height\":6,\"width\":24,\"y\":0,\"x\":0,\"type\":\"metric\",\"properties\":{\"metrics\":[[\"AWS/ApiGateway\",\"Count\",\"ApiName\",\"Routing API\",{\"label\":\"Requests\"}],[\".\",\"5XXError\",\".\",\".\",{\"label\":\"5XXError Responses\",\"color\":\"#ff7f0e\"}],[\".\",\"4XXError\",\".\",\".\",{\"label\":\"4XXError Responses\",\"color\":\"#2ca02c\"}]],\"view\":\"timeSeries\",\"stacked\":false,\"region\":\"",
+       {
+        "Ref": "AWS::Region"
+       },
+       "\",\"stat\":\"Sum\",\"period\":300,\"title\":\"Total Requests/Responses | 5min\"}},{\"height\":6,\"width\":24,\"y\":6,\"x\":0,\"type\":\"metric\",\"properties\":{\"metrics\":[[{\"expression\":\"m1 * 100\",\"label\":\"5XX Error Rate\",\"id\":\"e1\",\"color\":\"#ff7f0e\"}],[{\"expression\":\"m2 * 100\",\"label\":\"4XX Error Rate\",\"id\":\"e2\",\"color\":\"#2ca02c\"}],[\"AWS/ApiGateway\",\"5XXError\",\"ApiName\",\"Routing API\",{\"id\":\"m1\",\"label\":\"5XXError\",\"visible\":false}],[\".\",\"4XXError\",\".\",\".\",{\"id\":\"m2\",\"visible\":false}]],\"view\":\"timeSeries\",\"stacked\":false,\"region\":\"",
+       {
+        "Ref": "AWS::Region"
+       },
+       "\",\"stat\":\"Average\",\"period\":300,\"title\":\"5XX/4XX Error Rates | 5min\",\"setPeriodToTimeRange\":true,\"yAxis\":{\"left\":{\"showUnits\":false,\"label\":\"%\"}}}},{\"height\":6,\"width\":24,\"y\":12,\"x\":0,\"type\":\"metric\",\"properties\":{\"metrics\":[[\"AWS/ApiGateway\",\"Latency\",\"ApiName\",\"Routing API\"]],\"view\":\"timeSeries\",\"stacked\":false,\"region\":\"",
+       {
+        "Ref": "AWS::Region"
+       },
+       "\",\"period\":300,\"stat\":\"p90\",\"title\":\"Latency p90 | 5min\"}},{\"type\":\"metric\",\"x\":0,\"y\":18,\"width\":24,\"height\":6,\"properties\":{\"view\":\"timeSeries\",\"stacked\":false,\"metrics\":[[\"Uniswap\",\"QuotesFetched\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"V3QuotesFetched\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"V2QuotesFetched\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"MixedQuotesFetched\",\"Service\",\"RoutingAPI\"]],\"region\":\"",
+       {
+        "Ref": "AWS::Region"
+       },
+       "\",\"title\":\"p90 Quotes Fetched Per Swap\",\"period\":300,\"stat\":\"p90\"}},{\"type\":\"metric\",\"x\":0,\"y\":25,\"width\":24,\"height\":6,\"properties\":{\"view\":\"timeSeries\",\"stacked\":false,\"insightRule\":{\"maxContributorCount\":25,\"orderBy\":\"Sum\",\"ruleName\":\"RequestedQuotes\"},\"legend\":{\"position\":\"bottom\"},\"region\":\"",
+       {
+        "Ref": "AWS::Region"
+       },
+       "\",\"title\":\"Requested Quotes\",\"period\":300,\"stat\":\"Sum\"}},{\"type\":\"metric\",\"x\":0,\"y\":26,\"width\":24,\"height\":6,\"properties\":{\"view\":\"timeSeries\",\"stacked\":false,\"insightRule\":{\"maxContributorCount\":25,\"orderBy\":\"Sum\",\"ruleName\":\"RequestedQuotesByChain\"},\"legend\":{\"position\":\"bottom\"},\"region\":\"",
+       {
+        "Ref": "AWS::Region"
+       },
+       "\",\"title\":\"Requested Quotes By Chain\",\"period\":300,\"stat\":\"Sum\"}},{\"type\":\"metric\",\"x\":0,\"y\":24,\"width\":24,\"height\":6,\"properties\":{\"view\":\"timeSeries\",\"stacked\":false,\"metrics\":[[\"Uniswap\",\"MixedAndV3AndV2SplitRoute\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"MixedAndV3SplitRoute\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"MixedAndV2SplitRoute\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"MixedSplitRoute\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"MixedRoute\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"V3AndV2SplitRoute\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"V3SplitRoute\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"V3Route\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"V2SplitRoute\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"V2Route\",\"Service\",\"RoutingAPI\"]],\"region\":\"",
+       {
+        "Ref": "AWS::Region"
+       },
+       "\",\"title\":\"Types of routes returned across all chains\",\"period\":300,\"stat\":\"Sum\"}},{\"type\":\"metric\",\"x\":0,\"y\":30,\"width\":24,\"height\":6,\"properties\":{\"view\":\"timeSeries\",\"stacked\":false,\"metrics\":[[\"Uniswap\",\"MixedAndV3AndV2SplitRouteForChain1\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"MixedAndV3SplitRouteForChain1\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"MixedAndV2SplitRouteForChain1\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"MixedSplitRouteForChain1\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"MixedRouteForChain1\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"V3AndV2SplitRouteForChain1\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"V3SplitRouteForChain1\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"V3RouteForChain1\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"V2SplitRouteForChain1\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"V2RouteForChain1\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"MixedAndV3AndV2SplitRouteForChain4\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"MixedAndV3SplitRouteForChain4\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"MixedAndV2SplitRouteForChain4\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"MixedSplitRouteForChain4\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"MixedRouteForChain4\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"V3AndV2SplitRouteForChain4\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"V3SplitRouteForChain4\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"V3RouteForChain4\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"V2SplitRouteForChain4\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"V2RouteForChain4\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"MixedAndV3AndV2SplitRouteForChain3\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"MixedAndV3SplitRouteForChain3\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"MixedAndV2SplitRouteForChain3\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"MixedSplitRouteForChain3\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"MixedRouteForChain3\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"V3AndV2SplitRouteForChain3\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"V3SplitRouteForChain3\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"V3RouteForChain3\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"V2SplitRouteForChain3\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"V2RouteForChain3\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"MixedAndV3AndV2SplitRouteForChain42\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"MixedAndV3SplitRouteForChain42\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"MixedAndV2SplitRouteForChain42\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"MixedSplitRouteForChain42\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"MixedRouteForChain42\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"V3AndV2SplitRouteForChain42\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"V3SplitRouteForChain42\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"V3RouteForChain42\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"V2SplitRouteForChain42\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"V2RouteForChain42\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"MixedAndV3AndV2SplitRouteForChain10\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"MixedAndV3SplitRouteForChain10\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"MixedAndV2SplitRouteForChain10\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"MixedSplitRouteForChain10\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"MixedRouteForChain10\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"V3AndV2SplitRouteForChain10\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"V3SplitRouteForChain10\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"V3RouteForChain10\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"V2SplitRouteForChain10\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"V2RouteForChain10\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"MixedAndV3AndV2SplitRouteForChain69\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"MixedAndV3SplitRouteForChain69\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"MixedAndV2SplitRouteForChain69\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"MixedSplitRouteForChain69\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"MixedRouteForChain69\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"V3AndV2SplitRouteForChain69\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"V3SplitRouteForChain69\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"V3RouteForChain69\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"V2SplitRouteForChain69\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"V2RouteForChain69\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"MixedAndV3AndV2SplitRouteForChain42161\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"MixedAndV3SplitRouteForChain42161\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"MixedAndV2SplitRouteForChain42161\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"MixedSplitRouteForChain42161\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"MixedRouteForChain42161\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"V3AndV2SplitRouteForChain42161\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"V3SplitRouteForChain42161\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"V3RouteForChain42161\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"V2SplitRouteForChain42161\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"V2RouteForChain42161\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"MixedAndV3AndV2SplitRouteForChain421611\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"MixedAndV3SplitRouteForChain421611\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"MixedAndV2SplitRouteForChain421611\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"MixedSplitRouteForChain421611\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"MixedRouteForChain421611\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"V3AndV2SplitRouteForChain421611\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"V3SplitRouteForChain421611\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"V3RouteForChain421611\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"V2SplitRouteForChain421611\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"V2RouteForChain421611\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"MixedAndV3AndV2SplitRouteForChain421613\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"MixedAndV3SplitRouteForChain421613\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"MixedAndV2SplitRouteForChain421613\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"MixedSplitRouteForChain421613\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"MixedRouteForChain421613\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"V3AndV2SplitRouteForChain421613\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"V3SplitRouteForChain421613\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"V3RouteForChain421613\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"V2SplitRouteForChain421613\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"V2RouteForChain421613\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"MixedAndV3AndV2SplitRouteForChain137\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"MixedAndV3SplitRouteForChain137\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"MixedAndV2SplitRouteForChain137\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"MixedSplitRouteForChain137\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"MixedRouteForChain137\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"V3AndV2SplitRouteForChain137\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"V3SplitRouteForChain137\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"V3RouteForChain137\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"V2SplitRouteForChain137\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"V2RouteForChain137\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"MixedAndV3AndV2SplitRouteForChain80001\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"MixedAndV3SplitRouteForChain80001\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"MixedAndV2SplitRouteForChain80001\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"MixedSplitRouteForChain80001\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"MixedRouteForChain80001\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"V3AndV2SplitRouteForChain80001\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"V3SplitRouteForChain80001\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"V3RouteForChain80001\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"V2SplitRouteForChain80001\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"V2RouteForChain80001\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"MixedAndV3AndV2SplitRouteForChain5\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"MixedAndV3SplitRouteForChain5\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"MixedAndV2SplitRouteForChain5\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"MixedSplitRouteForChain5\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"MixedRouteForChain5\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"V3AndV2SplitRouteForChain5\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"V3SplitRouteForChain5\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"V3RouteForChain5\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"V2SplitRouteForChain5\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"V2RouteForChain5\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"MixedAndV3AndV2SplitRouteForChain42220\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"MixedAndV3SplitRouteForChain42220\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"MixedAndV2SplitRouteForChain42220\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"MixedSplitRouteForChain42220\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"MixedRouteForChain42220\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"V3AndV2SplitRouteForChain42220\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"V3SplitRouteForChain42220\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"V3RouteForChain42220\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"V2SplitRouteForChain42220\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"V2RouteForChain42220\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"MixedAndV3AndV2SplitRouteForChain44787\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"MixedAndV3SplitRouteForChain44787\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"MixedAndV2SplitRouteForChain44787\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"MixedSplitRouteForChain44787\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"MixedRouteForChain44787\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"V3AndV2SplitRouteForChain44787\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"V3SplitRouteForChain44787\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"V3RouteForChain44787\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"V2SplitRouteForChain44787\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"V2RouteForChain44787\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"MixedAndV3AndV2SplitRouteForChain56\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"MixedAndV3SplitRouteForChain56\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"MixedAndV2SplitRouteForChain56\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"MixedSplitRouteForChain56\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"MixedRouteForChain56\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"V3AndV2SplitRouteForChain56\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"V3SplitRouteForChain56\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"V3RouteForChain56\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"V2SplitRouteForChain56\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"V2RouteForChain56\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"MixedAndV3AndV2SplitRouteForChain250\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"MixedAndV3SplitRouteForChain250\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"MixedAndV2SplitRouteForChain250\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"MixedSplitRouteForChain250\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"MixedRouteForChain250\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"V3AndV2SplitRouteForChain250\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"V3SplitRouteForChain250\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"V3RouteForChain250\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"V2SplitRouteForChain250\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"V2RouteForChain250\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"MixedAndV3AndV2SplitRouteForChain100\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"MixedAndV3SplitRouteForChain100\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"MixedAndV2SplitRouteForChain100\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"MixedSplitRouteForChain100\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"MixedRouteForChain100\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"V3AndV2SplitRouteForChain100\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"V3SplitRouteForChain100\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"V3RouteForChain100\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"V2SplitRouteForChain100\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"V2RouteForChain100\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"MixedAndV3AndV2SplitRouteForChain8217\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"MixedAndV3SplitRouteForChain8217\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"MixedAndV2SplitRouteForChain8217\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"MixedSplitRouteForChain8217\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"MixedRouteForChain8217\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"V3AndV2SplitRouteForChain8217\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"V3SplitRouteForChain8217\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"V3RouteForChain8217\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"V2SplitRouteForChain8217\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"V2RouteForChain8217\",\"Service\",\"RoutingAPI\"]],\"region\":\"",
+       {
+        "Ref": "AWS::Region"
+       },
+       "\",\"title\":\"Types of V3 routes returned by chain\",\"period\":300,\"stat\":\"Sum\"}},{\"type\":\"metric\",\"x\":0,\"y\":36,\"width\":24,\"height\":6,\"properties\":{\"metrics\":[[\"Uniswap\",\"QuoteFoundForChain1\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"QuoteRequestedForChain1\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"QuoteFoundForChain4\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"QuoteRequestedForChain4\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"QuoteFoundForChain3\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"QuoteRequestedForChain3\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"QuoteFoundForChain42\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"QuoteRequestedForChain42\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"QuoteFoundForChain10\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"QuoteRequestedForChain10\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"QuoteFoundForChain69\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"QuoteRequestedForChain69\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"QuoteFoundForChain42161\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"QuoteRequestedForChain42161\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"QuoteFoundForChain421611\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"QuoteRequestedForChain421611\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"QuoteFoundForChain421613\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"QuoteRequestedForChain421613\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"QuoteFoundForChain137\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"QuoteRequestedForChain137\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"QuoteFoundForChain80001\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"QuoteRequestedForChain80001\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"QuoteFoundForChain5\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"QuoteRequestedForChain5\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"QuoteFoundForChain42220\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"QuoteRequestedForChain42220\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"QuoteFoundForChain44787\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"QuoteRequestedForChain44787\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"QuoteFoundForChain56\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"QuoteRequestedForChain56\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"QuoteFoundForChain250\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"QuoteRequestedForChain250\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"QuoteFoundForChain100\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"QuoteRequestedForChain100\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"QuoteFoundForChain8217\",\"Service\",\"RoutingAPI\"],[\"Uniswap\",\"QuoteRequestedForChain8217\",\"Service\",\"RoutingAPI\"]],\"view\":\"timeSeries\",\"stacked\":false,\"stat\":\"Sum\",\"period\":300,\"region\":\"",
+       {
+        "Ref": "AWS::Region"
+       },
+       "\",\"title\":\"Quote Requested/Found by Chain\"}},{\"height\":12,\"width\":24,\"y\":42,\"x\":0,\"type\":\"metric\",\"properties\":{\"metrics\":[[\"Uniswap\",\"TokenListLoad\",\"Service\",\"RoutingAPI\",{\"color\":\"#c5b0d5\"}],[\".\",\"GasPriceLoad\",\".\",\".\",{\"color\":\"#17becf\"}],[\".\",\"V3PoolsLoad\",\".\",\".\",{\"color\":\"#e377c2\"}],[\".\",\"V2PoolsLoad\",\".\",\".\",{\"color\":\"#e377c2\"}],[\".\",\"V3SubgraphPoolsLoad\",\".\",\".\",{\"color\":\"#1f77b4\"}],[\".\",\"V2SubgraphPoolsLoad\",\".\",\".\",{\"color\":\"#bf77b4\"}],[\".\",\"V3QuotesLoad\",\".\",\".\",{\"color\":\"#2ca02c\"}],[\".\",\"MixedQuotesLoad\",\".\",\".\",{\"color\":\"#fefa63\"}],[\".\",\"V2QuotesLoad\",\".\",\".\",{\"color\":\"#7f7f7f\"}],[\".\",\"FindBestSwapRoute\",\".\",\".\",{\"color\":\"#d62728\"}]],\"view\":\"timeSeries\",\"stacked\":true,\"region\":\"",
+       {
+        "Ref": "AWS::Region"
+       },
+       "\",\"stat\":\"p90\",\"period\":300,\"title\":\"Latency Breakdown | 5min\"}},{\"type\":\"metric\",\"x\":0,\"y\":48,\"width\":24,\"height\":9,\"properties\":{\"view\":\"timeSeries\",\"stacked\":false,\"metrics\":[[\"Uniswap\",\"V3top2directswappool\",\"Service\",\"RoutingAPI\"],[\".\",\"V3top2ethquotetokenpool\",\".\",\".\"],[\".\",\"V3topbytvl\",\".\",\".\"],[\".\",\"V3topbytvlusingtokenin\",\".\",\".\"],[\".\",\"V3topbytvlusingtokeninsecondhops\",\".\",\".\"],[\".\",\"V2topbytvlusingtokenout\",\".\",\".\"],[\".\",\"V3topbytvlusingtokenoutsecondhops\",\".\",\".\"],[\".\",\"V3topbybasewithtokenin\",\".\",\".\"],[\".\",\"V3topbybasewithtokenout\",\".\",\".\"]],\"region\":\"",
+       {
+        "Ref": "AWS::Region"
+       },
+       "\",\"title\":\"p95 V3 Top N Pools Used From Sources in Best Route | 5min\",\"stat\":\"p95\"}},{\"type\":\"metric\",\"x\":0,\"y\":54,\"width\":24,\"height\":9,\"properties\":{\"view\":\"timeSeries\",\"stacked\":false,\"metrics\":[[\"Uniswap\",\"V2top2directswappool\",\"Service\",\"RoutingAPI\"],[\".\",\"V2top2ethquotetokenpool\",\".\",\".\"],[\".\",\"V2topbytvl\",\".\",\".\"],[\".\",\"V2topbytvlusingtokenin\",\".\",\".\"],[\".\",\"V2topbytvlusingtokeninsecondhops\",\".\",\".\"],[\".\",\"V2topbytvlusingtokenout\",\".\",\".\"],[\".\",\"V2topbytvlusingtokenoutsecondhops\",\".\",\".\"],[\".\",\"V2topbybasewithtokenin\",\".\",\".\"],[\".\",\"V2topbybasewithtokenout\",\".\",\".\"]],\"region\":\"",
+       {
+        "Ref": "AWS::Region"
+       },
+       "\",\"title\":\"p95 V2 Top N Pools Used From Sources in Best Route | 5min\",\"stat\":\"p95\"}},{\"type\":\"metric\",\"x\":0,\"y\":60,\"width\":24,\"height\":9,\"properties\":{\"view\":\"timeSeries\",\"stacked\":false,\"metrics\":[[\"AWS/Lambda\",\"ProvisionedConcurrentExecutions\",\"FunctionName\",\"",
+       {
+        "Ref": "referencetoRoutingAPIStackRoutingLambdaStackNestedStackRoutingLambdaStackNestedStackResourceDEF5B513OutputsRoutingAPIStackRoutingLambdaStackRoutingLambda21C774982Ref"
+       },
+       "\"],[\".\",\"ConcurrentExecutions\",\".\",\".\"],[\".\",\"ProvisionedConcurrencySpilloverInvocations\",\".\",\".\"]],\"region\":\"",
+       {
+        "Ref": "AWS::Region"
+       },
+       "\",\"title\":\"Routing Lambda Provisioned Concurrency | 5min\",\"stat\":\"Average\"}}]}"
+      ]
+     ]
+    },
+    "DashboardName": "RoutingDashboard"
+   },
+   "Metadata": {
+    "aws:cdk:path": "RoutingAPIStack/RoutingDashboardStack/RoutingAPIDashboard"
+   }
+  },
+  "RoutingAPITrackedPairsDashboard": {
+   "Type": "AWS::CloudWatch::Dashboard",
+   "Properties": {
+    "DashboardBody": {
+     "Fn::Join": [
+      "",
+      [
+       "{\"periodOverride\":\"inherit\",\"widgets\":[{\"type\":\"text\",\"width\":24,\"height\":2,\"properties\":{\"markdown\":\"# mainnet - ChainId: 1\\n## WETH/USDC - ExactIn\"}},{\"type\":\"metric\",\"width\":24,\"height\":6,\"properties\":{\"view\":\"timeSeries\",\"stacked\":false,\"metrics\":[[\"Uniswap\",\"GET_QUOTE_AMOUNT_WETH/USDC_EXACTIN_CHAIN_1\",\"Service\",\"RoutingAPI\",{\"label\":\"WETH/USDC/EXACTIN Quotes\"}]],\"region\":\"",
+       {
+        "Ref": "AWS::Region"
+       },
+       "\",\"title\":\"Number of requested quotes WETH/USDC/ExactIn\",\"period\":300,\"stat\":\"SampleCount\"}},{\"type\":\"metric\",\"width\":24,\"height\":9,\"properties\":{\"view\":\"timeSeries\",\"stacked\":true,\"metrics\":[[\"Uniswap\",\"GET_QUOTE_AMOUNT_WETH/USDC_EXACTIN_CHAIN_1\",\"Service\",\"RoutingAPI\",{\"stat\":\"PR(0:1)\",\"label\":\"0 to 1 WETH\"}],[\"...\",{\"stat\":\"PR(1:5)\",\"label\":\"1 to 5 WETH\"}],[\"...\",{\"stat\":\"PR(5:10)\",\"label\":\"5 to 10 WETH\"}],[\"...\",{\"stat\":\"PR(10:50)\",\"label\":\"10 to 50 WETH\"}],[\"...\",{\"stat\":\"PR(50:100)\",\"label\":\"50 to 100 WETH\"}],[\"...\",{\"stat\":\"PR(100:500)\",\"label\":\"100 to 500 WETH\"}],[\"...\",{\"stat\":\"PR(500:1000)\",\"label\":\"500 to 1000 WETH\"}],[\"...\",{\"stat\":\"PR(1000:5000)\",\"label\":\"1000 to 5000 WETH\"}],[\"...\",{\"stat\":\"PR(5000:10000)\",\"label\":\"5000 to 10000 WETH\"}],[\"...\",{\"stat\":\"PR(10000:50000)\",\"label\":\"10000 to 50000 WETH\"}],[\"...\",{\"stat\":\"PR(50000:100000)\",\"label\":\"50000 to 100000 WETH\"}],[\"...\",{\"stat\":\"PR(100000:500000)\",\"label\":\"100000 to 500000 WETH\"}],[\"...\",{\"stat\":\"PR(500000:1000000)\",\"label\":\"500000 to 1000000 WETH\"}],[\"...\",{\"stat\":\"PR(1000000:)\",\"label\":\"1000000 to -1 WETH\"}]],\"region\":\"",
+       {
+        "Ref": "AWS::Region"
+       },
+       "\",\"title\":\"Distribution of quotes WETH/USDC/ExactIn\",\"period\":300}},{\"type\":\"text\",\"width\":24,\"height\":2,\"properties\":{\"markdown\":\"# mainnet - ChainId: 1\\n## USDC/WETH - ExactIn\"}},{\"type\":\"metric\",\"width\":24,\"height\":6,\"properties\":{\"view\":\"timeSeries\",\"stacked\":false,\"metrics\":[[\"Uniswap\",\"GET_QUOTE_AMOUNT_USDC/WETH_EXACTIN_CHAIN_1\",\"Service\",\"RoutingAPI\",{\"label\":\"USDC/WETH/EXACTIN Quotes\"}]],\"region\":\"",
+       {
+        "Ref": "AWS::Region"
+       },
+       "\",\"title\":\"Number of requested quotes USDC/WETH/ExactIn\",\"period\":300,\"stat\":\"SampleCount\"}},{\"type\":\"metric\",\"width\":24,\"height\":9,\"properties\":{\"view\":\"timeSeries\",\"stacked\":true,\"metrics\":[[\"Uniswap\",\"GET_QUOTE_AMOUNT_USDC/WETH_EXACTIN_CHAIN_1\",\"Service\",\"RoutingAPI\",{\"stat\":\"PR(0:1)\",\"label\":\"0 to 1 USDC\"}],[\"...\",{\"stat\":\"PR(1:5)\",\"label\":\"1 to 5 USDC\"}],[\"...\",{\"stat\":\"PR(5:10)\",\"label\":\"5 to 10 USDC\"}],[\"...\",{\"stat\":\"PR(10:50)\",\"label\":\"10 to 50 USDC\"}],[\"...\",{\"stat\":\"PR(50:100)\",\"label\":\"50 to 100 USDC\"}],[\"...\",{\"stat\":\"PR(100:500)\",\"label\":\"100 to 500 USDC\"}],[\"...\",{\"stat\":\"PR(500:1000)\",\"label\":\"500 to 1000 USDC\"}],[\"...\",{\"stat\":\"PR(1000:5000)\",\"label\":\"1000 to 5000 USDC\"}],[\"...\",{\"stat\":\"PR(5000:10000)\",\"label\":\"5000 to 10000 USDC\"}],[\"...\",{\"stat\":\"PR(10000:50000)\",\"label\":\"10000 to 50000 USDC\"}],[\"...\",{\"stat\":\"PR(50000:100000)\",\"label\":\"50000 to 100000 USDC\"}],[\"...\",{\"stat\":\"PR(100000:500000)\",\"label\":\"100000 to 500000 USDC\"}],[\"...\",{\"stat\":\"PR(500000:1000000)\",\"label\":\"500000 to 1000000 USDC\"}],[\"...\",{\"stat\":\"PR(1000000:)\",\"label\":\"1000000 to -1 USDC\"}]],\"region\":\"",
+       {
+        "Ref": "AWS::Region"
+       },
+       "\",\"title\":\"Distribution of quotes USDC/WETH/ExactIn\",\"period\":300}},{\"type\":\"text\",\"width\":24,\"height\":2,\"properties\":{\"markdown\":\"# mainnet - ChainId: 1\\n## USDT/WETH - ExactIn\"}},{\"type\":\"metric\",\"width\":24,\"height\":6,\"properties\":{\"view\":\"timeSeries\",\"stacked\":false,\"metrics\":[[\"Uniswap\",\"GET_QUOTE_AMOUNT_USDT/WETH_EXACTIN_CHAIN_1\",\"Service\",\"RoutingAPI\",{\"label\":\"USDT/WETH/EXACTIN Quotes\"}]],\"region\":\"",
+       {
+        "Ref": "AWS::Region"
+       },
+       "\",\"title\":\"Number of requested quotes USDT/WETH/ExactIn\",\"period\":300,\"stat\":\"SampleCount\"}},{\"type\":\"metric\",\"width\":24,\"height\":9,\"properties\":{\"view\":\"timeSeries\",\"stacked\":true,\"metrics\":[[\"Uniswap\",\"GET_QUOTE_AMOUNT_USDT/WETH_EXACTIN_CHAIN_1\",\"Service\",\"RoutingAPI\",{\"stat\":\"PR(0:1)\",\"label\":\"0 to 1 USDT\"}],[\"...\",{\"stat\":\"PR(1:5)\",\"label\":\"1 to 5 USDT\"}],[\"...\",{\"stat\":\"PR(5:10)\",\"label\":\"5 to 10 USDT\"}],[\"...\",{\"stat\":\"PR(10:50)\",\"label\":\"10 to 50 USDT\"}],[\"...\",{\"stat\":\"PR(50:100)\",\"label\":\"50 to 100 USDT\"}],[\"...\",{\"stat\":\"PR(100:500)\",\"label\":\"100 to 500 USDT\"}],[\"...\",{\"stat\":\"PR(500:1000)\",\"label\":\"500 to 1000 USDT\"}],[\"...\",{\"stat\":\"PR(1000:5000)\",\"label\":\"1000 to 5000 USDT\"}],[\"...\",{\"stat\":\"PR(5000:10000)\",\"label\":\"5000 to 10000 USDT\"}],[\"...\",{\"stat\":\"PR(10000:50000)\",\"label\":\"10000 to 50000 USDT\"}],[\"...\",{\"stat\":\"PR(50000:100000)\",\"label\":\"50000 to 100000 USDT\"}],[\"...\",{\"stat\":\"PR(100000:500000)\",\"label\":\"100000 to 500000 USDT\"}],[\"...\",{\"stat\":\"PR(500000:1000000)\",\"label\":\"500000 to 1000000 USDT\"}],[\"...\",{\"stat\":\"PR(1000000:)\",\"label\":\"1000000 to -1 USDT\"}]],\"region\":\"",
+       {
+        "Ref": "AWS::Region"
+       },
+       "\",\"title\":\"Distribution of quotes USDT/WETH/ExactIn\",\"period\":300}},{\"type\":\"text\",\"width\":24,\"height\":2,\"properties\":{\"markdown\":\"# mainnet - ChainId: 1\\n## WETH/USDT - ExactIn\"}},{\"type\":\"metric\",\"width\":24,\"height\":6,\"properties\":{\"view\":\"timeSeries\",\"stacked\":false,\"metrics\":[[\"Uniswap\",\"GET_QUOTE_AMOUNT_WETH/USDT_EXACTIN_CHAIN_1\",\"Service\",\"RoutingAPI\",{\"label\":\"WETH/USDT/EXACTIN Quotes\"}]],\"region\":\"",
+       {
+        "Ref": "AWS::Region"
+       },
+       "\",\"title\":\"Number of requested quotes WETH/USDT/ExactIn\",\"period\":300,\"stat\":\"SampleCount\"}},{\"type\":\"metric\",\"width\":24,\"height\":9,\"properties\":{\"view\":\"timeSeries\",\"stacked\":true,\"metrics\":[[\"Uniswap\",\"GET_QUOTE_AMOUNT_WETH/USDT_EXACTIN_CHAIN_1\",\"Service\",\"RoutingAPI\",{\"stat\":\"PR(0:1)\",\"label\":\"0 to 1 WETH\"}],[\"...\",{\"stat\":\"PR(1:5)\",\"label\":\"1 to 5 WETH\"}],[\"...\",{\"stat\":\"PR(5:10)\",\"label\":\"5 to 10 WETH\"}],[\"...\",{\"stat\":\"PR(10:50)\",\"label\":\"10 to 50 WETH\"}],[\"...\",{\"stat\":\"PR(50:100)\",\"label\":\"50 to 100 WETH\"}],[\"...\",{\"stat\":\"PR(100:500)\",\"label\":\"100 to 500 WETH\"}],[\"...\",{\"stat\":\"PR(500:1000)\",\"label\":\"500 to 1000 WETH\"}],[\"...\",{\"stat\":\"PR(1000:5000)\",\"label\":\"1000 to 5000 WETH\"}],[\"...\",{\"stat\":\"PR(5000:10000)\",\"label\":\"5000 to 10000 WETH\"}],[\"...\",{\"stat\":\"PR(10000:50000)\",\"label\":\"10000 to 50000 WETH\"}],[\"...\",{\"stat\":\"PR(50000:100000)\",\"label\":\"50000 to 100000 WETH\"}],[\"...\",{\"stat\":\"PR(100000:500000)\",\"label\":\"100000 to 500000 WETH\"}],[\"...\",{\"stat\":\"PR(500000:1000000)\",\"label\":\"500000 to 1000000 WETH\"}],[\"...\",{\"stat\":\"PR(1000000:)\",\"label\":\"1000000 to -1 WETH\"}]],\"region\":\"",
+       {
+        "Ref": "AWS::Region"
+       },
+       "\",\"title\":\"Distribution of quotes WETH/USDT/ExactIn\",\"period\":300}},{\"type\":\"text\",\"width\":24,\"height\":2,\"properties\":{\"markdown\":\"# mainnet - ChainId: 1\\n## USDC/WETH - ExactOut\"}},{\"type\":\"metric\",\"width\":24,\"height\":6,\"properties\":{\"view\":\"timeSeries\",\"stacked\":false,\"metrics\":[[\"Uniswap\",\"GET_QUOTE_AMOUNT_USDC/WETH_EXACTOUT_CHAIN_1\",\"Service\",\"RoutingAPI\",{\"label\":\"USDC/WETH/EXACTOUT Quotes\"}]],\"region\":\"",
+       {
+        "Ref": "AWS::Region"
+       },
+       "\",\"title\":\"Number of requested quotes USDC/WETH/ExactOut\",\"period\":300,\"stat\":\"SampleCount\"}},{\"type\":\"metric\",\"width\":24,\"height\":9,\"properties\":{\"view\":\"timeSeries\",\"stacked\":true,\"metrics\":[[\"Uniswap\",\"GET_QUOTE_AMOUNT_USDC/WETH_EXACTOUT_CHAIN_1\",\"Service\",\"RoutingAPI\",{\"stat\":\"PR(0:1)\",\"label\":\"0 to 1 WETH\"}],[\"...\",{\"stat\":\"PR(1:5)\",\"label\":\"1 to 5 WETH\"}],[\"...\",{\"stat\":\"PR(5:10)\",\"label\":\"5 to 10 WETH\"}],[\"...\",{\"stat\":\"PR(10:50)\",\"label\":\"10 to 50 WETH\"}],[\"...\",{\"stat\":\"PR(50:100)\",\"label\":\"50 to 100 WETH\"}],[\"...\",{\"stat\":\"PR(100:500)\",\"label\":\"100 to 500 WETH\"}],[\"...\",{\"stat\":\"PR(500:1000)\",\"label\":\"500 to 1000 WETH\"}],[\"...\",{\"stat\":\"PR(1000:5000)\",\"label\":\"1000 to 5000 WETH\"}],[\"...\",{\"stat\":\"PR(5000:10000)\",\"label\":\"5000 to 10000 WETH\"}],[\"...\",{\"stat\":\"PR(10000:50000)\",\"label\":\"10000 to 50000 WETH\"}],[\"...\",{\"stat\":\"PR(50000:100000)\",\"label\":\"50000 to 100000 WETH\"}],[\"...\",{\"stat\":\"PR(100000:500000)\",\"label\":\"100000 to 500000 WETH\"}],[\"...\",{\"stat\":\"PR(500000:1000000)\",\"label\":\"500000 to 1000000 WETH\"}],[\"...\",{\"stat\":\"PR(1000000:)\",\"label\":\"1000000 to -1 WETH\"}]],\"region\":\"",
+       {
+        "Ref": "AWS::Region"
+       },
+       "\",\"title\":\"Distribution of quotes USDC/WETH/ExactOut\",\"period\":300}},{\"type\":\"text\",\"width\":24,\"height\":2,\"properties\":{\"markdown\":\"# optimism-mainnet - ChainId: 10\\n## WETH/USDC - ExactIn\"}},{\"type\":\"metric\",\"width\":24,\"height\":6,\"properties\":{\"view\":\"timeSeries\",\"stacked\":false,\"metrics\":[[\"Uniswap\",\"GET_QUOTE_AMOUNT_WETH/USDC_EXACTIN_CHAIN_10\",\"Service\",\"RoutingAPI\",{\"label\":\"WETH/USDC/EXACTIN Quotes\"}]],\"region\":\"",
+       {
+        "Ref": "AWS::Region"
+       },
+       "\",\"title\":\"Number of requested quotes WETH/USDC/ExactIn\",\"period\":300,\"stat\":\"SampleCount\"}},{\"type\":\"metric\",\"width\":24,\"height\":9,\"properties\":{\"view\":\"timeSeries\",\"stacked\":true,\"metrics\":[[\"Uniswap\",\"GET_QUOTE_AMOUNT_WETH/USDC_EXACTIN_CHAIN_10\",\"Service\",\"RoutingAPI\",{\"stat\":\"PR(0:1)\",\"label\":\"0 to 1 WETH\"}],[\"...\",{\"stat\":\"PR(1:5)\",\"label\":\"1 to 5 WETH\"}],[\"...\",{\"stat\":\"PR(5:10)\",\"label\":\"5 to 10 WETH\"}],[\"...\",{\"stat\":\"PR(10:50)\",\"label\":\"10 to 50 WETH\"}],[\"...\",{\"stat\":\"PR(50:100)\",\"label\":\"50 to 100 WETH\"}],[\"...\",{\"stat\":\"PR(100:500)\",\"label\":\"100 to 500 WETH\"}],[\"...\",{\"stat\":\"PR(500:1000)\",\"label\":\"500 to 1000 WETH\"}],[\"...\",{\"stat\":\"PR(1000:5000)\",\"label\":\"1000 to 5000 WETH\"}],[\"...\",{\"stat\":\"PR(5000:10000)\",\"label\":\"5000 to 10000 WETH\"}],[\"...\",{\"stat\":\"PR(10000:50000)\",\"label\":\"10000 to 50000 WETH\"}],[\"...\",{\"stat\":\"PR(50000:100000)\",\"label\":\"50000 to 100000 WETH\"}],[\"...\",{\"stat\":\"PR(100000:500000)\",\"label\":\"100000 to 500000 WETH\"}],[\"...\",{\"stat\":\"PR(500000:1000000)\",\"label\":\"500000 to 1000000 WETH\"}],[\"...\",{\"stat\":\"PR(1000000:)\",\"label\":\"1000000 to -1 WETH\"}]],\"region\":\"",
+       {
+        "Ref": "AWS::Region"
+       },
+       "\",\"title\":\"Distribution of quotes WETH/USDC/ExactIn\",\"period\":300}},{\"type\":\"text\",\"width\":24,\"height\":2,\"properties\":{\"markdown\":\"# optimism-mainnet - ChainId: 10\\n## USDC/WETH - ExactIn\"}},{\"type\":\"metric\",\"width\":24,\"height\":6,\"properties\":{\"view\":\"timeSeries\",\"stacked\":false,\"metrics\":[[\"Uniswap\",\"GET_QUOTE_AMOUNT_USDC/WETH_EXACTIN_CHAIN_10\",\"Service\",\"RoutingAPI\",{\"label\":\"USDC/WETH/EXACTIN Quotes\"}]],\"region\":\"",
+       {
+        "Ref": "AWS::Region"
+       },
+       "\",\"title\":\"Number of requested quotes USDC/WETH/ExactIn\",\"period\":300,\"stat\":\"SampleCount\"}},{\"type\":\"metric\",\"width\":24,\"height\":9,\"properties\":{\"view\":\"timeSeries\",\"stacked\":true,\"metrics\":[[\"Uniswap\",\"GET_QUOTE_AMOUNT_USDC/WETH_EXACTIN_CHAIN_10\",\"Service\",\"RoutingAPI\",{\"stat\":\"PR(0:1)\",\"label\":\"0 to 1 USDC\"}],[\"...\",{\"stat\":\"PR(1:5)\",\"label\":\"1 to 5 USDC\"}],[\"...\",{\"stat\":\"PR(5:10)\",\"label\":\"5 to 10 USDC\"}],[\"...\",{\"stat\":\"PR(10:50)\",\"label\":\"10 to 50 USDC\"}],[\"...\",{\"stat\":\"PR(50:100)\",\"label\":\"50 to 100 USDC\"}],[\"...\",{\"stat\":\"PR(100:500)\",\"label\":\"100 to 500 USDC\"}],[\"...\",{\"stat\":\"PR(500:1000)\",\"label\":\"500 to 1000 USDC\"}],[\"...\",{\"stat\":\"PR(1000:5000)\",\"label\":\"1000 to 5000 USDC\"}],[\"...\",{\"stat\":\"PR(5000:10000)\",\"label\":\"5000 to 10000 USDC\"}],[\"...\",{\"stat\":\"PR(10000:50000)\",\"label\":\"10000 to 50000 USDC\"}],[\"...\",{\"stat\":\"PR(50000:100000)\",\"label\":\"50000 to 100000 USDC\"}],[\"...\",{\"stat\":\"PR(100000:500000)\",\"label\":\"100000 to 500000 USDC\"}],[\"...\",{\"stat\":\"PR(500000:1000000)\",\"label\":\"500000 to 1000000 USDC\"}],[\"...\",{\"stat\":\"PR(1000000:)\",\"label\":\"1000000 to -1 USDC\"}]],\"region\":\"",
+       {
+        "Ref": "AWS::Region"
+       },
+       "\",\"title\":\"Distribution of quotes USDC/WETH/ExactIn\",\"period\":300}},{\"type\":\"text\",\"width\":24,\"height\":2,\"properties\":{\"markdown\":\"# arbitrum-mainnet - ChainId: 42161\\n## WETH/USDC - ExactIn\"}},{\"type\":\"metric\",\"width\":24,\"height\":6,\"properties\":{\"view\":\"timeSeries\",\"stacked\":false,\"metrics\":[[\"Uniswap\",\"GET_QUOTE_AMOUNT_WETH/USDC_EXACTIN_CHAIN_42161\",\"Service\",\"RoutingAPI\",{\"label\":\"WETH/USDC/EXACTIN Quotes\"}]],\"region\":\"",
+       {
+        "Ref": "AWS::Region"
+       },
+       "\",\"title\":\"Number of requested quotes WETH/USDC/ExactIn\",\"period\":300,\"stat\":\"SampleCount\"}},{\"type\":\"metric\",\"width\":24,\"height\":9,\"properties\":{\"view\":\"timeSeries\",\"stacked\":true,\"metrics\":[[\"Uniswap\",\"GET_QUOTE_AMOUNT_WETH/USDC_EXACTIN_CHAIN_42161\",\"Service\",\"RoutingAPI\",{\"stat\":\"PR(0:1)\",\"label\":\"0 to 1 WETH\"}],[\"...\",{\"stat\":\"PR(1:5)\",\"label\":\"1 to 5 WETH\"}],[\"...\",{\"stat\":\"PR(5:10)\",\"label\":\"5 to 10 WETH\"}],[\"...\",{\"stat\":\"PR(10:50)\",\"label\":\"10 to 50 WETH\"}],[\"...\",{\"stat\":\"PR(50:100)\",\"label\":\"50 to 100 WETH\"}],[\"...\",{\"stat\":\"PR(100:500)\",\"label\":\"100 to 500 WETH\"}],[\"...\",{\"stat\":\"PR(500:1000)\",\"label\":\"500 to 1000 WETH\"}],[\"...\",{\"stat\":\"PR(1000:5000)\",\"label\":\"1000 to 5000 WETH\"}],[\"...\",{\"stat\":\"PR(5000:10000)\",\"label\":\"5000 to 10000 WETH\"}],[\"...\",{\"stat\":\"PR(10000:50000)\",\"label\":\"10000 to 50000 WETH\"}],[\"...\",{\"stat\":\"PR(50000:100000)\",\"label\":\"50000 to 100000 WETH\"}],[\"...\",{\"stat\":\"PR(100000:500000)\",\"label\":\"100000 to 500000 WETH\"}],[\"...\",{\"stat\":\"PR(500000:1000000)\",\"label\":\"500000 to 1000000 WETH\"}],[\"...\",{\"stat\":\"PR(1000000:)\",\"label\":\"1000000 to -1 WETH\"}]],\"region\":\"",
+       {
+        "Ref": "AWS::Region"
+       },
+       "\",\"title\":\"Distribution of quotes WETH/USDC/ExactIn\",\"period\":300}},{\"type\":\"text\",\"width\":24,\"height\":2,\"properties\":{\"markdown\":\"# arbitrum-mainnet - ChainId: 42161\\n## USDC/WETH - ExactIn\"}},{\"type\":\"metric\",\"width\":24,\"height\":6,\"properties\":{\"view\":\"timeSeries\",\"stacked\":false,\"metrics\":[[\"Uniswap\",\"GET_QUOTE_AMOUNT_USDC/WETH_EXACTIN_CHAIN_42161\",\"Service\",\"RoutingAPI\",{\"label\":\"USDC/WETH/EXACTIN Quotes\"}]],\"region\":\"",
+       {
+        "Ref": "AWS::Region"
+       },
+       "\",\"title\":\"Number of requested quotes USDC/WETH/ExactIn\",\"period\":300,\"stat\":\"SampleCount\"}},{\"type\":\"metric\",\"width\":24,\"height\":9,\"properties\":{\"view\":\"timeSeries\",\"stacked\":true,\"metrics\":[[\"Uniswap\",\"GET_QUOTE_AMOUNT_USDC/WETH_EXACTIN_CHAIN_42161\",\"Service\",\"RoutingAPI\",{\"stat\":\"PR(0:1)\",\"label\":\"0 to 1 USDC\"}],[\"...\",{\"stat\":\"PR(1:5)\",\"label\":\"1 to 5 USDC\"}],[\"...\",{\"stat\":\"PR(5:10)\",\"label\":\"5 to 10 USDC\"}],[\"...\",{\"stat\":\"PR(10:50)\",\"label\":\"10 to 50 USDC\"}],[\"...\",{\"stat\":\"PR(50:100)\",\"label\":\"50 to 100 USDC\"}],[\"...\",{\"stat\":\"PR(100:500)\",\"label\":\"100 to 500 USDC\"}],[\"...\",{\"stat\":\"PR(500:1000)\",\"label\":\"500 to 1000 USDC\"}],[\"...\",{\"stat\":\"PR(1000:5000)\",\"label\":\"1000 to 5000 USDC\"}],[\"...\",{\"stat\":\"PR(5000:10000)\",\"label\":\"5000 to 10000 USDC\"}],[\"...\",{\"stat\":\"PR(10000:50000)\",\"label\":\"10000 to 50000 USDC\"}],[\"...\",{\"stat\":\"PR(50000:100000)\",\"label\":\"50000 to 100000 USDC\"}],[\"...\",{\"stat\":\"PR(100000:500000)\",\"label\":\"100000 to 500000 USDC\"}],[\"...\",{\"stat\":\"PR(500000:1000000)\",\"label\":\"500000 to 1000000 USDC\"}],[\"...\",{\"stat\":\"PR(1000000:)\",\"label\":\"1000000 to -1 USDC\"}]],\"region\":\"",
+       {
+        "Ref": "AWS::Region"
+       },
+       "\",\"title\":\"Distribution of quotes USDC/WETH/ExactIn\",\"period\":300}},{\"type\":\"text\",\"width\":24,\"height\":2,\"properties\":{\"markdown\":\"# polygon-mainnet - ChainId: 137\\n## WETH/USDC - ExactIn\"}},{\"type\":\"metric\",\"width\":24,\"height\":6,\"properties\":{\"view\":\"timeSeries\",\"stacked\":false,\"metrics\":[[\"Uniswap\",\"GET_QUOTE_AMOUNT_WETH/USDC_EXACTIN_CHAIN_137\",\"Service\",\"RoutingAPI\",{\"label\":\"WETH/USDC/EXACTIN Quotes\"}]],\"region\":\"",
+       {
+        "Ref": "AWS::Region"
+       },
+       "\",\"title\":\"Number of requested quotes WETH/USDC/ExactIn\",\"period\":300,\"stat\":\"SampleCount\"}},{\"type\":\"metric\",\"width\":24,\"height\":9,\"properties\":{\"view\":\"timeSeries\",\"stacked\":true,\"metrics\":[[\"Uniswap\",\"GET_QUOTE_AMOUNT_WETH/USDC_EXACTIN_CHAIN_137\",\"Service\",\"RoutingAPI\",{\"stat\":\"PR(0:1)\",\"label\":\"0 to 1 WETH\"}],[\"...\",{\"stat\":\"PR(1:5)\",\"label\":\"1 to 5 WETH\"}],[\"...\",{\"stat\":\"PR(5:10)\",\"label\":\"5 to 10 WETH\"}],[\"...\",{\"stat\":\"PR(10:50)\",\"label\":\"10 to 50 WETH\"}],[\"...\",{\"stat\":\"PR(50:100)\",\"label\":\"50 to 100 WETH\"}],[\"...\",{\"stat\":\"PR(100:500)\",\"label\":\"100 to 500 WETH\"}],[\"...\",{\"stat\":\"PR(500:1000)\",\"label\":\"500 to 1000 WETH\"}],[\"...\",{\"stat\":\"PR(1000:5000)\",\"label\":\"1000 to 5000 WETH\"}],[\"...\",{\"stat\":\"PR(5000:10000)\",\"label\":\"5000 to 10000 WETH\"}],[\"...\",{\"stat\":\"PR(10000:50000)\",\"label\":\"10000 to 50000 WETH\"}],[\"...\",{\"stat\":\"PR(50000:100000)\",\"label\":\"50000 to 100000 WETH\"}],[\"...\",{\"stat\":\"PR(100000:500000)\",\"label\":\"100000 to 500000 WETH\"}],[\"...\",{\"stat\":\"PR(500000:1000000)\",\"label\":\"500000 to 1000000 WETH\"}],[\"...\",{\"stat\":\"PR(1000000:)\",\"label\":\"1000000 to -1 WETH\"}]],\"region\":\"",
+       {
+        "Ref": "AWS::Region"
+       },
+       "\",\"title\":\"Distribution of quotes WETH/USDC/ExactIn\",\"period\":300}},{\"type\":\"text\",\"width\":24,\"height\":2,\"properties\":{\"markdown\":\"# polygon-mainnet - ChainId: 137\\n## USDC/WETH - ExactIn\"}},{\"type\":\"metric\",\"width\":24,\"height\":6,\"properties\":{\"view\":\"timeSeries\",\"stacked\":false,\"metrics\":[[\"Uniswap\",\"GET_QUOTE_AMOUNT_USDC/WETH_EXACTIN_CHAIN_137\",\"Service\",\"RoutingAPI\",{\"label\":\"USDC/WETH/EXACTIN Quotes\"}]],\"region\":\"",
+       {
+        "Ref": "AWS::Region"
+       },
+       "\",\"title\":\"Number of requested quotes USDC/WETH/ExactIn\",\"period\":300,\"stat\":\"SampleCount\"}},{\"type\":\"metric\",\"width\":24,\"height\":9,\"properties\":{\"view\":\"timeSeries\",\"stacked\":true,\"metrics\":[[\"Uniswap\",\"GET_QUOTE_AMOUNT_USDC/WETH_EXACTIN_CHAIN_137\",\"Service\",\"RoutingAPI\",{\"stat\":\"PR(0:1)\",\"label\":\"0 to 1 USDC\"}],[\"...\",{\"stat\":\"PR(1:5)\",\"label\":\"1 to 5 USDC\"}],[\"...\",{\"stat\":\"PR(5:10)\",\"label\":\"5 to 10 USDC\"}],[\"...\",{\"stat\":\"PR(10:50)\",\"label\":\"10 to 50 USDC\"}],[\"...\",{\"stat\":\"PR(50:100)\",\"label\":\"50 to 100 USDC\"}],[\"...\",{\"stat\":\"PR(100:500)\",\"label\":\"100 to 500 USDC\"}],[\"...\",{\"stat\":\"PR(500:1000)\",\"label\":\"500 to 1000 USDC\"}],[\"...\",{\"stat\":\"PR(1000:5000)\",\"label\":\"1000 to 5000 USDC\"}],[\"...\",{\"stat\":\"PR(5000:10000)\",\"label\":\"5000 to 10000 USDC\"}],[\"...\",{\"stat\":\"PR(10000:50000)\",\"label\":\"10000 to 50000 USDC\"}],[\"...\",{\"stat\":\"PR(50000:100000)\",\"label\":\"50000 to 100000 USDC\"}],[\"...\",{\"stat\":\"PR(100000:500000)\",\"label\":\"100000 to 500000 USDC\"}],[\"...\",{\"stat\":\"PR(500000:1000000)\",\"label\":\"500000 to 1000000 USDC\"}],[\"...\",{\"stat\":\"PR(1000000:)\",\"label\":\"1000000 to -1 USDC\"}]],\"region\":\"",
+       {
+        "Ref": "AWS::Region"
+       },
+       "\",\"title\":\"Distribution of quotes USDC/WETH/ExactIn\",\"period\":300}},{\"type\":\"text\",\"width\":24,\"height\":2,\"properties\":{\"markdown\":\"# polygon-mainnet - ChainId: 137\\n## WMATIC/USDC - ExactIn\"}},{\"type\":\"metric\",\"width\":24,\"height\":6,\"properties\":{\"view\":\"timeSeries\",\"stacked\":false,\"metrics\":[[\"Uniswap\",\"GET_QUOTE_AMOUNT_WMATIC/USDC_EXACTIN_CHAIN_137\",\"Service\",\"RoutingAPI\",{\"label\":\"WMATIC/USDC/EXACTIN Quotes\"}]],\"region\":\"",
+       {
+        "Ref": "AWS::Region"
+       },
+       "\",\"title\":\"Number of requested quotes WMATIC/USDC/ExactIn\",\"period\":300,\"stat\":\"SampleCount\"}},{\"type\":\"metric\",\"width\":24,\"height\":9,\"properties\":{\"view\":\"timeSeries\",\"stacked\":true,\"metrics\":[[\"Uniswap\",\"GET_QUOTE_AMOUNT_WMATIC/USDC_EXACTIN_CHAIN_137\",\"Service\",\"RoutingAPI\",{\"stat\":\"PR(0:1)\",\"label\":\"0 to 1 WMATIC\"}],[\"...\",{\"stat\":\"PR(1:5)\",\"label\":\"1 to 5 WMATIC\"}],[\"...\",{\"stat\":\"PR(5:10)\",\"label\":\"5 to 10 WMATIC\"}],[\"...\",{\"stat\":\"PR(10:50)\",\"label\":\"10 to 50 WMATIC\"}],[\"...\",{\"stat\":\"PR(50:100)\",\"label\":\"50 to 100 WMATIC\"}],[\"...\",{\"stat\":\"PR(100:500)\",\"label\":\"100 to 500 WMATIC\"}],[\"...\",{\"stat\":\"PR(500:1000)\",\"label\":\"500 to 1000 WMATIC\"}],[\"...\",{\"stat\":\"PR(1000:5000)\",\"label\":\"1000 to 5000 WMATIC\"}],[\"...\",{\"stat\":\"PR(5000:10000)\",\"label\":\"5000 to 10000 WMATIC\"}],[\"...\",{\"stat\":\"PR(10000:50000)\",\"label\":\"10000 to 50000 WMATIC\"}],[\"...\",{\"stat\":\"PR(50000:100000)\",\"label\":\"50000 to 100000 WMATIC\"}],[\"...\",{\"stat\":\"PR(100000:500000)\",\"label\":\"100000 to 500000 WMATIC\"}],[\"...\",{\"stat\":\"PR(500000:1000000)\",\"label\":\"500000 to 1000000 WMATIC\"}],[\"...\",{\"stat\":\"PR(1000000:)\",\"label\":\"1000000 to -1 WMATIC\"}]],\"region\":\"",
+       {
+        "Ref": "AWS::Region"
+       },
+       "\",\"title\":\"Distribution of quotes WMATIC/USDC/ExactIn\",\"period\":300}},{\"type\":\"text\",\"width\":24,\"height\":2,\"properties\":{\"markdown\":\"# polygon-mainnet - ChainId: 137\\n## USDC/WMATIC - ExactIn\"}},{\"type\":\"metric\",\"width\":24,\"height\":6,\"properties\":{\"view\":\"timeSeries\",\"stacked\":false,\"metrics\":[[\"Uniswap\",\"GET_QUOTE_AMOUNT_USDC/WMATIC_EXACTIN_CHAIN_137\",\"Service\",\"RoutingAPI\",{\"label\":\"USDC/WMATIC/EXACTIN Quotes\"}]],\"region\":\"",
+       {
+        "Ref": "AWS::Region"
+       },
+       "\",\"title\":\"Number of requested quotes USDC/WMATIC/ExactIn\",\"period\":300,\"stat\":\"SampleCount\"}},{\"type\":\"metric\",\"width\":24,\"height\":9,\"properties\":{\"view\":\"timeSeries\",\"stacked\":true,\"metrics\":[[\"Uniswap\",\"GET_QUOTE_AMOUNT_USDC/WMATIC_EXACTIN_CHAIN_137\",\"Service\",\"RoutingAPI\",{\"stat\":\"PR(0:1)\",\"label\":\"0 to 1 USDC\"}],[\"...\",{\"stat\":\"PR(1:5)\",\"label\":\"1 to 5 USDC\"}],[\"...\",{\"stat\":\"PR(5:10)\",\"label\":\"5 to 10 USDC\"}],[\"...\",{\"stat\":\"PR(10:50)\",\"label\":\"10 to 50 USDC\"}],[\"...\",{\"stat\":\"PR(50:100)\",\"label\":\"50 to 100 USDC\"}],[\"...\",{\"stat\":\"PR(100:500)\",\"label\":\"100 to 500 USDC\"}],[\"...\",{\"stat\":\"PR(500:1000)\",\"label\":\"500 to 1000 USDC\"}],[\"...\",{\"stat\":\"PR(1000:5000)\",\"label\":\"1000 to 5000 USDC\"}],[\"...\",{\"stat\":\"PR(5000:10000)\",\"label\":\"5000 to 10000 USDC\"}],[\"...\",{\"stat\":\"PR(10000:50000)\",\"label\":\"10000 to 50000 USDC\"}],[\"...\",{\"stat\":\"PR(50000:100000)\",\"label\":\"50000 to 100000 USDC\"}],[\"...\",{\"stat\":\"PR(100000:500000)\",\"label\":\"100000 to 500000 USDC\"}],[\"...\",{\"stat\":\"PR(500000:1000000)\",\"label\":\"500000 to 1000000 USDC\"}],[\"...\",{\"stat\":\"PR(1000000:)\",\"label\":\"1000000 to -1 USDC\"}]],\"region\":\"",
+       {
+        "Ref": "AWS::Region"
+       },
+       "\",\"title\":\"Distribution of quotes USDC/WMATIC/ExactIn\",\"period\":300}}]}"
+      ]
+     ]
+    },
+    "DashboardName": "RoutingAPITrackedPairsDashboard"
+   },
+   "Metadata": {
+    "aws:cdk:path": "RoutingAPIStack/RoutingDashboardStack/RoutingAPITrackedPairsDashboard"
+   }
+  },
+  "CachedRoutesPerformanceDashboard": {
+   "Type": "AWS::CloudWatch::Dashboard",
+   "Properties": {
+    "DashboardBody": {
+     "Fn::Join": [
+      "",
+      [
+       "{\"periodOverride\":\"inherit\",\"widgets\":[{\"type\":\"text\",\"width\":24,\"height\":1,\"properties\":{\"markdown\":\"# Overall Cache Hit/Miss\"}},{\"type\":\"metric\",\"width\":24,\"height\":6,\"properties\":{\"view\":\"timeSeries\",\"stacked\":false,\"metrics\":[[\"Uniswap\",\"GetCachedRoute_hit_livemode\",\"Service\",\"RoutingAPI\",{\"label\":\"Cache Hit\"}],[\".\",\"GetCachedRoute_miss_livemode\",\".\",\".\",{\"label\":\"Cache Miss\"}]],\"region\":\"",
+       {
+        "Ref": "AWS::Region"
+       },
+       "\",\"title\":\"Cache Hit and Miss of Cachemode.Livemode\",\"period\":300,\"stat\":\"Sum\"}},{\"type\":\"metric\",\"width\":24,\"height\":6,\"properties\":{\"view\":\"timeSeries\",\"stacked\":false,\"metrics\":[[\"Uniswap\",\"GetCachedRoute_hit_tapcompare\",\"Service\",\"RoutingAPI\",{\"label\":\"Cache Hit\"}],[\".\",\"GetCachedRoute_miss_tapcompare\",\".\",\".\",{\"label\":\"Cache Miss\"}]],\"region\":\"",
+       {
+        "Ref": "AWS::Region"
+       },
+       "\",\"title\":\"Cache Hit and Miss of cachemode.Tapcompare\",\"period\":300,\"stat\":\"Sum\"}},{\"type\":\"text\",\"width\":24,\"height\":1,\"properties\":{\"markdown\":\"# Wildcard pairs\"}},{\"type\":\"log\",\"width\":24,\"height\":8,\"properties\":{\"view\":\"table\",\"query\":\"SOURCE '/aws/lambda/",
+       {
+        "Ref": "referencetoRoutingAPIStackRoutingLambdaStackNestedStackRoutingLambdaStackNestedStackResourceDEF5B513OutputsRoutingAPIStackRoutingLambdaStackRoutingLambda21C774982Ref"
+       },
+       "'\\n            | fields @timestamp, pair, quoteGasAdjustedDiff as diffOfTokenOut, amount as amountOfWETH\\n            | filter msg like 'Comparing quotes between Chain and Cache' and pair like /WETH\\\\/.*\\\\/ExactIn\\\\/1/ and quoteGasAdjustedDiff != 0 \\n            | sort quoteGasAdjustedDiff desc\",\"region\":\"",
+       {
+        "Ref": "AWS::Region"
+       },
+       "\",\"title\":\"Quote Differences and Amounts for WETH/*/ExactIn/1\"}},{\"type\":\"text\",\"width\":24,\"height\":1,\"properties\":{\"markdown\":\"# Cached Routes Performance for WETH/USDC/ExactIn/1\"}},{\"type\":\"metric\",\"width\":24,\"height\":6,\"properties\":{\"view\":\"timeSeries\",\"stacked\":false,\"metrics\":[[\"Uniswap\",\"GET_QUOTE_AMOUNT_WETH/USDC_EXACTIN_CHAIN_1\",\"Service\",\"RoutingAPI\",{\"label\":\"WETH/USDC/EXACTIN Quotes\"}]],\"region\":\"",
+       {
+        "Ref": "AWS::Region"
+       },
+       "\",\"title\":\"Number of requested quotes\",\"period\":300,\"stat\":\"SampleCount\"}},{\"type\":\"metric\",\"width\":24,\"height\":9,\"properties\":{\"view\":\"timeSeries\",\"stacked\":true,\"metrics\":[[\"Uniswap\",\"GET_QUOTE_AMOUNT_WETH/USDC_EXACTIN_CHAIN_1\",\"Service\",\"RoutingAPI\",{\"stat\":\"PR(0:1)\",\"label\":\"0 to 1 WETH\"}],[\"Uniswap\",\"GET_QUOTE_AMOUNT_WETH/USDC_EXACTIN_CHAIN_1\",\"Service\",\"RoutingAPI\",{\"stat\":\"PR(1:2)\",\"label\":\"1 to 2 WETH\"}],[\"Uniswap\",\"GET_QUOTE_AMOUNT_WETH/USDC_EXACTIN_CHAIN_1\",\"Service\",\"RoutingAPI\",{\"stat\":\"PR(2:3)\",\"label\":\"2 to 3 WETH\"}],[\"Uniswap\",\"GET_QUOTE_AMOUNT_WETH/USDC_EXACTIN_CHAIN_1\",\"Service\",\"RoutingAPI\",{\"stat\":\"PR(3:5)\",\"label\":\"3 to 5 WETH\"}],[\"Uniswap\",\"GET_QUOTE_AMOUNT_WETH/USDC_EXACTIN_CHAIN_1\",\"Service\",\"RoutingAPI\",{\"stat\":\"PR(5:8)\",\"label\":\"5 to 8 WETH\"}],[\"Uniswap\",\"GET_QUOTE_AMOUNT_WETH/USDC_EXACTIN_CHAIN_1\",\"Service\",\"RoutingAPI\",{\"stat\":\"PR(8:13)\",\"label\":\"8 to 13 WETH\"}],[\"Uniswap\",\"GET_QUOTE_AMOUNT_WETH/USDC_EXACTIN_CHAIN_1\",\"Service\",\"RoutingAPI\",{\"stat\":\"PR(13:21)\",\"label\":\"13 to 21 WETH\"}],[\"Uniswap\",\"GET_QUOTE_AMOUNT_WETH/USDC_EXACTIN_CHAIN_1\",\"Service\",\"RoutingAPI\",{\"stat\":\"PR(21:34)\",\"label\":\"21 to 34 WETH\"}],[\"Uniswap\",\"GET_QUOTE_AMOUNT_WETH/USDC_EXACTIN_CHAIN_1\",\"Service\",\"RoutingAPI\",{\"stat\":\"PR(34:55)\",\"label\":\"34 to 55 WETH\"}],[\"Uniswap\",\"GET_QUOTE_AMOUNT_WETH/USDC_EXACTIN_CHAIN_1\",\"Service\",\"RoutingAPI\",{\"stat\":\"PR(55:)\",\"label\":\"55 to -1 WETH\"}]],\"region\":\"",
+       {
+        "Ref": "AWS::Region"
+       },
+       "\",\"title\":\"Distribution of quotes WETH/USDC/ExactIn/1\",\"period\":300}},{\"type\":\"log\",\"width\":24,\"height\":8,\"properties\":{\"view\":\"table\",\"query\":\"SOURCE '/aws/lambda/",
+       {
+        "Ref": "referencetoRoutingAPIStackRoutingLambdaStackNestedStackRoutingLambdaStackNestedStackResourceDEF5B513OutputsRoutingAPIStackRoutingLambdaStackRoutingLambda21C774982Ref"
+       },
+       "'\\n            | fields @timestamp, pair, quoteGasAdjustedDiff as diffOfUSDC, amount as amountOfWETH\\n            | filter msg like 'Comparing quotes between Chain and Cache' and pair like /WETH\\\\/USDC\\\\/ExactIn\\\\/1/ and quoteGasAdjustedDiff != 0 \\n            | sort quoteGasAdjustedDiff desc\",\"region\":\"",
+       {
+        "Ref": "AWS::Region"
+       },
+       "\",\"title\":\"Quote Differences and Amounts for WETH/USDC/ExactIn/1\"}},{\"type\":\"text\",\"width\":24,\"height\":1,\"properties\":{\"markdown\":\"# Cached Routes Performance for USDC/WETH/ExactIn/1\"}},{\"type\":\"metric\",\"width\":24,\"height\":6,\"properties\":{\"view\":\"timeSeries\",\"stacked\":false,\"metrics\":[[\"Uniswap\",\"GET_QUOTE_AMOUNT_USDC/WETH_EXACTIN_CHAIN_1\",\"Service\",\"RoutingAPI\",{\"label\":\"USDC/WETH/EXACTIN Quotes\"}]],\"region\":\"",
+       {
+        "Ref": "AWS::Region"
+       },
+       "\",\"title\":\"Number of requested quotes\",\"period\":300,\"stat\":\"SampleCount\"}},{\"type\":\"metric\",\"width\":24,\"height\":9,\"properties\":{\"view\":\"timeSeries\",\"stacked\":true,\"metrics\":[[\"Uniswap\",\"GET_QUOTE_AMOUNT_USDC/WETH_EXACTIN_CHAIN_1\",\"Service\",\"RoutingAPI\",{\"stat\":\"PR(0:1000)\",\"label\":\"0 to 1000 USDC\"}],[\"Uniswap\",\"GET_QUOTE_AMOUNT_USDC/WETH_EXACTIN_CHAIN_1\",\"Service\",\"RoutingAPI\",{\"stat\":\"PR(1000:2000)\",\"label\":\"1000 to 2000 USDC\"}],[\"Uniswap\",\"GET_QUOTE_AMOUNT_USDC/WETH_EXACTIN_CHAIN_1\",\"Service\",\"RoutingAPI\",{\"stat\":\"PR(2000:3000)\",\"label\":\"2000 to 3000 USDC\"}],[\"Uniswap\",\"GET_QUOTE_AMOUNT_USDC/WETH_EXACTIN_CHAIN_1\",\"Service\",\"RoutingAPI\",{\"stat\":\"PR(3000:8000)\",\"label\":\"3000 to 8000 USDC\"}],[\"Uniswap\",\"GET_QUOTE_AMOUNT_USDC/WETH_EXACTIN_CHAIN_1\",\"Service\",\"RoutingAPI\",{\"stat\":\"PR(8000:13000)\",\"label\":\"8000 to 13000 USDC\"}],[\"Uniswap\",\"GET_QUOTE_AMOUNT_USDC/WETH_EXACTIN_CHAIN_1\",\"Service\",\"RoutingAPI\",{\"stat\":\"PR(13000:21000)\",\"label\":\"13000 to 21000 USDC\"}],[\"Uniswap\",\"GET_QUOTE_AMOUNT_USDC/WETH_EXACTIN_CHAIN_1\",\"Service\",\"RoutingAPI\",{\"stat\":\"PR(21000:34000)\",\"label\":\"21000 to 34000 USDC\"}],[\"Uniswap\",\"GET_QUOTE_AMOUNT_USDC/WETH_EXACTIN_CHAIN_1\",\"Service\",\"RoutingAPI\",{\"stat\":\"PR(34000:55000)\",\"label\":\"34000 to 55000 USDC\"}],[\"Uniswap\",\"GET_QUOTE_AMOUNT_USDC/WETH_EXACTIN_CHAIN_1\",\"Service\",\"RoutingAPI\",{\"stat\":\"PR(55000:89000)\",\"label\":\"55000 to 89000 USDC\"}],[\"Uniswap\",\"GET_QUOTE_AMOUNT_USDC/WETH_EXACTIN_CHAIN_1\",\"Service\",\"RoutingAPI\",{\"stat\":\"PR(89000:144000)\",\"label\":\"89000 to 144000 USDC\"}],[\"Uniswap\",\"GET_QUOTE_AMOUNT_USDC/WETH_EXACTIN_CHAIN_1\",\"Service\",\"RoutingAPI\",{\"stat\":\"PR(144000:233000)\",\"label\":\"144000 to 233000 USDC\"}],[\"Uniswap\",\"GET_QUOTE_AMOUNT_USDC/WETH_EXACTIN_CHAIN_1\",\"Service\",\"RoutingAPI\",{\"stat\":\"PR(233000:377000)\",\"label\":\"233000 to 377000 USDC\"}],[\"Uniswap\",\"GET_QUOTE_AMOUNT_USDC/WETH_EXACTIN_CHAIN_1\",\"Service\",\"RoutingAPI\",{\"stat\":\"PR(377000:610000)\",\"label\":\"377000 to 610000 USDC\"}],[\"Uniswap\",\"GET_QUOTE_AMOUNT_USDC/WETH_EXACTIN_CHAIN_1\",\"Service\",\"RoutingAPI\",{\"stat\":\"PR(610000:)\",\"label\":\"610000 to -1 USDC\"}]],\"region\":\"",
+       {
+        "Ref": "AWS::Region"
+       },
+       "\",\"title\":\"Distribution of quotes USDC/WETH/ExactIn/1\",\"period\":300}},{\"type\":\"log\",\"width\":24,\"height\":8,\"properties\":{\"view\":\"table\",\"query\":\"SOURCE '/aws/lambda/",
+       {
+        "Ref": "referencetoRoutingAPIStackRoutingLambdaStackNestedStackRoutingLambdaStackNestedStackResourceDEF5B513OutputsRoutingAPIStackRoutingLambdaStackRoutingLambda21C774982Ref"
+       },
+       "'\\n            | fields @timestamp, pair, quoteGasAdjustedDiff as diffOfWETH, amount as amountOfUSDC\\n            | filter msg like 'Comparing quotes between Chain and Cache' and pair like /USDC\\\\/WETH\\\\/ExactIn\\\\/1/ and quoteGasAdjustedDiff != 0 \\n            | sort quoteGasAdjustedDiff desc\",\"region\":\"",
+       {
+        "Ref": "AWS::Region"
+       },
+       "\",\"title\":\"Quote Differences and Amounts for USDC/WETH/ExactIn/1\"}}]}"
+      ]
+     ]
+    },
+    "DashboardName": "CachedRoutesPerformanceDashboard"
+   },
+   "Metadata": {
+    "aws:cdk:path": "RoutingAPIStack/RoutingDashboardStack/CachedRoutesPerformanceDashboard"
+   }
+  },
+  "RoutingAPIQuoteProviderDashboard": {
+   "Type": "AWS::CloudWatch::Dashboard",
+   "Properties": {
+    "DashboardBody": {
+     "Fn::Join": [
+      "",
+      [
+       "{\"periodOverride\":\"inherit\",\"widgets\":[{\"height\":6,\"width\":24,\"y\":0,\"x\":0,\"type\":\"metric\",\"properties\":{\"metrics\":[[\"Uniswap\",\"QuoteApproxGasUsedPerSuccessfulCall\",\"Service\",\"RoutingAPI\"]],\"view\":\"timeSeries\",\"stacked\":false,\"region\":\"",
+       {
+        "Ref": "AWS::Region"
+       },
+       "\",\"stat\":\"Average\",\"period\":300,\"title\":\"Approx gas used by each call\"}},{\"height\":6,\"width\":24,\"y\":6,\"x\":0,\"type\":\"metric\",\"properties\":{\"metrics\":[[\"Uniswap\",\"QuoteTotalCallsToProvider\",\"Service\",\"RoutingAPI\"],[\".\",\"QuoteExpectedCallsToProvider\",\".\",\".\"],[\".\",\"QuoteNumRetriedCalls\",\".\",\".\"],[\".\",\"QuoteNumRetryLoops\",\".\",\".\"]],\"view\":\"timeSeries\",\"stacked\":false,\"region\":\"",
+       {
+        "Ref": "AWS::Region"
+       },
+       "\",\"stat\":\"Average\",\"period\":300,\"title\":\"Number of retries to provider needed to get quote\"}},{\"height\":6,\"width\":24,\"y\":12,\"x\":0,\"type\":\"metric\",\"properties\":{\"metrics\":[[\"Uniswap\",\"QuoteOutOfGasExceptionRetry\",\"Service\",\"RoutingAPI\"],[\".\",\"QuoteSuccessRateRetry\",\".\",\".\"],[\".\",\"QuoteBlockHeaderNotFoundRetry\",\".\",\".\"],[\".\",\"QuoteTimeoutRetry\",\".\",\".\"],[\".\",\"QuoteUnknownReasonRetry\",\".\",\".\"],[\".\",\"QuoteBlockConflictErrorRetry\",\".\",\".\"]],\"view\":\"timeSeries\",\"stacked\":false,\"region\":\"",
+       {
+        "Ref": "AWS::Region"
+       },
+       "\",\"period\":300,\"stat\":\"Sum\",\"title\":\"Number of requests that retried in the quote provider\"}}]}"
+      ]
+     ]
+    },
+    "DashboardName": "RoutingQuoteProviderDashboard"
+   },
+   "Metadata": {
+    "aws:cdk:path": "RoutingAPIStack/RoutingDashboardStack/RoutingAPIQuoteProviderDashboard"
+   }
+  },
+  "CDKMetadata": {
+   "Type": "AWS::CDK::Metadata",
+   "Properties": {
+    "Analytics": "v2:deflate64:H4sIAAAAAAAA/yXKMQ7CMAxA0bN0TwxBCMRcZob2ACiNjeq2xFLs0AFxd4qY/vDfAc5H2DdxVZ9w9gsP8L6RGmFvMc2ufeSOVGpJ5DZ0T4tUXKOlEbZ1jToOEgv+XCsZ2Vjyx2VBgkl3r3CCcIHQTMrsS83GT4Lu3y9ZxOHLewAAAA=="
+   },
+   "Metadata": {
+    "aws:cdk:path": "RoutingAPIStack/RoutingDashboardStack/CDKMetadata/Default"
+   },
+   "Condition": "CDKMetadataAvailable"
+  }
+ },
+ "Conditions": {
+  "CDKMetadataAvailable": {
+   "Fn::Or": [
+    {
+     "Fn::Or": [
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "af-south-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-east-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-northeast-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-northeast-2"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-south-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-southeast-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-southeast-2"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ca-central-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "cn-north-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "cn-northwest-1"
+       ]
+      }
+     ]
+    },
+    {
+     "Fn::Or": [
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-central-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-north-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-south-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-west-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-west-2"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-west-3"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "me-south-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "sa-east-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "us-east-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "us-east-2"
+       ]
+      }
+     ]
+    },
+    {
+     "Fn::Or": [
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "us-west-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "us-west-2"
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "Parameters": {
+  "referencetoRoutingAPIStackRoutingLambdaStackNestedStackRoutingLambdaStackNestedStackResourceDEF5B513OutputsRoutingAPIStackRoutingLambdaStackRoutingLambda21C774982Ref": {
+   "Type": "String"
+  },
+  "referencetoRoutingAPIStackRoutingCachingStackNestedStackRoutingCachingStackNestedStackResource3F7983BFOutputsRoutingAPIStackRoutingCachingStackPoolCacheLambdaChainId1ProtocolV3556BA5B9Ref": {
+   "Type": "String"
+  },
+  "referencetoRoutingAPIStackRoutingCachingStackNestedStackRoutingCachingStackNestedStackResource3F7983BFOutputsRoutingAPIStackRoutingCachingStackPoolCacheLambdaChainId42161ProtocolV3A560094ARef": {
+   "Type": "String"
+  },
+  "referencetoRoutingAPIStackRoutingCachingStackNestedStackRoutingCachingStackNestedStackResource3F7983BFOutputsRoutingAPIStackRoutingCachingStackPoolCacheLambdaChainId137ProtocolV38017E3D2Ref": {
+   "Type": "String"
+  },
+  "referencetoRoutingAPIStackRoutingCachingStackNestedStackRoutingCachingStackNestedStackResource3F7983BFOutputsRoutingAPIStackRoutingCachingStackPoolCacheLambdaChainId42220ProtocolV3F1E89A58Ref": {
+   "Type": "String"
+  },
+  "referencetoRoutingAPIStackRoutingCachingStackNestedStackRoutingCachingStackNestedStackResource3F7983BFOutputsRoutingAPIStackRoutingCachingStackPoolCacheLambdaChainId56ProtocolV391DB5ADARef": {
+   "Type": "String"
+  },
+  "referencetoRoutingAPIStackRoutingCachingStackNestedStackRoutingCachingStackNestedStackResource3F7983BFOutputsRoutingAPIStackRoutingCachingStackPoolCacheLambdaChainId1ProtocolV21B153C9DRef": {
+   "Type": "String"
+  }
+ }
+}

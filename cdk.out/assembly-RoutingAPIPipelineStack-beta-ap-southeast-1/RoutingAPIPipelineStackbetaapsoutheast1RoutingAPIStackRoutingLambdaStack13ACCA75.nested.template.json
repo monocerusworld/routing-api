@@ -1,0 +1,584 @@
+{
+ "Resources": {
+  "RoutingLambdaRole270B0918": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "lambda.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "ManagedPolicyArns": [
+     {
+      "Fn::Join": [
+       "",
+       [
+        "arn:",
+        {
+         "Ref": "AWS::Partition"
+        },
+        ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+       ]
+      ]
+     },
+     {
+      "Fn::Join": [
+       "",
+       [
+        "arn:",
+        {
+         "Ref": "AWS::Partition"
+        },
+        ":iam::aws:policy/CloudWatchLambdaInsightsExecutionRolePolicy"
+       ]
+      ]
+     },
+     {
+      "Fn::Join": [
+       "",
+       [
+        "arn:",
+        {
+         "Ref": "AWS::Partition"
+        },
+        ":iam::aws:policy/AWSXRayDaemonWriteAccess"
+       ]
+      ]
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingLambdaStack/RoutingLambdaRole/Resource"
+   }
+  },
+  "RoutingLambdaRoleDefaultPolicyB8EDD428": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": [
+        "s3:GetObject*",
+        "s3:GetBucket*",
+        "s3:List*"
+       ],
+       "Effect": "Allow",
+       "Resource": [
+        {
+         "Ref": "referencetoRoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackNestedStackRoutingCachingStackNestedStackResource2194E320OutputsRoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackPoolCacheBucketC165B781Arn"
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           {
+            "Ref": "referencetoRoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackNestedStackRoutingCachingStackNestedStackResource2194E320OutputsRoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackPoolCacheBucketC165B781Arn"
+           },
+           "/*"
+          ]
+         ]
+        }
+       ]
+      },
+      {
+       "Action": [
+        "s3:GetObject*",
+        "s3:GetBucket*",
+        "s3:List*"
+       ],
+       "Effect": "Allow",
+       "Resource": [
+        {
+         "Ref": "referencetoRoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackNestedStackRoutingCachingStackNestedStackResource2194E320OutputsRoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackPoolCacheBucket20679C5E4Arn"
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           {
+            "Ref": "referencetoRoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackNestedStackRoutingCachingStackNestedStackResource2194E320OutputsRoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackPoolCacheBucket20679C5E4Arn"
+           },
+           "/*"
+          ]
+         ]
+        }
+       ]
+      },
+      {
+       "Action": [
+        "s3:GetObject*",
+        "s3:GetBucket*",
+        "s3:List*"
+       ],
+       "Effect": "Allow",
+       "Resource": [
+        {
+         "Ref": "referencetoRoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackNestedStackRoutingCachingStackNestedStackResource2194E320OutputsRoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackTokenListCacheBucket9E7C4291Arn"
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           {
+            "Ref": "referencetoRoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackNestedStackRoutingCachingStackNestedStackResource2194E320OutputsRoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackTokenListCacheBucket9E7C4291Arn"
+           },
+           "/*"
+          ]
+         ]
+        }
+       ]
+      },
+      {
+       "Action": [
+        "dynamodb:BatchGetItem",
+        "dynamodb:GetRecords",
+        "dynamodb:GetShardIterator",
+        "dynamodb:Query",
+        "dynamodb:GetItem",
+        "dynamodb:Scan",
+        "dynamodb:ConditionCheckItem",
+        "dynamodb:BatchWriteItem",
+        "dynamodb:PutItem",
+        "dynamodb:UpdateItem",
+        "dynamodb:DeleteItem",
+        "dynamodb:DescribeTable"
+       ],
+       "Effect": "Allow",
+       "Resource": [
+        {
+         "Ref": "referencetoRoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingDatabaseStackNestedStackRoutingDatabaseStackNestedStackResourceDA913E78OutputsRoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingDatabaseStackRouteCachingDB9CBC8CC2Arn"
+        },
+        {
+         "Ref": "AWS::NoValue"
+        }
+       ]
+      },
+      {
+       "Action": [
+        "xray:PutTraceSegments",
+        "xray:PutTelemetryRecords"
+       ],
+       "Effect": "Allow",
+       "Resource": "*"
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "RoutingLambdaRoleDefaultPolicyB8EDD428",
+    "Roles": [
+     {
+      "Ref": "RoutingLambdaRole270B0918"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingLambdaStack/RoutingLambdaRole/DefaultPolicy/Resource"
+   }
+  },
+  "RoutingLambda2C4DF0900": {
+   "Type": "AWS::Lambda::Function",
+   "Properties": {
+    "Code": {
+     "S3Bucket": "cdk-hnb659fds-assets-557822834307-ap-southeast-1",
+     "S3Key": "f2641ad6baaef84d3170367fa2e4ee13e3777abb4d2054cb3d038ed0a874d34c.zip"
+    },
+    "Role": {
+     "Fn::GetAtt": [
+      "RoutingLambdaRole270B0918",
+      "Arn"
+     ]
+    },
+    "Description": "Routing Lambda",
+    "Environment": {
+     "Variables": {
+      "AWS_NODEJS_CONNECTION_REUSE_ENABLED": "1",
+      "CACHED_ROUTES_TABLE_NAME": {
+       "Ref": "referencetoRoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingDatabaseStackNestedStackRoutingDatabaseStackNestedStackResourceDA913E78OutputsRoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingDatabaseStackRouteCachingDB9CBC8CC2Ref"
+      },
+      "ETH_GAS_STATION_INFO_URL": "{{resolve:secretsmanager:arn:aws:secretsmanager:ap-southeast-1:557822834307:secret:eth-gas-station-info-url-ulGncX:SecretString:::}}",
+      "NODE_OPTIONS": "--enable-source-maps",
+      "POOL_CACHE_BUCKET": {
+       "Ref": "referencetoRoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackNestedStackRoutingCachingStackNestedStackResource2194E320OutputsRoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackPoolCacheBucketC165B781Ref"
+      },
+      "POOL_CACHE_BUCKET_2": {
+       "Ref": "referencetoRoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackNestedStackRoutingCachingStackNestedStackResource2194E320OutputsRoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackPoolCacheBucket20679C5E4Ref"
+      },
+      "POOL_CACHE_KEY": "poolCache.json",
+      "TENDERLY_ACCESS_KEY": "{{resolve:secretsmanager:arn:aws:secretsmanager:ap-southeast-1:557822834307:secret:tenderly-api-wQaI2R:SecretString:tenderly-access-key::}}",
+      "TENDERLY_PROJECT": "{{resolve:secretsmanager:arn:aws:secretsmanager:ap-southeast-1:557822834307:secret:tenderly-api-wQaI2R:SecretString:tenderly-project::}}",
+      "TENDERLY_USER": "{{resolve:secretsmanager:arn:aws:secretsmanager:ap-southeast-1:557822834307:secret:tenderly-api-wQaI2R:SecretString:tenderly-user::}}",
+      "TOKEN_LIST_CACHE_BUCKET": {
+       "Ref": "referencetoRoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackNestedStackRoutingCachingStackNestedStackResource2194E320OutputsRoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackTokenListCacheBucket9E7C4291Ref"
+      },
+      "VERSION": "5",
+      "WEB3_RPC_1": "{{resolve:secretsmanager:arn:aws:secretsmanager:ap-southeast-1:557822834307:secret:routing-api-rpc-urls-json-primary-ixS8mw:SecretString:WEB3_RPC_1::}}",
+      "WEB3_RPC_10": "{{resolve:secretsmanager:arn:aws:secretsmanager:ap-southeast-1:557822834307:secret:routing-api-rpc-urls-json-primary-ixS8mw:SecretString:WEB3_RPC_10::}}",
+      "WEB3_RPC_100": "{{resolve:secretsmanager:arn:aws:secretsmanager:ap-southeast-1:557822834307:secret:routing-api-rpc-urls-json-primary-ixS8mw:SecretString:WEB3_RPC_100::}}",
+      "WEB3_RPC_137": "{{resolve:secretsmanager:arn:aws:secretsmanager:ap-southeast-1:557822834307:secret:routing-api-rpc-urls-json-primary-ixS8mw:SecretString:WEB3_RPC_137::}}",
+      "WEB3_RPC_250": "{{resolve:secretsmanager:arn:aws:secretsmanager:ap-southeast-1:557822834307:secret:routing-api-rpc-urls-json-primary-ixS8mw:SecretString:WEB3_RPC_250::}}",
+      "WEB3_RPC_3": "{{resolve:secretsmanager:arn:aws:secretsmanager:ap-southeast-1:557822834307:secret:routing-api-rpc-urls-json-primary-ixS8mw:SecretString:WEB3_RPC_3::}}",
+      "WEB3_RPC_4": "{{resolve:secretsmanager:arn:aws:secretsmanager:ap-southeast-1:557822834307:secret:routing-api-rpc-urls-json-primary-ixS8mw:SecretString:WEB3_RPC_4::}}",
+      "WEB3_RPC_42": "{{resolve:secretsmanager:arn:aws:secretsmanager:ap-southeast-1:557822834307:secret:routing-api-rpc-urls-json-primary-ixS8mw:SecretString:WEB3_RPC_42::}}",
+      "WEB3_RPC_42161": "{{resolve:secretsmanager:arn:aws:secretsmanager:ap-southeast-1:557822834307:secret:routing-api-rpc-urls-json-primary-ixS8mw:SecretString:WEB3_RPC_42161::}}",
+      "WEB3_RPC_421611": "{{resolve:secretsmanager:arn:aws:secretsmanager:ap-southeast-1:557822834307:secret:routing-api-rpc-urls-json-primary-ixS8mw:SecretString:WEB3_RPC_421611::}}",
+      "WEB3_RPC_421613": "{{resolve:secretsmanager:arn:aws:secretsmanager:ap-southeast-1:557822834307:secret:routing-api-rpc-urls-json-primary-ixS8mw:SecretString:WEB3_RPC_421613::}}",
+      "WEB3_RPC_42220": "{{resolve:secretsmanager:arn:aws:secretsmanager:ap-southeast-1:557822834307:secret:routing-api-rpc-urls-json-primary-ixS8mw:SecretString:WEB3_RPC_42220::}}",
+      "WEB3_RPC_44787": "{{resolve:secretsmanager:arn:aws:secretsmanager:ap-southeast-1:557822834307:secret:routing-api-rpc-urls-json-primary-ixS8mw:SecretString:WEB3_RPC_44787::}}",
+      "WEB3_RPC_5": "{{resolve:secretsmanager:arn:aws:secretsmanager:ap-southeast-1:557822834307:secret:routing-api-rpc-urls-json-primary-ixS8mw:SecretString:WEB3_RPC_5::}}",
+      "WEB3_RPC_56": "{{resolve:secretsmanager:arn:aws:secretsmanager:ap-southeast-1:557822834307:secret:routing-api-rpc-urls-json-primary-ixS8mw:SecretString:WEB3_RPC_56::}}",
+      "WEB3_RPC_69": "{{resolve:secretsmanager:arn:aws:secretsmanager:ap-southeast-1:557822834307:secret:routing-api-rpc-urls-json-primary-ixS8mw:SecretString:WEB3_RPC_69::}}",
+      "WEB3_RPC_80001": "{{resolve:secretsmanager:arn:aws:secretsmanager:ap-southeast-1:557822834307:secret:routing-api-rpc-urls-json-primary-ixS8mw:SecretString:WEB3_RPC_80001::}}",
+      "WEB3_RPC_8217": "{{resolve:secretsmanager:arn:aws:secretsmanager:ap-southeast-1:557822834307:secret:routing-api-rpc-urls-json-primary-ixS8mw:SecretString:WEB3_RPC_8217::}}"
+     }
+    },
+    "Handler": "index.quoteHandler",
+    "Layers": [
+     "arn:aws:lambda:ap-southeast-1:580247275435:layer:LambdaInsightsExtension:14"
+    ],
+    "MemorySize": 1024,
+    "Runtime": "nodejs14.x",
+    "Timeout": 29,
+    "TracingConfig": {
+     "Mode": "Active"
+    }
+   },
+   "DependsOn": [
+    "RoutingLambdaRoleDefaultPolicyB8EDD428",
+    "RoutingLambdaRole270B0918"
+   ],
+   "Metadata": {
+    "aws:cdk:path": "RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingLambdaStack/RoutingLambda2/Resource",
+    "aws:asset:path": "../asset.f2641ad6baaef84d3170367fa2e4ee13e3777abb4d2054cb3d038ed0a874d34c",
+    "aws:asset:is-bundled": true,
+    "aws:asset:property": "Code"
+   }
+  },
+  "RoutingLambda2CurrentVersion49A1BB94c75981e56875fd94fbbcc7d2e73d0934": {
+   "Type": "AWS::Lambda::Version",
+   "Properties": {
+    "FunctionName": {
+     "Ref": "RoutingLambda2C4DF0900"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingLambdaStack/RoutingLambda2/CurrentVersion/Resource"
+   }
+  },
+  "RouteToRatioLambda23FC7C21B": {
+   "Type": "AWS::Lambda::Function",
+   "Properties": {
+    "Code": {
+     "S3Bucket": "cdk-hnb659fds-assets-557822834307-ap-southeast-1",
+     "S3Key": "f2641ad6baaef84d3170367fa2e4ee13e3777abb4d2054cb3d038ed0a874d34c.zip"
+    },
+    "Role": {
+     "Fn::GetAtt": [
+      "RoutingLambdaRole270B0918",
+      "Arn"
+     ]
+    },
+    "Description": "Route to Ratio Lambda",
+    "Environment": {
+     "Variables": {
+      "VERSION": "4",
+      "NODE_OPTIONS": "--enable-source-maps",
+      "POOL_CACHE_BUCKET": {
+       "Ref": "referencetoRoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackNestedStackRoutingCachingStackNestedStackResource2194E320OutputsRoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackPoolCacheBucketC165B781Ref"
+      },
+      "POOL_CACHE_BUCKET_2": {
+       "Ref": "referencetoRoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackNestedStackRoutingCachingStackNestedStackResource2194E320OutputsRoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackPoolCacheBucket20679C5E4Ref"
+      },
+      "POOL_CACHE_KEY": "poolCache.json",
+      "TOKEN_LIST_CACHE_BUCKET": {
+       "Ref": "referencetoRoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackNestedStackRoutingCachingStackNestedStackResource2194E320OutputsRoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackTokenListCacheBucket9E7C4291Ref"
+      },
+      "ETH_GAS_STATION_INFO_URL": "{{resolve:secretsmanager:arn:aws:secretsmanager:ap-southeast-1:557822834307:secret:eth-gas-station-info-url-ulGncX:SecretString:::}}",
+      "CACHED_ROUTES_TABLE_NAME": {
+       "Ref": "referencetoRoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingDatabaseStackNestedStackRoutingDatabaseStackNestedStackResourceDA913E78OutputsRoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingDatabaseStackRouteCachingDB9CBC8CC2Ref"
+      },
+      "WEB3_RPC_1": "{{resolve:secretsmanager:arn:aws:secretsmanager:ap-southeast-1:557822834307:secret:routing-api-rpc-urls-json-primary-ixS8mw:SecretString:WEB3_RPC_1::}}",
+      "WEB3_RPC_4": "{{resolve:secretsmanager:arn:aws:secretsmanager:ap-southeast-1:557822834307:secret:routing-api-rpc-urls-json-primary-ixS8mw:SecretString:WEB3_RPC_4::}}",
+      "WEB3_RPC_3": "{{resolve:secretsmanager:arn:aws:secretsmanager:ap-southeast-1:557822834307:secret:routing-api-rpc-urls-json-primary-ixS8mw:SecretString:WEB3_RPC_3::}}",
+      "WEB3_RPC_42": "{{resolve:secretsmanager:arn:aws:secretsmanager:ap-southeast-1:557822834307:secret:routing-api-rpc-urls-json-primary-ixS8mw:SecretString:WEB3_RPC_42::}}",
+      "WEB3_RPC_10": "{{resolve:secretsmanager:arn:aws:secretsmanager:ap-southeast-1:557822834307:secret:routing-api-rpc-urls-json-primary-ixS8mw:SecretString:WEB3_RPC_10::}}",
+      "WEB3_RPC_69": "{{resolve:secretsmanager:arn:aws:secretsmanager:ap-southeast-1:557822834307:secret:routing-api-rpc-urls-json-primary-ixS8mw:SecretString:WEB3_RPC_69::}}",
+      "WEB3_RPC_42161": "{{resolve:secretsmanager:arn:aws:secretsmanager:ap-southeast-1:557822834307:secret:routing-api-rpc-urls-json-primary-ixS8mw:SecretString:WEB3_RPC_42161::}}",
+      "WEB3_RPC_421611": "{{resolve:secretsmanager:arn:aws:secretsmanager:ap-southeast-1:557822834307:secret:routing-api-rpc-urls-json-primary-ixS8mw:SecretString:WEB3_RPC_421611::}}",
+      "WEB3_RPC_421613": "{{resolve:secretsmanager:arn:aws:secretsmanager:ap-southeast-1:557822834307:secret:routing-api-rpc-urls-json-primary-ixS8mw:SecretString:WEB3_RPC_421613::}}",
+      "WEB3_RPC_137": "{{resolve:secretsmanager:arn:aws:secretsmanager:ap-southeast-1:557822834307:secret:routing-api-rpc-urls-json-primary-ixS8mw:SecretString:WEB3_RPC_137::}}",
+      "WEB3_RPC_80001": "{{resolve:secretsmanager:arn:aws:secretsmanager:ap-southeast-1:557822834307:secret:routing-api-rpc-urls-json-primary-ixS8mw:SecretString:WEB3_RPC_80001::}}",
+      "WEB3_RPC_5": "{{resolve:secretsmanager:arn:aws:secretsmanager:ap-southeast-1:557822834307:secret:routing-api-rpc-urls-json-primary-ixS8mw:SecretString:WEB3_RPC_5::}}",
+      "WEB3_RPC_42220": "{{resolve:secretsmanager:arn:aws:secretsmanager:ap-southeast-1:557822834307:secret:routing-api-rpc-urls-json-primary-ixS8mw:SecretString:WEB3_RPC_42220::}}",
+      "WEB3_RPC_44787": "{{resolve:secretsmanager:arn:aws:secretsmanager:ap-southeast-1:557822834307:secret:routing-api-rpc-urls-json-primary-ixS8mw:SecretString:WEB3_RPC_44787::}}",
+      "WEB3_RPC_56": "{{resolve:secretsmanager:arn:aws:secretsmanager:ap-southeast-1:557822834307:secret:routing-api-rpc-urls-json-primary-ixS8mw:SecretString:WEB3_RPC_56::}}",
+      "WEB3_RPC_250": "{{resolve:secretsmanager:arn:aws:secretsmanager:ap-southeast-1:557822834307:secret:routing-api-rpc-urls-json-primary-ixS8mw:SecretString:WEB3_RPC_250::}}",
+      "WEB3_RPC_100": "{{resolve:secretsmanager:arn:aws:secretsmanager:ap-southeast-1:557822834307:secret:routing-api-rpc-urls-json-primary-ixS8mw:SecretString:WEB3_RPC_100::}}",
+      "WEB3_RPC_8217": "{{resolve:secretsmanager:arn:aws:secretsmanager:ap-southeast-1:557822834307:secret:routing-api-rpc-urls-json-primary-ixS8mw:SecretString:WEB3_RPC_8217::}}",
+      "AWS_NODEJS_CONNECTION_REUSE_ENABLED": "1"
+     }
+    },
+    "Handler": "index.quoteToRatioHandler",
+    "Layers": [
+     "arn:aws:lambda:ap-southeast-1:580247275435:layer:LambdaInsightsExtension:14"
+    ],
+    "MemorySize": 1024,
+    "Runtime": "nodejs14.x",
+    "Timeout": 29,
+    "TracingConfig": {
+     "Mode": "Active"
+    }
+   },
+   "DependsOn": [
+    "RoutingLambdaRoleDefaultPolicyB8EDD428",
+    "RoutingLambdaRole270B0918"
+   ],
+   "Metadata": {
+    "aws:cdk:path": "RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingLambdaStack/RouteToRatioLambda2/Resource",
+    "aws:asset:path": "../asset.f2641ad6baaef84d3170367fa2e4ee13e3777abb4d2054cb3d038ed0a874d34c",
+    "aws:asset:is-bundled": true,
+    "aws:asset:property": "Code"
+   }
+  },
+  "RoutingAPILambdaErrorRate660C8652": {
+   "Type": "AWS::CloudWatch::Alarm",
+   "Properties": {
+    "ComparisonOperator": "GreaterThanOrEqualToThreshold",
+    "EvaluationPeriods": 3,
+    "Metrics": [
+     {
+      "Expression": "errors / invocations",
+      "Id": "expr_1"
+     },
+     {
+      "Id": "errors",
+      "MetricStat": {
+       "Metric": {
+        "Dimensions": [
+         {
+          "Name": "FunctionName",
+          "Value": {
+           "Ref": "RoutingLambda2C4DF0900"
+          }
+         }
+        ],
+        "MetricName": "Errors",
+        "Namespace": "AWS/Lambda"
+       },
+       "Period": 300,
+       "Stat": "Average"
+      },
+      "ReturnData": false
+     },
+     {
+      "Id": "invocations",
+      "MetricStat": {
+       "Metric": {
+        "Dimensions": [
+         {
+          "Name": "FunctionName",
+          "Value": {
+           "Ref": "RoutingLambda2C4DF0900"
+          }
+         }
+        ],
+        "MetricName": "Invocations",
+        "Namespace": "AWS/Lambda"
+       },
+       "Period": 300,
+       "Stat": "Average"
+      },
+      "ReturnData": false
+     }
+    ],
+    "Threshold": 0.05
+   },
+   "Metadata": {
+    "aws:cdk:path": "RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingLambdaStack/RoutingAPI-LambdaErrorRate/Resource"
+   }
+  },
+  "RoutingAPILambdaThrottles43ABF291": {
+   "Type": "AWS::CloudWatch::Alarm",
+   "Properties": {
+    "ComparisonOperator": "GreaterThanOrEqualToThreshold",
+    "EvaluationPeriods": 3,
+    "Dimensions": [
+     {
+      "Name": "FunctionName",
+      "Value": {
+       "Ref": "RoutingLambda2C4DF0900"
+      }
+     }
+    ],
+    "MetricName": "Throttles",
+    "Namespace": "AWS/Lambda",
+    "Period": 300,
+    "Statistic": "Sum",
+    "Threshold": 10
+   },
+   "Metadata": {
+    "aws:cdk:path": "RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingLambdaStack/RoutingAPI-LambdaThrottles/Resource"
+   }
+  },
+  "RoutingLiveAliasA636160D": {
+   "Type": "AWS::Lambda::Alias",
+   "Properties": {
+    "FunctionName": {
+     "Ref": "RoutingLambda2C4DF0900"
+    },
+    "FunctionVersion": {
+     "Fn::GetAtt": [
+      "RoutingLambda2CurrentVersion49A1BB94c75981e56875fd94fbbcc7d2e73d0934",
+      "Version"
+     ]
+    },
+    "Name": "live",
+    "ProvisionedConcurrencyConfig": {
+     "ProvisionedConcurrentExecutions": 100
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingLambdaStack/RoutingLiveAlias/Resource"
+   }
+  },
+  "RoutingProvConcASGRoleA0A3E236": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "application-autoscaling.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   },
+   "DependsOn": [
+    "RoutingLiveAliasA636160D"
+   ],
+   "Metadata": {
+    "aws:cdk:path": "RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingLambdaStack/RoutingProvConcASG/Role/Resource"
+   }
+  },
+  "RoutingProvConcASG3019D49A": {
+   "Type": "AWS::ApplicationAutoScaling::ScalableTarget",
+   "Properties": {
+    "MaxCapacity": 500,
+    "MinCapacity": 100,
+    "ResourceId": {
+     "Fn::Join": [
+      "",
+      [
+       "function:",
+       {
+        "Ref": "RoutingLambda2C4DF0900"
+       },
+       ":live"
+      ]
+     ]
+    },
+    "RoleARN": {
+     "Fn::GetAtt": [
+      "RoutingProvConcASGRoleA0A3E236",
+      "Arn"
+     ]
+    },
+    "ScalableDimension": "lambda:function:ProvisionedConcurrency",
+    "ServiceNamespace": "lambda"
+   },
+   "DependsOn": [
+    "RoutingLiveAliasA636160D"
+   ],
+   "Metadata": {
+    "aws:cdk:path": "RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingLambdaStack/RoutingProvConcASG/Resource"
+   }
+  },
+  "RoutingProvConcASGRoutingProvConcTracking01F266A4": {
+   "Type": "AWS::ApplicationAutoScaling::ScalingPolicy",
+   "Properties": {
+    "PolicyName": "RoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingLambdaStackRoutingProvConcASGRoutingProvConcTrackingE0E12216",
+    "PolicyType": "TargetTrackingScaling",
+    "ScalingTargetId": {
+     "Ref": "RoutingProvConcASG3019D49A"
+    },
+    "TargetTrackingScalingPolicyConfiguration": {
+     "PredefinedMetricSpecification": {
+      "PredefinedMetricType": "LambdaProvisionedConcurrencyUtilization"
+     },
+     "TargetValue": 0.8
+    }
+   },
+   "DependsOn": [
+    "RoutingLiveAliasA636160D"
+   ],
+   "Metadata": {
+    "aws:cdk:path": "RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingLambdaStack/RoutingProvConcASG/RoutingProvConcTracking/Resource"
+   }
+  },
+  "CDKMetadata": {
+   "Type": "AWS::CDK::Metadata",
+   "Properties": {
+    "Analytics": "v2:deflate64:H4sIAAAAAAAA/11QQU7EMAx8y95TQwGBOHaROK5Qu+JauWkoadNkFaesUJS/47QLCE4zntFYHt/Awx1c7/BMheynwugO4kFRUH0TUE6CjTZqnCHWzijx9GZXfHFGy888biwJg3PXY2tdr0aCwwrPi5VBOyvotkUiFQiqDDzDfpGTCnskdYlC5G0/iVflKSNr37QyGikLK0lCGrf0ZwzyHWJl0M+bxyQJPJ34LMyrcAmOJBptB4gNE+yMOqIf+A4O/FM2OHruzoFmy/22/SOkJGpFbvFSibUXv2xgd/3SxUgifwRGuvoo76F8hHI3ktaFX2zQs4J6wy/EZXldhwEAAA=="
+   },
+   "Metadata": {
+    "aws:cdk:path": "RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingLambdaStack/CDKMetadata/Default"
+   }
+  }
+ },
+ "Parameters": {
+  "referencetoRoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackNestedStackRoutingCachingStackNestedStackResource2194E320OutputsRoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackPoolCacheBucketC165B781Arn": {
+   "Type": "String"
+  },
+  "referencetoRoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackNestedStackRoutingCachingStackNestedStackResource2194E320OutputsRoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackPoolCacheBucket20679C5E4Arn": {
+   "Type": "String"
+  },
+  "referencetoRoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackNestedStackRoutingCachingStackNestedStackResource2194E320OutputsRoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackTokenListCacheBucket9E7C4291Arn": {
+   "Type": "String"
+  },
+  "referencetoRoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingDatabaseStackNestedStackRoutingDatabaseStackNestedStackResourceDA913E78OutputsRoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingDatabaseStackRouteCachingDB9CBC8CC2Arn": {
+   "Type": "String"
+  },
+  "referencetoRoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingDatabaseStackNestedStackRoutingDatabaseStackNestedStackResourceDA913E78OutputsRoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingDatabaseStackRouteCachingDB9CBC8CC2Ref": {
+   "Type": "String"
+  },
+  "referencetoRoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackNestedStackRoutingCachingStackNestedStackResource2194E320OutputsRoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackPoolCacheBucketC165B781Ref": {
+   "Type": "String"
+  },
+  "referencetoRoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackNestedStackRoutingCachingStackNestedStackResource2194E320OutputsRoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackPoolCacheBucket20679C5E4Ref": {
+   "Type": "String"
+  },
+  "referencetoRoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackNestedStackRoutingCachingStackNestedStackResource2194E320OutputsRoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackTokenListCacheBucket9E7C4291Ref": {
+   "Type": "String"
+  }
+ },
+ "Outputs": {
+  "RoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingLambdaStackRoutingLiveAliasB22F3232Ref": {
+   "Value": {
+    "Ref": "RoutingLiveAliasA636160D"
+   }
+  },
+  "RoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingLambdaStackRouteToRatioLambda23F7D3785Arn": {
+   "Value": {
+    "Fn::GetAtt": [
+     "RouteToRatioLambda23FC7C21B",
+     "Arn"
+    ]
+   }
+  },
+  "RoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingLambdaStackRoutingLambda22F6514ADRef": {
+   "Value": {
+    "Ref": "RoutingLambda2C4DF0900"
+   }
+  }
+ }
+}
