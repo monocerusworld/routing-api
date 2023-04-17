@@ -17,7 +17,7 @@
         "validateOnSynth": true,
         "assumeRoleArn": "arn:${AWS::Partition}:iam::557822834307:role/cdk-hnb659fds-deploy-role-557822834307-ap-southeast-1",
         "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::557822834307:role/cdk-hnb659fds-cfn-exec-role-557822834307-ap-southeast-1",
-        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-557822834307-ap-southeast-1/66d9df1e59035b89e237fd8b1af0272724c5c864b5fd5722d195a0fcb0c77842.json",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-557822834307-ap-southeast-1/0d40a03958d5f5ff80233158b66e5e7e0e4ff0b65c510a88ae365000586a5121.json",
         "requiresBootstrapStackVersion": 6,
         "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
         "additionalDependencies": [
@@ -447,7 +447,7 @@
         "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingLambdaStack/RoutingLambda2/CurrentVersion/Resource": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "RoutingLambda2CurrentVersion49A1BB94c75981e56875fd94fbbcc7d2e73d0934"
+            "data": "RoutingLambda2CurrentVersion49A1BB947cb3d0a4f0990df8a5cce2fee0e0e048"
           }
         ],
         "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingLambdaStack/RouteToRatioLambda2/Resource": [
@@ -900,6 +900,18 @@
             "data": "RoutingAPISEV32XXAlarmChainId100868843A8"
           }
         ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingAPI-SEV3-2XXAlarm-ChainId: 43114/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RoutingAPISEV32XXAlarmChainId4311452C99D62"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingAPI-SEV3-2XXAlarm-ChainId: 1284/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RoutingAPISEV32XXAlarmChainId1284AAE0B12B"
+          }
+        ],
         "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingAPI-SEV3-4XXAlarm-ChainId: 1/Resource": [
           {
             "type": "aws:cdk:logicalId",
@@ -970,6 +982,18 @@
           {
             "type": "aws:cdk:logicalId",
             "data": "RoutingAPISEV34XXAlarmChainId100530A5EF6"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingAPI-SEV3-4XXAlarm-ChainId: 43114/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RoutingAPISEV34XXAlarmChainId43114FDB775B5"
+          }
+        ],
+        "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingAPI-SEV3-4XXAlarm-ChainId: 1284/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RoutingAPISEV34XXAlarmChainId1284778FE1A6"
           }
         ],
         "/RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/Url": [

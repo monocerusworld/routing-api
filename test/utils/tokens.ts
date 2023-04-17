@@ -6,6 +6,11 @@ import {
   DAI_ARBITRUM,
   DAI_ARBITRUM_RINKEBY,
   DAI_BSC,
+  DAI_FANTOM,
+  DAI_GNOSIS,
+  DAI_KLAYTN,
+  DAI_AVALANCHE,
+  DAI_MOONBEAM,
   DAI_GÖRLI,
   DAI_KOVAN,
   DAI_MAINNET,
@@ -33,6 +38,19 @@ import {
   USDC_ROPSTEN,
   USDT_ARBITRUM,
   USDT_ARBITRUM_RINKEBY,
+
+  USDC_FANTOM,
+  USDC_GNOSIS,
+  USDC_KLAYTN,
+  USDC_AVALANCHE,
+  USDC_MOONBEAM,
+
+  USDT_FANTOM,
+  USDT_GNOSIS,
+  USDT_KLAYTN,
+  USDT_AVALANCHE,
+  USDT_MOONBEAM,
+
   USDT_BSC,
   USDT_GÖRLI,
   USDT_KOVAN,
@@ -108,6 +126,16 @@ export const DAI_ON = (chainId: ChainId): Token => {
       return DAI_POLYGON_MUMBAI
     case ChainId.BSC:
       return DAI_BSC
+      case ChainId.FANTOM:
+        return DAI_FANTOM
+        case ChainId.GNOSIS:
+          return DAI_GNOSIS
+          case ChainId.KLAYTN:
+            return DAI_KLAYTN
+            case ChainId.AVALANCHE:
+              return DAI_AVALANCHE
+              case ChainId.MOONBEAM:
+                return DAI_MOONBEAM
     default:
       throw new Error(`Chain id: ${chainId} not supported`)
   }
@@ -135,6 +163,16 @@ export const USDT_ON = (chainId: ChainId): Token => {
       return USDT_ARBITRUM_RINKEBY
     case ChainId.BSC:
       return USDT_BSC
+      case ChainId.FANTOM:
+        return USDT_FANTOM
+        case ChainId.GNOSIS:
+          return USDT_GNOSIS
+          case ChainId.KLAYTN:
+            return USDT_KLAYTN
+            case ChainId.AVALANCHE:
+              return USDT_AVALANCHE
+              case ChainId.MOONBEAM:
+                return USDT_MOONBEAM
     default:
       throw new Error(`Chain id: ${chainId} not supported`)
   }
@@ -168,6 +206,16 @@ export const USDC_ON = (chainId: ChainId): Token => {
       return USDC_POLYGON_MUMBAI
     case ChainId.BSC:
       return USDC_BSC
+      case ChainId.FANTOM:
+        return USDC_FANTOM
+        case ChainId.GNOSIS:
+          return USDC_GNOSIS
+          case ChainId.KLAYTN:
+            return USDC_KLAYTN
+            case ChainId.AVALANCHE:
+              return USDC_AVALANCHE
+              case ChainId.MOONBEAM:
+                return USDC_MOONBEAM
     default:
       throw new Error(`Chain id: ${chainId} not supported`)
   }

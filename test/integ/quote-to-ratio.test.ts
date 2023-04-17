@@ -723,6 +723,7 @@ describe('quote-to-ratio', async function () {
     [ChainId.BSC]: USDC_ON(ChainId.BSC),
     [ChainId.FANTOM]: USDC_ON(ChainId.FANTOM),
     [ChainId.KLAYTN]: USDC_ON(ChainId.KLAYTN),
+    [ChainId.AVALANCHE]: USDC_ON(ChainId.AVALANCHE),
   }
 
   const TEST_ERC20_2: { [chainId in ChainId]: Token | null } = {
@@ -746,6 +747,7 @@ describe('quote-to-ratio', async function () {
     [ChainId.BSC]: USDT_ON(ChainId.BSC),
     [ChainId.FANTOM]: USDT_ON(ChainId.FANTOM),
     [ChainId.KLAYTN]: USDT_ON(ChainId.KLAYTN),
+    [ChainId.AVALANCHE]: USDT_ON(ChainId.AVALANCHE),
   }
 
   for (const chain of _.filter(

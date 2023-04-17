@@ -19,7 +19,8 @@ export declare enum ChainId {
     MOONBEAM = 1284,
     BSC = 56,
     KLAYTN = 8217,
-    FANTOM = 250
+    FANTOM = 250,
+    AVALANCHE = 43114
 }
 export declare const SUPPORTED_CHAINS: ChainId[];
 export declare const V2_SUPPORTED: ChainId[];
@@ -46,7 +47,8 @@ export declare enum ChainName {
     MOONBEAM = "moonbeam-mainnet",
     BSC = "bsc-mainnet",
     KLAYTN = "klaytn-mainnet",
-    FANTOM = "fantom-mainnet"
+    FANTOM = "fantom-mainnet",
+    AVALANCHE = "avalanche-mainnet"
 }
 export declare enum NativeCurrencyName {
     ETHER = "ETH",
@@ -56,7 +58,8 @@ export declare enum NativeCurrencyName {
     MOONBEAM = "GLMR",
     BNB = "BNB",
     KLAYTN = "KLAY",
-    FANTOM = "FTM"
+    FANTOM = "FTM",
+    AVALANCHE = "AVAX"
 }
 export declare const NATIVE_NAMES_BY_ID: {
     [chainId: number]: string[];

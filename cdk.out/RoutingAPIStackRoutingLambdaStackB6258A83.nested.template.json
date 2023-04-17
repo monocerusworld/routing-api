@@ -189,7 +189,7 @@
      "S3Bucket": {
       "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
      },
-     "S3Key": "f2641ad6baaef84d3170367fa2e4ee13e3777abb4d2054cb3d038ed0a874d34c.zip"
+     "S3Key": "ee09914112b98e832c6e1181892e2c3d6bde75f5d17de2c42ca8b71944714a79.zip"
     },
     "Role": {
      "Fn::GetAtt": [
@@ -212,6 +212,9 @@
        "Ref": "referencetoRoutingAPIStackRoutingCachingStackNestedStackRoutingCachingStackNestedStackResource3F7983BFOutputsRoutingAPIStackRoutingCachingStackPoolCacheBucket28CA80A17Ref"
       },
       "POOL_CACHE_KEY": "poolCache.json",
+      "TENDERLY_ACCESS_KEY": "",
+      "TENDERLY_PROJECT": "",
+      "TENDERLY_USER": "",
       "TOKEN_LIST_CACHE_BUCKET": {
        "Ref": "referencetoRoutingAPIStackRoutingCachingStackNestedStackRoutingCachingStackNestedStackResource3F7983BFOutputsRoutingAPIStackRoutingCachingStackTokenListCacheBucket5B090E54Ref"
       },
@@ -246,12 +249,12 @@
    ],
    "Metadata": {
     "aws:cdk:path": "RoutingAPIStack/RoutingLambdaStack/RoutingLambda2/Resource",
-    "aws:asset:path": "asset.f2641ad6baaef84d3170367fa2e4ee13e3777abb4d2054cb3d038ed0a874d34c",
+    "aws:asset:path": "asset.ee09914112b98e832c6e1181892e2c3d6bde75f5d17de2c42ca8b71944714a79",
     "aws:asset:is-bundled": true,
     "aws:asset:property": "Code"
    }
   },
-  "RoutingLambda2CurrentVersion49A1BB943dd910830f7158df575f8c898846f55d": {
+  "RoutingLambda2CurrentVersion49A1BB9427b16f011903afbf8a76957502765ba9": {
    "Type": "AWS::Lambda::Version",
    "Properties": {
     "FunctionName": {
@@ -269,7 +272,7 @@
      "S3Bucket": {
       "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
      },
-     "S3Key": "f2641ad6baaef84d3170367fa2e4ee13e3777abb4d2054cb3d038ed0a874d34c.zip"
+     "S3Key": "ee09914112b98e832c6e1181892e2c3d6bde75f5d17de2c42ca8b71944714a79.zip"
     },
     "Role": {
      "Fn::GetAtt": [
@@ -326,7 +329,7 @@
    ],
    "Metadata": {
     "aws:cdk:path": "RoutingAPIStack/RoutingLambdaStack/RouteToRatioLambda2/Resource",
-    "aws:asset:path": "asset.f2641ad6baaef84d3170367fa2e4ee13e3777abb4d2054cb3d038ed0a874d34c",
+    "aws:asset:path": "asset.ee09914112b98e832c6e1181892e2c3d6bde75f5d17de2c42ca8b71944714a79",
     "aws:asset:is-bundled": true,
     "aws:asset:property": "Code"
    }
@@ -419,7 +422,7 @@
     },
     "FunctionVersion": {
      "Fn::GetAtt": [
-      "RoutingLambda2CurrentVersion49A1BB943dd910830f7158df575f8c898846f55d",
+      "RoutingLambda2CurrentVersion49A1BB9427b16f011903afbf8a76957502765ba9",
       "Version"
      ]
     },

@@ -31,7 +31,7 @@
         "validateOnSynth": false,
         "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-deploy-role-${AWS::AccountId}-${AWS::Region}",
         "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-cfn-exec-role-${AWS::AccountId}-${AWS::Region}",
-        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/94c4ae109d2c5b9052b26e711a82664bfda1ff61b49bf12dafba3901e67e95e2.json",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/3e52ceb232678ec0fba7dd19339a8a2f012b7eb5e5c43eee49888b785cf8484e.json",
         "requiresBootstrapStackVersion": 6,
         "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
         "additionalDependencies": [
@@ -430,7 +430,7 @@
         "/RoutingAPIStack/RoutingLambdaStack/RoutingLambda2/CurrentVersion/Resource": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "RoutingLambda2CurrentVersion49A1BB943dd910830f7158df575f8c898846f55d"
+            "data": "RoutingLambda2CurrentVersion49A1BB9427b16f011903afbf8a76957502765ba9"
           }
         ],
         "/RoutingAPIStack/RoutingLambdaStack/RouteToRatioLambda2/Resource": [
@@ -871,6 +871,18 @@
             "data": "RoutingAPISEV32XXAlarmChainId100868843A8"
           }
         ],
+        "/RoutingAPIStack/RoutingAPI-SEV3-2XXAlarm-ChainId: 43114/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RoutingAPISEV32XXAlarmChainId4311452C99D62"
+          }
+        ],
+        "/RoutingAPIStack/RoutingAPI-SEV3-2XXAlarm-ChainId: 1284/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RoutingAPISEV32XXAlarmChainId1284AAE0B12B"
+          }
+        ],
         "/RoutingAPIStack/RoutingAPI-SEV3-4XXAlarm-ChainId: 1/Resource": [
           {
             "type": "aws:cdk:logicalId",
@@ -943,6 +955,18 @@
             "data": "RoutingAPISEV34XXAlarmChainId100530A5EF6"
           }
         ],
+        "/RoutingAPIStack/RoutingAPI-SEV3-4XXAlarm-ChainId: 43114/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RoutingAPISEV34XXAlarmChainId43114FDB775B5"
+          }
+        ],
+        "/RoutingAPIStack/RoutingAPI-SEV3-4XXAlarm-ChainId: 1284/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RoutingAPISEV34XXAlarmChainId1284778FE1A6"
+          }
+        ],
         "/RoutingAPIStack/Url": [
           {
             "type": "aws:cdk:logicalId",
@@ -992,7 +1016,7 @@
         "validateOnSynth": false,
         "assumeRoleArn": "arn:${AWS::Partition}:iam::557822834307:role/cdk-hnb659fds-deploy-role-557822834307-ap-southeast-1",
         "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::557822834307:role/cdk-hnb659fds-cfn-exec-role-557822834307-ap-southeast-1",
-        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-557822834307-ap-southeast-1/a49aea128a2f17029a063b25f55caf10b75d6a1df4afbc755c6e655102871741.json",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-557822834307-ap-southeast-1/0cb9b3eb78bd5e1145a63f1f353078724645b51589dc1227ba4c55ea9082a830.json",
         "requiresBootstrapStackVersion": 6,
         "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
         "additionalDependencies": [

@@ -1,7 +1,7 @@
 {
   "version": "31.0.0",
   "files": {
-    "a49aea128a2f17029a063b25f55caf10b75d6a1df4afbc755c6e655102871741": {
+    "0cb9b3eb78bd5e1145a63f1f353078724645b51589dc1227ba4c55ea9082a830": {
       "source": {
         "path": "RoutingAPIPipelineStack.template.json",
         "packaging": "file"
@@ -9,7 +9,7 @@
       "destinations": {
         "557822834307-ap-southeast-1": {
           "bucketName": "cdk-hnb659fds-assets-557822834307-ap-southeast-1",
-          "objectKey": "a49aea128a2f17029a063b25f55caf10b75d6a1df4afbc755c6e655102871741.json",
+          "objectKey": "0cb9b3eb78bd5e1145a63f1f353078724645b51589dc1227ba4c55ea9082a830.json",
           "region": "ap-southeast-1",
           "assumeRoleArn": "arn:${AWS::Partition}:iam::557822834307:role/cdk-hnb659fds-file-publishing-role-557822834307-ap-southeast-1"
         }

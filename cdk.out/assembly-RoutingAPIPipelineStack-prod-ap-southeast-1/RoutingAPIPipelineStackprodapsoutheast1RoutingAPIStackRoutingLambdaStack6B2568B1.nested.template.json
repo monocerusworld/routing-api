@@ -187,7 +187,7 @@
    "Properties": {
     "Code": {
      "S3Bucket": "cdk-hnb659fds-assets-557822834307-ap-southeast-1",
-     "S3Key": "f2641ad6baaef84d3170367fa2e4ee13e3777abb4d2054cb3d038ed0a874d34c.zip"
+     "S3Key": "ee09914112b98e832c6e1181892e2c3d6bde75f5d17de2c42ca8b71944714a79.zip"
     },
     "Role": {
      "Fn::GetAtt": [
@@ -255,12 +255,12 @@
    ],
    "Metadata": {
     "aws:cdk:path": "RoutingAPIPipelineStack/prod-ap-southeast-1/RoutingAPIStack/RoutingLambdaStack/RoutingLambda2/Resource",
-    "aws:asset:path": "../asset.f2641ad6baaef84d3170367fa2e4ee13e3777abb4d2054cb3d038ed0a874d34c",
+    "aws:asset:path": "../asset.ee09914112b98e832c6e1181892e2c3d6bde75f5d17de2c42ca8b71944714a79",
     "aws:asset:is-bundled": true,
     "aws:asset:property": "Code"
    }
   },
-  "RoutingLambda2CurrentVersion49A1BB94c1a448ad8c7664f649d55576ceb80df7": {
+  "RoutingLambda2CurrentVersion49A1BB940cba14517e3c3149f51c3b7c40d03a40": {
    "Type": "AWS::Lambda::Version",
    "Properties": {
     "FunctionName": {
@@ -276,7 +276,7 @@
    "Properties": {
     "Code": {
      "S3Bucket": "cdk-hnb659fds-assets-557822834307-ap-southeast-1",
-     "S3Key": "f2641ad6baaef84d3170367fa2e4ee13e3777abb4d2054cb3d038ed0a874d34c.zip"
+     "S3Key": "ee09914112b98e832c6e1181892e2c3d6bde75f5d17de2c42ca8b71944714a79.zip"
     },
     "Role": {
      "Fn::GetAtt": [
@@ -341,7 +341,7 @@
    ],
    "Metadata": {
     "aws:cdk:path": "RoutingAPIPipelineStack/prod-ap-southeast-1/RoutingAPIStack/RoutingLambdaStack/RouteToRatioLambda2/Resource",
-    "aws:asset:path": "../asset.f2641ad6baaef84d3170367fa2e4ee13e3777abb4d2054cb3d038ed0a874d34c",
+    "aws:asset:path": "../asset.ee09914112b98e832c6e1181892e2c3d6bde75f5d17de2c42ca8b71944714a79",
     "aws:asset:is-bundled": true,
     "aws:asset:property": "Code"
    }
@@ -440,7 +440,7 @@
     },
     "FunctionVersion": {
      "Fn::GetAtt": [
-      "RoutingLambda2CurrentVersion49A1BB94c1a448ad8c7664f649d55576ceb80df7",
+      "RoutingLambda2CurrentVersion49A1BB940cba14517e3c3149f51c3b7c40d03a40",
       "Version"
      ]
     },
