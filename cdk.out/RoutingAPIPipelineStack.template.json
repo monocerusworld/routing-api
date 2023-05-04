@@ -2485,7 +2485,7 @@
      ]
     },
     "Source": {
-     "BuildSpec": "{\n  \"version\": \"0.2\",\n  \"phases\": {\n    \"install\": {\n      \"commands\": [\n        \"npm install -g cdk-assets@2\"\n      ]\n    },\n    \"build\": {\n      \"commands\": [\n        \"cdk-assets --path \\\"assembly-RoutingAPIPipelineStack-beta-ap-southeast-1/RoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStack7B527832.assets.json\\\" --verbose publish \\\"a8e1f5dfcd6ea7c65361d0d834f1dc77a7fa55d6e6b7e4942d5b86196fa557c1:557822834307-ap-southeast-1\\\"\"\n      ]\n    }\n  }\n}",
+     "BuildSpec": "{\n  \"version\": \"0.2\",\n  \"phases\": {\n    \"install\": {\n      \"commands\": [\n        \"npm install -g cdk-assets@2\"\n      ]\n    },\n    \"build\": {\n      \"commands\": [\n        \"cdk-assets --path \\\"assembly-RoutingAPIPipelineStack-beta-ap-southeast-1/RoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStack7B527832.assets.json\\\" --verbose publish \\\"bc9da3e72c58ab9f39edd58816981de37dddbf96cc8ffcbb71f3d942d081d2aa:557822834307-ap-southeast-1\\\"\"\n      ]\n    }\n  }\n}",
      "Type": "CODEPIPELINE"
     },
     "Cache": {
@@ -2523,7 +2523,7 @@
      ]
     },
     "Source": {
-     "BuildSpec": "{\n  \"version\": \"0.2\",\n  \"phases\": {\n    \"install\": {\n      \"commands\": [\n        \"npm install -g cdk-assets@2\"\n      ]\n    },\n    \"build\": {\n      \"commands\": [\n        \"cdk-assets --path \\\"assembly-RoutingAPIPipelineStack-prod-ap-southeast-1/RoutingAPIPipelineStackprodapsoutheast1RoutingAPIStack515163CA.assets.json\\\" --verbose publish \\\"ea9ce0c7da865df52a946c717f9d3d83a80a203f3909ad97eb46b3054fd405be:557822834307-ap-southeast-1\\\"\"\n      ]\n    }\n  }\n}",
+     "BuildSpec": "{\n  \"version\": \"0.2\",\n  \"phases\": {\n    \"install\": {\n      \"commands\": [\n        \"npm install -g cdk-assets@2\"\n      ]\n    },\n    \"build\": {\n      \"commands\": [\n        \"cdk-assets --path \\\"assembly-RoutingAPIPipelineStack-prod-ap-southeast-1/RoutingAPIPipelineStackprodapsoutheast1RoutingAPIStack515163CA.assets.json\\\" --verbose publish \\\"03c62a8dff1ffaa66e65575cea3c5b33f60404da68500e325d94859c207ea16b:557822834307-ap-southeast-1\\\"\"\n      ]\n    }\n  }\n}",
      "Type": "CODEPIPELINE"
     },
     "Cache": {
@@ -2599,7 +2599,7 @@
      ]
     },
     "Source": {
-     "BuildSpec": "{\n  \"version\": \"0.2\",\n  \"phases\": {\n    \"install\": {\n      \"commands\": [\n        \"npm install -g cdk-assets@2\"\n      ]\n    },\n    \"build\": {\n      \"commands\": [\n        \"cdk-assets --path \\\"assembly-RoutingAPIPipelineStack-prod-ap-southeast-1/RoutingAPIPipelineStackprodapsoutheast1RoutingAPIStack515163CA.assets.json\\\" --verbose publish \\\"b9708e297e1fa316b69cb8e708469f873a8c066cb5535b78bea630846c33b499:557822834307-ap-southeast-1\\\"\"\n      ]\n    }\n  }\n}",
+     "BuildSpec": "{\n  \"version\": \"0.2\",\n  \"phases\": {\n    \"install\": {\n      \"commands\": [\n        \"npm install -g cdk-assets@2\"\n      ]\n    },\n    \"build\": {\n      \"commands\": [\n        \"cdk-assets --path \\\"assembly-RoutingAPIPipelineStack-prod-ap-southeast-1/RoutingAPIPipelineStackprodapsoutheast1RoutingAPIStack515163CA.assets.json\\\" --verbose publish \\\"9c89fe2c25205274e07d89e26de13a10b015bd8496e882e5225fbab0e9d2a8ca:557822834307-ap-southeast-1\\\"\"\n      ]\n    }\n  }\n}",
      "Type": "CODEPIPELINE"
     },
     "Cache": {
@@ -2675,7 +2675,7 @@
      ]
     },
     "Source": {
-     "BuildSpec": "{\n  \"version\": \"0.2\",\n  \"phases\": {\n    \"install\": {\n      \"commands\": [\n        \"npm install -g cdk-assets@2\"\n      ]\n    },\n    \"build\": {\n      \"commands\": [\n        \"cdk-assets --path \\\"assembly-RoutingAPIPipelineStack-beta-ap-southeast-1/RoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStack7B527832.assets.json\\\" --verbose publish \\\"61f8ac9fe14cf64e91c8e567300e4696f5a296725593f485b06cadd5edb006c5:557822834307-ap-southeast-1\\\"\"\n      ]\n    }\n  }\n}",
+     "BuildSpec": "{\n  \"version\": \"0.2\",\n  \"phases\": {\n    \"install\": {\n      \"commands\": [\n        \"npm install -g cdk-assets@2\"\n      ]\n    },\n    \"build\": {\n      \"commands\": [\n        \"cdk-assets --path \\\"assembly-RoutingAPIPipelineStack-beta-ap-southeast-1/RoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStack7B527832.assets.json\\\" --verbose publish \\\"be04a0e62cba2ddda3d8140d41105d2a40a0f07e33e8217abaf9620eecb17a82:557822834307-ap-southeast-1\\\"\"\n      ]\n    }\n  }\n}",
      "Type": "CODEPIPELINE"
     },
     "Cache": {
@@ -2789,7 +2789,7 @@
      ]
     },
     "Source": {
-     "BuildSpec": "{\n  \"version\": \"0.2\",\n  \"phases\": {\n    \"install\": {\n      \"commands\": [\n        \"npm install -g cdk-assets@2\"\n      ]\n    },\n    \"build\": {\n      \"commands\": [\n        \"cdk-assets --path \\\"assembly-RoutingAPIPipelineStack-beta-ap-southeast-1/RoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStack7B527832.assets.json\\\" --verbose publish \\\"ee09914112b98e832c6e1181892e2c3d6bde75f5d17de2c42ca8b71944714a79:557822834307-ap-southeast-1\\\"\"\n      ]\n    }\n  }\n}",
+     "BuildSpec": "{\n  \"version\": \"0.2\",\n  \"phases\": {\n    \"install\": {\n      \"commands\": [\n        \"npm install -g cdk-assets@2\"\n      ]\n    },\n    \"build\": {\n      \"commands\": [\n        \"cdk-assets --path \\\"assembly-RoutingAPIPipelineStack-beta-ap-southeast-1/RoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStack7B527832.assets.json\\\" --verbose publish \\\"4025e9d085c0e3d0c0df2ed15bc558843252cf0a672e28ca677d7754a69e14ea:557822834307-ap-southeast-1\\\"\"\n      ]\n    }\n  }\n}",
      "Type": "CODEPIPELINE"
     },
     "Cache": {
@@ -2827,7 +2827,7 @@
      ]
     },
     "Source": {
-     "BuildSpec": "{\n  \"version\": \"0.2\",\n  \"phases\": {\n    \"install\": {\n      \"commands\": [\n        \"npm install -g cdk-assets@2\"\n      ]\n    },\n    \"build\": {\n      \"commands\": [\n        \"cdk-assets --path \\\"assembly-RoutingAPIPipelineStack-beta-ap-southeast-1/RoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStack7B527832.assets.json\\\" --verbose publish \\\"f1794b7a2197c1fa230339a431b26d567182555361b8aa96ef6be2e85af0ad54:557822834307-ap-southeast-1\\\"\"\n      ]\n    }\n  }\n}",
+     "BuildSpec": "{\n  \"version\": \"0.2\",\n  \"phases\": {\n    \"install\": {\n      \"commands\": [\n        \"npm install -g cdk-assets@2\"\n      ]\n    },\n    \"build\": {\n      \"commands\": [\n        \"cdk-assets --path \\\"assembly-RoutingAPIPipelineStack-beta-ap-southeast-1/RoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStack7B527832.assets.json\\\" --verbose publish \\\"2c84defb1ed1969811083321d784c9f309636ba0da76ba5cc0ccafa18b4373b4:557822834307-ap-southeast-1\\\"\"\n      ]\n    }\n  }\n}",
      "Type": "CODEPIPELINE"
     },
     "Cache": {
@@ -2903,7 +2903,7 @@
      ]
     },
     "Source": {
-     "BuildSpec": "{\n  \"version\": \"0.2\",\n  \"phases\": {\n    \"install\": {\n      \"commands\": [\n        \"npm install -g cdk-assets@2\"\n      ]\n    },\n    \"build\": {\n      \"commands\": [\n        \"cdk-assets --path \\\"assembly-RoutingAPIPipelineStack-beta-ap-southeast-1/RoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStack7B527832.assets.json\\\" --verbose publish \\\"c99324af1a6f75e2ac562e2910ae3b867e6060817545add31070bdc4672f9436:557822834307-ap-southeast-1\\\"\"\n      ]\n    }\n  }\n}",
+     "BuildSpec": "{\n  \"version\": \"0.2\",\n  \"phases\": {\n    \"install\": {\n      \"commands\": [\n        \"npm install -g cdk-assets@2\"\n      ]\n    },\n    \"build\": {\n      \"commands\": [\n        \"cdk-assets --path \\\"assembly-RoutingAPIPipelineStack-beta-ap-southeast-1/RoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStack7B527832.assets.json\\\" --verbose publish \\\"95b336bf64cf98ae2558804e6a01c2270463ae7161c951eba397fd2fb900713d:557822834307-ap-southeast-1\\\"\"\n      ]\n    }\n  }\n}",
      "Type": "CODEPIPELINE"
     },
     "Cache": {

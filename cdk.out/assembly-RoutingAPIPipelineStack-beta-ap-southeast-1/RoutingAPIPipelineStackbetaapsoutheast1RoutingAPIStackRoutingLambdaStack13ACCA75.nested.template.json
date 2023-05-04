@@ -187,7 +187,7 @@
    "Properties": {
     "Code": {
      "S3Bucket": "cdk-hnb659fds-assets-557822834307-ap-southeast-1",
-     "S3Key": "ee09914112b98e832c6e1181892e2c3d6bde75f5d17de2c42ca8b71944714a79.zip"
+     "S3Key": "4025e9d085c0e3d0c0df2ed15bc558843252cf0a672e28ca677d7754a69e14ea.zip"
     },
     "Role": {
      "Fn::GetAtt": [
@@ -255,12 +255,12 @@
    ],
    "Metadata": {
     "aws:cdk:path": "RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingLambdaStack/RoutingLambda2/Resource",
-    "aws:asset:path": "../asset.ee09914112b98e832c6e1181892e2c3d6bde75f5d17de2c42ca8b71944714a79",
+    "aws:asset:path": "../asset.4025e9d085c0e3d0c0df2ed15bc558843252cf0a672e28ca677d7754a69e14ea",
     "aws:asset:is-bundled": true,
     "aws:asset:property": "Code"
    }
   },
-  "RoutingLambda2CurrentVersion49A1BB947cb3d0a4f0990df8a5cce2fee0e0e048": {
+  "RoutingLambda2CurrentVersion49A1BB94a3ed756f2bd28c09a9f66be1cbf59a42": {
    "Type": "AWS::Lambda::Version",
    "Properties": {
     "FunctionName": {
@@ -276,7 +276,7 @@
    "Properties": {
     "Code": {
      "S3Bucket": "cdk-hnb659fds-assets-557822834307-ap-southeast-1",
-     "S3Key": "ee09914112b98e832c6e1181892e2c3d6bde75f5d17de2c42ca8b71944714a79.zip"
+     "S3Key": "4025e9d085c0e3d0c0df2ed15bc558843252cf0a672e28ca677d7754a69e14ea.zip"
     },
     "Role": {
      "Fn::GetAtt": [
@@ -341,7 +341,7 @@
    ],
    "Metadata": {
     "aws:cdk:path": "RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingLambdaStack/RouteToRatioLambda2/Resource",
-    "aws:asset:path": "../asset.ee09914112b98e832c6e1181892e2c3d6bde75f5d17de2c42ca8b71944714a79",
+    "aws:asset:path": "../asset.4025e9d085c0e3d0c0df2ed15bc558843252cf0a672e28ca677d7754a69e14ea",
     "aws:asset:is-bundled": true,
     "aws:asset:property": "Code"
    }
@@ -434,7 +434,7 @@
     },
     "FunctionVersion": {
      "Fn::GetAtt": [
-      "RoutingLambda2CurrentVersion49A1BB947cb3d0a4f0990df8a5cce2fee0e0e048",
+      "RoutingLambda2CurrentVersion49A1BB94a3ed756f2bd28c09a9f66be1cbf59a42",
       "Version"
      ]
     },
