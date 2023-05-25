@@ -14,11 +14,11 @@ const SUBGRAPH_URL_BY_CHAIN = {
     [ChainId.CELO]: 'https://api.thegraph.com/subgraphs/name/jesse-sawa/uniswap-celo',
     [ChainId.GÖRLI]: 'https://api.thegraph.com/subgraphs/name/ianlapham/uniswap-v3-gorli',
     [ChainId.BSC]: 'https://api.thegraph.com/subgraphs/name/ilyamk/uniswap-v3---bnb-chain',
-    [ChainId.FANTOM]: 'https://api.thegraph.com/subgraphs/name/pullstacker/v3-fantom',
-    [ChainId.GNOSIS]: 'https://api.thegraph.com/subgraphs/name/pullstacker/v3-gnosis',
-    [ChainId.KLAYTN]: 'https://api.thegraph.com/subgraphs/name/pullstacker/v3-klaytn',
-    [ChainId.AVALANCHE]: 'https://api.thegraph.com/subgraphs/name/pullstacker/v3-avalanche',
-    [ChainId.MOONBEAM]: 'https://api.thegraph.com/subgraphs/name/pullstacker/v3-moonbeam',
+    [ChainId.FANTOM]: 'https://api.thegraph.com/subgraphs/name/tartz-one/v3-fantom',
+    [ChainId.GNOSIS]: 'https://api.thegraph.com/subgraphs/name/tartz-one/v3-gnosis',
+    [ChainId.KLAYTN]: 'https://api.thegraph.com/subgraphs/name/tartz-one/v3-klaytn',
+    [ChainId.AVALANCHE]: 'https://api.thegraph.com/subgraphs/name/tartz-one/v3-avalanche',
+    [ChainId.MOONBEAM]: 'https://api.thegraph.com/subgraphs/name/tartz-one/v3-moonbeam',
 };
 const PAGE_SIZE = 1000; // 1k is max possible query size from subgraph.
 export class V3SubgraphProvider {
@@ -37,7 +37,7 @@ export class V3SubgraphProvider {
         let blockNumber = (providerConfig === null || providerConfig === void 0 ? void 0 : providerConfig.blockNumber)
             ? await providerConfig.blockNumber
             : undefined;
-        const query = gql `
+        const query = gql`
       query getPools($pageSize: Int!, $id: String) {
         pools(
           first: $pageSize
@@ -112,22 +112,22 @@ export class V3SubgraphProvider {
         });
         const poolsSanitized = pools
             .filter((pool) => parseInt(pool.liquidity) > 0 ||
-            parseFloat(pool.totalValueLockedETH) > 0.01)
+                parseFloat(pool.totalValueLockedETH) > 0.01)
             .map((pool) => {
-            const { totalValueLockedETH, totalValueLockedUSD, ...rest } = pool;
-            return {
-                ...rest,
-                id: pool.id.toLowerCase(),
-                token0: {
-                    id: pool.token0.id.toLowerCase(),
-                },
-                token1: {
-                    id: pool.token1.id.toLowerCase(),
-                },
-                tvlETH: parseFloat(totalValueLockedETH),
-                tvlUSD: parseFloat(totalValueLockedUSD),
-            };
-        });
+                const { totalValueLockedETH, totalValueLockedUSD, ...rest } = pool;
+                return {
+                    ...rest,
+                    id: pool.id.toLowerCase(),
+                    token0: {
+                        id: pool.token0.id.toLowerCase(),
+                    },
+                    token1: {
+                        id: pool.token1.id.toLowerCase(),
+                    },
+                    tvlETH: parseFloat(totalValueLockedETH),
+                    tvlUSD: parseFloat(totalValueLockedUSD),
+                };
+            });
         log.info(`Got ${pools.length} V3 pools from the subgraph. ${poolsSanitized.length} after filtering`);
         return poolsSanitized;
     }

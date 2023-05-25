@@ -187,7 +187,7 @@
    "Properties": {
     "Code": {
      "S3Bucket": "cdk-hnb659fds-assets-557822834307-ap-southeast-1",
-     "S3Key": "4025e9d085c0e3d0c0df2ed15bc558843252cf0a672e28ca677d7754a69e14ea.zip"
+     "S3Key": "5e0d2b1e613e743000707410b00ffd00b9d3a9511602b3a80c09d0e4000b104a.zip"
     },
     "Role": {
      "Fn::GetAtt": [
@@ -255,12 +255,12 @@
    ],
    "Metadata": {
     "aws:cdk:path": "RoutingAPIPipelineStack/prod-ap-southeast-1/RoutingAPIStack/RoutingLambdaStack/RoutingLambda2/Resource",
-    "aws:asset:path": "../asset.4025e9d085c0e3d0c0df2ed15bc558843252cf0a672e28ca677d7754a69e14ea",
+    "aws:asset:path": "../asset.5e0d2b1e613e743000707410b00ffd00b9d3a9511602b3a80c09d0e4000b104a",
     "aws:asset:is-bundled": true,
     "aws:asset:property": "Code"
    }
   },
-  "RoutingLambda2CurrentVersion49A1BB9455f5dad03355b31e41f2b01c78073b0f": {
+  "RoutingLambda2CurrentVersion49A1BB94fc76451a70edf6e1d5d26fe574ad8832": {
    "Type": "AWS::Lambda::Version",
    "Properties": {
     "FunctionName": {
@@ -276,7 +276,7 @@
    "Properties": {
     "Code": {
      "S3Bucket": "cdk-hnb659fds-assets-557822834307-ap-southeast-1",
-     "S3Key": "4025e9d085c0e3d0c0df2ed15bc558843252cf0a672e28ca677d7754a69e14ea.zip"
+     "S3Key": "5e0d2b1e613e743000707410b00ffd00b9d3a9511602b3a80c09d0e4000b104a.zip"
     },
     "Role": {
      "Fn::GetAtt": [
@@ -341,7 +341,7 @@
    ],
    "Metadata": {
     "aws:cdk:path": "RoutingAPIPipelineStack/prod-ap-southeast-1/RoutingAPIStack/RoutingLambdaStack/RouteToRatioLambda2/Resource",
-    "aws:asset:path": "../asset.4025e9d085c0e3d0c0df2ed15bc558843252cf0a672e28ca677d7754a69e14ea",
+    "aws:asset:path": "../asset.5e0d2b1e613e743000707410b00ffd00b9d3a9511602b3a80c09d0e4000b104a",
     "aws:asset:is-bundled": true,
     "aws:asset:property": "Code"
    }
@@ -440,7 +440,7 @@
     },
     "FunctionVersion": {
      "Fn::GetAtt": [
-      "RoutingLambda2CurrentVersion49A1BB9455f5dad03355b31e41f2b01c78073b0f",
+      "RoutingLambda2CurrentVersion49A1BB94fc76451a70edf6e1d5d26fe574ad8832",
       "Version"
      ]
     },
@@ -534,7 +534,7 @@
   "CDKMetadata": {
    "Type": "AWS::CDK::Metadata",
    "Properties": {
-    "Analytics": "v2:deflate64:H4sIAAAAAAAA/11QwU6FMBD8lncvq6jReOSZeHwxQLySpVQslJawrS+G9N/dwlOjp5nOZLa7cwMPd3B9wDNlshszo1tYT4q86iqPchRsNKvGCdbSGSWe3uyGL85o+ZmeO4vC4NR22FjXqYHgtMFzsNJrZwXdNkikPEGRgN9wDHJU/oikLlFYedpP4lUtlJC1b1oYjZSEjUQhjQvdGb18h7UwuEy7xyQKsgS1m7XcPsB55iUxDcbgHUk02vawVkywNarGpeetOP5P2aFeuAkOVHvu9/Y/QoyiVOTCIpXYruQCe3a3zi5GFKkfGOjqI7+H/BHyw0BaZ0uwXk8Kyh2/AJvaDHOVAQAA"
+    "Analytics": "v2:deflate64:H4sIAAAAAAAA/11QQU7DMBB8C3d3KQXBOUXqsUJJxDXaOCY4cewoa1MhK39n7RQQnGY8o1nvzgGeHmB/gxfayW7cGd1CPCvyqqs8ylGw0USNE8TSGSWe32zGF2e0/EzPja3C4NR22FjXqYHgnOEUrPTaWUH3DRIpT1Ak4DccgxyVPyKpaxQiT/tJvKqFErL2TQujkZKQySqkcaG7oJfvEAuDy7R5TFZBlqB2s5b5A5xnXhLTYAzekUSjbQ+xYoKtUTUuPW/F8X/KBvXCTXCg2nK/t/8R1lWUilxYpBL5Si6wZzd3djVWkfqBgW4/7h7hsOfmB9J6twTr9aSg3PALkVHhApUBAAA="
    },
    "Metadata": {
     "aws:cdk:path": "RoutingAPIPipelineStack/prod-ap-southeast-1/RoutingAPIStack/RoutingLambdaStack/CDKMetadata/Default"

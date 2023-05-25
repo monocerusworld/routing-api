@@ -33,11 +33,11 @@ const SUBGRAPH_URL_BY_CHAIN = {
     [util_1.ChainId.CELO]: 'https://api.thegraph.com/subgraphs/name/jesse-sawa/uniswap-celo',
     [util_1.ChainId.GÖRLI]: 'https://api.thegraph.com/subgraphs/name/ianlapham/uniswap-v3-gorli',
     [util_1.ChainId.BSC]: 'https://api.thegraph.com/subgraphs/name/ilyamk/uniswap-v3---bnb-chain',
-    [util_1.ChainId.FANTOM]: 'https://api.thegraph.com/subgraphs/name/pullstacker/v3-fantom',
-    [util_1.ChainId.GNOSIS]: 'https://api.thegraph.com/subgraphs/name/pullstacker/v3-gnosis',
-    [util_1.ChainId.KLAYTN]: 'https://api.thegraph.com/subgraphs/name/pullstacker/v3-klaytn',
-    [util_1.ChainId.AVALANCHE]: 'https://api.thegraph.com/subgraphs/name/pullstacker/v3-avalanche',
-    [util_1.ChainId.MOONBEAM]: 'https://api.thegraph.com/subgraphs/name/pullstacker/v3-moonbeam',
+    [util_1.ChainId.FANTOM]: 'https://api.thegraph.com/subgraphs/name/tartz-one/v3-fantom',
+    [util_1.ChainId.GNOSIS]: 'https://api.thegraph.com/subgraphs/name/tartz-one/v3-gnosis',
+    [util_1.ChainId.KLAYTN]: 'https://api.thegraph.com/subgraphs/name/tartz-one/v3-klaytn',
+    [util_1.ChainId.AVALANCHE]: 'https://api.thegraph.com/subgraphs/name/tartz-one/v3-avalanche',
+    [util_1.ChainId.MOONBEAM]: 'https://api.thegraph.com/subgraphs/name/tartz-one/v3-moonbeam',
 };
 const PAGE_SIZE = 1000; // 1k is max possible query size from subgraph.
 class V3SubgraphProvider {
@@ -56,7 +56,7 @@ class V3SubgraphProvider {
         let blockNumber = (providerConfig === null || providerConfig === void 0 ? void 0 : providerConfig.blockNumber)
             ? await providerConfig.blockNumber
             : undefined;
-        const query = (0, graphql_request_1.gql) `
+        const query = (0, graphql_request_1.gql)`
       query getPools($pageSize: Int!, $id: String) {
         pools(
           first: $pageSize
@@ -131,15 +131,17 @@ class V3SubgraphProvider {
         });
         const poolsSanitized = pools
             .filter((pool) => parseInt(pool.liquidity) > 0 ||
-            parseFloat(pool.totalValueLockedETH) > 0.01)
+                parseFloat(pool.totalValueLockedETH) > 0.01)
             .map((pool) => {
-            const { totalValueLockedETH, totalValueLockedUSD } = pool, rest = __rest(pool, ["totalValueLockedETH", "totalValueLockedUSD"]);
-            return Object.assign(Object.assign({}, rest), { id: pool.id.toLowerCase(), token0: {
-                    id: pool.token0.id.toLowerCase(),
-                }, token1: {
-                    id: pool.token1.id.toLowerCase(),
-                }, tvlETH: parseFloat(totalValueLockedETH), tvlUSD: parseFloat(totalValueLockedUSD) });
-        });
+                const { totalValueLockedETH, totalValueLockedUSD } = pool, rest = __rest(pool, ["totalValueLockedETH", "totalValueLockedUSD"]);
+                return Object.assign(Object.assign({}, rest), {
+                    id: pool.id.toLowerCase(), token0: {
+                        id: pool.token0.id.toLowerCase(),
+                    }, token1: {
+                        id: pool.token1.id.toLowerCase(),
+                    }, tvlETH: parseFloat(totalValueLockedETH), tvlUSD: parseFloat(totalValueLockedUSD)
+                });
+            });
         util_1.log.info(`Got ${pools.length} V3 pools from the subgraph. ${poolsSanitized.length} after filtering`);
         return poolsSanitized;
     }

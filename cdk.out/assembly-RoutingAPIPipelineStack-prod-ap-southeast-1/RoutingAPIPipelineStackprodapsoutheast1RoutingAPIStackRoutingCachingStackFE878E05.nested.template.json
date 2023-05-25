@@ -184,7 +184,7 @@
    "Properties": {
     "Code": {
      "S3Bucket": "cdk-hnb659fds-assets-557822834307-ap-southeast-1",
-     "S3Key": "bc9da3e72c58ab9f39edd58816981de37dddbf96cc8ffcbb71f3d942d081d2aa.zip"
+     "S3Key": "a578dc352207445bfb7ccfdf29b4b9dbe622e0feb3dd038f75f25f7a12aabe38.zip"
     },
     "Role": {
      "Fn::GetAtt": [
@@ -225,7 +225,7 @@
    ],
    "Metadata": {
     "aws:cdk:path": "RoutingAPIPipelineStack/prod-ap-southeast-1/RoutingAPIStack/RoutingCachingStack/PoolCacheLambda-ChainId1-ProtocolV3/Resource",
-    "aws:asset:path": "../asset.bc9da3e72c58ab9f39edd58816981de37dddbf96cc8ffcbb71f3d942d081d2aa",
+    "aws:asset:path": "../asset.a578dc352207445bfb7ccfdf29b4b9dbe622e0feb3dd038f75f25f7a12aabe38",
     "aws:asset:is-bundled": true,
     "aws:asset:property": "Code"
    }
@@ -364,7 +364,7 @@
    "Properties": {
     "Code": {
      "S3Bucket": "cdk-hnb659fds-assets-557822834307-ap-southeast-1",
-     "S3Key": "bc9da3e72c58ab9f39edd58816981de37dddbf96cc8ffcbb71f3d942d081d2aa.zip"
+     "S3Key": "a578dc352207445bfb7ccfdf29b4b9dbe622e0feb3dd038f75f25f7a12aabe38.zip"
     },
     "Role": {
      "Fn::GetAtt": [
@@ -405,7 +405,7 @@
    ],
    "Metadata": {
     "aws:cdk:path": "RoutingAPIPipelineStack/prod-ap-southeast-1/RoutingAPIStack/RoutingCachingStack/PoolCacheLambda-ChainId42161-ProtocolV3/Resource",
-    "aws:asset:path": "../asset.bc9da3e72c58ab9f39edd58816981de37dddbf96cc8ffcbb71f3d942d081d2aa",
+    "aws:asset:path": "../asset.a578dc352207445bfb7ccfdf29b4b9dbe622e0feb3dd038f75f25f7a12aabe38",
     "aws:asset:is-bundled": true,
     "aws:asset:property": "Code"
    }
@@ -544,7 +544,7 @@
    "Properties": {
     "Code": {
      "S3Bucket": "cdk-hnb659fds-assets-557822834307-ap-southeast-1",
-     "S3Key": "bc9da3e72c58ab9f39edd58816981de37dddbf96cc8ffcbb71f3d942d081d2aa.zip"
+     "S3Key": "a578dc352207445bfb7ccfdf29b4b9dbe622e0feb3dd038f75f25f7a12aabe38.zip"
     },
     "Role": {
      "Fn::GetAtt": [
@@ -585,7 +585,7 @@
    ],
    "Metadata": {
     "aws:cdk:path": "RoutingAPIPipelineStack/prod-ap-southeast-1/RoutingAPIStack/RoutingCachingStack/PoolCacheLambda-ChainId137-ProtocolV3/Resource",
-    "aws:asset:path": "../asset.bc9da3e72c58ab9f39edd58816981de37dddbf96cc8ffcbb71f3d942d081d2aa",
+    "aws:asset:path": "../asset.a578dc352207445bfb7ccfdf29b4b9dbe622e0feb3dd038f75f25f7a12aabe38",
     "aws:asset:is-bundled": true,
     "aws:asset:property": "Code"
    }
@@ -724,7 +724,7 @@
    "Properties": {
     "Code": {
      "S3Bucket": "cdk-hnb659fds-assets-557822834307-ap-southeast-1",
-     "S3Key": "bc9da3e72c58ab9f39edd58816981de37dddbf96cc8ffcbb71f3d942d081d2aa.zip"
+     "S3Key": "a578dc352207445bfb7ccfdf29b4b9dbe622e0feb3dd038f75f25f7a12aabe38.zip"
     },
     "Role": {
      "Fn::GetAtt": [
@@ -765,7 +765,7 @@
    ],
    "Metadata": {
     "aws:cdk:path": "RoutingAPIPipelineStack/prod-ap-southeast-1/RoutingAPIStack/RoutingCachingStack/PoolCacheLambda-ChainId42220-ProtocolV3/Resource",
-    "aws:asset:path": "../asset.bc9da3e72c58ab9f39edd58816981de37dddbf96cc8ffcbb71f3d942d081d2aa",
+    "aws:asset:path": "../asset.a578dc352207445bfb7ccfdf29b4b9dbe622e0feb3dd038f75f25f7a12aabe38",
     "aws:asset:is-bundled": true,
     "aws:asset:property": "Code"
    }
@@ -904,7 +904,7 @@
    "Properties": {
     "Code": {
      "S3Bucket": "cdk-hnb659fds-assets-557822834307-ap-southeast-1",
-     "S3Key": "bc9da3e72c58ab9f39edd58816981de37dddbf96cc8ffcbb71f3d942d081d2aa.zip"
+     "S3Key": "a578dc352207445bfb7ccfdf29b4b9dbe622e0feb3dd038f75f25f7a12aabe38.zip"
     },
     "Role": {
      "Fn::GetAtt": [
@@ -945,7 +945,7 @@
    ],
    "Metadata": {
     "aws:cdk:path": "RoutingAPIPipelineStack/prod-ap-southeast-1/RoutingAPIStack/RoutingCachingStack/PoolCacheLambda-ChainId56-ProtocolV3/Resource",
-    "aws:asset:path": "../asset.bc9da3e72c58ab9f39edd58816981de37dddbf96cc8ffcbb71f3d942d081d2aa",
+    "aws:asset:path": "../asset.a578dc352207445bfb7ccfdf29b4b9dbe622e0feb3dd038f75f25f7a12aabe38",
     "aws:asset:is-bundled": true,
     "aws:asset:property": "Code"
    }
@@ -1084,7 +1084,7 @@
    "Properties": {
     "Code": {
      "S3Bucket": "cdk-hnb659fds-assets-557822834307-ap-southeast-1",
-     "S3Key": "bc9da3e72c58ab9f39edd58816981de37dddbf96cc8ffcbb71f3d942d081d2aa.zip"
+     "S3Key": "a578dc352207445bfb7ccfdf29b4b9dbe622e0feb3dd038f75f25f7a12aabe38.zip"
     },
     "Role": {
      "Fn::GetAtt": [
@@ -1125,7 +1125,7 @@
    ],
    "Metadata": {
     "aws:cdk:path": "RoutingAPIPipelineStack/prod-ap-southeast-1/RoutingAPIStack/RoutingCachingStack/PoolCacheLambda-ChainId1-ProtocolV2/Resource",
-    "aws:asset:path": "../asset.bc9da3e72c58ab9f39edd58816981de37dddbf96cc8ffcbb71f3d942d081d2aa",
+    "aws:asset:path": "../asset.a578dc352207445bfb7ccfdf29b4b9dbe622e0feb3dd038f75f25f7a12aabe38",
     "aws:asset:is-bundled": true,
     "aws:asset:property": "Code"
    }
@@ -1264,7 +1264,7 @@
    "Properties": {
     "Code": {
      "S3Bucket": "cdk-hnb659fds-assets-557822834307-ap-southeast-1",
-     "S3Key": "be04a0e62cba2ddda3d8140d41105d2a40a0f07e33e8217abaf9620eecb17a82.zip"
+     "S3Key": "73657176d39f228a2c15172ff0be6e28fa72b6a57a300f7ccd73f36cf096330f.zip"
     },
     "Role": {
      "Fn::GetAtt": [
@@ -1301,7 +1301,7 @@
    ],
    "Metadata": {
     "aws:cdk:path": "RoutingAPIPipelineStack/prod-ap-southeast-1/RoutingAPIStack/RoutingCachingStack/IpfsPoolCacheLambda/Resource",
-    "aws:asset:path": "../asset.be04a0e62cba2ddda3d8140d41105d2a40a0f07e33e8217abaf9620eecb17a82",
+    "aws:asset:path": "../asset.73657176d39f228a2c15172ff0be6e28fa72b6a57a300f7ccd73f36cf096330f",
     "aws:asset:is-bundled": true,
     "aws:asset:property": "Code"
    }
@@ -1561,7 +1561,7 @@
   "CDKMetadata": {
    "Type": "AWS::CDK::Metadata",
    "Properties": {
-    "Analytics": "v2:deflate64:H4sIAAAAAAAA/z2PzU7DMBCEn6X3zUIAgTi2lThWKHCPXHspTvyDsnYrZPndsZ2I0zermfWsH/DlCe934sadVHNn9BnTiTiQ+ghCzlCMMbFj/PQ/Wh4EE/AjpkOUMwU4frlNrah+Bi0spsEbqn7juzda/tZxVRmMsGclRucVTYynhrfoZNDelYZRMFNg3FdsYUxl/z9T36LFauYyZaAruZJPQ9xqCzNI46O6iSC/Me2NWGy1msgZBmIfF0nQSsp3L9pd2u5mZKjn4cR31/4Z+1fsdxNr3S3RBW0Jh5V/FiJXmUMBAAA="
+    "Analytics": "v2:deflate64:H4sIAAAAAAAA/z2QzU7DMBCEn4X7ZikFwblF4lihwD1y7aVs4h+UtVshy++OnUScvlnNrMf2Hl+ecHenbtJpM3WWz5hPJJHMR1R6gmoMWbzgZ/hhfVRCII+Yj0lPFOH1y29qRfMLsHKY+2Cp+Qvfg2X928ZVFbDKnY0afDA0Cp4WvCWvIwdfGwYlQlHw0LCFMdf9/0w7i2bHInUqQFfyNZ/7tNVWFtA2JHNTUX9jPlg1u2YtohToSUKaNcFSUp97YX9ZdjejQLsejnJ/fXjG/a7+0yjM3Zx8ZEfYr/wDHKm66EMBAAA="
    },
    "Metadata": {
     "aws:cdk:path": "RoutingAPIPipelineStack/prod-ap-southeast-1/RoutingAPIStack/RoutingCachingStack/CDKMetadata/Default"
