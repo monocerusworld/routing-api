@@ -11,7 +11,7 @@
        {
         "Ref": "AWS::URLSuffix"
        },
-       "/cdk-hnb659fds-assets-557822834307-ap-southeast-1/f64e00ff57d878e1bc5a0fb4ff38fef4bdb1c8e11f8746e47609b19e56f89041.json"
+       "/cdk-hnb659fds-assets-978958364414-ap-southeast-1/03cd8be2e717df5804f66215c9e3d13c3f46f121b37c2c7e8fd6e914723e2628.json"
       ]
      ]
     }
@@ -35,7 +35,7 @@
        {
         "Ref": "AWS::URLSuffix"
        },
-       "/cdk-hnb659fds-assets-557822834307-ap-southeast-1/7ea9475d25c415c484a4cc397f4784c9e07497ef37de87982860a1485320ccd2.json"
+       "/cdk-hnb659fds-assets-978958364414-ap-southeast-1/381c8b8ef9980c0e4223de45780499d9de79f1027f2d5a26b64efb5ae50114a7.json"
       ]
      ]
     }
@@ -59,7 +59,7 @@
        {
         "Ref": "AWS::URLSuffix"
        },
-       "/cdk-hnb659fds-assets-557822834307-ap-southeast-1/2b7b7e62a2b8690aa99e8438ff37b35cce207ff2ee0db8eb3b8681de8330358d.json"
+       "/cdk-hnb659fds-assets-978958364414-ap-southeast-1/c7fa521f852cc96d25b754da6995b6f0084c419ce6f7acfb8cf84f5b585b6e05.json"
       ]
      ]
     },
@@ -82,16 +82,16 @@
        "Outputs.RoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackTokenListCacheBucket9E7C4291Arn"
       ]
      },
-     "referencetoRoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingDatabaseStackNestedStackRoutingDatabaseStackNestedStackResourceDA913E78OutputsRoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingDatabaseStackRouteCachingDB9CBC8CC2Arn": {
+     "referencetoRoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingDatabaseStackNestedStackRoutingDatabaseStackNestedStackResourceDA913E78OutputsRoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingDatabaseStackRouteCacheDBE4E85438Arn": {
       "Fn::GetAtt": [
        "RoutingDatabaseStackNestedStackRoutingDatabaseStackNestedStackResource6A37F2CD",
-       "Outputs.RoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingDatabaseStackRouteCachingDB9CBC8CC2Arn"
+       "Outputs.RoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingDatabaseStackRouteCacheDBE4E85438Arn"
       ]
      },
-     "referencetoRoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingDatabaseStackNestedStackRoutingDatabaseStackNestedStackResourceDA913E78OutputsRoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingDatabaseStackRouteCachingDB9CBC8CC2Ref": {
+     "referencetoRoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingDatabaseStackNestedStackRoutingDatabaseStackNestedStackResourceDA913E78OutputsRoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingDatabaseStackRouteCacheDBE4E85438Ref": {
       "Fn::GetAtt": [
        "RoutingDatabaseStackNestedStackRoutingDatabaseStackNestedStackResource6A37F2CD",
-       "Outputs.RoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingDatabaseStackRouteCachingDB9CBC8CC2Ref"
+       "Outputs.RoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingDatabaseStackRouteCacheDBE4E85438Ref"
       ]
      },
      "referencetoRoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackNestedStackRoutingCachingStackNestedStackResource2194E320OutputsRoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackPoolCacheBucketC165B781Ref": {
@@ -378,7 +378,7 @@
        {
         "Ref": "AWS::Partition"
        },
-       ":execute-api:ap-southeast-1:557822834307:",
+       ":execute-api:ap-southeast-1:978958364414:",
        {
         "Ref": "routingapiA6A29457"
        },
@@ -414,7 +414,7 @@
        {
         "Ref": "AWS::Partition"
        },
-       ":execute-api:ap-southeast-1:557822834307:",
+       ":execute-api:ap-southeast-1:978958364414:",
        {
         "Ref": "routingapiA6A29457"
        },
@@ -545,7 +545,7 @@
        {
         "Ref": "AWS::Partition"
        },
-       ":execute-api:ap-southeast-1:557822834307:",
+       ":execute-api:ap-southeast-1:978958364414:",
        {
         "Ref": "routingapiA6A29457"
        },
@@ -581,7 +581,7 @@
        {
         "Ref": "AWS::Partition"
        },
-       ":execute-api:ap-southeast-1:557822834307:",
+       ":execute-api:ap-southeast-1:978958364414:",
        {
         "Ref": "routingapiA6A29457"
        },
@@ -726,7 +726,7 @@
        {
         "Ref": "AWS::URLSuffix"
        },
-       "/cdk-hnb659fds-assets-557822834307-ap-southeast-1/3645496ab6b82279634fd45b153f210f52e7b703e87e317fa894365fc8077661.json"
+       "/cdk-hnb659fds-assets-978958364414-ap-southeast-1/3645496ab6b82279634fd45b153f210f52e7b703e87e317fa894365fc8077661.json"
       ]
      ]
     },

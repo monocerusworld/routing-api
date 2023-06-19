@@ -80,7 +80,7 @@
       {
        "Action": "sts:AssumeRole",
        "Effect": "Allow",
-       "Resource": "{{resolve:secretsmanager:arn:aws:secretsmanager:ap-southeast-1:557822834307:secret:Route53Arn-elRmmw:SecretString:arn::}}",
+       "Resource": "{{resolve:secretsmanager:arn:aws:secretsmanager:ap-southeast-1:978958364414:secret:Route53Arn-elRmmw:SecretString:arn::}}",
        "Sid": "1"
       },
       {
@@ -183,8 +183,8 @@
    "Type": "AWS::Lambda::Function",
    "Properties": {
     "Code": {
-     "S3Bucket": "cdk-hnb659fds-assets-557822834307-ap-southeast-1",
-     "S3Key": "a578dc352207445bfb7ccfdf29b4b9dbe622e0feb3dd038f75f25f7a12aabe38.zip"
+     "S3Bucket": "cdk-hnb659fds-assets-978958364414-ap-southeast-1",
+     "S3Key": "0b7f461e78061f518723b1ba2f196591486022469a00b162b5fcec4de2642a78.zip"
     },
     "Role": {
      "Fn::GetAtt": [
@@ -225,7 +225,7 @@
    ],
    "Metadata": {
     "aws:cdk:path": "RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingCachingStack/PoolCacheLambda-ChainId1-ProtocolV3/Resource",
-    "aws:asset:path": "../asset.a578dc352207445bfb7ccfdf29b4b9dbe622e0feb3dd038f75f25f7a12aabe38",
+    "aws:asset:path": "../asset.0b7f461e78061f518723b1ba2f196591486022469a00b162b5fcec4de2642a78",
     "aws:asset:is-bundled": true,
     "aws:asset:property": "Code"
    }
@@ -357,8 +357,8 @@
    "Type": "AWS::Lambda::Function",
    "Properties": {
     "Code": {
-     "S3Bucket": "cdk-hnb659fds-assets-557822834307-ap-southeast-1",
-     "S3Key": "a578dc352207445bfb7ccfdf29b4b9dbe622e0feb3dd038f75f25f7a12aabe38.zip"
+     "S3Bucket": "cdk-hnb659fds-assets-978958364414-ap-southeast-1",
+     "S3Key": "0b7f461e78061f518723b1ba2f196591486022469a00b162b5fcec4de2642a78.zip"
     },
     "Role": {
      "Fn::GetAtt": [
@@ -399,7 +399,7 @@
    ],
    "Metadata": {
     "aws:cdk:path": "RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingCachingStack/PoolCacheLambda-ChainId42161-ProtocolV3/Resource",
-    "aws:asset:path": "../asset.a578dc352207445bfb7ccfdf29b4b9dbe622e0feb3dd038f75f25f7a12aabe38",
+    "aws:asset:path": "../asset.0b7f461e78061f518723b1ba2f196591486022469a00b162b5fcec4de2642a78",
     "aws:asset:is-bundled": true,
     "aws:asset:property": "Code"
    }
@@ -531,8 +531,8 @@
    "Type": "AWS::Lambda::Function",
    "Properties": {
     "Code": {
-     "S3Bucket": "cdk-hnb659fds-assets-557822834307-ap-southeast-1",
-     "S3Key": "a578dc352207445bfb7ccfdf29b4b9dbe622e0feb3dd038f75f25f7a12aabe38.zip"
+     "S3Bucket": "cdk-hnb659fds-assets-978958364414-ap-southeast-1",
+     "S3Key": "0b7f461e78061f518723b1ba2f196591486022469a00b162b5fcec4de2642a78.zip"
     },
     "Role": {
      "Fn::GetAtt": [
@@ -573,7 +573,7 @@
    ],
    "Metadata": {
     "aws:cdk:path": "RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingCachingStack/PoolCacheLambda-ChainId137-ProtocolV3/Resource",
-    "aws:asset:path": "../asset.a578dc352207445bfb7ccfdf29b4b9dbe622e0feb3dd038f75f25f7a12aabe38",
+    "aws:asset:path": "../asset.0b7f461e78061f518723b1ba2f196591486022469a00b162b5fcec4de2642a78",
     "aws:asset:is-bundled": true,
     "aws:asset:property": "Code"
    }
@@ -705,8 +705,8 @@
    "Type": "AWS::Lambda::Function",
    "Properties": {
     "Code": {
-     "S3Bucket": "cdk-hnb659fds-assets-557822834307-ap-southeast-1",
-     "S3Key": "a578dc352207445bfb7ccfdf29b4b9dbe622e0feb3dd038f75f25f7a12aabe38.zip"
+     "S3Bucket": "cdk-hnb659fds-assets-978958364414-ap-southeast-1",
+     "S3Key": "0b7f461e78061f518723b1ba2f196591486022469a00b162b5fcec4de2642a78.zip"
     },
     "Role": {
      "Fn::GetAtt": [
@@ -747,7 +747,7 @@
    ],
    "Metadata": {
     "aws:cdk:path": "RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingCachingStack/PoolCacheLambda-ChainId42220-ProtocolV3/Resource",
-    "aws:asset:path": "../asset.a578dc352207445bfb7ccfdf29b4b9dbe622e0feb3dd038f75f25f7a12aabe38",
+    "aws:asset:path": "../asset.0b7f461e78061f518723b1ba2f196591486022469a00b162b5fcec4de2642a78",
     "aws:asset:is-bundled": true,
     "aws:asset:property": "Code"
    }
@@ -879,8 +879,8 @@
    "Type": "AWS::Lambda::Function",
    "Properties": {
     "Code": {
-     "S3Bucket": "cdk-hnb659fds-assets-557822834307-ap-southeast-1",
-     "S3Key": "a578dc352207445bfb7ccfdf29b4b9dbe622e0feb3dd038f75f25f7a12aabe38.zip"
+     "S3Bucket": "cdk-hnb659fds-assets-978958364414-ap-southeast-1",
+     "S3Key": "0b7f461e78061f518723b1ba2f196591486022469a00b162b5fcec4de2642a78.zip"
     },
     "Role": {
      "Fn::GetAtt": [
@@ -921,7 +921,7 @@
    ],
    "Metadata": {
     "aws:cdk:path": "RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingCachingStack/PoolCacheLambda-ChainId56-ProtocolV3/Resource",
-    "aws:asset:path": "../asset.a578dc352207445bfb7ccfdf29b4b9dbe622e0feb3dd038f75f25f7a12aabe38",
+    "aws:asset:path": "../asset.0b7f461e78061f518723b1ba2f196591486022469a00b162b5fcec4de2642a78",
     "aws:asset:is-bundled": true,
     "aws:asset:property": "Code"
    }
@@ -1053,8 +1053,8 @@
    "Type": "AWS::Lambda::Function",
    "Properties": {
     "Code": {
-     "S3Bucket": "cdk-hnb659fds-assets-557822834307-ap-southeast-1",
-     "S3Key": "a578dc352207445bfb7ccfdf29b4b9dbe622e0feb3dd038f75f25f7a12aabe38.zip"
+     "S3Bucket": "cdk-hnb659fds-assets-978958364414-ap-southeast-1",
+     "S3Key": "0b7f461e78061f518723b1ba2f196591486022469a00b162b5fcec4de2642a78.zip"
     },
     "Role": {
      "Fn::GetAtt": [
@@ -1095,7 +1095,7 @@
    ],
    "Metadata": {
     "aws:cdk:path": "RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingCachingStack/PoolCacheLambda-ChainId1-ProtocolV2/Resource",
-    "aws:asset:path": "../asset.a578dc352207445bfb7ccfdf29b4b9dbe622e0feb3dd038f75f25f7a12aabe38",
+    "aws:asset:path": "../asset.0b7f461e78061f518723b1ba2f196591486022469a00b162b5fcec4de2642a78",
     "aws:asset:is-bundled": true,
     "aws:asset:property": "Code"
    }
@@ -1227,8 +1227,8 @@
    "Type": "AWS::Lambda::Function",
    "Properties": {
     "Code": {
-     "S3Bucket": "cdk-hnb659fds-assets-557822834307-ap-southeast-1",
-     "S3Key": "73657176d39f228a2c15172ff0be6e28fa72b6a57a300f7ccd73f36cf096330f.zip"
+     "S3Bucket": "cdk-hnb659fds-assets-978958364414-ap-southeast-1",
+     "S3Key": "295a2bf68703a6a29232acdd113301386e89e6e69ee49fa9c14ecd155851af2d.zip"
     },
     "Role": {
      "Fn::GetAtt": [
@@ -1239,10 +1239,10 @@
     "Description": "IPFS Pool Cache Lambda",
     "Environment": {
      "Variables": {
-      "PINATA_API_KEY": "{{resolve:secretsmanager:arn:aws:secretsmanager:ap-southeast-1:557822834307:secret:pinata-api-key-UVLAfM:SecretString:pinata-api-key::}}",
-      "PINATA_API_SECRET": "{{resolve:secretsmanager:arn:aws:secretsmanager:ap-southeast-1:557822834307:secret:pinata-secret-svGaPt:SecretString:secret::}}",
-      "ROLE_ARN": "{{resolve:secretsmanager:arn:aws:secretsmanager:ap-southeast-1:557822834307:secret:Route53Arn-elRmmw:SecretString:arn::}}",
-      "HOSTED_ZONE": "{{resolve:secretsmanager:arn:aws:secretsmanager:ap-southeast-1:557822834307:secret:hosted-zone-JmPDNV:SecretString:zone::}}",
+      "PINATA_API_KEY": "{{resolve:secretsmanager:arn:aws:secretsmanager:ap-southeast-1:978958364414:secret:pinata-api-key-UVLAfM:SecretString:pinata-api-key::}}",
+      "PINATA_API_SECRET": "{{resolve:secretsmanager:arn:aws:secretsmanager:ap-southeast-1:978958364414:secret:pinata-secret-svGaPt:SecretString:secret::}}",
+      "ROLE_ARN": "{{resolve:secretsmanager:arn:aws:secretsmanager:ap-southeast-1:978958364414:secret:Route53Arn-elRmmw:SecretString:arn::}}",
+      "HOSTED_ZONE": "{{resolve:secretsmanager:arn:aws:secretsmanager:ap-southeast-1:978958364414:secret:hosted-zone-JmPDNV:SecretString:zone::}}",
       "STAGE": "beta",
       "REDEPLOY": "1",
       "AWS_NODEJS_CONNECTION_REUSE_ENABLED": "1"
@@ -1265,7 +1265,7 @@
    ],
    "Metadata": {
     "aws:cdk:path": "RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingCachingStack/IpfsPoolCacheLambda/Resource",
-    "aws:asset:path": "../asset.73657176d39f228a2c15172ff0be6e28fa72b6a57a300f7ccd73f36cf096330f",
+    "aws:asset:path": "../asset.295a2bf68703a6a29232acdd113301386e89e6e69ee49fa9c14ecd155851af2d",
     "aws:asset:is-bundled": true,
     "aws:asset:property": "Code"
    }
@@ -1317,7 +1317,7 @@
    "Type": "AWS::Lambda::Function",
    "Properties": {
     "Code": {
-     "S3Bucket": "cdk-hnb659fds-assets-557822834307-ap-southeast-1",
+     "S3Bucket": "cdk-hnb659fds-assets-978958364414-ap-southeast-1",
      "S3Key": "ce6eab688b6d8ff5a3352750d1f7b2d3eb3589f0c97a6bd1ad247f6f346bbc9e.zip"
     },
     "Role": {
@@ -1329,8 +1329,8 @@
     "Description": "Clean IPFS Pool Cache Lambda",
     "Environment": {
      "Variables": {
-      "PINATA_API_KEY": "{{resolve:secretsmanager:arn:aws:secretsmanager:ap-southeast-1:557822834307:secret:pinata-api-key-UVLAfM:SecretString:pinata-api-key::}}",
-      "PINATA_API_SECRET": "{{resolve:secretsmanager:arn:aws:secretsmanager:ap-southeast-1:557822834307:secret:pinata-secret-svGaPt:SecretString:secret::}}",
+      "PINATA_API_KEY": "{{resolve:secretsmanager:arn:aws:secretsmanager:ap-southeast-1:978958364414:secret:pinata-api-key-UVLAfM:SecretString:pinata-api-key::}}",
+      "PINATA_API_SECRET": "{{resolve:secretsmanager:arn:aws:secretsmanager:ap-southeast-1:978958364414:secret:pinata-secret-svGaPt:SecretString:secret::}}",
       "STAGE": "beta",
       "REDEPLOY": "1",
       "AWS_NODEJS_CONNECTION_REUSE_ENABLED": "1"
@@ -1413,7 +1413,7 @@
    "Type": "AWS::Lambda::Function",
    "Properties": {
     "Code": {
-     "S3Bucket": "cdk-hnb659fds-assets-557822834307-ap-southeast-1",
+     "S3Bucket": "cdk-hnb659fds-assets-978958364414-ap-southeast-1",
      "S3Key": "101f0022ead0ddbe999e771dfd5a39025acd89da1a5f5571820a2eac30c1b7b9.zip"
     },
     "Role": {

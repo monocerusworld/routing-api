@@ -1,6 +1,6 @@
 {
  "Resources": {
-  "RouteCachingDB1361CA88": {
+  "RouteCacheDB68449847": {
    "Type": "AWS::DynamoDB::Table",
    "Properties": {
     "KeySchema": [
@@ -24,7 +24,7 @@
      }
     ],
     "BillingMode": "PAY_PER_REQUEST",
-    "TableName": "RouteCachingDB",
+    "TableName": "RouteCacheDB",
     "TimeToLiveSpecification": {
      "AttributeName": "ttl",
      "Enabled": true
@@ -33,7 +33,7 @@
    "UpdateReplacePolicy": "Retain",
    "DeletionPolicy": "Retain",
    "Metadata": {
-    "aws:cdk:path": "RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingDatabaseStack/RouteCachingDB/Resource"
+    "aws:cdk:path": "RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingDatabaseStack/RouteCacheDB/Resource"
    }
   },
   "CDKMetadata": {
@@ -47,17 +47,17 @@
   }
  },
  "Outputs": {
-  "RoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingDatabaseStackRouteCachingDB9CBC8CC2Arn": {
+  "RoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingDatabaseStackRouteCacheDBE4E85438Arn": {
    "Value": {
     "Fn::GetAtt": [
-     "RouteCachingDB1361CA88",
+     "RouteCacheDB68449847",
      "Arn"
     ]
    }
   },
-  "RoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingDatabaseStackRouteCachingDB9CBC8CC2Ref": {
+  "RoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingDatabaseStackRouteCacheDBE4E85438Ref": {
    "Value": {
-    "Ref": "RouteCachingDB1361CA88"
+    "Ref": "RouteCacheDB68449847"
    }
   }
  }

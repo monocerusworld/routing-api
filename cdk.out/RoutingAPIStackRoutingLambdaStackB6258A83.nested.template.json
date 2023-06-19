@@ -153,7 +153,7 @@
        "Effect": "Allow",
        "Resource": [
         {
-         "Ref": "referencetoRoutingAPIStackRoutingDatabaseStackNestedStackRoutingDatabaseStackNestedStackResource3AE7BFDEOutputsRoutingAPIStackRoutingDatabaseStackRouteCachingDB3F557D78Arn"
+         "Ref": "referencetoRoutingAPIStackRoutingDatabaseStackNestedStackRoutingDatabaseStackNestedStackResource3AE7BFDEOutputsRoutingAPIStackRoutingDatabaseStackRouteCacheDB5E9EB8B6Arn"
         },
         {
          "Ref": "AWS::NoValue"
@@ -189,7 +189,7 @@
      "S3Bucket": {
       "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
      },
-     "S3Key": "5e0d2b1e613e743000707410b00ffd00b9d3a9511602b3a80c09d0e4000b104a.zip"
+     "S3Key": "564bc34a28ca4b3d07cec29fda01060393e494b2feec42676e6e340d0e2b5454.zip"
     },
     "Role": {
      "Fn::GetAtt": [
@@ -202,7 +202,7 @@
      "Variables": {
       "AWS_NODEJS_CONNECTION_REUSE_ENABLED": "1",
       "CACHED_ROUTES_TABLE_NAME": {
-       "Ref": "referencetoRoutingAPIStackRoutingDatabaseStackNestedStackRoutingDatabaseStackNestedStackResource3AE7BFDEOutputsRoutingAPIStackRoutingDatabaseStackRouteCachingDB3F557D78Ref"
+       "Ref": "referencetoRoutingAPIStackRoutingDatabaseStackNestedStackRoutingDatabaseStackNestedStackResource3AE7BFDEOutputsRoutingAPIStackRoutingDatabaseStackRouteCacheDB5E9EB8B6Ref"
       },
       "NODE_OPTIONS": "--enable-source-maps",
       "POOL_CACHE_BUCKET": {
@@ -249,12 +249,12 @@
    ],
    "Metadata": {
     "aws:cdk:path": "RoutingAPIStack/RoutingLambdaStack/RoutingLambda2/Resource",
-    "aws:asset:path": "asset.5e0d2b1e613e743000707410b00ffd00b9d3a9511602b3a80c09d0e4000b104a",
+    "aws:asset:path": "asset.564bc34a28ca4b3d07cec29fda01060393e494b2feec42676e6e340d0e2b5454",
     "aws:asset:is-bundled": true,
     "aws:asset:property": "Code"
    }
   },
-  "RoutingLambda2CurrentVersion49A1BB947e408ec5b3f9af7a72acdd1e85f051c9": {
+  "RoutingLambda2CurrentVersion49A1BB9419a898711bdf8bea5275bfd874abdf38": {
    "Type": "AWS::Lambda::Version",
    "Properties": {
     "FunctionName": {
@@ -272,7 +272,7 @@
      "S3Bucket": {
       "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
      },
-     "S3Key": "5e0d2b1e613e743000707410b00ffd00b9d3a9511602b3a80c09d0e4000b104a.zip"
+     "S3Key": "564bc34a28ca4b3d07cec29fda01060393e494b2feec42676e6e340d0e2b5454.zip"
     },
     "Role": {
      "Fn::GetAtt": [
@@ -296,7 +296,7 @@
        "Ref": "referencetoRoutingAPIStackRoutingCachingStackNestedStackRoutingCachingStackNestedStackResource3F7983BFOutputsRoutingAPIStackRoutingCachingStackTokenListCacheBucket5B090E54Ref"
       },
       "CACHED_ROUTES_TABLE_NAME": {
-       "Ref": "referencetoRoutingAPIStackRoutingDatabaseStackNestedStackRoutingDatabaseStackNestedStackResource3AE7BFDEOutputsRoutingAPIStackRoutingDatabaseStackRouteCachingDB3F557D78Ref"
+       "Ref": "referencetoRoutingAPIStackRoutingDatabaseStackNestedStackRoutingDatabaseStackNestedStackResource3AE7BFDEOutputsRoutingAPIStackRoutingDatabaseStackRouteCacheDB5E9EB8B6Ref"
       },
       "AWS_NODEJS_CONNECTION_REUSE_ENABLED": "1"
      }
@@ -329,7 +329,7 @@
    ],
    "Metadata": {
     "aws:cdk:path": "RoutingAPIStack/RoutingLambdaStack/RouteToRatioLambda2/Resource",
-    "aws:asset:path": "asset.5e0d2b1e613e743000707410b00ffd00b9d3a9511602b3a80c09d0e4000b104a",
+    "aws:asset:path": "asset.564bc34a28ca4b3d07cec29fda01060393e494b2feec42676e6e340d0e2b5454",
     "aws:asset:is-bundled": true,
     "aws:asset:property": "Code"
    }
@@ -422,7 +422,7 @@
     },
     "FunctionVersion": {
      "Fn::GetAtt": [
-      "RoutingLambda2CurrentVersion49A1BB947e408ec5b3f9af7a72acdd1e85f051c9",
+      "RoutingLambda2CurrentVersion49A1BB9419a898711bdf8bea5275bfd874abdf38",
       "Version"
      ]
     },
@@ -647,10 +647,10 @@
   "referencetoRoutingAPIStackRoutingCachingStackNestedStackRoutingCachingStackNestedStackResource3F7983BFOutputsRoutingAPIStackRoutingCachingStackTokenListCacheBucket5B090E54Arn": {
    "Type": "String"
   },
-  "referencetoRoutingAPIStackRoutingDatabaseStackNestedStackRoutingDatabaseStackNestedStackResource3AE7BFDEOutputsRoutingAPIStackRoutingDatabaseStackRouteCachingDB3F557D78Arn": {
+  "referencetoRoutingAPIStackRoutingDatabaseStackNestedStackRoutingDatabaseStackNestedStackResource3AE7BFDEOutputsRoutingAPIStackRoutingDatabaseStackRouteCacheDB5E9EB8B6Arn": {
    "Type": "String"
   },
-  "referencetoRoutingAPIStackRoutingDatabaseStackNestedStackRoutingDatabaseStackNestedStackResource3AE7BFDEOutputsRoutingAPIStackRoutingDatabaseStackRouteCachingDB3F557D78Ref": {
+  "referencetoRoutingAPIStackRoutingDatabaseStackNestedStackRoutingDatabaseStackNestedStackResource3AE7BFDEOutputsRoutingAPIStackRoutingDatabaseStackRouteCacheDB5E9EB8B6Ref": {
    "Type": "String"
   },
   "referencetoRoutingAPIStackRoutingCachingStackNestedStackRoutingCachingStackNestedStackResource3F7983BFOutputsRoutingAPIStackRoutingCachingStackPoolCacheBucket620A121ARef": {

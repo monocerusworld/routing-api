@@ -12,8 +12,8 @@ export class RoutingDatabaseStack extends cdk.NestedStack {
     super(scope, name, props)
 
     // Creates a DynamoDB Table for storing the cached routes
-    this.cachedRoutesDynamoDb = new aws_dynamodb.Table(this, 'RouteCachingDB', {
-      tableName: 'RouteCachingDB',
+    this.cachedRoutesDynamoDb = new aws_dynamodb.Table(this, 'RouteCacheDB', {
+      tableName: 'RouteCacheDB',
       partitionKey: { name: 'pairTradeTypeChainId', type: AttributeType.STRING },
       sortKey: { name: 'protocolsBucketBlockNumber', type: AttributeType.STRING },
       billingMode: BillingMode.PAY_PER_REQUEST,
