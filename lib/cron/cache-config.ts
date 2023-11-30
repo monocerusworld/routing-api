@@ -11,27 +11,15 @@ export const chainProtocols = [
   },
   {
     protocol: Protocol.V3,
-    chainId: ChainId.ARBITRUM_ONE,
+    chainId: ChainId.MANTA,
     timeout: 90000,
-    provider: new V3SubgraphProvider(ChainId.ARBITRUM_ONE, 3, 90000),
+    provider: new V3SubgraphProvider(ChainId.MANTA, 3, 90000),
   },
   {
     protocol: Protocol.V3,
-    chainId: ChainId.POLYGON,
+    chainId: ChainId.MANTA_TESTNET,
     timeout: 90000,
-    provider: new V3SubgraphProvider(ChainId.POLYGON, 3, 90000),
-  },
-  {
-    protocol: Protocol.V3,
-    chainId: ChainId.CELO,
-    timeout: 90000,
-    provider: new V3SubgraphProvider(ChainId.CELO, 3, 90000),
-  },
-  {
-    protocol: Protocol.V3,
-    chainId: ChainId.BSC,
-    timeout: 90000,
-    provider: new V3SubgraphProvider(ChainId.BSC, 3, 90000),
+    provider: new V3SubgraphProvider(ChainId.MANTA_TESTNET, 3, 90000),
   },
   // Currently there is no working V3 subgraph for Optimism so we use a static provider.
   // V2.

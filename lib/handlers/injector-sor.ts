@@ -45,24 +45,8 @@ import { DynamoRouteCachingProvider } from './router-entities/route-caching/dyna
 
 export const SUPPORTED_CHAINS: ChainId[] = [
   ChainId.MAINNET,
-  ChainId.RINKEBY,
-  ChainId.ROPSTEN,
-  ChainId.KOVAN,
-  ChainId.OPTIMISM,
-  ChainId.OPTIMISTIC_KOVAN,
-  ChainId.ARBITRUM_ONE,
-  ChainId.ARBITRUM_RINKEBY,
-  ChainId.ARBITRUM_GOERLI,
-  ChainId.POLYGON,
-  ChainId.POLYGON_MUMBAI,
-  ChainId.GÖRLI,
-  ChainId.CELO,
-  ChainId.CELO_ALFAJORES,
-  ChainId.BSC,
-  ChainId.FANTOM,
-  ChainId.GNOSIS,
-  ChainId.KLAYTN,
-
+  ChainId.MANTA,
+  ChainId.MANTA_TESTNET
 ]
 const DEFAULT_TOKEN_LIST = 'https://gateway.ipfs.io/ipns/tokens.uniswap.org'
 
@@ -134,16 +118,8 @@ export abstract class InjectorSOR<Router, QueryParams> extends Injector<
         }
 
         let timeout: number
-        switch (chainId) {
-          case ChainId.ARBITRUM_ONE:
-          case ChainId.ARBITRUM_RINKEBY:
-            timeout = 8000
-            break
-          default:
-            timeout = 5000
-            break
-        }
-
+        timeout = 5000
+        
         const provider = new ethers.providers.JsonRpcProvider(
           {
             url: url,
@@ -173,8 +149,8 @@ export abstract class InjectorSOR<Router, QueryParams> extends Injector<
         // 200*725k < 150m
         let quoteProvider: OnChainQuoteProvider | undefined = undefined
         switch (chainId) {
-          case ChainId.OPTIMISM:
-          case ChainId.OPTIMISTIC_KOVAN:
+          case ChainId.MANTA:
+          case ChainId.MANTA_TESTNET:
             quoteProvider = new OnChainQuoteProvider(
               chainId,
               provider,
@@ -207,40 +183,7 @@ export abstract class InjectorSOR<Router, QueryParams> extends Injector<
               }
             )
             break
-          case ChainId.ARBITRUM_ONE:
-          case ChainId.ARBITRUM_RINKEBY:
-            quoteProvider = new OnChainQuoteProvider(
-              chainId,
-              provider,
-              multicall2Provider,
-              {
-                retries: 2,
-                minTimeout: 100,
-                maxTimeout: 1000,
-              },
-              {
-                multicallChunk: 15,
-                gasLimitPerCall: 15_000_000,
-                quoteMinSuccessRate: 0.15,
-              },
-              {
-                gasLimitOverride: 30_000_000,
-                multicallChunk: 8,
-              },
-              {
-                gasLimitOverride: 30_000_000,
-                multicallChunk: 8,
-              },
-              {
-                baseBlockOffset: 0,
-                rollback: {
-                  enabled: true,
-                  attemptsBeforeRollback: 1,
-                  rollbackBlockOffset: -10,
-                },
-              }
-            )
-            break
+          
         }
 
         const v3PoolProvider = new CachingV3PoolProvider(
