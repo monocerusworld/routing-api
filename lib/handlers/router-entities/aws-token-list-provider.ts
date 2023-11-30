@@ -5,7 +5,7 @@ import {
   ITokenProvider,
   log,
   NodeJSCache,
-} from '@tartz-one/smart-order-router'
+} from '@monocerus/smart-order-router'
 import { TokenList } from '@uniswap/token-lists'
 import S3 from 'aws-sdk/clients/s3'
 import NodeCache from 'node-cache'

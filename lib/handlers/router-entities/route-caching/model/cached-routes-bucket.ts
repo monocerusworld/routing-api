@@ -1,4 +1,4 @@
-import { CacheMode } from '@tartz-one/smart-order-router'
+import { CacheMode } from '@monocerus/smart-order-router'
 
 interface CachedRoutesBucketsArgs {
   /**

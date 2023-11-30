@@ -1,4 +1,4 @@
-import { ChainId, SUPPORTED_CHAINS } from '@tartz-one/smart-order-router'
+import { ChainId, SUPPORTED_CHAINS } from '@monocerus/smart-order-router'
 import * as cdk from 'aws-cdk-lib'
 import { CfnOutput, Duration } from 'aws-cdk-lib'
 import * as aws_apigateway from 'aws-cdk-lib/aws-apigateway'

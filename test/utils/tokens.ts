@@ -60,7 +60,7 @@ import {
   USDT_RINKEBY,
   USDT_ROPSTEN,
   WRAPPED_NATIVE_CURRENCY,
-} from '@tartz-one/smart-order-router'
+} from '@monocerus/smart-order-router'
 import { ethers } from 'ethers'
 import NodeCache from 'node-cache'
 

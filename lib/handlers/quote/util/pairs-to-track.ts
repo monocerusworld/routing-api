@@ -1,5 +1,5 @@
 import { TradeType } from '@uniswap/sdk-core'
-import { ChainId } from '@tartz-one/smart-order-router'
+import { ChainId } from '@monocerus/smart-order-router'
 
 export const PAIRS_TO_TRACK: Map<ChainId, Map<TradeType, string[]>> = new Map([
   [

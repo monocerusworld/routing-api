@@ -1,5 +1,5 @@
 import { CachedRoutesBucket, CachedRoutesStrategy } from '../../../../../../lib/handlers/router-entities/route-caching'
-import { CacheMode, ChainId } from '@tartz-one/smart-order-router'
+import { CacheMode, ChainId } from '@monocerus/smart-order-router'
 import { CurrencyAmount, Token, TradeType } from '@uniswap/sdk-core'
 import { expect } from 'chai'
 

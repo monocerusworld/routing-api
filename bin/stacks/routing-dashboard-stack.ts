@@ -1,4 +1,4 @@
-import { ChainId } from '@tartz-one/smart-order-router'
+import { ChainId } from '@monocerus/smart-order-router'
 import * as cdk from 'aws-cdk-lib'
 import * as aws_cloudwatch from 'aws-cdk-lib/aws-cloudwatch'
 import { Construct } from 'constructs'

@@ -1,4 +1,4 @@
-import { GasPrice, IGasPriceProvider } from '@tartz-one/smart-order-router'
+import { GasPrice, IGasPriceProvider } from '@monocerus/smart-order-router'
 import { BigNumber } from 'ethers'
 
 export class StaticGasPriceProvider implements IGasPriceProvider {

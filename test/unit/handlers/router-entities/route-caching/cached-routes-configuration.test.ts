@@ -1,6 +1,6 @@
 import { expect } from 'chai'
 import { CurrencyAmount, Token, TradeType } from '@uniswap/sdk-core'
-import { CacheMode, ChainId } from '@tartz-one/smart-order-router'
+import { CacheMode, ChainId } from '@monocerus/smart-order-router'
 import {
   CACHED_ROUTES_CONFIGURATION,
   PairTradeTypeChainId,

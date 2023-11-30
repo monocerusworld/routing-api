@@ -1,4 +1,4 @@
-import { IMetric, MetricLoggerUnit } from '@tartz-one/smart-order-router'
+import { IMetric, MetricLoggerUnit } from '@monocerus/smart-order-router'
 import { MetricsLogger as AWSEmbeddedMetricsLogger } from 'aws-embedded-metrics'
 
 export class AWSMetricsLogger implements IMetric {

@@ -1,4 +1,4 @@
-import { SimulationStatus } from '@tartz-one/smart-order-router'
+import { SimulationStatus } from '@monocerus/smart-order-router'
 import Logger from 'bunyan'
 
 export const simulationStatusToString = (simulationStatus: SimulationStatus | undefined, log: Logger) => {
