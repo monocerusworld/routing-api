@@ -187,13 +187,7 @@
    "Properties": {
     "Code": {
      "S3Bucket": "cdk-hnb659fds-assets-978958364414-ap-southeast-1",
-     "S3Key": "564bc34a28ca4b3d07cec29fda01060393e494b2feec42676e6e340d0e2b5454.zip"
-    },
-    "Role": {
-     "Fn::GetAtt": [
-      "RoutingLambdaRole270B0918",
-      "Arn"
-     ]
+     "S3Key": "358d75db6b8e7705d9b315ef2d2d5144848d178c7b7adf6cb30b049d3f25aec1.zip"
     },
     "Description": "Routing Lambda",
     "Environment": {
@@ -219,23 +213,8 @@
       },
       "VERSION": "5",
       "WEB3_RPC_1": "{{resolve:secretsmanager:arn:aws:secretsmanager:ap-southeast-1:978958364414:secret:routing-api-rpc-urls-json-primary-ixS8mw:SecretString:WEB3_RPC_1::}}",
-      "WEB3_RPC_10": "{{resolve:secretsmanager:arn:aws:secretsmanager:ap-southeast-1:978958364414:secret:routing-api-rpc-urls-json-primary-ixS8mw:SecretString:WEB3_RPC_10::}}",
-      "WEB3_RPC_100": "{{resolve:secretsmanager:arn:aws:secretsmanager:ap-southeast-1:978958364414:secret:routing-api-rpc-urls-json-primary-ixS8mw:SecretString:WEB3_RPC_100::}}",
-      "WEB3_RPC_137": "{{resolve:secretsmanager:arn:aws:secretsmanager:ap-southeast-1:978958364414:secret:routing-api-rpc-urls-json-primary-ixS8mw:SecretString:WEB3_RPC_137::}}",
-      "WEB3_RPC_250": "{{resolve:secretsmanager:arn:aws:secretsmanager:ap-southeast-1:978958364414:secret:routing-api-rpc-urls-json-primary-ixS8mw:SecretString:WEB3_RPC_250::}}",
-      "WEB3_RPC_3": "{{resolve:secretsmanager:arn:aws:secretsmanager:ap-southeast-1:978958364414:secret:routing-api-rpc-urls-json-primary-ixS8mw:SecretString:WEB3_RPC_3::}}",
-      "WEB3_RPC_4": "{{resolve:secretsmanager:arn:aws:secretsmanager:ap-southeast-1:978958364414:secret:routing-api-rpc-urls-json-primary-ixS8mw:SecretString:WEB3_RPC_4::}}",
-      "WEB3_RPC_42": "{{resolve:secretsmanager:arn:aws:secretsmanager:ap-southeast-1:978958364414:secret:routing-api-rpc-urls-json-primary-ixS8mw:SecretString:WEB3_RPC_42::}}",
-      "WEB3_RPC_42161": "{{resolve:secretsmanager:arn:aws:secretsmanager:ap-southeast-1:978958364414:secret:routing-api-rpc-urls-json-primary-ixS8mw:SecretString:WEB3_RPC_42161::}}",
-      "WEB3_RPC_421611": "{{resolve:secretsmanager:arn:aws:secretsmanager:ap-southeast-1:978958364414:secret:routing-api-rpc-urls-json-primary-ixS8mw:SecretString:WEB3_RPC_421611::}}",
-      "WEB3_RPC_421613": "{{resolve:secretsmanager:arn:aws:secretsmanager:ap-southeast-1:978958364414:secret:routing-api-rpc-urls-json-primary-ixS8mw:SecretString:WEB3_RPC_421613::}}",
-      "WEB3_RPC_42220": "{{resolve:secretsmanager:arn:aws:secretsmanager:ap-southeast-1:978958364414:secret:routing-api-rpc-urls-json-primary-ixS8mw:SecretString:WEB3_RPC_42220::}}",
-      "WEB3_RPC_44787": "{{resolve:secretsmanager:arn:aws:secretsmanager:ap-southeast-1:978958364414:secret:routing-api-rpc-urls-json-primary-ixS8mw:SecretString:WEB3_RPC_44787::}}",
-      "WEB3_RPC_5": "{{resolve:secretsmanager:arn:aws:secretsmanager:ap-southeast-1:978958364414:secret:routing-api-rpc-urls-json-primary-ixS8mw:SecretString:WEB3_RPC_5::}}",
-      "WEB3_RPC_56": "{{resolve:secretsmanager:arn:aws:secretsmanager:ap-southeast-1:978958364414:secret:routing-api-rpc-urls-json-primary-ixS8mw:SecretString:WEB3_RPC_56::}}",
-      "WEB3_RPC_69": "{{resolve:secretsmanager:arn:aws:secretsmanager:ap-southeast-1:978958364414:secret:routing-api-rpc-urls-json-primary-ixS8mw:SecretString:WEB3_RPC_69::}}",
-      "WEB3_RPC_80001": "{{resolve:secretsmanager:arn:aws:secretsmanager:ap-southeast-1:978958364414:secret:routing-api-rpc-urls-json-primary-ixS8mw:SecretString:WEB3_RPC_80001::}}",
-      "WEB3_RPC_8217": "{{resolve:secretsmanager:arn:aws:secretsmanager:ap-southeast-1:978958364414:secret:routing-api-rpc-urls-json-primary-ixS8mw:SecretString:WEB3_RPC_8217::}}"
+      "WEB3_RPC_169": "{{resolve:secretsmanager:arn:aws:secretsmanager:ap-southeast-1:978958364414:secret:routing-api-rpc-urls-json-primary-ixS8mw:SecretString:WEB3_RPC_169::}}",
+      "WEB3_RPC_3441005": "{{resolve:secretsmanager:arn:aws:secretsmanager:ap-southeast-1:978958364414:secret:routing-api-rpc-urls-json-primary-ixS8mw:SecretString:WEB3_RPC_3441005::}}"
      }
     },
     "Handler": "index.quoteHandler",
@@ -243,6 +222,12 @@
      "arn:aws:lambda:ap-southeast-1:580247275435:layer:LambdaInsightsExtension:14"
     ],
     "MemorySize": 1024,
+    "Role": {
+     "Fn::GetAtt": [
+      "RoutingLambdaRole270B0918",
+      "Arn"
+     ]
+    },
     "Runtime": "nodejs14.x",
     "Timeout": 29,
     "TracingConfig": {
@@ -255,12 +240,12 @@
    ],
    "Metadata": {
     "aws:cdk:path": "RoutingAPIPipelineStack/prod-ap-southeast-1/RoutingAPIStack/RoutingLambdaStack/RoutingLambda2/Resource",
-    "aws:asset:path": "../asset.564bc34a28ca4b3d07cec29fda01060393e494b2feec42676e6e340d0e2b5454",
+    "aws:asset:path": "../asset.358d75db6b8e7705d9b315ef2d2d5144848d178c7b7adf6cb30b049d3f25aec1",
     "aws:asset:is-bundled": true,
     "aws:asset:property": "Code"
    }
   },
-  "RoutingLambda2CurrentVersion49A1BB94667b43a8a6cb8368027732f65ffee36e": {
+  "RoutingLambda2CurrentVersion49A1BB9449d4efca2698bdc5c35a7a78f97fc693": {
    "Type": "AWS::Lambda::Version",
    "Properties": {
     "FunctionName": {
@@ -276,13 +261,7 @@
    "Properties": {
     "Code": {
      "S3Bucket": "cdk-hnb659fds-assets-978958364414-ap-southeast-1",
-     "S3Key": "564bc34a28ca4b3d07cec29fda01060393e494b2feec42676e6e340d0e2b5454.zip"
-    },
-    "Role": {
-     "Fn::GetAtt": [
-      "RoutingLambdaRole270B0918",
-      "Arn"
-     ]
+     "S3Key": "358d75db6b8e7705d9b315ef2d2d5144848d178c7b7adf6cb30b049d3f25aec1.zip"
     },
     "Description": "Route to Ratio Lambda",
     "Environment": {
@@ -304,23 +283,8 @@
        "Ref": "referencetoRoutingAPIPipelineStackprodapsoutheast1RoutingAPIStackRoutingDatabaseStackNestedStackRoutingDatabaseStackNestedStackResource25647FAFOutputsRoutingAPIPipelineStackprodapsoutheast1RoutingAPIStackRoutingDatabaseStackRouteCacheDB178F9644Ref"
       },
       "WEB3_RPC_1": "{{resolve:secretsmanager:arn:aws:secretsmanager:ap-southeast-1:978958364414:secret:routing-api-rpc-urls-json-primary-ixS8mw:SecretString:WEB3_RPC_1::}}",
-      "WEB3_RPC_4": "{{resolve:secretsmanager:arn:aws:secretsmanager:ap-southeast-1:978958364414:secret:routing-api-rpc-urls-json-primary-ixS8mw:SecretString:WEB3_RPC_4::}}",
-      "WEB3_RPC_3": "{{resolve:secretsmanager:arn:aws:secretsmanager:ap-southeast-1:978958364414:secret:routing-api-rpc-urls-json-primary-ixS8mw:SecretString:WEB3_RPC_3::}}",
-      "WEB3_RPC_42": "{{resolve:secretsmanager:arn:aws:secretsmanager:ap-southeast-1:978958364414:secret:routing-api-rpc-urls-json-primary-ixS8mw:SecretString:WEB3_RPC_42::}}",
-      "WEB3_RPC_10": "{{resolve:secretsmanager:arn:aws:secretsmanager:ap-southeast-1:978958364414:secret:routing-api-rpc-urls-json-primary-ixS8mw:SecretString:WEB3_RPC_10::}}",
-      "WEB3_RPC_69": "{{resolve:secretsmanager:arn:aws:secretsmanager:ap-southeast-1:978958364414:secret:routing-api-rpc-urls-json-primary-ixS8mw:SecretString:WEB3_RPC_69::}}",
-      "WEB3_RPC_42161": "{{resolve:secretsmanager:arn:aws:secretsmanager:ap-southeast-1:978958364414:secret:routing-api-rpc-urls-json-primary-ixS8mw:SecretString:WEB3_RPC_42161::}}",
-      "WEB3_RPC_421611": "{{resolve:secretsmanager:arn:aws:secretsmanager:ap-southeast-1:978958364414:secret:routing-api-rpc-urls-json-primary-ixS8mw:SecretString:WEB3_RPC_421611::}}",
-      "WEB3_RPC_421613": "{{resolve:secretsmanager:arn:aws:secretsmanager:ap-southeast-1:978958364414:secret:routing-api-rpc-urls-json-primary-ixS8mw:SecretString:WEB3_RPC_421613::}}",
-      "WEB3_RPC_137": "{{resolve:secretsmanager:arn:aws:secretsmanager:ap-southeast-1:978958364414:secret:routing-api-rpc-urls-json-primary-ixS8mw:SecretString:WEB3_RPC_137::}}",
-      "WEB3_RPC_80001": "{{resolve:secretsmanager:arn:aws:secretsmanager:ap-southeast-1:978958364414:secret:routing-api-rpc-urls-json-primary-ixS8mw:SecretString:WEB3_RPC_80001::}}",
-      "WEB3_RPC_5": "{{resolve:secretsmanager:arn:aws:secretsmanager:ap-southeast-1:978958364414:secret:routing-api-rpc-urls-json-primary-ixS8mw:SecretString:WEB3_RPC_5::}}",
-      "WEB3_RPC_42220": "{{resolve:secretsmanager:arn:aws:secretsmanager:ap-southeast-1:978958364414:secret:routing-api-rpc-urls-json-primary-ixS8mw:SecretString:WEB3_RPC_42220::}}",
-      "WEB3_RPC_44787": "{{resolve:secretsmanager:arn:aws:secretsmanager:ap-southeast-1:978958364414:secret:routing-api-rpc-urls-json-primary-ixS8mw:SecretString:WEB3_RPC_44787::}}",
-      "WEB3_RPC_56": "{{resolve:secretsmanager:arn:aws:secretsmanager:ap-southeast-1:978958364414:secret:routing-api-rpc-urls-json-primary-ixS8mw:SecretString:WEB3_RPC_56::}}",
-      "WEB3_RPC_250": "{{resolve:secretsmanager:arn:aws:secretsmanager:ap-southeast-1:978958364414:secret:routing-api-rpc-urls-json-primary-ixS8mw:SecretString:WEB3_RPC_250::}}",
-      "WEB3_RPC_100": "{{resolve:secretsmanager:arn:aws:secretsmanager:ap-southeast-1:978958364414:secret:routing-api-rpc-urls-json-primary-ixS8mw:SecretString:WEB3_RPC_100::}}",
-      "WEB3_RPC_8217": "{{resolve:secretsmanager:arn:aws:secretsmanager:ap-southeast-1:978958364414:secret:routing-api-rpc-urls-json-primary-ixS8mw:SecretString:WEB3_RPC_8217::}}",
+      "WEB3_RPC_169": "{{resolve:secretsmanager:arn:aws:secretsmanager:ap-southeast-1:978958364414:secret:routing-api-rpc-urls-json-primary-ixS8mw:SecretString:WEB3_RPC_169::}}",
+      "WEB3_RPC_3441005": "{{resolve:secretsmanager:arn:aws:secretsmanager:ap-southeast-1:978958364414:secret:routing-api-rpc-urls-json-primary-ixS8mw:SecretString:WEB3_RPC_3441005::}}",
       "AWS_NODEJS_CONNECTION_REUSE_ENABLED": "1"
      }
     },
@@ -329,6 +293,12 @@
      "arn:aws:lambda:ap-southeast-1:580247275435:layer:LambdaInsightsExtension:14"
     ],
     "MemorySize": 1024,
+    "Role": {
+     "Fn::GetAtt": [
+      "RoutingLambdaRole270B0918",
+      "Arn"
+     ]
+    },
     "Runtime": "nodejs14.x",
     "Timeout": 29,
     "TracingConfig": {
@@ -341,7 +311,7 @@
    ],
    "Metadata": {
     "aws:cdk:path": "RoutingAPIPipelineStack/prod-ap-southeast-1/RoutingAPIStack/RoutingLambdaStack/RouteToRatioLambda2/Resource",
-    "aws:asset:path": "../asset.564bc34a28ca4b3d07cec29fda01060393e494b2feec42676e6e340d0e2b5454",
+    "aws:asset:path": "../asset.358d75db6b8e7705d9b315ef2d2d5144848d178c7b7adf6cb30b049d3f25aec1",
     "aws:asset:is-bundled": true,
     "aws:asset:property": "Code"
    }
@@ -349,11 +319,11 @@
   "RoutingAPILambdaErrorRate660C8652": {
    "Type": "AWS::CloudWatch::Alarm",
    "Properties": {
-    "ComparisonOperator": "GreaterThanOrEqualToThreshold",
-    "EvaluationPeriods": 3,
     "AlarmActions": [
      "arn:aws:sns:ap-southeast-1:978958364414:SlackChatbotTopic"
     ],
+    "ComparisonOperator": "GreaterThanOrEqualToThreshold",
+    "EvaluationPeriods": 3,
     "Metrics": [
      {
       "Expression": "errors / invocations",
@@ -409,11 +379,10 @@
   "RoutingAPILambdaThrottles43ABF291": {
    "Type": "AWS::CloudWatch::Alarm",
    "Properties": {
-    "ComparisonOperator": "GreaterThanOrEqualToThreshold",
-    "EvaluationPeriods": 3,
     "AlarmActions": [
      "arn:aws:sns:ap-southeast-1:978958364414:SlackChatbotTopic"
     ],
+    "ComparisonOperator": "GreaterThanOrEqualToThreshold",
     "Dimensions": [
      {
       "Name": "FunctionName",
@@ -422,6 +391,7 @@
       }
      }
     ],
+    "EvaluationPeriods": 3,
     "MetricName": "Throttles",
     "Namespace": "AWS/Lambda",
     "Period": 300,
@@ -440,7 +410,7 @@
     },
     "FunctionVersion": {
      "Fn::GetAtt": [
-      "RoutingLambda2CurrentVersion49A1BB94667b43a8a6cb8368027732f65ffee36e",
+      "RoutingLambda2CurrentVersion49A1BB9449d4efca2698bdc5c35a7a78f97fc693",
       "Version"
      ]
     },
@@ -534,7 +504,7 @@
   "CDKMetadata": {
    "Type": "AWS::CDK::Metadata",
    "Properties": {
-    "Analytics": "v2:deflate64:H4sIAAAAAAAA/11QQU7DMBB8C3d3KQXBOUXqsUJJxDXaOCY4cewoa1MhK39n7RQQnGY8o1nvzgGeHmB/gxfayW7cGd1CPCvyqqs8ylGw0USNE8TSGSWe32zGF2e0/EzPja3C4NR22FjXqYHgnOEUrPTaWUH3DRIpT1Ak4DccgxyVPyKpaxQiT/tJvKqFErL2TQujkZKQySqkcaG7oJfvEAuDy7R5TFZBlqB2s5b5A5xnXhLTYAzekUSjbQ+xYoKtUTUuPW/F8X/KBvXCTXCg2nK/t/8R1lWUilxYpBL5Si6wZzd3djVWkfqBgW4/7h7hsOfmB9J6twTr9aSg3PALkVHhApUBAAA="
+    "Analytics": "v2:deflate64:H4sIAAAAAAAA/12QQW+DMAyFf0vvqVfWy3aklXasplLtioxxmSEkVRyGJsR/nwLdpu30PT/r2bIfIcsy2G1w1C3V3dZKBdOJNXJdRKTO4KjlJNjDdPaWzfHqFr56K/SZylXNxmJf1Vg6X3OrcFrwMjiK4p3RfYmqHBXyBKN7OAzUcTyg8j0K0/HqfhJvHDTxeHXfMreCmoxFzIasH+oRI73DlFsM/drD0M9GncLF34SWBXi7WSFMg3GIXgmtuAamgtBiZfmCoeGY4v+cFZeA1IlrijX3e/sfY57NmdUPgdgsVxYRG3HN8rN7YzbpP9Dqw0f2BNkz7DatimzD4KL0DOeVX1wlSRmWAQAA"
    },
    "Metadata": {
     "aws:cdk:path": "RoutingAPIPipelineStack/prod-ap-southeast-1/RoutingAPIStack/RoutingLambdaStack/CDKMetadata/Default"

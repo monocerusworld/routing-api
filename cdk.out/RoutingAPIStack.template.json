@@ -19,7 +19,7 @@
        {
         "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
        },
-       "/63d72d999a9b7cdb7d7063998937be88b1d35b6bce75d0ce879802d032902025.json"
+       "/03f3226fc7b70862bb04238ae0a833372109381166b2ea1bf7757f6ba74792d6.json"
       ]
      ]
     }
@@ -51,7 +51,7 @@
        {
         "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
        },
-       "/f16ce1606ddbc202bacb1f4cde7f5e453aad3f16b0978a745b8cdeff5d1b1802.json"
+       "/9b53cbe3a7bb6d5b2491fde32ab1b3fe78729a1f1581fe79bd3798a57b5f505e.json"
       ]
      ]
     }
@@ -67,26 +67,6 @@
   "RoutingLambdaStackNestedStackRoutingLambdaStackNestedStackResource809DEBCF": {
    "Type": "AWS::CloudFormation::Stack",
    "Properties": {
-    "TemplateURL": {
-     "Fn::Join": [
-      "",
-      [
-       "https://s3.",
-       {
-        "Ref": "AWS::Region"
-       },
-       ".",
-       {
-        "Ref": "AWS::URLSuffix"
-       },
-       "/",
-       {
-        "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
-       },
-       "/65c25508b501f9da9ae999cd1c64b58de757d90d5e6b9448a76d766f808b5349.json"
-      ]
-     ]
-    },
     "Parameters": {
      "referencetoRoutingAPIStackRoutingCachingStackNestedStackRoutingCachingStackNestedStackResource3F7983BFOutputsRoutingAPIStackRoutingCachingStackPoolCacheBucket620A121AArn": {
       "Fn::GetAtt": [
@@ -136,6 +116,26 @@
        "Outputs.RoutingAPIStackRoutingCachingStackTokenListCacheBucket5B090E54Ref"
       ]
      }
+    },
+    "TemplateURL": {
+     "Fn::Join": [
+      "",
+      [
+       "https://s3.",
+       {
+        "Ref": "AWS::Region"
+       },
+       ".",
+       {
+        "Ref": "AWS::URLSuffix"
+       },
+       "/",
+       {
+        "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
+       },
+       "/acd53301834787e80896cbf1439af57dc86b9362512878948e17237a1a9c775d.json"
+      ]
+     ]
     }
    },
    "UpdateReplacePolicy": "Delete",
@@ -221,13 +221,13 @@
     "aws:cdk:path": "RoutingAPIStack/routing-api/Account"
    }
   },
-  "routingapiDeploymentB21C3ACB3a21c53dd7933e9d105bf04b8bda9fe5": {
+  "routingapiDeploymentB21C3ACBed1c9c57df57138acc19a935aee5f070": {
    "Type": "AWS::ApiGateway::Deployment",
    "Properties": {
+    "Description": "Automatically created by the RestApi construct",
     "RestApiId": {
      "Ref": "routingapiA6A29457"
-    },
-    "Description": "Automatically created by the RestApi construct"
+    }
    },
    "DependsOn": [
     "routingapiOPTIONSC8A73B96",
@@ -245,9 +245,6 @@
   "routingapiDeploymentStageprod8BE7ABCF": {
    "Type": "AWS::ApiGateway::Stage",
    "Properties": {
-    "RestApiId": {
-     "Ref": "routingapiA6A29457"
-    },
     "AccessLogSetting": {
      "DestinationArn": {
       "Fn::GetAtt": [
@@ -258,7 +255,7 @@
      "Format": "{\"requestId\":\"$context.requestId\",\"requestTime\":\"$context.requestTime\",\"httpMethod\":\"$context.httpMethod\",\"resourcePath\":\"$context.resourcePath\",\"status\":\"$context.status\",\"protocol\":\"$context.protocol\",\"responseLength\":\"$context.responseLength\"}"
     },
     "DeploymentId": {
-     "Ref": "routingapiDeploymentB21C3ACB3a21c53dd7933e9d105bf04b8bda9fe5"
+     "Ref": "routingapiDeploymentB21C3ACBed1c9c57df57138acc19a935aee5f070"
     },
     "MethodSettings": [
      {
@@ -268,6 +265,9 @@
       "ResourcePath": "/*"
      }
     ],
+    "RestApiId": {
+     "Ref": "routingapiA6A29457"
+    },
     "StageName": "prod",
     "TracingEnabled": true
    },
@@ -281,17 +281,9 @@
   "routingapiOPTIONSC8A73B96": {
    "Type": "AWS::ApiGateway::Method",
    "Properties": {
-    "HttpMethod": "OPTIONS",
-    "ResourceId": {
-     "Fn::GetAtt": [
-      "routingapiA6A29457",
-      "RootResourceId"
-     ]
-    },
-    "RestApiId": {
-     "Ref": "routingapiA6A29457"
-    },
+    "ApiKeyRequired": false,
     "AuthorizationType": "NONE",
+    "HttpMethod": "OPTIONS",
     "Integration": {
      "IntegrationResponses": [
       {
@@ -317,7 +309,16 @@
       },
       "StatusCode": "204"
      }
-    ]
+    ],
+    "ResourceId": {
+     "Fn::GetAtt": [
+      "routingapiA6A29457",
+      "RootResourceId"
+     ]
+    },
+    "RestApiId": {
+     "Ref": "routingapiA6A29457"
+    }
    },
    "Metadata": {
     "aws:cdk:path": "RoutingAPIStack/routing-api/Default/OPTIONS/Resource"
@@ -344,14 +345,9 @@
   "routingapiquoteOPTIONS5FC9C216": {
    "Type": "AWS::ApiGateway::Method",
    "Properties": {
-    "HttpMethod": "OPTIONS",
-    "ResourceId": {
-     "Ref": "routingapiquoteCE190E63"
-    },
-    "RestApiId": {
-     "Ref": "routingapiA6A29457"
-    },
+    "ApiKeyRequired": false,
     "AuthorizationType": "NONE",
+    "HttpMethod": "OPTIONS",
     "Integration": {
      "IntegrationResponses": [
       {
@@ -377,7 +373,13 @@
       },
       "StatusCode": "204"
      }
-    ]
+    ],
+    "ResourceId": {
+     "Ref": "routingapiquoteCE190E63"
+    },
+    "RestApiId": {
+     "Ref": "routingapiA6A29457"
+    }
    },
    "Metadata": {
     "aws:cdk:path": "RoutingAPIStack/routing-api/Default/quote/OPTIONS/Resource"
@@ -470,14 +472,8 @@
   "routingapiquoteGETA533B14B": {
    "Type": "AWS::ApiGateway::Method",
    "Properties": {
-    "HttpMethod": "GET",
-    "ResourceId": {
-     "Ref": "routingapiquoteCE190E63"
-    },
-    "RestApiId": {
-     "Ref": "routingapiA6A29457"
-    },
     "AuthorizationType": "NONE",
+    "HttpMethod": "GET",
     "Integration": {
      "IntegrationHttpMethod": "POST",
      "Type": "AWS_PROXY",
@@ -504,6 +500,12 @@
        ]
       ]
      }
+    },
+    "ResourceId": {
+     "Ref": "routingapiquoteCE190E63"
+    },
+    "RestApiId": {
+     "Ref": "routingapiA6A29457"
     }
    },
    "Metadata": {
@@ -531,14 +533,9 @@
   "routingapiquoteToRatioOPTIONS87EF7538": {
    "Type": "AWS::ApiGateway::Method",
    "Properties": {
-    "HttpMethod": "OPTIONS",
-    "ResourceId": {
-     "Ref": "routingapiquoteToRatio040AC04F"
-    },
-    "RestApiId": {
-     "Ref": "routingapiA6A29457"
-    },
+    "ApiKeyRequired": false,
     "AuthorizationType": "NONE",
+    "HttpMethod": "OPTIONS",
     "Integration": {
      "IntegrationResponses": [
       {
@@ -564,7 +561,13 @@
       },
       "StatusCode": "204"
      }
-    ]
+    ],
+    "ResourceId": {
+     "Ref": "routingapiquoteToRatio040AC04F"
+    },
+    "RestApiId": {
+     "Ref": "routingapiA6A29457"
+    }
    },
    "Metadata": {
     "aws:cdk:path": "RoutingAPIStack/routing-api/Default/quoteToRatio/OPTIONS/Resource"
@@ -657,14 +660,8 @@
   "routingapiquoteToRatioGET9A57B6E8": {
    "Type": "AWS::ApiGateway::Method",
    "Properties": {
-    "HttpMethod": "GET",
-    "ResourceId": {
-     "Ref": "routingapiquoteToRatio040AC04F"
-    },
-    "RestApiId": {
-     "Ref": "routingapiA6A29457"
-    },
     "AuthorizationType": "NONE",
+    "HttpMethod": "GET",
     "Integration": {
      "IntegrationHttpMethod": "POST",
      "Type": "AWS_PROXY",
@@ -691,6 +688,12 @@
        ]
       ]
      }
+    },
+    "ResourceId": {
+     "Ref": "routingapiquoteToRatio040AC04F"
+    },
+    "RestApiId": {
+     "Ref": "routingapiA6A29457"
     }
    },
    "Metadata": {
@@ -700,20 +703,14 @@
   "RoutingAPIIPThrottlingACL": {
    "Type": "AWS::WAFv2::WebACL",
    "Properties": {
-    "DefaultAction": {
-     "Allow": {}
-    },
-    "Scope": "REGIONAL",
-    "VisibilityConfig": {
-     "CloudWatchMetricsEnabled": true,
-     "MetricName": "RoutingAPIIPBasedThrottling",
-     "SampledRequestsEnabled": true
-    },
     "CustomResponseBodies": {
      "RoutingAPIThrottledResponseBody": {
       "Content": "{\"errorCode\": \"TOO_MANY_REQUESTS\"}",
       "ContentType": "APPLICATION_JSON"
      }
+    },
+    "DefaultAction": {
+     "Allow": {}
     },
     "Name": "RoutingAPIIPThrottling",
     "Rules": [
@@ -744,7 +741,13 @@
        "SampledRequestsEnabled": true
       }
      }
-    ]
+    ],
+    "Scope": "REGIONAL",
+    "VisibilityConfig": {
+     "CloudWatchMetricsEnabled": true,
+     "MetricName": "RoutingAPIIPBasedThrottling",
+     "SampledRequestsEnabled": true
+    }
    },
    "Metadata": {
     "aws:cdk:path": "RoutingAPIStack/RoutingAPIIPThrottlingACL"
@@ -786,6 +789,38 @@
   "RoutingDashboardStackNestedStackRoutingDashboardStackNestedStackResourceDF805217": {
    "Type": "AWS::CloudFormation::Stack",
    "Properties": {
+    "Parameters": {
+     "referencetoRoutingAPIStackRoutingLambdaStackNestedStackRoutingLambdaStackNestedStackResourceDEF5B513OutputsRoutingAPIStackRoutingLambdaStackRoutingLambda21C774982Ref": {
+      "Fn::GetAtt": [
+       "RoutingLambdaStackNestedStackRoutingLambdaStackNestedStackResource809DEBCF",
+       "Outputs.RoutingAPIStackRoutingLambdaStackRoutingLambda21C774982Ref"
+      ]
+     },
+     "referencetoRoutingAPIStackRoutingCachingStackNestedStackRoutingCachingStackNestedStackResource3F7983BFOutputsRoutingAPIStackRoutingCachingStackPoolCacheLambdaChainId1ProtocolV3556BA5B9Ref": {
+      "Fn::GetAtt": [
+       "RoutingCachingStackNestedStackRoutingCachingStackNestedStackResource5CAB1140",
+       "Outputs.RoutingAPIStackRoutingCachingStackPoolCacheLambdaChainId1ProtocolV3556BA5B9Ref"
+      ]
+     },
+     "referencetoRoutingAPIStackRoutingCachingStackNestedStackRoutingCachingStackNestedStackResource3F7983BFOutputsRoutingAPIStackRoutingCachingStackPoolCacheLambdaChainId169ProtocolV35359872ERef": {
+      "Fn::GetAtt": [
+       "RoutingCachingStackNestedStackRoutingCachingStackNestedStackResource5CAB1140",
+       "Outputs.RoutingAPIStackRoutingCachingStackPoolCacheLambdaChainId169ProtocolV35359872ERef"
+      ]
+     },
+     "referencetoRoutingAPIStackRoutingCachingStackNestedStackRoutingCachingStackNestedStackResource3F7983BFOutputsRoutingAPIStackRoutingCachingStackPoolCacheLambdaChainId3441005ProtocolV3E6467D47Ref": {
+      "Fn::GetAtt": [
+       "RoutingCachingStackNestedStackRoutingCachingStackNestedStackResource5CAB1140",
+       "Outputs.RoutingAPIStackRoutingCachingStackPoolCacheLambdaChainId3441005ProtocolV3E6467D47Ref"
+      ]
+     },
+     "referencetoRoutingAPIStackRoutingCachingStackNestedStackRoutingCachingStackNestedStackResource3F7983BFOutputsRoutingAPIStackRoutingCachingStackPoolCacheLambdaChainId1ProtocolV21B153C9DRef": {
+      "Fn::GetAtt": [
+       "RoutingCachingStackNestedStackRoutingCachingStackNestedStackResource5CAB1140",
+       "Outputs.RoutingAPIStackRoutingCachingStackPoolCacheLambdaChainId1ProtocolV21B153C9DRef"
+      ]
+     }
+    },
     "TemplateURL": {
      "Fn::Join": [
       "",
@@ -802,53 +837,9 @@
        {
         "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
        },
-       "/a4fe69e72f36aa1a0d653a5238130d09ce3f0bc9dbacb86e3d36d6e8e7f13d32.json"
+       "/17f5701c00c06c4927d271271844106c9153dcb39004cf949223f5ebace8dd57.json"
       ]
      ]
-    },
-    "Parameters": {
-     "referencetoRoutingAPIStackRoutingLambdaStackNestedStackRoutingLambdaStackNestedStackResourceDEF5B513OutputsRoutingAPIStackRoutingLambdaStackRoutingLambda21C774982Ref": {
-      "Fn::GetAtt": [
-       "RoutingLambdaStackNestedStackRoutingLambdaStackNestedStackResource809DEBCF",
-       "Outputs.RoutingAPIStackRoutingLambdaStackRoutingLambda21C774982Ref"
-      ]
-     },
-     "referencetoRoutingAPIStackRoutingCachingStackNestedStackRoutingCachingStackNestedStackResource3F7983BFOutputsRoutingAPIStackRoutingCachingStackPoolCacheLambdaChainId1ProtocolV3556BA5B9Ref": {
-      "Fn::GetAtt": [
-       "RoutingCachingStackNestedStackRoutingCachingStackNestedStackResource5CAB1140",
-       "Outputs.RoutingAPIStackRoutingCachingStackPoolCacheLambdaChainId1ProtocolV3556BA5B9Ref"
-      ]
-     },
-     "referencetoRoutingAPIStackRoutingCachingStackNestedStackRoutingCachingStackNestedStackResource3F7983BFOutputsRoutingAPIStackRoutingCachingStackPoolCacheLambdaChainId42161ProtocolV3A560094ARef": {
-      "Fn::GetAtt": [
-       "RoutingCachingStackNestedStackRoutingCachingStackNestedStackResource5CAB1140",
-       "Outputs.RoutingAPIStackRoutingCachingStackPoolCacheLambdaChainId42161ProtocolV3A560094ARef"
-      ]
-     },
-     "referencetoRoutingAPIStackRoutingCachingStackNestedStackRoutingCachingStackNestedStackResource3F7983BFOutputsRoutingAPIStackRoutingCachingStackPoolCacheLambdaChainId137ProtocolV38017E3D2Ref": {
-      "Fn::GetAtt": [
-       "RoutingCachingStackNestedStackRoutingCachingStackNestedStackResource5CAB1140",
-       "Outputs.RoutingAPIStackRoutingCachingStackPoolCacheLambdaChainId137ProtocolV38017E3D2Ref"
-      ]
-     },
-     "referencetoRoutingAPIStackRoutingCachingStackNestedStackRoutingCachingStackNestedStackResource3F7983BFOutputsRoutingAPIStackRoutingCachingStackPoolCacheLambdaChainId42220ProtocolV3F1E89A58Ref": {
-      "Fn::GetAtt": [
-       "RoutingCachingStackNestedStackRoutingCachingStackNestedStackResource5CAB1140",
-       "Outputs.RoutingAPIStackRoutingCachingStackPoolCacheLambdaChainId42220ProtocolV3F1E89A58Ref"
-      ]
-     },
-     "referencetoRoutingAPIStackRoutingCachingStackNestedStackRoutingCachingStackNestedStackResource3F7983BFOutputsRoutingAPIStackRoutingCachingStackPoolCacheLambdaChainId56ProtocolV391DB5ADARef": {
-      "Fn::GetAtt": [
-       "RoutingCachingStackNestedStackRoutingCachingStackNestedStackResource5CAB1140",
-       "Outputs.RoutingAPIStackRoutingCachingStackPoolCacheLambdaChainId56ProtocolV391DB5ADARef"
-      ]
-     },
-     "referencetoRoutingAPIStackRoutingCachingStackNestedStackRoutingCachingStackNestedStackResource3F7983BFOutputsRoutingAPIStackRoutingCachingStackPoolCacheLambdaChainId1ProtocolV21B153C9DRef": {
-      "Fn::GetAtt": [
-       "RoutingCachingStackNestedStackRoutingCachingStackNestedStackResource5CAB1140",
-       "Outputs.RoutingAPIStackRoutingCachingStackPoolCacheLambdaChainId1ProtocolV21B153C9DRef"
-      ]
-     }
     }
    },
    "UpdateReplacePolicy": "Delete",
@@ -862,15 +853,15 @@
   "RoutingAPISEV25XXAlarm44598BE4": {
    "Type": "AWS::CloudWatch::Alarm",
    "Properties": {
-    "ComparisonOperator": "GreaterThanOrEqualToThreshold",
-    "EvaluationPeriods": 3,
     "AlarmName": "RoutingAPI-SEV2-5XX",
+    "ComparisonOperator": "GreaterThanOrEqualToThreshold",
     "Dimensions": [
      {
       "Name": "ApiName",
       "Value": "Routing API"
      }
     ],
+    "EvaluationPeriods": 3,
     "MetricName": "5XXError",
     "Namespace": "AWS/ApiGateway",
     "Period": 300,
@@ -884,15 +875,15 @@
   "RoutingAPISEV24XXAlarmEAC7EDAA": {
    "Type": "AWS::CloudWatch::Alarm",
    "Properties": {
-    "ComparisonOperator": "GreaterThanOrEqualToThreshold",
-    "EvaluationPeriods": 3,
     "AlarmName": "RoutingAPI-SEV2-4XX",
+    "ComparisonOperator": "GreaterThanOrEqualToThreshold",
     "Dimensions": [
      {
       "Name": "ApiName",
       "Value": "Routing API"
      }
     ],
+    "EvaluationPeriods": 3,
     "MetricName": "4XXError",
     "Namespace": "AWS/ApiGateway",
     "Period": 300,
@@ -906,15 +897,15 @@
   "RoutingAPISEV2LatencyA6B1019A": {
    "Type": "AWS::CloudWatch::Alarm",
    "Properties": {
-    "ComparisonOperator": "GreaterThanOrEqualToThreshold",
-    "EvaluationPeriods": 3,
     "AlarmName": "RoutingAPI-SEV2-Latency",
+    "ComparisonOperator": "GreaterThanOrEqualToThreshold",
     "Dimensions": [
      {
       "Name": "ApiName",
       "Value": "Routing API"
      }
     ],
+    "EvaluationPeriods": 3,
     "ExtendedStatistic": "p90",
     "MetricName": "Latency",
     "Namespace": "AWS/ApiGateway",
@@ -928,15 +919,15 @@
   "RoutingAPISEV35XXAlarm1A98106B": {
    "Type": "AWS::CloudWatch::Alarm",
    "Properties": {
-    "ComparisonOperator": "GreaterThanOrEqualToThreshold",
-    "EvaluationPeriods": 3,
     "AlarmName": "RoutingAPI-SEV3-5XX",
+    "ComparisonOperator": "GreaterThanOrEqualToThreshold",
     "Dimensions": [
      {
       "Name": "ApiName",
       "Value": "Routing API"
      }
     ],
+    "EvaluationPeriods": 3,
     "MetricName": "5XXError",
     "Namespace": "AWS/ApiGateway",
     "Period": 300,
@@ -950,15 +941,15 @@
   "RoutingAPISEV34XXAlarm90CADBEF": {
    "Type": "AWS::CloudWatch::Alarm",
    "Properties": {
-    "ComparisonOperator": "GreaterThanOrEqualToThreshold",
-    "EvaluationPeriods": 3,
     "AlarmName": "RoutingAPI-SEV3-4XX",
+    "ComparisonOperator": "GreaterThanOrEqualToThreshold",
     "Dimensions": [
      {
       "Name": "ApiName",
       "Value": "Routing API"
      }
     ],
+    "EvaluationPeriods": 3,
     "MetricName": "4XXError",
     "Namespace": "AWS/ApiGateway",
     "Period": 300,
@@ -972,15 +963,15 @@
   "RoutingAPISEV3LatencyC60ADA63": {
    "Type": "AWS::CloudWatch::Alarm",
    "Properties": {
-    "ComparisonOperator": "GreaterThanOrEqualToThreshold",
-    "EvaluationPeriods": 3,
     "AlarmName": "RoutingAPI-SEV3-Latency",
+    "ComparisonOperator": "GreaterThanOrEqualToThreshold",
     "Dimensions": [
      {
       "Name": "ApiName",
       "Value": "Routing API"
      }
     ],
+    "EvaluationPeriods": 3,
     "ExtendedStatistic": "p90",
     "MetricName": "Latency",
     "Namespace": "AWS/ApiGateway",
@@ -994,9 +985,9 @@
   "RoutingAPISEV3Simulation151B9C9C": {
    "Type": "AWS::CloudWatch::Alarm",
    "Properties": {
+    "AlarmName": "RoutingAPI-SEV3-Simulation",
     "ComparisonOperator": "GreaterThanOrEqualToThreshold",
     "EvaluationPeriods": 3,
-    "AlarmName": "RoutingAPI-SEV3-Simulation",
     "Metrics": [
      {
       "Expression": "100*(simulationFailed/simulationRequested)",
@@ -1048,1550 +1039,10 @@
     "aws:cdk:path": "RoutingAPIStack/RoutingAPI-SEV3-Simulation/Resource"
    }
   },
-  "RoutingAPISEV32XXAlarmChainId1825327DB": {
-   "Type": "AWS::CloudWatch::Alarm",
-   "Properties": {
-    "ComparisonOperator": "LessThanOrEqualToThreshold",
-    "EvaluationPeriods": 2,
-    "AlarmName": "RoutingAPI-SEV3-2XXAlarm-ChainId: 1",
-    "Metrics": [
-     {
-      "Expression": "100*(response200/invocations)",
-      "Id": "expr_1"
-     },
-     {
-      "Id": "invocations",
-      "MetricStat": {
-       "Metric": {
-        "Dimensions": [
-         {
-          "Name": "Service",
-          "Value": "RoutingAPI"
-         }
-        ],
-        "MetricName": "GET_QUOTE_REQUESTED_CHAINID: 1",
-        "Namespace": "Uniswap"
-       },
-       "Period": 1800,
-       "Stat": "Sum",
-       "Unit": "Count"
-      },
-      "ReturnData": false
-     },
-     {
-      "Id": "response200",
-      "MetricStat": {
-       "Metric": {
-        "Dimensions": [
-         {
-          "Name": "Service",
-          "Value": "RoutingAPI"
-         }
-        ],
-        "MetricName": "GET_QUOTE_200_CHAINID: 1",
-        "Namespace": "Uniswap"
-       },
-       "Period": 1800,
-       "Stat": "Sum",
-       "Unit": "Count"
-      },
-      "ReturnData": false
-     }
-    ],
-    "Threshold": 20
-   },
-   "Metadata": {
-    "aws:cdk:path": "RoutingAPIStack/RoutingAPI-SEV3-2XXAlarm-ChainId: 1/Resource"
-   }
-  },
-  "RoutingAPISEV32XXAlarmChainId10D37829BA": {
-   "Type": "AWS::CloudWatch::Alarm",
-   "Properties": {
-    "ComparisonOperator": "LessThanOrEqualToThreshold",
-    "EvaluationPeriods": 2,
-    "AlarmName": "RoutingAPI-SEV3-2XXAlarm-ChainId: 10",
-    "Metrics": [
-     {
-      "Expression": "100*(response200/invocations)",
-      "Id": "expr_1"
-     },
-     {
-      "Id": "invocations",
-      "MetricStat": {
-       "Metric": {
-        "Dimensions": [
-         {
-          "Name": "Service",
-          "Value": "RoutingAPI"
-         }
-        ],
-        "MetricName": "GET_QUOTE_REQUESTED_CHAINID: 10",
-        "Namespace": "Uniswap"
-       },
-       "Period": 1800,
-       "Stat": "Sum",
-       "Unit": "Count"
-      },
-      "ReturnData": false
-     },
-     {
-      "Id": "response200",
-      "MetricStat": {
-       "Metric": {
-        "Dimensions": [
-         {
-          "Name": "Service",
-          "Value": "RoutingAPI"
-         }
-        ],
-        "MetricName": "GET_QUOTE_200_CHAINID: 10",
-        "Namespace": "Uniswap"
-       },
-       "Period": 1800,
-       "Stat": "Sum",
-       "Unit": "Count"
-      },
-      "ReturnData": false
-     }
-    ],
-    "Threshold": 20
-   },
-   "Metadata": {
-    "aws:cdk:path": "RoutingAPIStack/RoutingAPI-SEV3-2XXAlarm-ChainId: 10/Resource"
-   }
-  },
-  "RoutingAPISEV32XXAlarmChainId420C57DC8EA": {
-   "Type": "AWS::CloudWatch::Alarm",
-   "Properties": {
-    "ComparisonOperator": "LessThanOrEqualToThreshold",
-    "EvaluationPeriods": 2,
-    "AlarmName": "RoutingAPI-SEV3-2XXAlarm-ChainId: 420",
-    "Metrics": [
-     {
-      "Expression": "100*(response200/invocations)",
-      "Id": "expr_1"
-     },
-     {
-      "Id": "invocations",
-      "MetricStat": {
-       "Metric": {
-        "Dimensions": [
-         {
-          "Name": "Service",
-          "Value": "RoutingAPI"
-         }
-        ],
-        "MetricName": "GET_QUOTE_REQUESTED_CHAINID: 420",
-        "Namespace": "Uniswap"
-       },
-       "Period": 1800,
-       "Stat": "Sum",
-       "Unit": "Count"
-      },
-      "ReturnData": false
-     },
-     {
-      "Id": "response200",
-      "MetricStat": {
-       "Metric": {
-        "Dimensions": [
-         {
-          "Name": "Service",
-          "Value": "RoutingAPI"
-         }
-        ],
-        "MetricName": "GET_QUOTE_200_CHAINID: 420",
-        "Namespace": "Uniswap"
-       },
-       "Period": 1800,
-       "Stat": "Sum",
-       "Unit": "Count"
-      },
-      "ReturnData": false
-     }
-    ],
-    "Threshold": 20
-   },
-   "Metadata": {
-    "aws:cdk:path": "RoutingAPIStack/RoutingAPI-SEV3-2XXAlarm-ChainId: 420/Resource"
-   }
-  },
-  "RoutingAPISEV32XXAlarmChainId42161919834E2": {
-   "Type": "AWS::CloudWatch::Alarm",
-   "Properties": {
-    "ComparisonOperator": "LessThanOrEqualToThreshold",
-    "EvaluationPeriods": 2,
-    "AlarmName": "RoutingAPI-SEV3-2XXAlarm-ChainId: 42161",
-    "Metrics": [
-     {
-      "Expression": "100*(response200/invocations)",
-      "Id": "expr_1"
-     },
-     {
-      "Id": "invocations",
-      "MetricStat": {
-       "Metric": {
-        "Dimensions": [
-         {
-          "Name": "Service",
-          "Value": "RoutingAPI"
-         }
-        ],
-        "MetricName": "GET_QUOTE_REQUESTED_CHAINID: 42161",
-        "Namespace": "Uniswap"
-       },
-       "Period": 1800,
-       "Stat": "Sum",
-       "Unit": "Count"
-      },
-      "ReturnData": false
-     },
-     {
-      "Id": "response200",
-      "MetricStat": {
-       "Metric": {
-        "Dimensions": [
-         {
-          "Name": "Service",
-          "Value": "RoutingAPI"
-         }
-        ],
-        "MetricName": "GET_QUOTE_200_CHAINID: 42161",
-        "Namespace": "Uniswap"
-       },
-       "Period": 1800,
-       "Stat": "Sum",
-       "Unit": "Count"
-      },
-      "ReturnData": false
-     }
-    ],
-    "Threshold": 20
-   },
-   "Metadata": {
-    "aws:cdk:path": "RoutingAPIStack/RoutingAPI-SEV3-2XXAlarm-ChainId: 42161/Resource"
-   }
-  },
-  "RoutingAPISEV32XXAlarmChainId4216130E4D6A5C": {
-   "Type": "AWS::CloudWatch::Alarm",
-   "Properties": {
-    "ComparisonOperator": "LessThanOrEqualToThreshold",
-    "EvaluationPeriods": 2,
-    "AlarmName": "RoutingAPI-SEV3-2XXAlarm-ChainId: 421613",
-    "Metrics": [
-     {
-      "Expression": "100*(response200/invocations)",
-      "Id": "expr_1"
-     },
-     {
-      "Id": "invocations",
-      "MetricStat": {
-       "Metric": {
-        "Dimensions": [
-         {
-          "Name": "Service",
-          "Value": "RoutingAPI"
-         }
-        ],
-        "MetricName": "GET_QUOTE_REQUESTED_CHAINID: 421613",
-        "Namespace": "Uniswap"
-       },
-       "Period": 1800,
-       "Stat": "Sum",
-       "Unit": "Count"
-      },
-      "ReturnData": false
-     },
-     {
-      "Id": "response200",
-      "MetricStat": {
-       "Metric": {
-        "Dimensions": [
-         {
-          "Name": "Service",
-          "Value": "RoutingAPI"
-         }
-        ],
-        "MetricName": "GET_QUOTE_200_CHAINID: 421613",
-        "Namespace": "Uniswap"
-       },
-       "Period": 1800,
-       "Stat": "Sum",
-       "Unit": "Count"
-      },
-      "ReturnData": false
-     }
-    ],
-    "Threshold": 20
-   },
-   "Metadata": {
-    "aws:cdk:path": "RoutingAPIStack/RoutingAPI-SEV3-2XXAlarm-ChainId: 421613/Resource"
-   }
-  },
-  "RoutingAPISEV32XXAlarmChainId13712713024": {
-   "Type": "AWS::CloudWatch::Alarm",
-   "Properties": {
-    "ComparisonOperator": "LessThanOrEqualToThreshold",
-    "EvaluationPeriods": 2,
-    "AlarmName": "RoutingAPI-SEV3-2XXAlarm-ChainId: 137",
-    "Metrics": [
-     {
-      "Expression": "100*(response200/invocations)",
-      "Id": "expr_1"
-     },
-     {
-      "Id": "invocations",
-      "MetricStat": {
-       "Metric": {
-        "Dimensions": [
-         {
-          "Name": "Service",
-          "Value": "RoutingAPI"
-         }
-        ],
-        "MetricName": "GET_QUOTE_REQUESTED_CHAINID: 137",
-        "Namespace": "Uniswap"
-       },
-       "Period": 1800,
-       "Stat": "Sum",
-       "Unit": "Count"
-      },
-      "ReturnData": false
-     },
-     {
-      "Id": "response200",
-      "MetricStat": {
-       "Metric": {
-        "Dimensions": [
-         {
-          "Name": "Service",
-          "Value": "RoutingAPI"
-         }
-        ],
-        "MetricName": "GET_QUOTE_200_CHAINID: 137",
-        "Namespace": "Uniswap"
-       },
-       "Period": 1800,
-       "Stat": "Sum",
-       "Unit": "Count"
-      },
-      "ReturnData": false
-     }
-    ],
-    "Threshold": 20
-   },
-   "Metadata": {
-    "aws:cdk:path": "RoutingAPIStack/RoutingAPI-SEV3-2XXAlarm-ChainId: 137/Resource"
-   }
-  },
-  "RoutingAPISEV32XXAlarmChainId44787C4DC9019": {
-   "Type": "AWS::CloudWatch::Alarm",
-   "Properties": {
-    "ComparisonOperator": "LessThanOrEqualToThreshold",
-    "EvaluationPeriods": 2,
-    "AlarmName": "RoutingAPI-SEV3-2XXAlarm-ChainId: 44787",
-    "Metrics": [
-     {
-      "Expression": "100*(response200/invocations)",
-      "Id": "expr_1"
-     },
-     {
-      "Id": "invocations",
-      "MetricStat": {
-       "Metric": {
-        "Dimensions": [
-         {
-          "Name": "Service",
-          "Value": "RoutingAPI"
-         }
-        ],
-        "MetricName": "GET_QUOTE_REQUESTED_CHAINID: 44787",
-        "Namespace": "Uniswap"
-       },
-       "Period": 1800,
-       "Stat": "Sum",
-       "Unit": "Count"
-      },
-      "ReturnData": false
-     },
-     {
-      "Id": "response200",
-      "MetricStat": {
-       "Metric": {
-        "Dimensions": [
-         {
-          "Name": "Service",
-          "Value": "RoutingAPI"
-         }
-        ],
-        "MetricName": "GET_QUOTE_200_CHAINID: 44787",
-        "Namespace": "Uniswap"
-       },
-       "Period": 1800,
-       "Stat": "Sum",
-       "Unit": "Count"
-      },
-      "ReturnData": false
-     }
-    ],
-    "Threshold": 20
-   },
-   "Metadata": {
-    "aws:cdk:path": "RoutingAPIStack/RoutingAPI-SEV3-2XXAlarm-ChainId: 44787/Resource"
-   }
-  },
-  "RoutingAPISEV32XXAlarmChainId42220936B7B77": {
-   "Type": "AWS::CloudWatch::Alarm",
-   "Properties": {
-    "ComparisonOperator": "LessThanOrEqualToThreshold",
-    "EvaluationPeriods": 2,
-    "AlarmName": "RoutingAPI-SEV3-2XXAlarm-ChainId: 42220",
-    "Metrics": [
-     {
-      "Expression": "100*(response200/invocations)",
-      "Id": "expr_1"
-     },
-     {
-      "Id": "invocations",
-      "MetricStat": {
-       "Metric": {
-        "Dimensions": [
-         {
-          "Name": "Service",
-          "Value": "RoutingAPI"
-         }
-        ],
-        "MetricName": "GET_QUOTE_REQUESTED_CHAINID: 42220",
-        "Namespace": "Uniswap"
-       },
-       "Period": 1800,
-       "Stat": "Sum",
-       "Unit": "Count"
-      },
-      "ReturnData": false
-     },
-     {
-      "Id": "response200",
-      "MetricStat": {
-       "Metric": {
-        "Dimensions": [
-         {
-          "Name": "Service",
-          "Value": "RoutingAPI"
-         }
-        ],
-        "MetricName": "GET_QUOTE_200_CHAINID: 42220",
-        "Namespace": "Uniswap"
-       },
-       "Period": 1800,
-       "Stat": "Sum",
-       "Unit": "Count"
-      },
-      "ReturnData": false
-     }
-    ],
-    "Threshold": 20
-   },
-   "Metadata": {
-    "aws:cdk:path": "RoutingAPIStack/RoutingAPI-SEV3-2XXAlarm-ChainId: 42220/Resource"
-   }
-  },
-  "RoutingAPISEV32XXAlarmChainId56D4CB0C35": {
-   "Type": "AWS::CloudWatch::Alarm",
-   "Properties": {
-    "ComparisonOperator": "LessThanOrEqualToThreshold",
-    "EvaluationPeriods": 2,
-    "AlarmName": "RoutingAPI-SEV3-2XXAlarm-ChainId: 56",
-    "Metrics": [
-     {
-      "Expression": "100*(response200/invocations)",
-      "Id": "expr_1"
-     },
-     {
-      "Id": "invocations",
-      "MetricStat": {
-       "Metric": {
-        "Dimensions": [
-         {
-          "Name": "Service",
-          "Value": "RoutingAPI"
-         }
-        ],
-        "MetricName": "GET_QUOTE_REQUESTED_CHAINID: 56",
-        "Namespace": "Uniswap"
-       },
-       "Period": 1800,
-       "Stat": "Sum",
-       "Unit": "Count"
-      },
-      "ReturnData": false
-     },
-     {
-      "Id": "response200",
-      "MetricStat": {
-       "Metric": {
-        "Dimensions": [
-         {
-          "Name": "Service",
-          "Value": "RoutingAPI"
-         }
-        ],
-        "MetricName": "GET_QUOTE_200_CHAINID: 56",
-        "Namespace": "Uniswap"
-       },
-       "Period": 1800,
-       "Stat": "Sum",
-       "Unit": "Count"
-      },
-      "ReturnData": false
-     }
-    ],
-    "Threshold": 20
-   },
-   "Metadata": {
-    "aws:cdk:path": "RoutingAPIStack/RoutingAPI-SEV3-2XXAlarm-ChainId: 56/Resource"
-   }
-  },
-  "RoutingAPISEV32XXAlarmChainId82170C7BF7CF": {
-   "Type": "AWS::CloudWatch::Alarm",
-   "Properties": {
-    "ComparisonOperator": "LessThanOrEqualToThreshold",
-    "EvaluationPeriods": 2,
-    "AlarmName": "RoutingAPI-SEV3-2XXAlarm-ChainId: 8217",
-    "Metrics": [
-     {
-      "Expression": "100*(response200/invocations)",
-      "Id": "expr_1"
-     },
-     {
-      "Id": "invocations",
-      "MetricStat": {
-       "Metric": {
-        "Dimensions": [
-         {
-          "Name": "Service",
-          "Value": "RoutingAPI"
-         }
-        ],
-        "MetricName": "GET_QUOTE_REQUESTED_CHAINID: 8217",
-        "Namespace": "Uniswap"
-       },
-       "Period": 1800,
-       "Stat": "Sum",
-       "Unit": "Count"
-      },
-      "ReturnData": false
-     },
-     {
-      "Id": "response200",
-      "MetricStat": {
-       "Metric": {
-        "Dimensions": [
-         {
-          "Name": "Service",
-          "Value": "RoutingAPI"
-         }
-        ],
-        "MetricName": "GET_QUOTE_200_CHAINID: 8217",
-        "Namespace": "Uniswap"
-       },
-       "Period": 1800,
-       "Stat": "Sum",
-       "Unit": "Count"
-      },
-      "ReturnData": false
-     }
-    ],
-    "Threshold": 20
-   },
-   "Metadata": {
-    "aws:cdk:path": "RoutingAPIStack/RoutingAPI-SEV3-2XXAlarm-ChainId: 8217/Resource"
-   }
-  },
-  "RoutingAPISEV32XXAlarmChainId25019239F97": {
-   "Type": "AWS::CloudWatch::Alarm",
-   "Properties": {
-    "ComparisonOperator": "LessThanOrEqualToThreshold",
-    "EvaluationPeriods": 2,
-    "AlarmName": "RoutingAPI-SEV3-2XXAlarm-ChainId: 250",
-    "Metrics": [
-     {
-      "Expression": "100*(response200/invocations)",
-      "Id": "expr_1"
-     },
-     {
-      "Id": "invocations",
-      "MetricStat": {
-       "Metric": {
-        "Dimensions": [
-         {
-          "Name": "Service",
-          "Value": "RoutingAPI"
-         }
-        ],
-        "MetricName": "GET_QUOTE_REQUESTED_CHAINID: 250",
-        "Namespace": "Uniswap"
-       },
-       "Period": 1800,
-       "Stat": "Sum",
-       "Unit": "Count"
-      },
-      "ReturnData": false
-     },
-     {
-      "Id": "response200",
-      "MetricStat": {
-       "Metric": {
-        "Dimensions": [
-         {
-          "Name": "Service",
-          "Value": "RoutingAPI"
-         }
-        ],
-        "MetricName": "GET_QUOTE_200_CHAINID: 250",
-        "Namespace": "Uniswap"
-       },
-       "Period": 1800,
-       "Stat": "Sum",
-       "Unit": "Count"
-      },
-      "ReturnData": false
-     }
-    ],
-    "Threshold": 20
-   },
-   "Metadata": {
-    "aws:cdk:path": "RoutingAPIStack/RoutingAPI-SEV3-2XXAlarm-ChainId: 250/Resource"
-   }
-  },
-  "RoutingAPISEV32XXAlarmChainId100868843A8": {
-   "Type": "AWS::CloudWatch::Alarm",
-   "Properties": {
-    "ComparisonOperator": "LessThanOrEqualToThreshold",
-    "EvaluationPeriods": 2,
-    "AlarmName": "RoutingAPI-SEV3-2XXAlarm-ChainId: 100",
-    "Metrics": [
-     {
-      "Expression": "100*(response200/invocations)",
-      "Id": "expr_1"
-     },
-     {
-      "Id": "invocations",
-      "MetricStat": {
-       "Metric": {
-        "Dimensions": [
-         {
-          "Name": "Service",
-          "Value": "RoutingAPI"
-         }
-        ],
-        "MetricName": "GET_QUOTE_REQUESTED_CHAINID: 100",
-        "Namespace": "Uniswap"
-       },
-       "Period": 1800,
-       "Stat": "Sum",
-       "Unit": "Count"
-      },
-      "ReturnData": false
-     },
-     {
-      "Id": "response200",
-      "MetricStat": {
-       "Metric": {
-        "Dimensions": [
-         {
-          "Name": "Service",
-          "Value": "RoutingAPI"
-         }
-        ],
-        "MetricName": "GET_QUOTE_200_CHAINID: 100",
-        "Namespace": "Uniswap"
-       },
-       "Period": 1800,
-       "Stat": "Sum",
-       "Unit": "Count"
-      },
-      "ReturnData": false
-     }
-    ],
-    "Threshold": 20
-   },
-   "Metadata": {
-    "aws:cdk:path": "RoutingAPIStack/RoutingAPI-SEV3-2XXAlarm-ChainId: 100/Resource"
-   }
-  },
-  "RoutingAPISEV32XXAlarmChainId4311452C99D62": {
-   "Type": "AWS::CloudWatch::Alarm",
-   "Properties": {
-    "ComparisonOperator": "LessThanOrEqualToThreshold",
-    "EvaluationPeriods": 2,
-    "AlarmName": "RoutingAPI-SEV3-2XXAlarm-ChainId: 43114",
-    "Metrics": [
-     {
-      "Expression": "100*(response200/invocations)",
-      "Id": "expr_1"
-     },
-     {
-      "Id": "invocations",
-      "MetricStat": {
-       "Metric": {
-        "Dimensions": [
-         {
-          "Name": "Service",
-          "Value": "RoutingAPI"
-         }
-        ],
-        "MetricName": "GET_QUOTE_REQUESTED_CHAINID: 43114",
-        "Namespace": "Uniswap"
-       },
-       "Period": 1800,
-       "Stat": "Sum",
-       "Unit": "Count"
-      },
-      "ReturnData": false
-     },
-     {
-      "Id": "response200",
-      "MetricStat": {
-       "Metric": {
-        "Dimensions": [
-         {
-          "Name": "Service",
-          "Value": "RoutingAPI"
-         }
-        ],
-        "MetricName": "GET_QUOTE_200_CHAINID: 43114",
-        "Namespace": "Uniswap"
-       },
-       "Period": 1800,
-       "Stat": "Sum",
-       "Unit": "Count"
-      },
-      "ReturnData": false
-     }
-    ],
-    "Threshold": 20
-   },
-   "Metadata": {
-    "aws:cdk:path": "RoutingAPIStack/RoutingAPI-SEV3-2XXAlarm-ChainId: 43114/Resource"
-   }
-  },
-  "RoutingAPISEV32XXAlarmChainId1284AAE0B12B": {
-   "Type": "AWS::CloudWatch::Alarm",
-   "Properties": {
-    "ComparisonOperator": "LessThanOrEqualToThreshold",
-    "EvaluationPeriods": 2,
-    "AlarmName": "RoutingAPI-SEV3-2XXAlarm-ChainId: 1284",
-    "Metrics": [
-     {
-      "Expression": "100*(response200/invocations)",
-      "Id": "expr_1"
-     },
-     {
-      "Id": "invocations",
-      "MetricStat": {
-       "Metric": {
-        "Dimensions": [
-         {
-          "Name": "Service",
-          "Value": "RoutingAPI"
-         }
-        ],
-        "MetricName": "GET_QUOTE_REQUESTED_CHAINID: 1284",
-        "Namespace": "Uniswap"
-       },
-       "Period": 1800,
-       "Stat": "Sum",
-       "Unit": "Count"
-      },
-      "ReturnData": false
-     },
-     {
-      "Id": "response200",
-      "MetricStat": {
-       "Metric": {
-        "Dimensions": [
-         {
-          "Name": "Service",
-          "Value": "RoutingAPI"
-         }
-        ],
-        "MetricName": "GET_QUOTE_200_CHAINID: 1284",
-        "Namespace": "Uniswap"
-       },
-       "Period": 1800,
-       "Stat": "Sum",
-       "Unit": "Count"
-      },
-      "ReturnData": false
-     }
-    ],
-    "Threshold": 20
-   },
-   "Metadata": {
-    "aws:cdk:path": "RoutingAPIStack/RoutingAPI-SEV3-2XXAlarm-ChainId: 1284/Resource"
-   }
-  },
-  "RoutingAPISEV34XXAlarmChainId1450CBEAD": {
-   "Type": "AWS::CloudWatch::Alarm",
-   "Properties": {
-    "ComparisonOperator": "GreaterThanOrEqualToThreshold",
-    "EvaluationPeriods": 2,
-    "AlarmName": "RoutingAPI-SEV3-4XXAlarm-ChainId: 1",
-    "Metrics": [
-     {
-      "Expression": "100*(response400/invocations)",
-      "Id": "expr_1"
-     },
-     {
-      "Id": "invocations",
-      "MetricStat": {
-       "Metric": {
-        "Dimensions": [
-         {
-          "Name": "ApiName",
-          "Value": "Routing API"
-         }
-        ],
-        "MetricName": "GET_QUOTE_REQUESTED_CHAINID: 1",
-        "Namespace": "AWS/ApiGateway"
-       },
-       "Period": 300,
-       "Stat": "Sum"
-      },
-      "ReturnData": false
-     },
-     {
-      "Id": "response400",
-      "MetricStat": {
-       "Metric": {
-        "Dimensions": [
-         {
-          "Name": "ApiName",
-          "Value": "Routing API"
-         }
-        ],
-        "MetricName": "GET_QUOTE_400_CHAINID: 1",
-        "Namespace": "AWS/ApiGateway"
-       },
-       "Period": 300,
-       "Stat": "Sum"
-      },
-      "ReturnData": false
-     }
-    ],
-    "Threshold": 80
-   },
-   "Metadata": {
-    "aws:cdk:path": "RoutingAPIStack/RoutingAPI-SEV3-4XXAlarm-ChainId: 1/Resource"
-   }
-  },
-  "RoutingAPISEV34XXAlarmChainId10208DC15D": {
-   "Type": "AWS::CloudWatch::Alarm",
-   "Properties": {
-    "ComparisonOperator": "GreaterThanOrEqualToThreshold",
-    "EvaluationPeriods": 2,
-    "AlarmName": "RoutingAPI-SEV3-4XXAlarm-ChainId: 10",
-    "Metrics": [
-     {
-      "Expression": "100*(response400/invocations)",
-      "Id": "expr_1"
-     },
-     {
-      "Id": "invocations",
-      "MetricStat": {
-       "Metric": {
-        "Dimensions": [
-         {
-          "Name": "ApiName",
-          "Value": "Routing API"
-         }
-        ],
-        "MetricName": "GET_QUOTE_REQUESTED_CHAINID: 10",
-        "Namespace": "AWS/ApiGateway"
-       },
-       "Period": 300,
-       "Stat": "Sum"
-      },
-      "ReturnData": false
-     },
-     {
-      "Id": "response400",
-      "MetricStat": {
-       "Metric": {
-        "Dimensions": [
-         {
-          "Name": "ApiName",
-          "Value": "Routing API"
-         }
-        ],
-        "MetricName": "GET_QUOTE_400_CHAINID: 10",
-        "Namespace": "AWS/ApiGateway"
-       },
-       "Period": 300,
-       "Stat": "Sum"
-      },
-      "ReturnData": false
-     }
-    ],
-    "Threshold": 80
-   },
-   "Metadata": {
-    "aws:cdk:path": "RoutingAPIStack/RoutingAPI-SEV3-4XXAlarm-ChainId: 10/Resource"
-   }
-  },
-  "RoutingAPISEV34XXAlarmChainId420BEF766F0": {
-   "Type": "AWS::CloudWatch::Alarm",
-   "Properties": {
-    "ComparisonOperator": "GreaterThanOrEqualToThreshold",
-    "EvaluationPeriods": 2,
-    "AlarmName": "RoutingAPI-SEV3-4XXAlarm-ChainId: 420",
-    "Metrics": [
-     {
-      "Expression": "100*(response400/invocations)",
-      "Id": "expr_1"
-     },
-     {
-      "Id": "invocations",
-      "MetricStat": {
-       "Metric": {
-        "Dimensions": [
-         {
-          "Name": "ApiName",
-          "Value": "Routing API"
-         }
-        ],
-        "MetricName": "GET_QUOTE_REQUESTED_CHAINID: 420",
-        "Namespace": "AWS/ApiGateway"
-       },
-       "Period": 300,
-       "Stat": "Sum"
-      },
-      "ReturnData": false
-     },
-     {
-      "Id": "response400",
-      "MetricStat": {
-       "Metric": {
-        "Dimensions": [
-         {
-          "Name": "ApiName",
-          "Value": "Routing API"
-         }
-        ],
-        "MetricName": "GET_QUOTE_400_CHAINID: 420",
-        "Namespace": "AWS/ApiGateway"
-       },
-       "Period": 300,
-       "Stat": "Sum"
-      },
-      "ReturnData": false
-     }
-    ],
-    "Threshold": 80
-   },
-   "Metadata": {
-    "aws:cdk:path": "RoutingAPIStack/RoutingAPI-SEV3-4XXAlarm-ChainId: 420/Resource"
-   }
-  },
-  "RoutingAPISEV34XXAlarmChainId42161C388D5B1": {
-   "Type": "AWS::CloudWatch::Alarm",
-   "Properties": {
-    "ComparisonOperator": "GreaterThanOrEqualToThreshold",
-    "EvaluationPeriods": 2,
-    "AlarmName": "RoutingAPI-SEV3-4XXAlarm-ChainId: 42161",
-    "Metrics": [
-     {
-      "Expression": "100*(response400/invocations)",
-      "Id": "expr_1"
-     },
-     {
-      "Id": "invocations",
-      "MetricStat": {
-       "Metric": {
-        "Dimensions": [
-         {
-          "Name": "ApiName",
-          "Value": "Routing API"
-         }
-        ],
-        "MetricName": "GET_QUOTE_REQUESTED_CHAINID: 42161",
-        "Namespace": "AWS/ApiGateway"
-       },
-       "Period": 300,
-       "Stat": "Sum"
-      },
-      "ReturnData": false
-     },
-     {
-      "Id": "response400",
-      "MetricStat": {
-       "Metric": {
-        "Dimensions": [
-         {
-          "Name": "ApiName",
-          "Value": "Routing API"
-         }
-        ],
-        "MetricName": "GET_QUOTE_400_CHAINID: 42161",
-        "Namespace": "AWS/ApiGateway"
-       },
-       "Period": 300,
-       "Stat": "Sum"
-      },
-      "ReturnData": false
-     }
-    ],
-    "Threshold": 80
-   },
-   "Metadata": {
-    "aws:cdk:path": "RoutingAPIStack/RoutingAPI-SEV3-4XXAlarm-ChainId: 42161/Resource"
-   }
-  },
-  "RoutingAPISEV34XXAlarmChainId421613BF0BDC06": {
-   "Type": "AWS::CloudWatch::Alarm",
-   "Properties": {
-    "ComparisonOperator": "GreaterThanOrEqualToThreshold",
-    "EvaluationPeriods": 2,
-    "AlarmName": "RoutingAPI-SEV3-4XXAlarm-ChainId: 421613",
-    "Metrics": [
-     {
-      "Expression": "100*(response400/invocations)",
-      "Id": "expr_1"
-     },
-     {
-      "Id": "invocations",
-      "MetricStat": {
-       "Metric": {
-        "Dimensions": [
-         {
-          "Name": "ApiName",
-          "Value": "Routing API"
-         }
-        ],
-        "MetricName": "GET_QUOTE_REQUESTED_CHAINID: 421613",
-        "Namespace": "AWS/ApiGateway"
-       },
-       "Period": 300,
-       "Stat": "Sum"
-      },
-      "ReturnData": false
-     },
-     {
-      "Id": "response400",
-      "MetricStat": {
-       "Metric": {
-        "Dimensions": [
-         {
-          "Name": "ApiName",
-          "Value": "Routing API"
-         }
-        ],
-        "MetricName": "GET_QUOTE_400_CHAINID: 421613",
-        "Namespace": "AWS/ApiGateway"
-       },
-       "Period": 300,
-       "Stat": "Sum"
-      },
-      "ReturnData": false
-     }
-    ],
-    "Threshold": 80
-   },
-   "Metadata": {
-    "aws:cdk:path": "RoutingAPIStack/RoutingAPI-SEV3-4XXAlarm-ChainId: 421613/Resource"
-   }
-  },
-  "RoutingAPISEV34XXAlarmChainId137152B73B3": {
-   "Type": "AWS::CloudWatch::Alarm",
-   "Properties": {
-    "ComparisonOperator": "GreaterThanOrEqualToThreshold",
-    "EvaluationPeriods": 2,
-    "AlarmName": "RoutingAPI-SEV3-4XXAlarm-ChainId: 137",
-    "Metrics": [
-     {
-      "Expression": "100*(response400/invocations)",
-      "Id": "expr_1"
-     },
-     {
-      "Id": "invocations",
-      "MetricStat": {
-       "Metric": {
-        "Dimensions": [
-         {
-          "Name": "ApiName",
-          "Value": "Routing API"
-         }
-        ],
-        "MetricName": "GET_QUOTE_REQUESTED_CHAINID: 137",
-        "Namespace": "AWS/ApiGateway"
-       },
-       "Period": 300,
-       "Stat": "Sum"
-      },
-      "ReturnData": false
-     },
-     {
-      "Id": "response400",
-      "MetricStat": {
-       "Metric": {
-        "Dimensions": [
-         {
-          "Name": "ApiName",
-          "Value": "Routing API"
-         }
-        ],
-        "MetricName": "GET_QUOTE_400_CHAINID: 137",
-        "Namespace": "AWS/ApiGateway"
-       },
-       "Period": 300,
-       "Stat": "Sum"
-      },
-      "ReturnData": false
-     }
-    ],
-    "Threshold": 80
-   },
-   "Metadata": {
-    "aws:cdk:path": "RoutingAPIStack/RoutingAPI-SEV3-4XXAlarm-ChainId: 137/Resource"
-   }
-  },
-  "RoutingAPISEV34XXAlarmChainId44787BB3A0A9D": {
-   "Type": "AWS::CloudWatch::Alarm",
-   "Properties": {
-    "ComparisonOperator": "GreaterThanOrEqualToThreshold",
-    "EvaluationPeriods": 2,
-    "AlarmName": "RoutingAPI-SEV3-4XXAlarm-ChainId: 44787",
-    "Metrics": [
-     {
-      "Expression": "100*(response400/invocations)",
-      "Id": "expr_1"
-     },
-     {
-      "Id": "invocations",
-      "MetricStat": {
-       "Metric": {
-        "Dimensions": [
-         {
-          "Name": "ApiName",
-          "Value": "Routing API"
-         }
-        ],
-        "MetricName": "GET_QUOTE_REQUESTED_CHAINID: 44787",
-        "Namespace": "AWS/ApiGateway"
-       },
-       "Period": 300,
-       "Stat": "Sum"
-      },
-      "ReturnData": false
-     },
-     {
-      "Id": "response400",
-      "MetricStat": {
-       "Metric": {
-        "Dimensions": [
-         {
-          "Name": "ApiName",
-          "Value": "Routing API"
-         }
-        ],
-        "MetricName": "GET_QUOTE_400_CHAINID: 44787",
-        "Namespace": "AWS/ApiGateway"
-       },
-       "Period": 300,
-       "Stat": "Sum"
-      },
-      "ReturnData": false
-     }
-    ],
-    "Threshold": 80
-   },
-   "Metadata": {
-    "aws:cdk:path": "RoutingAPIStack/RoutingAPI-SEV3-4XXAlarm-ChainId: 44787/Resource"
-   }
-  },
-  "RoutingAPISEV34XXAlarmChainId42220A086E57A": {
-   "Type": "AWS::CloudWatch::Alarm",
-   "Properties": {
-    "ComparisonOperator": "GreaterThanOrEqualToThreshold",
-    "EvaluationPeriods": 2,
-    "AlarmName": "RoutingAPI-SEV3-4XXAlarm-ChainId: 42220",
-    "Metrics": [
-     {
-      "Expression": "100*(response400/invocations)",
-      "Id": "expr_1"
-     },
-     {
-      "Id": "invocations",
-      "MetricStat": {
-       "Metric": {
-        "Dimensions": [
-         {
-          "Name": "ApiName",
-          "Value": "Routing API"
-         }
-        ],
-        "MetricName": "GET_QUOTE_REQUESTED_CHAINID: 42220",
-        "Namespace": "AWS/ApiGateway"
-       },
-       "Period": 300,
-       "Stat": "Sum"
-      },
-      "ReturnData": false
-     },
-     {
-      "Id": "response400",
-      "MetricStat": {
-       "Metric": {
-        "Dimensions": [
-         {
-          "Name": "ApiName",
-          "Value": "Routing API"
-         }
-        ],
-        "MetricName": "GET_QUOTE_400_CHAINID: 42220",
-        "Namespace": "AWS/ApiGateway"
-       },
-       "Period": 300,
-       "Stat": "Sum"
-      },
-      "ReturnData": false
-     }
-    ],
-    "Threshold": 80
-   },
-   "Metadata": {
-    "aws:cdk:path": "RoutingAPIStack/RoutingAPI-SEV3-4XXAlarm-ChainId: 42220/Resource"
-   }
-  },
-  "RoutingAPISEV34XXAlarmChainId56135B294E": {
-   "Type": "AWS::CloudWatch::Alarm",
-   "Properties": {
-    "ComparisonOperator": "GreaterThanOrEqualToThreshold",
-    "EvaluationPeriods": 2,
-    "AlarmName": "RoutingAPI-SEV3-4XXAlarm-ChainId: 56",
-    "Metrics": [
-     {
-      "Expression": "100*(response400/invocations)",
-      "Id": "expr_1"
-     },
-     {
-      "Id": "invocations",
-      "MetricStat": {
-       "Metric": {
-        "Dimensions": [
-         {
-          "Name": "ApiName",
-          "Value": "Routing API"
-         }
-        ],
-        "MetricName": "GET_QUOTE_REQUESTED_CHAINID: 56",
-        "Namespace": "AWS/ApiGateway"
-       },
-       "Period": 300,
-       "Stat": "Sum"
-      },
-      "ReturnData": false
-     },
-     {
-      "Id": "response400",
-      "MetricStat": {
-       "Metric": {
-        "Dimensions": [
-         {
-          "Name": "ApiName",
-          "Value": "Routing API"
-         }
-        ],
-        "MetricName": "GET_QUOTE_400_CHAINID: 56",
-        "Namespace": "AWS/ApiGateway"
-       },
-       "Period": 300,
-       "Stat": "Sum"
-      },
-      "ReturnData": false
-     }
-    ],
-    "Threshold": 80
-   },
-   "Metadata": {
-    "aws:cdk:path": "RoutingAPIStack/RoutingAPI-SEV3-4XXAlarm-ChainId: 56/Resource"
-   }
-  },
-  "RoutingAPISEV34XXAlarmChainId8217D12E0BEE": {
-   "Type": "AWS::CloudWatch::Alarm",
-   "Properties": {
-    "ComparisonOperator": "GreaterThanOrEqualToThreshold",
-    "EvaluationPeriods": 2,
-    "AlarmName": "RoutingAPI-SEV3-4XXAlarm-ChainId: 8217",
-    "Metrics": [
-     {
-      "Expression": "100*(response400/invocations)",
-      "Id": "expr_1"
-     },
-     {
-      "Id": "invocations",
-      "MetricStat": {
-       "Metric": {
-        "Dimensions": [
-         {
-          "Name": "ApiName",
-          "Value": "Routing API"
-         }
-        ],
-        "MetricName": "GET_QUOTE_REQUESTED_CHAINID: 8217",
-        "Namespace": "AWS/ApiGateway"
-       },
-       "Period": 300,
-       "Stat": "Sum"
-      },
-      "ReturnData": false
-     },
-     {
-      "Id": "response400",
-      "MetricStat": {
-       "Metric": {
-        "Dimensions": [
-         {
-          "Name": "ApiName",
-          "Value": "Routing API"
-         }
-        ],
-        "MetricName": "GET_QUOTE_400_CHAINID: 8217",
-        "Namespace": "AWS/ApiGateway"
-       },
-       "Period": 300,
-       "Stat": "Sum"
-      },
-      "ReturnData": false
-     }
-    ],
-    "Threshold": 80
-   },
-   "Metadata": {
-    "aws:cdk:path": "RoutingAPIStack/RoutingAPI-SEV3-4XXAlarm-ChainId: 8217/Resource"
-   }
-  },
-  "RoutingAPISEV34XXAlarmChainId2507EB94355": {
-   "Type": "AWS::CloudWatch::Alarm",
-   "Properties": {
-    "ComparisonOperator": "GreaterThanOrEqualToThreshold",
-    "EvaluationPeriods": 2,
-    "AlarmName": "RoutingAPI-SEV3-4XXAlarm-ChainId: 250",
-    "Metrics": [
-     {
-      "Expression": "100*(response400/invocations)",
-      "Id": "expr_1"
-     },
-     {
-      "Id": "invocations",
-      "MetricStat": {
-       "Metric": {
-        "Dimensions": [
-         {
-          "Name": "ApiName",
-          "Value": "Routing API"
-         }
-        ],
-        "MetricName": "GET_QUOTE_REQUESTED_CHAINID: 250",
-        "Namespace": "AWS/ApiGateway"
-       },
-       "Period": 300,
-       "Stat": "Sum"
-      },
-      "ReturnData": false
-     },
-     {
-      "Id": "response400",
-      "MetricStat": {
-       "Metric": {
-        "Dimensions": [
-         {
-          "Name": "ApiName",
-          "Value": "Routing API"
-         }
-        ],
-        "MetricName": "GET_QUOTE_400_CHAINID: 250",
-        "Namespace": "AWS/ApiGateway"
-       },
-       "Period": 300,
-       "Stat": "Sum"
-      },
-      "ReturnData": false
-     }
-    ],
-    "Threshold": 80
-   },
-   "Metadata": {
-    "aws:cdk:path": "RoutingAPIStack/RoutingAPI-SEV3-4XXAlarm-ChainId: 250/Resource"
-   }
-  },
-  "RoutingAPISEV34XXAlarmChainId100530A5EF6": {
-   "Type": "AWS::CloudWatch::Alarm",
-   "Properties": {
-    "ComparisonOperator": "GreaterThanOrEqualToThreshold",
-    "EvaluationPeriods": 2,
-    "AlarmName": "RoutingAPI-SEV3-4XXAlarm-ChainId: 100",
-    "Metrics": [
-     {
-      "Expression": "100*(response400/invocations)",
-      "Id": "expr_1"
-     },
-     {
-      "Id": "invocations",
-      "MetricStat": {
-       "Metric": {
-        "Dimensions": [
-         {
-          "Name": "ApiName",
-          "Value": "Routing API"
-         }
-        ],
-        "MetricName": "GET_QUOTE_REQUESTED_CHAINID: 100",
-        "Namespace": "AWS/ApiGateway"
-       },
-       "Period": 300,
-       "Stat": "Sum"
-      },
-      "ReturnData": false
-     },
-     {
-      "Id": "response400",
-      "MetricStat": {
-       "Metric": {
-        "Dimensions": [
-         {
-          "Name": "ApiName",
-          "Value": "Routing API"
-         }
-        ],
-        "MetricName": "GET_QUOTE_400_CHAINID: 100",
-        "Namespace": "AWS/ApiGateway"
-       },
-       "Period": 300,
-       "Stat": "Sum"
-      },
-      "ReturnData": false
-     }
-    ],
-    "Threshold": 80
-   },
-   "Metadata": {
-    "aws:cdk:path": "RoutingAPIStack/RoutingAPI-SEV3-4XXAlarm-ChainId: 100/Resource"
-   }
-  },
-  "RoutingAPISEV34XXAlarmChainId43114FDB775B5": {
-   "Type": "AWS::CloudWatch::Alarm",
-   "Properties": {
-    "ComparisonOperator": "GreaterThanOrEqualToThreshold",
-    "EvaluationPeriods": 2,
-    "AlarmName": "RoutingAPI-SEV3-4XXAlarm-ChainId: 43114",
-    "Metrics": [
-     {
-      "Expression": "100*(response400/invocations)",
-      "Id": "expr_1"
-     },
-     {
-      "Id": "invocations",
-      "MetricStat": {
-       "Metric": {
-        "Dimensions": [
-         {
-          "Name": "ApiName",
-          "Value": "Routing API"
-         }
-        ],
-        "MetricName": "GET_QUOTE_REQUESTED_CHAINID: 43114",
-        "Namespace": "AWS/ApiGateway"
-       },
-       "Period": 300,
-       "Stat": "Sum"
-      },
-      "ReturnData": false
-     },
-     {
-      "Id": "response400",
-      "MetricStat": {
-       "Metric": {
-        "Dimensions": [
-         {
-          "Name": "ApiName",
-          "Value": "Routing API"
-         }
-        ],
-        "MetricName": "GET_QUOTE_400_CHAINID: 43114",
-        "Namespace": "AWS/ApiGateway"
-       },
-       "Period": 300,
-       "Stat": "Sum"
-      },
-      "ReturnData": false
-     }
-    ],
-    "Threshold": 80
-   },
-   "Metadata": {
-    "aws:cdk:path": "RoutingAPIStack/RoutingAPI-SEV3-4XXAlarm-ChainId: 43114/Resource"
-   }
-  },
-  "RoutingAPISEV34XXAlarmChainId1284778FE1A6": {
-   "Type": "AWS::CloudWatch::Alarm",
-   "Properties": {
-    "ComparisonOperator": "GreaterThanOrEqualToThreshold",
-    "EvaluationPeriods": 2,
-    "AlarmName": "RoutingAPI-SEV3-4XXAlarm-ChainId: 1284",
-    "Metrics": [
-     {
-      "Expression": "100*(response400/invocations)",
-      "Id": "expr_1"
-     },
-     {
-      "Id": "invocations",
-      "MetricStat": {
-       "Metric": {
-        "Dimensions": [
-         {
-          "Name": "ApiName",
-          "Value": "Routing API"
-         }
-        ],
-        "MetricName": "GET_QUOTE_REQUESTED_CHAINID: 1284",
-        "Namespace": "AWS/ApiGateway"
-       },
-       "Period": 300,
-       "Stat": "Sum"
-      },
-      "ReturnData": false
-     },
-     {
-      "Id": "response400",
-      "MetricStat": {
-       "Metric": {
-        "Dimensions": [
-         {
-          "Name": "ApiName",
-          "Value": "Routing API"
-         }
-        ],
-        "MetricName": "GET_QUOTE_400_CHAINID: 1284",
-        "Namespace": "AWS/ApiGateway"
-       },
-       "Period": 300,
-       "Stat": "Sum"
-      },
-      "ReturnData": false
-     }
-    ],
-    "Threshold": 80
-   },
-   "Metadata": {
-    "aws:cdk:path": "RoutingAPIStack/RoutingAPI-SEV3-4XXAlarm-ChainId: 1284/Resource"
-   }
-  },
   "CDKMetadata": {
    "Type": "AWS::CDK::Metadata",
    "Properties": {
-    "Analytics": "v2:deflate64:H4sIAAAAAAAA/1WQwU7DMAyGn4V7GkaF4FyKxGUINA4ckZt4Xbakrppk1RTl3XHXDpWTP/t3/Dsu5fOj3NzB6AulT4U1jUxfAdRJ1PtuBtZ+kqXWy7Sl9m2g2E/ijbOA3rQQcISLTDv0oerN1LDCSimKXRCv2Fu6OGTk6ipjpxYXSwZ+SnFQ+AIexTuGA+lJXOimLiZXzsKAY3uyc5ljFhZco0Fy/omDM94b6sQI+3MpExe/sanqrfijyntSBgJ3ZaEsRT1CUAeZKguDu/5jgpz/bfARQx/DepeJa+q0mSd1pFEe/f354UmWGz720RtTDHwP41Du5vgLoDQ6OIgBAAA="
+    "Analytics": "v2:deflate64:H4sIAAAAAAAA/1WPQU/DMAyFf8vumVl3gmMpEpchUHfgiNzE7bIlcdUkq6ao/x1l7VA5+fN7lp+9h6IoYLfB0W+lumyNbiAdA8qLqFo3A47+JxnuPKQDd+8Dxz6bD54E9rrDQCPeINXkQ9nrPLDCUkqOLog36g3fLLmQ1VV3DNjREtmRqMlzHCS9oifxQeHEKpsLPdwl5M6T0Ggh1WxmmQ1NwqBtFELVui8arPZesxMjttc9pKp139SU1UH8Uek9S41Bs5uENBzViEGeIJUGB3v/I8M0/bvgM4Y+hvUtmSt2Ss+bHCuCs3+6Fs9QvMBuc/Zab4fogrYE9Vx/AQuegheJAQAA"
    },
    "Metadata": {
     "aws:cdk:path": "RoutingAPIStack/CDKMetadata/Default"

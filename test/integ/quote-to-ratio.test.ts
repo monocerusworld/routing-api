@@ -1,18 +1,12 @@
 import { SignerWithAddress } from '@nomiclabs/hardhat-ethers/signers'
 import { Currency, CurrencyAmount, Ether, Fraction, Token, WETH9 } from '@uniswap/sdk-core'
 import {
-  CEUR_CELO,
-  CEUR_CELO_ALFAJORES,
   ChainId,
-  CUSD_CELO,
-  CUSD_CELO_ALFAJORES,
-  DAI_MAINNET,
   ID_TO_NETWORK_NAME,
   NATIVE_CURRENCY,
   parseAmount,
   USDC_MAINNET,
   USDT_MAINNET,
-  WBTC_MAINNET,
 } from '@monocerus/smart-order-router'
 import { MethodParameters, Pool, Position } from '@uniswap/v3-sdk'
 import { fail } from 'assert'
@@ -38,7 +32,7 @@ import { getBalance, getBalanceAndApprove, getBalanceOfAddress } from '../utils/
 import { minimumAmountOut } from '../utils/minimumAmountOut'
 import { getTestParamsFromEvents, parseEvents } from '../utils/parseEvents'
 import { FeeAmount, getMaxTick, getMinTick, TICK_SPACINGS } from '../utils/ticks'
-import { DAI_ON, UNI_MAINNET, USDC_ON, USDT_ON, WNATIVE_ON } from '../utils/tokens'
+import { USDC_ON, WNATIVE_ON } from '../utils/tokens'
 
 const { ethers } = hre
 
@@ -78,11 +72,11 @@ describe('quote-to-ratio', async function () {
   let response: AxiosResponse<QuoteToRatioResponse>
 
   const DEFAULT_QUERY_PARAMS = {
-    token0Address: DAI_MAINNET.address,
+    token0Address: USDT_MAINNET.address,
     token0ChainId: 1,
     token1Address: USDC_MAINNET.address,
     token1ChainId: 1,
-    token0Balance: parseAmount('5000', DAI_MAINNET).quotient.toString(),
+    token0Balance: parseAmount('5000', USDT_MAINNET).quotient.toString(),
     token1Balance: parseAmount('2000', USDC_MAINNET).quotient.toString(),
     tickLower: getMinTick(TICK_SPACINGS[FeeAmount.LOW]),
     tickUpper: getMaxTick(TICK_SPACINGS[FeeAmount.LOW]),
@@ -324,10 +318,8 @@ describe('quote-to-ratio', async function () {
     alice = await resetAndFundAtBlock(alice, block, [
       parseAmount('8000000', USDC_MAINNET),
       parseAmount('5000000', USDT_MAINNET),
-      parseAmount('10', WBTC_MAINNET),
-      parseAmount('1000', UNI_MAINNET),
       parseAmount('4000', WETH9[1]),
-      parseAmount('5000000', DAI_MAINNET),
+
     ])
   })
 
@@ -352,41 +344,41 @@ describe('quote-to-ratio', async function () {
       zeroForOne: true,
       requestParams: {
         ...DEFAULT_QUERY_PARAMS,
-        token0Balance: parseAmount('1000000', DAI_MAINNET).quotient.toString(),
+        token0Balance: parseAmount('1000000', USDT_MAINNET).quotient.toString(),
         token1Balance: parseAmount('2000', USDC_MAINNET).quotient.toString(),
         slippageTolerance: '0.05',
       },
     },
     {
       testCase: 'erc20 -> erc20 low volume trade token1Excess',
-      token0: DAI_MAINNET,
+      token0: USDT_MAINNET,
       token1: USDC_MAINNET,
       zeroForOne: false,
       requestParams: {
         ...DEFAULT_QUERY_PARAMS,
-        token0Balance: parseAmount('2000', DAI_MAINNET).quotient.toString(),
+        token0Balance: parseAmount('2000', USDT_MAINNET).quotient.toString(),
         token1Balance: parseAmount('5000', USDC_MAINNET).quotient.toString(),
       },
     },
     {
       testCase: 'erc20 -> erc20 high volume trade token1Excess',
-      token0: DAI_MAINNET,
+      token0: USDT_MAINNET,
       token1: USDC_MAINNET,
       zeroForOne: false,
       requestParams: {
         ...DEFAULT_QUERY_PARAMS,
-        token0Balance: parseAmount('2000', DAI_MAINNET).quotient.toString(),
+        token0Balance: parseAmount('2000', USDT_MAINNET).quotient.toString(),
         token1Balance: parseAmount('2000000', USDC_MAINNET).quotient.toString(),
       },
     },
     {
       testCase: 'erc20 -> erc20 range order position token0 excess',
-      token0: DAI_MAINNET,
+      token0: USDT_MAINNET,
       token1: USDC_MAINNET,
       zeroForOne: true,
       requestParams: {
         ...DEFAULT_QUERY_PARAMS,
-        token0Balance: parseAmount('50000', DAI_MAINNET).quotient.toString(),
+        token0Balance: parseAmount('50000', USDT_MAINNET).quotient.toString(),
         token1Balance: parseAmount('2000', USDC_MAINNET).quotient.toString(),
         tickLower: -286420,
         tickUpper: -276420,
@@ -394,12 +386,12 @@ describe('quote-to-ratio', async function () {
     },
     {
       testCase: 'erc20 -> erc20 range order position token1 excess',
-      token0: DAI_MAINNET,
+      token0: USDT_MAINNET,
       token1: USDC_MAINNET,
       zeroForOne: false,
       requestParams: {
         ...DEFAULT_QUERY_PARAMS,
-        token0Balance: parseAmount('2000', DAI_MAINNET).quotient.toString(),
+        token0Balance: parseAmount('2000', USDT_MAINNET).quotient.toString(),
         token1Balance: parseAmount('50000', USDC_MAINNET).quotient.toString(),
         tickLower: 0,
         tickUpper: 60,
@@ -407,25 +399,25 @@ describe('quote-to-ratio', async function () {
     },
     {
       testCase: 'erc20 -> eth',
-      token0: DAI_MAINNET,
+      token0: USDT_MAINNET,
       token1: Ether.onChain(1),
       zeroForOne: true,
       requestParams: {
         ...DEFAULT_QUERY_PARAMS,
         token1Address: 'ETH',
-        token0Balance: parseAmount('10000', DAI_MAINNET).quotient.toString(),
+        token0Balance: parseAmount('10000', USDT_MAINNET).quotient.toString(),
         token1Balance: parseAmount('1', WETH9[1]).quotient.toString(),
       },
     },
     {
       testCase: 'eth -> erc20',
-      token0: DAI_MAINNET,
+      token0: USDT_MAINNET,
       token1: Ether.onChain(1),
       zeroForOne: false,
       requestParams: {
         ...DEFAULT_QUERY_PARAMS,
         token1Address: 'ETH',
-        token0Balance: parseAmount('1000', DAI_MAINNET).quotient.toString(),
+        token0Balance: parseAmount('1000', USDT_MAINNET).quotient.toString(),
         token1Balance: parseAmount('3', Ether.onChain(1)).quotient.toString(),
       },
     },
@@ -472,7 +464,7 @@ describe('quote-to-ratio', async function () {
 
     // before hook times out. This test needed for subsequent tests in this block.
     it('first mint new position', async () => {
-      const token0Balance = parseAmount('2000', DAI_MAINNET).quotient.toString()
+      const token0Balance = parseAmount('2000', USDT_MAINNET).quotient.toString()
       const token1Balance = parseAmount('5000', USDC_MAINNET).quotient.toString()
 
       quoteToRatioParams = {
@@ -491,13 +483,13 @@ describe('quote-to-ratio', async function () {
       const { events } = await executeSwapAndAdd(
         postSwapTargetPool.address,
         methodParameters!,
-        DAI_MAINNET,
+        USDT_MAINNET,
         USDC_MAINNET
       )
 
       const { onChainPosition } = getTestParamsFromEvents(
         events,
-        DAI_MAINNET,
+        USDT_MAINNET,
         USDC_MAINNET,
         alice.address,
         postSwapTargetPool.address
@@ -507,7 +499,7 @@ describe('quote-to-ratio', async function () {
     })
 
     it('generates a legitimate trade with routing-api', async () => {
-      const token0Balance = parseAmount('3000', DAI_MAINNET).quotient.toString()
+      const token0Balance = parseAmount('3000', USDT_MAINNET).quotient.toString()
       const token1Balance = parseAmount('8000', USDC_MAINNET).quotient.toString()
       const addLiquidityTokenId = tokenId
       const addLiquidityRecipient = undefined
@@ -536,12 +528,12 @@ describe('quote-to-ratio', async function () {
       expect(status).to.equal(200, JSON.stringify(response.data))
       expect(ratioDeviation.lessThan(ratioErrorToleranceFraction)).to.be.true
       expect(tokenInAddress.toLowerCase()).to.equal(USDC_MAINNET.address.toLowerCase())
-      expect(tokenOutAddress.toLowerCase()).to.equal(DAI_MAINNET.address.toLowerCase())
+      expect(tokenOutAddress.toLowerCase()).to.equal(USDT_MAINNET.address.toLowerCase())
     })
 
     it('successfully executes at the contract level', async () => {
       const zeroForOne = false
-      await testSuccessfulContractExecution(response, quoteToRatioParams, DAI_MAINNET, USDC_MAINNET, zeroForOne)
+      await testSuccessfulContractExecution(response, quoteToRatioParams, USDT_MAINNET, USDC_MAINNET, zeroForOne)
     })
   })
 
@@ -590,7 +582,7 @@ describe('quote-to-ratio', async function () {
         testCase: 'when ratio is already fulfilled with token1',
         requestParams: {
           ...DEFAULT_QUERY_PARAMS,
-          token0Balance: parseAmount('0', DAI_MAINNET).quotient.toString(),
+          token0Balance: parseAmount('0', USDT_MAINNET).quotient.toString(),
           token1Balance: parseAmount('5000', USDC_MAINNET).quotient.toString(),
           tickLower: -286420,
           tickUpper: -276420,
@@ -607,7 +599,7 @@ describe('quote-to-ratio', async function () {
         testCase: 'when ratio is already fulfilled with token0',
         requestParams: {
           ...DEFAULT_QUERY_PARAMS,
-          token0Balance: parseAmount('50000', DAI_MAINNET).quotient.toString(),
+          token0Balance: parseAmount('50000', USDT_MAINNET).quotient.toString(),
           token1Balance: parseAmount('0', USDC_MAINNET).quotient.toString(),
           tickLower: 0,
           tickUpper: 60,
@@ -653,8 +645,8 @@ describe('quote-to-ratio', async function () {
         testCase: 'when tokens are the same',
         requestParams: {
           ...DEFAULT_QUERY_PARAMS,
-          token0Address: DAI_MAINNET.address,
-          token1Address: DAI_MAINNET.address,
+          token0Address: USDT_MAINNET.address,
+          token1Address: USDT_MAINNET.address,
         },
         result: {
           status: 400,
@@ -669,7 +661,7 @@ describe('quote-to-ratio', async function () {
         requestParams: {
           ...DEFAULT_QUERY_PARAMS,
           token0Address: USDC_MAINNET.address,
-          token1Address: DAI_MAINNET.address,
+          token1Address: USDT_MAINNET.address,
         },
         result: {
           status: 400,
@@ -704,74 +696,21 @@ describe('quote-to-ratio', async function () {
 
   const TEST_ERC20_1: { [chainId in ChainId]: null | Token } = {
     [ChainId.MAINNET]: USDC_ON(1),
-    [ChainId.ROPSTEN]: USDC_ON(ChainId.ROPSTEN),
-    [ChainId.RINKEBY]: USDC_ON(ChainId.RINKEBY),
-    [ChainId.GÖRLI]: USDC_ON(ChainId.GÖRLI),
-    [ChainId.KOVAN]: USDC_ON(ChainId.KOVAN),
-    [ChainId.OPTIMISM]: USDC_ON(ChainId.OPTIMISM),
-    [ChainId.OPTIMISTIC_KOVAN]: USDC_ON(ChainId.OPTIMISTIC_KOVAN),
-    [ChainId.OPTIMISM_GOERLI]: USDC_ON(ChainId.OPTIMISM_GOERLI),
-    [ChainId.ARBITRUM_ONE]: USDC_ON(ChainId.ARBITRUM_ONE),
-    [ChainId.ARBITRUM_RINKEBY]: USDC_ON(ChainId.ARBITRUM_RINKEBY),
-    [ChainId.ARBITRUM_GOERLI]: null,
-    [ChainId.POLYGON]: USDC_ON(ChainId.POLYGON),
-    [ChainId.POLYGON_MUMBAI]: USDC_ON(ChainId.POLYGON_MUMBAI),
-    [ChainId.CELO]: CUSD_CELO,
-    [ChainId.CELO_ALFAJORES]: CUSD_CELO_ALFAJORES,
-    [ChainId.MOONBEAM]: null,
-    [ChainId.GNOSIS]: null,
-    [ChainId.BSC]: USDC_ON(ChainId.BSC),
-    [ChainId.FANTOM]: USDC_ON(ChainId.FANTOM),
-    [ChainId.KLAYTN]: USDC_ON(ChainId.KLAYTN),
-    [ChainId.AVALANCHE]: USDC_ON(ChainId.AVALANCHE),
+    [ChainId.MANTA_TESTNET]: USDC_ON(ChainId.MANTA_TESTNET),
+    [ChainId.MANTA]: USDC_ON(ChainId.MANTA),
   }
 
   const TEST_ERC20_2: { [chainId in ChainId]: Token | null } = {
-    [ChainId.MAINNET]: DAI_ON(1),
-    [ChainId.ROPSTEN]: DAI_ON(ChainId.ROPSTEN),
-    [ChainId.RINKEBY]: DAI_ON(ChainId.RINKEBY),
-    [ChainId.GÖRLI]: DAI_ON(ChainId.GÖRLI),
-    [ChainId.KOVAN]: DAI_ON(ChainId.KOVAN),
-    [ChainId.OPTIMISM]: DAI_ON(ChainId.OPTIMISM),
-    [ChainId.OPTIMISTIC_KOVAN]: DAI_ON(ChainId.OPTIMISTIC_KOVAN),
-    [ChainId.OPTIMISM_GOERLI]: DAI_ON(ChainId.OPTIMISM_GOERLI),
-    [ChainId.ARBITRUM_ONE]: DAI_ON(ChainId.ARBITRUM_ONE),
-    [ChainId.ARBITRUM_RINKEBY]: DAI_ON(ChainId.ARBITRUM_RINKEBY),
-    [ChainId.POLYGON]: DAI_ON(ChainId.POLYGON),
-    [ChainId.POLYGON_MUMBAI]: DAI_ON(ChainId.POLYGON_MUMBAI),
-    [ChainId.CELO]: CEUR_CELO,
-    [ChainId.CELO_ALFAJORES]: CEUR_CELO_ALFAJORES,
-    [ChainId.MOONBEAM]: null,
-    [ChainId.GNOSIS]: null,
-    [ChainId.ARBITRUM_GOERLI]: null,
-    [ChainId.BSC]: USDT_ON(ChainId.BSC),
-    [ChainId.FANTOM]: USDT_ON(ChainId.FANTOM),
-    [ChainId.KLAYTN]: USDT_ON(ChainId.KLAYTN),
-    [ChainId.AVALANCHE]: USDT_ON(ChainId.AVALANCHE),
+    [ChainId.MAINNET]: USDC_ON(1),
+    [ChainId.MANTA_TESTNET]: USDC_ON(ChainId.MANTA_TESTNET),
+    [ChainId.MANTA]: USDC_ON(ChainId.MANTA),
   }
 
   for (const chain of _.filter(
     SUPPORTED_CHAINS,
     (c) =>
-      c != ChainId.POLYGON &&
-      c != ChainId.RINKEBY &&
-      c != ChainId.OPTIMISM &&
-      c != ChainId.OPTIMISTIC_KOVAN &&
-      c != ChainId.OPTIMISM_GOERLI &&
-      c != ChainId.POLYGON_MUMBAI &&
-      c != ChainId.ARBITRUM_RINKEBY &&
-      c != ChainId.ARBITRUM_GOERLI &&
-      c != ChainId.GÖRLI &&
-      c != ChainId.MOONBEAM &&
-      c != ChainId.GNOSIS &&
-      c != ChainId.FANTOM &&
-      c != ChainId.KLAYTN &&
-      c != ChainId.CELO &&
-      c != ChainId.CELO_ALFAJORES &&
-      c != ChainId.KOVAN &&
-      c != ChainId.ROPSTEN &&
-      /// @dev We can enable for BSC after more pools are created
-      c != ChainId.BSC
+      c != ChainId.MANTA &&
+      c != ChainId.MANTA_TESTNET
   )) {
     const erc1 = TEST_ERC20_1[chain]
     const erc2 = TEST_ERC20_2[chain]
@@ -849,17 +788,6 @@ describe('quote-to-ratio', async function () {
         let feeTierParams: any
 
         // finding active pools on arb-rink is difficult
-        if (chain == ChainId.ARBITRUM_RINKEBY) {
-          token0Address = '0xe2c750ed87e81e2d4da24982eae385bad116eefe'
-          token1Address = '0xfec501fcc518a69473f132b4fff28a542ffffec4'
-          token0Balance = `1${'0'.repeat(18)}`
-          token1Balance = `30000${'0'.repeat(18)}`
-          feeTierParams = {
-            tickLower: getMinTick(TICK_SPACINGS[FeeAmount.MEDIUM]),
-            tickUpper: getMaxTick(TICK_SPACINGS[FeeAmount.MEDIUM]),
-            feeAmount: FeeAmount.MEDIUM,
-          }
-        } else {
           feeTierParams = {}
           token0Address = token0.wrapped.address
           token1Address = token1.wrapped.address
@@ -869,7 +797,7 @@ describe('quote-to-ratio', async function () {
             tickLower: getMinTick(TICK_SPACINGS[FeeAmount.MEDIUM]),
             tickUpper: getMaxTick(TICK_SPACINGS[FeeAmount.MEDIUM]),
             feeAmount: FeeAmount.MEDIUM,
-          }
+          
         }
 
         quoteToRatioParams = {

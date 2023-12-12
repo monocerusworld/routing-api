@@ -189,13 +189,7 @@
      "S3Bucket": {
       "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
      },
-     "S3Key": "564bc34a28ca4b3d07cec29fda01060393e494b2feec42676e6e340d0e2b5454.zip"
-    },
-    "Role": {
-     "Fn::GetAtt": [
-      "RoutingLambdaRole270B0918",
-      "Arn"
-     ]
+     "S3Key": "358d75db6b8e7705d9b315ef2d2d5144848d178c7b7adf6cb30b049d3f25aec1.zip"
     },
     "Description": "Routing Lambda",
     "Environment": {
@@ -237,6 +231,12 @@
      }
     ],
     "MemorySize": 1024,
+    "Role": {
+     "Fn::GetAtt": [
+      "RoutingLambdaRole270B0918",
+      "Arn"
+     ]
+    },
     "Runtime": "nodejs14.x",
     "Timeout": 29,
     "TracingConfig": {
@@ -249,12 +249,12 @@
    ],
    "Metadata": {
     "aws:cdk:path": "RoutingAPIStack/RoutingLambdaStack/RoutingLambda2/Resource",
-    "aws:asset:path": "asset.564bc34a28ca4b3d07cec29fda01060393e494b2feec42676e6e340d0e2b5454",
+    "aws:asset:path": "asset.358d75db6b8e7705d9b315ef2d2d5144848d178c7b7adf6cb30b049d3f25aec1",
     "aws:asset:is-bundled": true,
     "aws:asset:property": "Code"
    }
   },
-  "RoutingLambda2CurrentVersion49A1BB9419a898711bdf8bea5275bfd874abdf38": {
+  "RoutingLambda2CurrentVersion49A1BB942a98c7319e503a637e8df929b9db9409": {
    "Type": "AWS::Lambda::Version",
    "Properties": {
     "FunctionName": {
@@ -272,13 +272,7 @@
      "S3Bucket": {
       "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
      },
-     "S3Key": "564bc34a28ca4b3d07cec29fda01060393e494b2feec42676e6e340d0e2b5454.zip"
-    },
-    "Role": {
-     "Fn::GetAtt": [
-      "RoutingLambdaRole270B0918",
-      "Arn"
-     ]
+     "S3Key": "358d75db6b8e7705d9b315ef2d2d5144848d178c7b7adf6cb30b049d3f25aec1.zip"
     },
     "Description": "Route to Ratio Lambda",
     "Environment": {
@@ -317,6 +311,12 @@
      }
     ],
     "MemorySize": 1024,
+    "Role": {
+     "Fn::GetAtt": [
+      "RoutingLambdaRole270B0918",
+      "Arn"
+     ]
+    },
     "Runtime": "nodejs14.x",
     "Timeout": 29,
     "TracingConfig": {
@@ -329,7 +329,7 @@
    ],
    "Metadata": {
     "aws:cdk:path": "RoutingAPIStack/RoutingLambdaStack/RouteToRatioLambda2/Resource",
-    "aws:asset:path": "asset.564bc34a28ca4b3d07cec29fda01060393e494b2feec42676e6e340d0e2b5454",
+    "aws:asset:path": "asset.358d75db6b8e7705d9b315ef2d2d5144848d178c7b7adf6cb30b049d3f25aec1",
     "aws:asset:is-bundled": true,
     "aws:asset:property": "Code"
    }
@@ -395,7 +395,6 @@
    "Type": "AWS::CloudWatch::Alarm",
    "Properties": {
     "ComparisonOperator": "GreaterThanOrEqualToThreshold",
-    "EvaluationPeriods": 3,
     "Dimensions": [
      {
       "Name": "FunctionName",
@@ -404,6 +403,7 @@
       }
      }
     ],
+    "EvaluationPeriods": 3,
     "MetricName": "Throttles",
     "Namespace": "AWS/Lambda",
     "Period": 300,
@@ -422,7 +422,7 @@
     },
     "FunctionVersion": {
      "Fn::GetAtt": [
-      "RoutingLambda2CurrentVersion49A1BB9419a898711bdf8bea5275bfd874abdf38",
+      "RoutingLambda2CurrentVersion49A1BB942a98c7319e503a637e8df929b9db9409",
       "Version"
      ]
     },
@@ -435,7 +435,7 @@
   "CDKMetadata": {
    "Type": "AWS::CDK::Metadata",
    "Properties": {
-    "Analytics": "v2:deflate64:H4sIAAAAAAAA/z2QTU/DMAyGfwv31IyB4NxN4jihInGtvMQMt2ki1QkTivLfSVLG6XntV/7cw8sT7O7wKp02c2f5DOlEEsi8B9SzKsaYGBdIg7ekjp+u8c1b1j813FRWFpezwdF5Q5PAqeE1Oh3YOyWPI4pQEOgrSgyHqGcKBxT6K4VUuv1XfNAqlSV3k71llJpoIittfTRXDPoLUm9xXTaviJzVQOLjqkm1geWWC7tLW/9mFH30znAdl1XdGya5/354hv2ufGQS5m6NLvBCMGz8BbiZQm4tAQAA"
+    "Analytics": "v2:deflate64:H4sIAAAAAAAA/z2OzWrDMBCEnyV3eRs3l/boCHoMwYFezUZap7L1A1qpphi9e5Hd9PTN7jDMvELbtnA84MKN0nNjzR3WC3EifUuoZoELD6tBB2sfLAk5+o3XYI36qeeuirDo7hoHHzRNDJcNH9mrZIIXfBqQmRJDVyH4BOesZkpnZPqLwipH/5/4pMiVcvRP2VmDXB+bKELZkPWCSX3B2lmMbvcwulJETxxyVCS2wlvCh/GPbf7TkKOXwWtT64qou2Hil+/2Ddp3OB4mNqaJ2SfjCPqdv/2tKscuAQAA"
    },
    "Metadata": {
     "aws:cdk:path": "RoutingAPIStack/RoutingLambdaStack/CDKMetadata/Default"

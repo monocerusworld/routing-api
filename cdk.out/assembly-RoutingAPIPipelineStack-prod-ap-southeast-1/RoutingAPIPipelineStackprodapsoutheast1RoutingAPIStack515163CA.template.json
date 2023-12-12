@@ -11,7 +11,7 @@
        {
         "Ref": "AWS::URLSuffix"
        },
-       "/cdk-hnb659fds-assets-978958364414-ap-southeast-1/f28ee70bbd6dfc205908df23fa9fb038fc17501451359ada8681d0274349a7ea.json"
+       "/cdk-hnb659fds-assets-978958364414-ap-southeast-1/d00c9dc4e3559be6af5ddf01079a5893abe122656ce627f0d5cbed3a8e0f74e0.json"
       ]
      ]
     }
@@ -35,7 +35,7 @@
        {
         "Ref": "AWS::URLSuffix"
        },
-       "/cdk-hnb659fds-assets-978958364414-ap-southeast-1/131105589e4b0fdfb9812a621b2f22871d0589bd95cfb0724f7a1790d68cbdd8.json"
+       "/cdk-hnb659fds-assets-978958364414-ap-southeast-1/3c524624e6528030aeddeaee26432af584c2fd0a76d919ff0634113c871f101d.json"
       ]
      ]
     }
@@ -51,18 +51,6 @@
   "RoutingLambdaStackNestedStackRoutingLambdaStackNestedStackResource809DEBCF": {
    "Type": "AWS::CloudFormation::Stack",
    "Properties": {
-    "TemplateURL": {
-     "Fn::Join": [
-      "",
-      [
-       "https://s3.ap-southeast-1.",
-       {
-        "Ref": "AWS::URLSuffix"
-       },
-       "/cdk-hnb659fds-assets-978958364414-ap-southeast-1/89e8eb53cf256b9c484d0e8c290ff45da179b85c15fe39eec18d37a4d7332cf0.json"
-      ]
-     ]
-    },
     "Parameters": {
      "referencetoRoutingAPIPipelineStackprodapsoutheast1RoutingAPIStackRoutingCachingStackNestedStackRoutingCachingStackNestedStackResource6A558122OutputsRoutingAPIPipelineStackprodapsoutheast1RoutingAPIStackRoutingCachingStackPoolCacheBucketF8B58402Arn": {
       "Fn::GetAtt": [
@@ -112,6 +100,18 @@
        "Outputs.RoutingAPIPipelineStackprodapsoutheast1RoutingAPIStackRoutingCachingStackTokenListCacheBucket34829994Ref"
       ]
      }
+    },
+    "TemplateURL": {
+     "Fn::Join": [
+      "",
+      [
+       "https://s3.ap-southeast-1.",
+       {
+        "Ref": "AWS::URLSuffix"
+       },
+       "/cdk-hnb659fds-assets-978958364414-ap-southeast-1/9b983d66abf5cf634938e19922c4a6ec0e7587e740179fa44c4a2f774bae0654.json"
+      ]
+     ]
     }
    },
    "UpdateReplacePolicy": "Delete",
@@ -197,13 +197,13 @@
     "aws:cdk:path": "RoutingAPIPipelineStack/prod-ap-southeast-1/RoutingAPIStack/routing-api/Account"
    }
   },
-  "routingapiDeploymentB21C3ACB374f718d199169ef8c3c667ce6ccca03": {
+  "routingapiDeploymentB21C3ACB9b7aa308c26f5cd42c0df910b5f57de4": {
    "Type": "AWS::ApiGateway::Deployment",
    "Properties": {
+    "Description": "Automatically created by the RestApi construct",
     "RestApiId": {
      "Ref": "routingapiA6A29457"
-    },
-    "Description": "Automatically created by the RestApi construct"
+    }
    },
    "DependsOn": [
     "routingapiOPTIONSC8A73B96",
@@ -221,9 +221,6 @@
   "routingapiDeploymentStageprod8BE7ABCF": {
    "Type": "AWS::ApiGateway::Stage",
    "Properties": {
-    "RestApiId": {
-     "Ref": "routingapiA6A29457"
-    },
     "AccessLogSetting": {
      "DestinationArn": {
       "Fn::GetAtt": [
@@ -234,7 +231,7 @@
      "Format": "{\"requestId\":\"$context.requestId\",\"requestTime\":\"$context.requestTime\",\"httpMethod\":\"$context.httpMethod\",\"resourcePath\":\"$context.resourcePath\",\"status\":\"$context.status\",\"protocol\":\"$context.protocol\",\"responseLength\":\"$context.responseLength\"}"
     },
     "DeploymentId": {
-     "Ref": "routingapiDeploymentB21C3ACB374f718d199169ef8c3c667ce6ccca03"
+     "Ref": "routingapiDeploymentB21C3ACB9b7aa308c26f5cd42c0df910b5f57de4"
     },
     "MethodSettings": [
      {
@@ -244,6 +241,9 @@
       "ResourcePath": "/*"
      }
     ],
+    "RestApiId": {
+     "Ref": "routingapiA6A29457"
+    },
     "StageName": "prod",
     "TracingEnabled": true
    },
@@ -257,17 +257,9 @@
   "routingapiOPTIONSC8A73B96": {
    "Type": "AWS::ApiGateway::Method",
    "Properties": {
-    "HttpMethod": "OPTIONS",
-    "ResourceId": {
-     "Fn::GetAtt": [
-      "routingapiA6A29457",
-      "RootResourceId"
-     ]
-    },
-    "RestApiId": {
-     "Ref": "routingapiA6A29457"
-    },
+    "ApiKeyRequired": false,
     "AuthorizationType": "NONE",
+    "HttpMethod": "OPTIONS",
     "Integration": {
      "IntegrationResponses": [
       {
@@ -293,7 +285,16 @@
       },
       "StatusCode": "204"
      }
-    ]
+    ],
+    "ResourceId": {
+     "Fn::GetAtt": [
+      "routingapiA6A29457",
+      "RootResourceId"
+     ]
+    },
+    "RestApiId": {
+     "Ref": "routingapiA6A29457"
+    }
    },
    "Metadata": {
     "aws:cdk:path": "RoutingAPIPipelineStack/prod-ap-southeast-1/RoutingAPIStack/routing-api/Default/OPTIONS/Resource"
@@ -320,14 +321,9 @@
   "routingapiquoteOPTIONS5FC9C216": {
    "Type": "AWS::ApiGateway::Method",
    "Properties": {
-    "HttpMethod": "OPTIONS",
-    "ResourceId": {
-     "Ref": "routingapiquoteCE190E63"
-    },
-    "RestApiId": {
-     "Ref": "routingapiA6A29457"
-    },
+    "ApiKeyRequired": false,
     "AuthorizationType": "NONE",
+    "HttpMethod": "OPTIONS",
     "Integration": {
      "IntegrationResponses": [
       {
@@ -353,7 +349,13 @@
       },
       "StatusCode": "204"
      }
-    ]
+    ],
+    "ResourceId": {
+     "Ref": "routingapiquoteCE190E63"
+    },
+    "RestApiId": {
+     "Ref": "routingapiA6A29457"
+    }
    },
    "Metadata": {
     "aws:cdk:path": "RoutingAPIPipelineStack/prod-ap-southeast-1/RoutingAPIStack/routing-api/Default/quote/OPTIONS/Resource"
@@ -430,14 +432,8 @@
   "routingapiquoteGETA533B14B": {
    "Type": "AWS::ApiGateway::Method",
    "Properties": {
-    "HttpMethod": "GET",
-    "ResourceId": {
-     "Ref": "routingapiquoteCE190E63"
-    },
-    "RestApiId": {
-     "Ref": "routingapiA6A29457"
-    },
     "AuthorizationType": "NONE",
+    "HttpMethod": "GET",
     "Integration": {
      "IntegrationHttpMethod": "POST",
      "Type": "AWS_PROXY",
@@ -460,6 +456,12 @@
        ]
       ]
      }
+    },
+    "ResourceId": {
+     "Ref": "routingapiquoteCE190E63"
+    },
+    "RestApiId": {
+     "Ref": "routingapiA6A29457"
     }
    },
    "Metadata": {
@@ -487,14 +489,9 @@
   "routingapiquoteToRatioOPTIONS87EF7538": {
    "Type": "AWS::ApiGateway::Method",
    "Properties": {
-    "HttpMethod": "OPTIONS",
-    "ResourceId": {
-     "Ref": "routingapiquoteToRatio040AC04F"
-    },
-    "RestApiId": {
-     "Ref": "routingapiA6A29457"
-    },
+    "ApiKeyRequired": false,
     "AuthorizationType": "NONE",
+    "HttpMethod": "OPTIONS",
     "Integration": {
      "IntegrationResponses": [
       {
@@ -520,7 +517,13 @@
       },
       "StatusCode": "204"
      }
-    ]
+    ],
+    "ResourceId": {
+     "Ref": "routingapiquoteToRatio040AC04F"
+    },
+    "RestApiId": {
+     "Ref": "routingapiA6A29457"
+    }
    },
    "Metadata": {
     "aws:cdk:path": "RoutingAPIPipelineStack/prod-ap-southeast-1/RoutingAPIStack/routing-api/Default/quoteToRatio/OPTIONS/Resource"
@@ -597,14 +600,8 @@
   "routingapiquoteToRatioGET9A57B6E8": {
    "Type": "AWS::ApiGateway::Method",
    "Properties": {
-    "HttpMethod": "GET",
-    "ResourceId": {
-     "Ref": "routingapiquoteToRatio040AC04F"
-    },
-    "RestApiId": {
-     "Ref": "routingapiA6A29457"
-    },
     "AuthorizationType": "NONE",
+    "HttpMethod": "GET",
     "Integration": {
      "IntegrationHttpMethod": "POST",
      "Type": "AWS_PROXY",
@@ -627,6 +624,12 @@
        ]
       ]
      }
+    },
+    "ResourceId": {
+     "Ref": "routingapiquoteToRatio040AC04F"
+    },
+    "RestApiId": {
+     "Ref": "routingapiA6A29457"
     }
    },
    "Metadata": {
@@ -636,20 +639,14 @@
   "RoutingAPIIPThrottlingACL": {
    "Type": "AWS::WAFv2::WebACL",
    "Properties": {
-    "DefaultAction": {
-     "Allow": {}
-    },
-    "Scope": "REGIONAL",
-    "VisibilityConfig": {
-     "CloudWatchMetricsEnabled": true,
-     "MetricName": "RoutingAPIIPBasedThrottling",
-     "SampledRequestsEnabled": true
-    },
     "CustomResponseBodies": {
      "RoutingAPIThrottledResponseBody": {
       "Content": "{\"errorCode\": \"TOO_MANY_REQUESTS\"}",
       "ContentType": "APPLICATION_JSON"
      }
+    },
+    "DefaultAction": {
+     "Allow": {}
     },
     "Name": "RoutingAPIIPThrottling",
     "Rules": [
@@ -680,7 +677,13 @@
        "SampledRequestsEnabled": true
       }
      }
-    ]
+    ],
+    "Scope": "REGIONAL",
+    "VisibilityConfig": {
+     "CloudWatchMetricsEnabled": true,
+     "MetricName": "RoutingAPIIPBasedThrottling",
+     "SampledRequestsEnabled": true
+    }
    },
    "Metadata": {
     "aws:cdk:path": "RoutingAPIPipelineStack/prod-ap-southeast-1/RoutingAPIStack/RoutingAPIIPThrottlingACL"
@@ -718,18 +721,6 @@
   "RoutingDashboardStackNestedStackRoutingDashboardStackNestedStackResourceDF805217": {
    "Type": "AWS::CloudFormation::Stack",
    "Properties": {
-    "TemplateURL": {
-     "Fn::Join": [
-      "",
-      [
-       "https://s3.ap-southeast-1.",
-       {
-        "Ref": "AWS::URLSuffix"
-       },
-       "/cdk-hnb659fds-assets-978958364414-ap-southeast-1/77d6d74ac580b04c32d90f54902c42f2d2a77763d09afa4f7629e6a8eb3fba04.json"
-      ]
-     ]
-    },
     "Parameters": {
      "referencetoRoutingAPIPipelineStackprodapsoutheast1RoutingAPIStackRoutingLambdaStackNestedStackRoutingLambdaStackNestedStackResourceB8D316ACOutputsRoutingAPIPipelineStackprodapsoutheast1RoutingAPIStackRoutingLambdaStackRoutingLambda2E17584E3Ref": {
       "Fn::GetAtt": [
@@ -743,28 +734,16 @@
        "Outputs.RoutingAPIPipelineStackprodapsoutheast1RoutingAPIStackRoutingCachingStackPoolCacheLambdaChainId1ProtocolV37B8998DARef"
       ]
      },
-     "referencetoRoutingAPIPipelineStackprodapsoutheast1RoutingAPIStackRoutingCachingStackNestedStackRoutingCachingStackNestedStackResource6A558122OutputsRoutingAPIPipelineStackprodapsoutheast1RoutingAPIStackRoutingCachingStackPoolCacheLambdaChai54047D11": {
+     "referencetoRoutingAPIPipelineStackprodapsoutheast1RoutingAPIStackRoutingCachingStackNestedStackRoutingCachingStackNestedStackResource6A558122OutputsRoutingAPIPipelineStackprodapsoutheast1RoutingAPIStackRoutingCachingStackPoolCacheLambdaChaiAF79A093": {
       "Fn::GetAtt": [
        "RoutingCachingStackNestedStackRoutingCachingStackNestedStackResource5CAB1140",
-       "Outputs.RoutingAPIPipelineStackprodapsoutheast1RoutingAPIStackRoutingCachingStackPoolCacheLambdaChainId42161ProtocolV333B26952Ref"
+       "Outputs.RoutingAPIPipelineStackprodapsoutheast1RoutingAPIStackRoutingCachingStackPoolCacheLambdaChainId169ProtocolV3B204B550Ref"
       ]
      },
-     "referencetoRoutingAPIPipelineStackprodapsoutheast1RoutingAPIStackRoutingCachingStackNestedStackRoutingCachingStackNestedStackResource6A558122OutputsRoutingAPIPipelineStackprodapsoutheast1RoutingAPIStackRoutingCachingStackPoolCacheLambdaChai78ACD3E1": {
+     "referencetoRoutingAPIPipelineStackprodapsoutheast1RoutingAPIStackRoutingCachingStackNestedStackRoutingCachingStackNestedStackResource6A558122OutputsRoutingAPIPipelineStackprodapsoutheast1RoutingAPIStackRoutingCachingStackPoolCacheLambdaChai844CCE8E": {
       "Fn::GetAtt": [
        "RoutingCachingStackNestedStackRoutingCachingStackNestedStackResource5CAB1140",
-       "Outputs.RoutingAPIPipelineStackprodapsoutheast1RoutingAPIStackRoutingCachingStackPoolCacheLambdaChainId137ProtocolV375EA4DDBRef"
-      ]
-     },
-     "referencetoRoutingAPIPipelineStackprodapsoutheast1RoutingAPIStackRoutingCachingStackNestedStackRoutingCachingStackNestedStackResource6A558122OutputsRoutingAPIPipelineStackprodapsoutheast1RoutingAPIStackRoutingCachingStackPoolCacheLambdaChai1729C579": {
-      "Fn::GetAtt": [
-       "RoutingCachingStackNestedStackRoutingCachingStackNestedStackResource5CAB1140",
-       "Outputs.RoutingAPIPipelineStackprodapsoutheast1RoutingAPIStackRoutingCachingStackPoolCacheLambdaChainId42220ProtocolV36D2F3FB5Ref"
-      ]
-     },
-     "referencetoRoutingAPIPipelineStackprodapsoutheast1RoutingAPIStackRoutingCachingStackNestedStackRoutingCachingStackNestedStackResource6A558122OutputsRoutingAPIPipelineStackprodapsoutheast1RoutingAPIStackRoutingCachingStackPoolCacheLambdaChai9E52FB39": {
-      "Fn::GetAtt": [
-       "RoutingCachingStackNestedStackRoutingCachingStackNestedStackResource5CAB1140",
-       "Outputs.RoutingAPIPipelineStackprodapsoutheast1RoutingAPIStackRoutingCachingStackPoolCacheLambdaChainId56ProtocolV341A918E1Ref"
+       "Outputs.RoutingAPIPipelineStackprodapsoutheast1RoutingAPIStackRoutingCachingStackPoolCacheLambdaChainId3441005ProtocolV3C7404463Ref"
       ]
      },
      "referencetoRoutingAPIPipelineStackprodapsoutheast1RoutingAPIStackRoutingCachingStackNestedStackRoutingCachingStackNestedStackResource6A558122OutputsRoutingAPIPipelineStackprodapsoutheast1RoutingAPIStackRoutingCachingStackPoolCacheLambdaChaiBCAE7089": {
@@ -779,6 +758,18 @@
        "Outputs.RoutingAPIPipelineStackprodapsoutheast1RoutingAPIStackRoutingCachingStackIpfsPoolCacheLambda567733DCRef"
       ]
      }
+    },
+    "TemplateURL": {
+     "Fn::Join": [
+      "",
+      [
+       "https://s3.ap-southeast-1.",
+       {
+        "Ref": "AWS::URLSuffix"
+       },
+       "/cdk-hnb659fds-assets-978958364414-ap-southeast-1/4f8fe14eefc94218c8c6999ee62147c3bb9adbacd538b093389c5e1c3f4b566e.json"
+      ]
+     ]
     }
    },
    "UpdateReplacePolicy": "Delete",
@@ -792,18 +783,18 @@
   "RoutingAPISEV25XXAlarm44598BE4": {
    "Type": "AWS::CloudWatch::Alarm",
    "Properties": {
-    "ComparisonOperator": "GreaterThanOrEqualToThreshold",
-    "EvaluationPeriods": 3,
     "AlarmActions": [
      "arn:aws:sns:ap-southeast-1:978958364414:SlackChatbotTopic"
     ],
     "AlarmName": "RoutingAPI-SEV2-5XX",
+    "ComparisonOperator": "GreaterThanOrEqualToThreshold",
     "Dimensions": [
      {
       "Name": "ApiName",
       "Value": "Routing API"
      }
     ],
+    "EvaluationPeriods": 3,
     "MetricName": "5XXError",
     "Namespace": "AWS/ApiGateway",
     "Period": 300,
@@ -817,18 +808,18 @@
   "RoutingAPISEV24XXAlarmEAC7EDAA": {
    "Type": "AWS::CloudWatch::Alarm",
    "Properties": {
-    "ComparisonOperator": "GreaterThanOrEqualToThreshold",
-    "EvaluationPeriods": 3,
     "AlarmActions": [
      "arn:aws:sns:ap-southeast-1:978958364414:SlackChatbotTopic"
     ],
     "AlarmName": "RoutingAPI-SEV2-4XX",
+    "ComparisonOperator": "GreaterThanOrEqualToThreshold",
     "Dimensions": [
      {
       "Name": "ApiName",
       "Value": "Routing API"
      }
     ],
+    "EvaluationPeriods": 3,
     "MetricName": "4XXError",
     "Namespace": "AWS/ApiGateway",
     "Period": 300,
@@ -842,18 +833,18 @@
   "RoutingAPISEV2LatencyA6B1019A": {
    "Type": "AWS::CloudWatch::Alarm",
    "Properties": {
-    "ComparisonOperator": "GreaterThanOrEqualToThreshold",
-    "EvaluationPeriods": 3,
     "AlarmActions": [
      "arn:aws:sns:ap-southeast-1:978958364414:SlackChatbotTopic"
     ],
     "AlarmName": "RoutingAPI-SEV2-Latency",
+    "ComparisonOperator": "GreaterThanOrEqualToThreshold",
     "Dimensions": [
      {
       "Name": "ApiName",
       "Value": "Routing API"
      }
     ],
+    "EvaluationPeriods": 3,
     "ExtendedStatistic": "p90",
     "MetricName": "Latency",
     "Namespace": "AWS/ApiGateway",
@@ -867,18 +858,18 @@
   "RoutingAPISEV35XXAlarm1A98106B": {
    "Type": "AWS::CloudWatch::Alarm",
    "Properties": {
-    "ComparisonOperator": "GreaterThanOrEqualToThreshold",
-    "EvaluationPeriods": 3,
     "AlarmActions": [
      "arn:aws:sns:ap-southeast-1:978958364414:SlackChatbotTopic"
     ],
     "AlarmName": "RoutingAPI-SEV3-5XX",
+    "ComparisonOperator": "GreaterThanOrEqualToThreshold",
     "Dimensions": [
      {
       "Name": "ApiName",
       "Value": "Routing API"
      }
     ],
+    "EvaluationPeriods": 3,
     "MetricName": "5XXError",
     "Namespace": "AWS/ApiGateway",
     "Period": 300,
@@ -892,18 +883,18 @@
   "RoutingAPISEV34XXAlarm90CADBEF": {
    "Type": "AWS::CloudWatch::Alarm",
    "Properties": {
-    "ComparisonOperator": "GreaterThanOrEqualToThreshold",
-    "EvaluationPeriods": 3,
     "AlarmActions": [
      "arn:aws:sns:ap-southeast-1:978958364414:SlackChatbotTopic"
     ],
     "AlarmName": "RoutingAPI-SEV3-4XX",
+    "ComparisonOperator": "GreaterThanOrEqualToThreshold",
     "Dimensions": [
      {
       "Name": "ApiName",
       "Value": "Routing API"
      }
     ],
+    "EvaluationPeriods": 3,
     "MetricName": "4XXError",
     "Namespace": "AWS/ApiGateway",
     "Period": 300,
@@ -917,18 +908,18 @@
   "RoutingAPISEV3LatencyC60ADA63": {
    "Type": "AWS::CloudWatch::Alarm",
    "Properties": {
-    "ComparisonOperator": "GreaterThanOrEqualToThreshold",
-    "EvaluationPeriods": 3,
     "AlarmActions": [
      "arn:aws:sns:ap-southeast-1:978958364414:SlackChatbotTopic"
     ],
     "AlarmName": "RoutingAPI-SEV3-Latency",
+    "ComparisonOperator": "GreaterThanOrEqualToThreshold",
     "Dimensions": [
      {
       "Name": "ApiName",
       "Value": "Routing API"
      }
     ],
+    "EvaluationPeriods": 3,
     "ExtendedStatistic": "p90",
     "MetricName": "Latency",
     "Namespace": "AWS/ApiGateway",
@@ -942,12 +933,12 @@
   "RoutingAPISEV3Simulation151B9C9C": {
    "Type": "AWS::CloudWatch::Alarm",
    "Properties": {
-    "ComparisonOperator": "GreaterThanOrEqualToThreshold",
-    "EvaluationPeriods": 3,
     "AlarmActions": [
      "arn:aws:sns:ap-southeast-1:978958364414:SlackChatbotTopic"
     ],
     "AlarmName": "RoutingAPI-SEV3-Simulation",
+    "ComparisonOperator": "GreaterThanOrEqualToThreshold",
+    "EvaluationPeriods": 3,
     "Metrics": [
      {
       "Expression": "100*(simulationFailed/simulationRequested)",
@@ -999,1634 +990,10 @@
     "aws:cdk:path": "RoutingAPIPipelineStack/prod-ap-southeast-1/RoutingAPIStack/RoutingAPI-SEV3-Simulation/Resource"
    }
   },
-  "RoutingAPISEV32XXAlarmChainId1825327DB": {
-   "Type": "AWS::CloudWatch::Alarm",
-   "Properties": {
-    "ComparisonOperator": "LessThanOrEqualToThreshold",
-    "EvaluationPeriods": 2,
-    "AlarmActions": [
-     "arn:aws:sns:ap-southeast-1:978958364414:SlackChatbotTopic"
-    ],
-    "AlarmName": "RoutingAPI-SEV3-2XXAlarm-ChainId: 1",
-    "Metrics": [
-     {
-      "Expression": "100*(response200/invocations)",
-      "Id": "expr_1"
-     },
-     {
-      "Id": "invocations",
-      "MetricStat": {
-       "Metric": {
-        "Dimensions": [
-         {
-          "Name": "Service",
-          "Value": "RoutingAPI"
-         }
-        ],
-        "MetricName": "GET_QUOTE_REQUESTED_CHAINID: 1",
-        "Namespace": "Uniswap"
-       },
-       "Period": 1800,
-       "Stat": "Sum",
-       "Unit": "Count"
-      },
-      "ReturnData": false
-     },
-     {
-      "Id": "response200",
-      "MetricStat": {
-       "Metric": {
-        "Dimensions": [
-         {
-          "Name": "Service",
-          "Value": "RoutingAPI"
-         }
-        ],
-        "MetricName": "GET_QUOTE_200_CHAINID: 1",
-        "Namespace": "Uniswap"
-       },
-       "Period": 1800,
-       "Stat": "Sum",
-       "Unit": "Count"
-      },
-      "ReturnData": false
-     }
-    ],
-    "Threshold": 20
-   },
-   "Metadata": {
-    "aws:cdk:path": "RoutingAPIPipelineStack/prod-ap-southeast-1/RoutingAPIStack/RoutingAPI-SEV3-2XXAlarm-ChainId: 1/Resource"
-   }
-  },
-  "RoutingAPISEV32XXAlarmChainId10D37829BA": {
-   "Type": "AWS::CloudWatch::Alarm",
-   "Properties": {
-    "ComparisonOperator": "LessThanOrEqualToThreshold",
-    "EvaluationPeriods": 2,
-    "AlarmActions": [
-     "arn:aws:sns:ap-southeast-1:978958364414:SlackChatbotTopic"
-    ],
-    "AlarmName": "RoutingAPI-SEV3-2XXAlarm-ChainId: 10",
-    "Metrics": [
-     {
-      "Expression": "100*(response200/invocations)",
-      "Id": "expr_1"
-     },
-     {
-      "Id": "invocations",
-      "MetricStat": {
-       "Metric": {
-        "Dimensions": [
-         {
-          "Name": "Service",
-          "Value": "RoutingAPI"
-         }
-        ],
-        "MetricName": "GET_QUOTE_REQUESTED_CHAINID: 10",
-        "Namespace": "Uniswap"
-       },
-       "Period": 1800,
-       "Stat": "Sum",
-       "Unit": "Count"
-      },
-      "ReturnData": false
-     },
-     {
-      "Id": "response200",
-      "MetricStat": {
-       "Metric": {
-        "Dimensions": [
-         {
-          "Name": "Service",
-          "Value": "RoutingAPI"
-         }
-        ],
-        "MetricName": "GET_QUOTE_200_CHAINID: 10",
-        "Namespace": "Uniswap"
-       },
-       "Period": 1800,
-       "Stat": "Sum",
-       "Unit": "Count"
-      },
-      "ReturnData": false
-     }
-    ],
-    "Threshold": 20
-   },
-   "Metadata": {
-    "aws:cdk:path": "RoutingAPIPipelineStack/prod-ap-southeast-1/RoutingAPIStack/RoutingAPI-SEV3-2XXAlarm-ChainId: 10/Resource"
-   }
-  },
-  "RoutingAPISEV32XXAlarmChainId420C57DC8EA": {
-   "Type": "AWS::CloudWatch::Alarm",
-   "Properties": {
-    "ComparisonOperator": "LessThanOrEqualToThreshold",
-    "EvaluationPeriods": 2,
-    "AlarmActions": [
-     "arn:aws:sns:ap-southeast-1:978958364414:SlackChatbotTopic"
-    ],
-    "AlarmName": "RoutingAPI-SEV3-2XXAlarm-ChainId: 420",
-    "Metrics": [
-     {
-      "Expression": "100*(response200/invocations)",
-      "Id": "expr_1"
-     },
-     {
-      "Id": "invocations",
-      "MetricStat": {
-       "Metric": {
-        "Dimensions": [
-         {
-          "Name": "Service",
-          "Value": "RoutingAPI"
-         }
-        ],
-        "MetricName": "GET_QUOTE_REQUESTED_CHAINID: 420",
-        "Namespace": "Uniswap"
-       },
-       "Period": 1800,
-       "Stat": "Sum",
-       "Unit": "Count"
-      },
-      "ReturnData": false
-     },
-     {
-      "Id": "response200",
-      "MetricStat": {
-       "Metric": {
-        "Dimensions": [
-         {
-          "Name": "Service",
-          "Value": "RoutingAPI"
-         }
-        ],
-        "MetricName": "GET_QUOTE_200_CHAINID: 420",
-        "Namespace": "Uniswap"
-       },
-       "Period": 1800,
-       "Stat": "Sum",
-       "Unit": "Count"
-      },
-      "ReturnData": false
-     }
-    ],
-    "Threshold": 20
-   },
-   "Metadata": {
-    "aws:cdk:path": "RoutingAPIPipelineStack/prod-ap-southeast-1/RoutingAPIStack/RoutingAPI-SEV3-2XXAlarm-ChainId: 420/Resource"
-   }
-  },
-  "RoutingAPISEV32XXAlarmChainId42161919834E2": {
-   "Type": "AWS::CloudWatch::Alarm",
-   "Properties": {
-    "ComparisonOperator": "LessThanOrEqualToThreshold",
-    "EvaluationPeriods": 2,
-    "AlarmActions": [
-     "arn:aws:sns:ap-southeast-1:978958364414:SlackChatbotTopic"
-    ],
-    "AlarmName": "RoutingAPI-SEV3-2XXAlarm-ChainId: 42161",
-    "Metrics": [
-     {
-      "Expression": "100*(response200/invocations)",
-      "Id": "expr_1"
-     },
-     {
-      "Id": "invocations",
-      "MetricStat": {
-       "Metric": {
-        "Dimensions": [
-         {
-          "Name": "Service",
-          "Value": "RoutingAPI"
-         }
-        ],
-        "MetricName": "GET_QUOTE_REQUESTED_CHAINID: 42161",
-        "Namespace": "Uniswap"
-       },
-       "Period": 1800,
-       "Stat": "Sum",
-       "Unit": "Count"
-      },
-      "ReturnData": false
-     },
-     {
-      "Id": "response200",
-      "MetricStat": {
-       "Metric": {
-        "Dimensions": [
-         {
-          "Name": "Service",
-          "Value": "RoutingAPI"
-         }
-        ],
-        "MetricName": "GET_QUOTE_200_CHAINID: 42161",
-        "Namespace": "Uniswap"
-       },
-       "Period": 1800,
-       "Stat": "Sum",
-       "Unit": "Count"
-      },
-      "ReturnData": false
-     }
-    ],
-    "Threshold": 20
-   },
-   "Metadata": {
-    "aws:cdk:path": "RoutingAPIPipelineStack/prod-ap-southeast-1/RoutingAPIStack/RoutingAPI-SEV3-2XXAlarm-ChainId: 42161/Resource"
-   }
-  },
-  "RoutingAPISEV32XXAlarmChainId4216130E4D6A5C": {
-   "Type": "AWS::CloudWatch::Alarm",
-   "Properties": {
-    "ComparisonOperator": "LessThanOrEqualToThreshold",
-    "EvaluationPeriods": 2,
-    "AlarmActions": [
-     "arn:aws:sns:ap-southeast-1:978958364414:SlackChatbotTopic"
-    ],
-    "AlarmName": "RoutingAPI-SEV3-2XXAlarm-ChainId: 421613",
-    "Metrics": [
-     {
-      "Expression": "100*(response200/invocations)",
-      "Id": "expr_1"
-     },
-     {
-      "Id": "invocations",
-      "MetricStat": {
-       "Metric": {
-        "Dimensions": [
-         {
-          "Name": "Service",
-          "Value": "RoutingAPI"
-         }
-        ],
-        "MetricName": "GET_QUOTE_REQUESTED_CHAINID: 421613",
-        "Namespace": "Uniswap"
-       },
-       "Period": 1800,
-       "Stat": "Sum",
-       "Unit": "Count"
-      },
-      "ReturnData": false
-     },
-     {
-      "Id": "response200",
-      "MetricStat": {
-       "Metric": {
-        "Dimensions": [
-         {
-          "Name": "Service",
-          "Value": "RoutingAPI"
-         }
-        ],
-        "MetricName": "GET_QUOTE_200_CHAINID: 421613",
-        "Namespace": "Uniswap"
-       },
-       "Period": 1800,
-       "Stat": "Sum",
-       "Unit": "Count"
-      },
-      "ReturnData": false
-     }
-    ],
-    "Threshold": 20
-   },
-   "Metadata": {
-    "aws:cdk:path": "RoutingAPIPipelineStack/prod-ap-southeast-1/RoutingAPIStack/RoutingAPI-SEV3-2XXAlarm-ChainId: 421613/Resource"
-   }
-  },
-  "RoutingAPISEV32XXAlarmChainId13712713024": {
-   "Type": "AWS::CloudWatch::Alarm",
-   "Properties": {
-    "ComparisonOperator": "LessThanOrEqualToThreshold",
-    "EvaluationPeriods": 2,
-    "AlarmActions": [
-     "arn:aws:sns:ap-southeast-1:978958364414:SlackChatbotTopic"
-    ],
-    "AlarmName": "RoutingAPI-SEV3-2XXAlarm-ChainId: 137",
-    "Metrics": [
-     {
-      "Expression": "100*(response200/invocations)",
-      "Id": "expr_1"
-     },
-     {
-      "Id": "invocations",
-      "MetricStat": {
-       "Metric": {
-        "Dimensions": [
-         {
-          "Name": "Service",
-          "Value": "RoutingAPI"
-         }
-        ],
-        "MetricName": "GET_QUOTE_REQUESTED_CHAINID: 137",
-        "Namespace": "Uniswap"
-       },
-       "Period": 1800,
-       "Stat": "Sum",
-       "Unit": "Count"
-      },
-      "ReturnData": false
-     },
-     {
-      "Id": "response200",
-      "MetricStat": {
-       "Metric": {
-        "Dimensions": [
-         {
-          "Name": "Service",
-          "Value": "RoutingAPI"
-         }
-        ],
-        "MetricName": "GET_QUOTE_200_CHAINID: 137",
-        "Namespace": "Uniswap"
-       },
-       "Period": 1800,
-       "Stat": "Sum",
-       "Unit": "Count"
-      },
-      "ReturnData": false
-     }
-    ],
-    "Threshold": 20
-   },
-   "Metadata": {
-    "aws:cdk:path": "RoutingAPIPipelineStack/prod-ap-southeast-1/RoutingAPIStack/RoutingAPI-SEV3-2XXAlarm-ChainId: 137/Resource"
-   }
-  },
-  "RoutingAPISEV32XXAlarmChainId44787C4DC9019": {
-   "Type": "AWS::CloudWatch::Alarm",
-   "Properties": {
-    "ComparisonOperator": "LessThanOrEqualToThreshold",
-    "EvaluationPeriods": 2,
-    "AlarmActions": [
-     "arn:aws:sns:ap-southeast-1:978958364414:SlackChatbotTopic"
-    ],
-    "AlarmName": "RoutingAPI-SEV3-2XXAlarm-ChainId: 44787",
-    "Metrics": [
-     {
-      "Expression": "100*(response200/invocations)",
-      "Id": "expr_1"
-     },
-     {
-      "Id": "invocations",
-      "MetricStat": {
-       "Metric": {
-        "Dimensions": [
-         {
-          "Name": "Service",
-          "Value": "RoutingAPI"
-         }
-        ],
-        "MetricName": "GET_QUOTE_REQUESTED_CHAINID: 44787",
-        "Namespace": "Uniswap"
-       },
-       "Period": 1800,
-       "Stat": "Sum",
-       "Unit": "Count"
-      },
-      "ReturnData": false
-     },
-     {
-      "Id": "response200",
-      "MetricStat": {
-       "Metric": {
-        "Dimensions": [
-         {
-          "Name": "Service",
-          "Value": "RoutingAPI"
-         }
-        ],
-        "MetricName": "GET_QUOTE_200_CHAINID: 44787",
-        "Namespace": "Uniswap"
-       },
-       "Period": 1800,
-       "Stat": "Sum",
-       "Unit": "Count"
-      },
-      "ReturnData": false
-     }
-    ],
-    "Threshold": 20
-   },
-   "Metadata": {
-    "aws:cdk:path": "RoutingAPIPipelineStack/prod-ap-southeast-1/RoutingAPIStack/RoutingAPI-SEV3-2XXAlarm-ChainId: 44787/Resource"
-   }
-  },
-  "RoutingAPISEV32XXAlarmChainId42220936B7B77": {
-   "Type": "AWS::CloudWatch::Alarm",
-   "Properties": {
-    "ComparisonOperator": "LessThanOrEqualToThreshold",
-    "EvaluationPeriods": 2,
-    "AlarmActions": [
-     "arn:aws:sns:ap-southeast-1:978958364414:SlackChatbotTopic"
-    ],
-    "AlarmName": "RoutingAPI-SEV3-2XXAlarm-ChainId: 42220",
-    "Metrics": [
-     {
-      "Expression": "100*(response200/invocations)",
-      "Id": "expr_1"
-     },
-     {
-      "Id": "invocations",
-      "MetricStat": {
-       "Metric": {
-        "Dimensions": [
-         {
-          "Name": "Service",
-          "Value": "RoutingAPI"
-         }
-        ],
-        "MetricName": "GET_QUOTE_REQUESTED_CHAINID: 42220",
-        "Namespace": "Uniswap"
-       },
-       "Period": 1800,
-       "Stat": "Sum",
-       "Unit": "Count"
-      },
-      "ReturnData": false
-     },
-     {
-      "Id": "response200",
-      "MetricStat": {
-       "Metric": {
-        "Dimensions": [
-         {
-          "Name": "Service",
-          "Value": "RoutingAPI"
-         }
-        ],
-        "MetricName": "GET_QUOTE_200_CHAINID: 42220",
-        "Namespace": "Uniswap"
-       },
-       "Period": 1800,
-       "Stat": "Sum",
-       "Unit": "Count"
-      },
-      "ReturnData": false
-     }
-    ],
-    "Threshold": 20
-   },
-   "Metadata": {
-    "aws:cdk:path": "RoutingAPIPipelineStack/prod-ap-southeast-1/RoutingAPIStack/RoutingAPI-SEV3-2XXAlarm-ChainId: 42220/Resource"
-   }
-  },
-  "RoutingAPISEV32XXAlarmChainId56D4CB0C35": {
-   "Type": "AWS::CloudWatch::Alarm",
-   "Properties": {
-    "ComparisonOperator": "LessThanOrEqualToThreshold",
-    "EvaluationPeriods": 2,
-    "AlarmActions": [
-     "arn:aws:sns:ap-southeast-1:978958364414:SlackChatbotTopic"
-    ],
-    "AlarmName": "RoutingAPI-SEV3-2XXAlarm-ChainId: 56",
-    "Metrics": [
-     {
-      "Expression": "100*(response200/invocations)",
-      "Id": "expr_1"
-     },
-     {
-      "Id": "invocations",
-      "MetricStat": {
-       "Metric": {
-        "Dimensions": [
-         {
-          "Name": "Service",
-          "Value": "RoutingAPI"
-         }
-        ],
-        "MetricName": "GET_QUOTE_REQUESTED_CHAINID: 56",
-        "Namespace": "Uniswap"
-       },
-       "Period": 1800,
-       "Stat": "Sum",
-       "Unit": "Count"
-      },
-      "ReturnData": false
-     },
-     {
-      "Id": "response200",
-      "MetricStat": {
-       "Metric": {
-        "Dimensions": [
-         {
-          "Name": "Service",
-          "Value": "RoutingAPI"
-         }
-        ],
-        "MetricName": "GET_QUOTE_200_CHAINID: 56",
-        "Namespace": "Uniswap"
-       },
-       "Period": 1800,
-       "Stat": "Sum",
-       "Unit": "Count"
-      },
-      "ReturnData": false
-     }
-    ],
-    "Threshold": 20
-   },
-   "Metadata": {
-    "aws:cdk:path": "RoutingAPIPipelineStack/prod-ap-southeast-1/RoutingAPIStack/RoutingAPI-SEV3-2XXAlarm-ChainId: 56/Resource"
-   }
-  },
-  "RoutingAPISEV32XXAlarmChainId82170C7BF7CF": {
-   "Type": "AWS::CloudWatch::Alarm",
-   "Properties": {
-    "ComparisonOperator": "LessThanOrEqualToThreshold",
-    "EvaluationPeriods": 2,
-    "AlarmActions": [
-     "arn:aws:sns:ap-southeast-1:978958364414:SlackChatbotTopic"
-    ],
-    "AlarmName": "RoutingAPI-SEV3-2XXAlarm-ChainId: 8217",
-    "Metrics": [
-     {
-      "Expression": "100*(response200/invocations)",
-      "Id": "expr_1"
-     },
-     {
-      "Id": "invocations",
-      "MetricStat": {
-       "Metric": {
-        "Dimensions": [
-         {
-          "Name": "Service",
-          "Value": "RoutingAPI"
-         }
-        ],
-        "MetricName": "GET_QUOTE_REQUESTED_CHAINID: 8217",
-        "Namespace": "Uniswap"
-       },
-       "Period": 1800,
-       "Stat": "Sum",
-       "Unit": "Count"
-      },
-      "ReturnData": false
-     },
-     {
-      "Id": "response200",
-      "MetricStat": {
-       "Metric": {
-        "Dimensions": [
-         {
-          "Name": "Service",
-          "Value": "RoutingAPI"
-         }
-        ],
-        "MetricName": "GET_QUOTE_200_CHAINID: 8217",
-        "Namespace": "Uniswap"
-       },
-       "Period": 1800,
-       "Stat": "Sum",
-       "Unit": "Count"
-      },
-      "ReturnData": false
-     }
-    ],
-    "Threshold": 20
-   },
-   "Metadata": {
-    "aws:cdk:path": "RoutingAPIPipelineStack/prod-ap-southeast-1/RoutingAPIStack/RoutingAPI-SEV3-2XXAlarm-ChainId: 8217/Resource"
-   }
-  },
-  "RoutingAPISEV32XXAlarmChainId25019239F97": {
-   "Type": "AWS::CloudWatch::Alarm",
-   "Properties": {
-    "ComparisonOperator": "LessThanOrEqualToThreshold",
-    "EvaluationPeriods": 2,
-    "AlarmActions": [
-     "arn:aws:sns:ap-southeast-1:978958364414:SlackChatbotTopic"
-    ],
-    "AlarmName": "RoutingAPI-SEV3-2XXAlarm-ChainId: 250",
-    "Metrics": [
-     {
-      "Expression": "100*(response200/invocations)",
-      "Id": "expr_1"
-     },
-     {
-      "Id": "invocations",
-      "MetricStat": {
-       "Metric": {
-        "Dimensions": [
-         {
-          "Name": "Service",
-          "Value": "RoutingAPI"
-         }
-        ],
-        "MetricName": "GET_QUOTE_REQUESTED_CHAINID: 250",
-        "Namespace": "Uniswap"
-       },
-       "Period": 1800,
-       "Stat": "Sum",
-       "Unit": "Count"
-      },
-      "ReturnData": false
-     },
-     {
-      "Id": "response200",
-      "MetricStat": {
-       "Metric": {
-        "Dimensions": [
-         {
-          "Name": "Service",
-          "Value": "RoutingAPI"
-         }
-        ],
-        "MetricName": "GET_QUOTE_200_CHAINID: 250",
-        "Namespace": "Uniswap"
-       },
-       "Period": 1800,
-       "Stat": "Sum",
-       "Unit": "Count"
-      },
-      "ReturnData": false
-     }
-    ],
-    "Threshold": 20
-   },
-   "Metadata": {
-    "aws:cdk:path": "RoutingAPIPipelineStack/prod-ap-southeast-1/RoutingAPIStack/RoutingAPI-SEV3-2XXAlarm-ChainId: 250/Resource"
-   }
-  },
-  "RoutingAPISEV32XXAlarmChainId100868843A8": {
-   "Type": "AWS::CloudWatch::Alarm",
-   "Properties": {
-    "ComparisonOperator": "LessThanOrEqualToThreshold",
-    "EvaluationPeriods": 2,
-    "AlarmActions": [
-     "arn:aws:sns:ap-southeast-1:978958364414:SlackChatbotTopic"
-    ],
-    "AlarmName": "RoutingAPI-SEV3-2XXAlarm-ChainId: 100",
-    "Metrics": [
-     {
-      "Expression": "100*(response200/invocations)",
-      "Id": "expr_1"
-     },
-     {
-      "Id": "invocations",
-      "MetricStat": {
-       "Metric": {
-        "Dimensions": [
-         {
-          "Name": "Service",
-          "Value": "RoutingAPI"
-         }
-        ],
-        "MetricName": "GET_QUOTE_REQUESTED_CHAINID: 100",
-        "Namespace": "Uniswap"
-       },
-       "Period": 1800,
-       "Stat": "Sum",
-       "Unit": "Count"
-      },
-      "ReturnData": false
-     },
-     {
-      "Id": "response200",
-      "MetricStat": {
-       "Metric": {
-        "Dimensions": [
-         {
-          "Name": "Service",
-          "Value": "RoutingAPI"
-         }
-        ],
-        "MetricName": "GET_QUOTE_200_CHAINID: 100",
-        "Namespace": "Uniswap"
-       },
-       "Period": 1800,
-       "Stat": "Sum",
-       "Unit": "Count"
-      },
-      "ReturnData": false
-     }
-    ],
-    "Threshold": 20
-   },
-   "Metadata": {
-    "aws:cdk:path": "RoutingAPIPipelineStack/prod-ap-southeast-1/RoutingAPIStack/RoutingAPI-SEV3-2XXAlarm-ChainId: 100/Resource"
-   }
-  },
-  "RoutingAPISEV32XXAlarmChainId4311452C99D62": {
-   "Type": "AWS::CloudWatch::Alarm",
-   "Properties": {
-    "ComparisonOperator": "LessThanOrEqualToThreshold",
-    "EvaluationPeriods": 2,
-    "AlarmActions": [
-     "arn:aws:sns:ap-southeast-1:978958364414:SlackChatbotTopic"
-    ],
-    "AlarmName": "RoutingAPI-SEV3-2XXAlarm-ChainId: 43114",
-    "Metrics": [
-     {
-      "Expression": "100*(response200/invocations)",
-      "Id": "expr_1"
-     },
-     {
-      "Id": "invocations",
-      "MetricStat": {
-       "Metric": {
-        "Dimensions": [
-         {
-          "Name": "Service",
-          "Value": "RoutingAPI"
-         }
-        ],
-        "MetricName": "GET_QUOTE_REQUESTED_CHAINID: 43114",
-        "Namespace": "Uniswap"
-       },
-       "Period": 1800,
-       "Stat": "Sum",
-       "Unit": "Count"
-      },
-      "ReturnData": false
-     },
-     {
-      "Id": "response200",
-      "MetricStat": {
-       "Metric": {
-        "Dimensions": [
-         {
-          "Name": "Service",
-          "Value": "RoutingAPI"
-         }
-        ],
-        "MetricName": "GET_QUOTE_200_CHAINID: 43114",
-        "Namespace": "Uniswap"
-       },
-       "Period": 1800,
-       "Stat": "Sum",
-       "Unit": "Count"
-      },
-      "ReturnData": false
-     }
-    ],
-    "Threshold": 20
-   },
-   "Metadata": {
-    "aws:cdk:path": "RoutingAPIPipelineStack/prod-ap-southeast-1/RoutingAPIStack/RoutingAPI-SEV3-2XXAlarm-ChainId: 43114/Resource"
-   }
-  },
-  "RoutingAPISEV32XXAlarmChainId1284AAE0B12B": {
-   "Type": "AWS::CloudWatch::Alarm",
-   "Properties": {
-    "ComparisonOperator": "LessThanOrEqualToThreshold",
-    "EvaluationPeriods": 2,
-    "AlarmActions": [
-     "arn:aws:sns:ap-southeast-1:978958364414:SlackChatbotTopic"
-    ],
-    "AlarmName": "RoutingAPI-SEV3-2XXAlarm-ChainId: 1284",
-    "Metrics": [
-     {
-      "Expression": "100*(response200/invocations)",
-      "Id": "expr_1"
-     },
-     {
-      "Id": "invocations",
-      "MetricStat": {
-       "Metric": {
-        "Dimensions": [
-         {
-          "Name": "Service",
-          "Value": "RoutingAPI"
-         }
-        ],
-        "MetricName": "GET_QUOTE_REQUESTED_CHAINID: 1284",
-        "Namespace": "Uniswap"
-       },
-       "Period": 1800,
-       "Stat": "Sum",
-       "Unit": "Count"
-      },
-      "ReturnData": false
-     },
-     {
-      "Id": "response200",
-      "MetricStat": {
-       "Metric": {
-        "Dimensions": [
-         {
-          "Name": "Service",
-          "Value": "RoutingAPI"
-         }
-        ],
-        "MetricName": "GET_QUOTE_200_CHAINID: 1284",
-        "Namespace": "Uniswap"
-       },
-       "Period": 1800,
-       "Stat": "Sum",
-       "Unit": "Count"
-      },
-      "ReturnData": false
-     }
-    ],
-    "Threshold": 20
-   },
-   "Metadata": {
-    "aws:cdk:path": "RoutingAPIPipelineStack/prod-ap-southeast-1/RoutingAPIStack/RoutingAPI-SEV3-2XXAlarm-ChainId: 1284/Resource"
-   }
-  },
-  "RoutingAPISEV34XXAlarmChainId1450CBEAD": {
-   "Type": "AWS::CloudWatch::Alarm",
-   "Properties": {
-    "ComparisonOperator": "GreaterThanOrEqualToThreshold",
-    "EvaluationPeriods": 2,
-    "AlarmActions": [
-     "arn:aws:sns:ap-southeast-1:978958364414:SlackChatbotTopic"
-    ],
-    "AlarmName": "RoutingAPI-SEV3-4XXAlarm-ChainId: 1",
-    "Metrics": [
-     {
-      "Expression": "100*(response400/invocations)",
-      "Id": "expr_1"
-     },
-     {
-      "Id": "invocations",
-      "MetricStat": {
-       "Metric": {
-        "Dimensions": [
-         {
-          "Name": "ApiName",
-          "Value": "Routing API"
-         }
-        ],
-        "MetricName": "GET_QUOTE_REQUESTED_CHAINID: 1",
-        "Namespace": "AWS/ApiGateway"
-       },
-       "Period": 300,
-       "Stat": "Sum"
-      },
-      "ReturnData": false
-     },
-     {
-      "Id": "response400",
-      "MetricStat": {
-       "Metric": {
-        "Dimensions": [
-         {
-          "Name": "ApiName",
-          "Value": "Routing API"
-         }
-        ],
-        "MetricName": "GET_QUOTE_400_CHAINID: 1",
-        "Namespace": "AWS/ApiGateway"
-       },
-       "Period": 300,
-       "Stat": "Sum"
-      },
-      "ReturnData": false
-     }
-    ],
-    "Threshold": 80
-   },
-   "Metadata": {
-    "aws:cdk:path": "RoutingAPIPipelineStack/prod-ap-southeast-1/RoutingAPIStack/RoutingAPI-SEV3-4XXAlarm-ChainId: 1/Resource"
-   }
-  },
-  "RoutingAPISEV34XXAlarmChainId10208DC15D": {
-   "Type": "AWS::CloudWatch::Alarm",
-   "Properties": {
-    "ComparisonOperator": "GreaterThanOrEqualToThreshold",
-    "EvaluationPeriods": 2,
-    "AlarmActions": [
-     "arn:aws:sns:ap-southeast-1:978958364414:SlackChatbotTopic"
-    ],
-    "AlarmName": "RoutingAPI-SEV3-4XXAlarm-ChainId: 10",
-    "Metrics": [
-     {
-      "Expression": "100*(response400/invocations)",
-      "Id": "expr_1"
-     },
-     {
-      "Id": "invocations",
-      "MetricStat": {
-       "Metric": {
-        "Dimensions": [
-         {
-          "Name": "ApiName",
-          "Value": "Routing API"
-         }
-        ],
-        "MetricName": "GET_QUOTE_REQUESTED_CHAINID: 10",
-        "Namespace": "AWS/ApiGateway"
-       },
-       "Period": 300,
-       "Stat": "Sum"
-      },
-      "ReturnData": false
-     },
-     {
-      "Id": "response400",
-      "MetricStat": {
-       "Metric": {
-        "Dimensions": [
-         {
-          "Name": "ApiName",
-          "Value": "Routing API"
-         }
-        ],
-        "MetricName": "GET_QUOTE_400_CHAINID: 10",
-        "Namespace": "AWS/ApiGateway"
-       },
-       "Period": 300,
-       "Stat": "Sum"
-      },
-      "ReturnData": false
-     }
-    ],
-    "Threshold": 80
-   },
-   "Metadata": {
-    "aws:cdk:path": "RoutingAPIPipelineStack/prod-ap-southeast-1/RoutingAPIStack/RoutingAPI-SEV3-4XXAlarm-ChainId: 10/Resource"
-   }
-  },
-  "RoutingAPISEV34XXAlarmChainId420BEF766F0": {
-   "Type": "AWS::CloudWatch::Alarm",
-   "Properties": {
-    "ComparisonOperator": "GreaterThanOrEqualToThreshold",
-    "EvaluationPeriods": 2,
-    "AlarmActions": [
-     "arn:aws:sns:ap-southeast-1:978958364414:SlackChatbotTopic"
-    ],
-    "AlarmName": "RoutingAPI-SEV3-4XXAlarm-ChainId: 420",
-    "Metrics": [
-     {
-      "Expression": "100*(response400/invocations)",
-      "Id": "expr_1"
-     },
-     {
-      "Id": "invocations",
-      "MetricStat": {
-       "Metric": {
-        "Dimensions": [
-         {
-          "Name": "ApiName",
-          "Value": "Routing API"
-         }
-        ],
-        "MetricName": "GET_QUOTE_REQUESTED_CHAINID: 420",
-        "Namespace": "AWS/ApiGateway"
-       },
-       "Period": 300,
-       "Stat": "Sum"
-      },
-      "ReturnData": false
-     },
-     {
-      "Id": "response400",
-      "MetricStat": {
-       "Metric": {
-        "Dimensions": [
-         {
-          "Name": "ApiName",
-          "Value": "Routing API"
-         }
-        ],
-        "MetricName": "GET_QUOTE_400_CHAINID: 420",
-        "Namespace": "AWS/ApiGateway"
-       },
-       "Period": 300,
-       "Stat": "Sum"
-      },
-      "ReturnData": false
-     }
-    ],
-    "Threshold": 80
-   },
-   "Metadata": {
-    "aws:cdk:path": "RoutingAPIPipelineStack/prod-ap-southeast-1/RoutingAPIStack/RoutingAPI-SEV3-4XXAlarm-ChainId: 420/Resource"
-   }
-  },
-  "RoutingAPISEV34XXAlarmChainId42161C388D5B1": {
-   "Type": "AWS::CloudWatch::Alarm",
-   "Properties": {
-    "ComparisonOperator": "GreaterThanOrEqualToThreshold",
-    "EvaluationPeriods": 2,
-    "AlarmActions": [
-     "arn:aws:sns:ap-southeast-1:978958364414:SlackChatbotTopic"
-    ],
-    "AlarmName": "RoutingAPI-SEV3-4XXAlarm-ChainId: 42161",
-    "Metrics": [
-     {
-      "Expression": "100*(response400/invocations)",
-      "Id": "expr_1"
-     },
-     {
-      "Id": "invocations",
-      "MetricStat": {
-       "Metric": {
-        "Dimensions": [
-         {
-          "Name": "ApiName",
-          "Value": "Routing API"
-         }
-        ],
-        "MetricName": "GET_QUOTE_REQUESTED_CHAINID: 42161",
-        "Namespace": "AWS/ApiGateway"
-       },
-       "Period": 300,
-       "Stat": "Sum"
-      },
-      "ReturnData": false
-     },
-     {
-      "Id": "response400",
-      "MetricStat": {
-       "Metric": {
-        "Dimensions": [
-         {
-          "Name": "ApiName",
-          "Value": "Routing API"
-         }
-        ],
-        "MetricName": "GET_QUOTE_400_CHAINID: 42161",
-        "Namespace": "AWS/ApiGateway"
-       },
-       "Period": 300,
-       "Stat": "Sum"
-      },
-      "ReturnData": false
-     }
-    ],
-    "Threshold": 80
-   },
-   "Metadata": {
-    "aws:cdk:path": "RoutingAPIPipelineStack/prod-ap-southeast-1/RoutingAPIStack/RoutingAPI-SEV3-4XXAlarm-ChainId: 42161/Resource"
-   }
-  },
-  "RoutingAPISEV34XXAlarmChainId421613BF0BDC06": {
-   "Type": "AWS::CloudWatch::Alarm",
-   "Properties": {
-    "ComparisonOperator": "GreaterThanOrEqualToThreshold",
-    "EvaluationPeriods": 2,
-    "AlarmActions": [
-     "arn:aws:sns:ap-southeast-1:978958364414:SlackChatbotTopic"
-    ],
-    "AlarmName": "RoutingAPI-SEV3-4XXAlarm-ChainId: 421613",
-    "Metrics": [
-     {
-      "Expression": "100*(response400/invocations)",
-      "Id": "expr_1"
-     },
-     {
-      "Id": "invocations",
-      "MetricStat": {
-       "Metric": {
-        "Dimensions": [
-         {
-          "Name": "ApiName",
-          "Value": "Routing API"
-         }
-        ],
-        "MetricName": "GET_QUOTE_REQUESTED_CHAINID: 421613",
-        "Namespace": "AWS/ApiGateway"
-       },
-       "Period": 300,
-       "Stat": "Sum"
-      },
-      "ReturnData": false
-     },
-     {
-      "Id": "response400",
-      "MetricStat": {
-       "Metric": {
-        "Dimensions": [
-         {
-          "Name": "ApiName",
-          "Value": "Routing API"
-         }
-        ],
-        "MetricName": "GET_QUOTE_400_CHAINID: 421613",
-        "Namespace": "AWS/ApiGateway"
-       },
-       "Period": 300,
-       "Stat": "Sum"
-      },
-      "ReturnData": false
-     }
-    ],
-    "Threshold": 80
-   },
-   "Metadata": {
-    "aws:cdk:path": "RoutingAPIPipelineStack/prod-ap-southeast-1/RoutingAPIStack/RoutingAPI-SEV3-4XXAlarm-ChainId: 421613/Resource"
-   }
-  },
-  "RoutingAPISEV34XXAlarmChainId137152B73B3": {
-   "Type": "AWS::CloudWatch::Alarm",
-   "Properties": {
-    "ComparisonOperator": "GreaterThanOrEqualToThreshold",
-    "EvaluationPeriods": 2,
-    "AlarmActions": [
-     "arn:aws:sns:ap-southeast-1:978958364414:SlackChatbotTopic"
-    ],
-    "AlarmName": "RoutingAPI-SEV3-4XXAlarm-ChainId: 137",
-    "Metrics": [
-     {
-      "Expression": "100*(response400/invocations)",
-      "Id": "expr_1"
-     },
-     {
-      "Id": "invocations",
-      "MetricStat": {
-       "Metric": {
-        "Dimensions": [
-         {
-          "Name": "ApiName",
-          "Value": "Routing API"
-         }
-        ],
-        "MetricName": "GET_QUOTE_REQUESTED_CHAINID: 137",
-        "Namespace": "AWS/ApiGateway"
-       },
-       "Period": 300,
-       "Stat": "Sum"
-      },
-      "ReturnData": false
-     },
-     {
-      "Id": "response400",
-      "MetricStat": {
-       "Metric": {
-        "Dimensions": [
-         {
-          "Name": "ApiName",
-          "Value": "Routing API"
-         }
-        ],
-        "MetricName": "GET_QUOTE_400_CHAINID: 137",
-        "Namespace": "AWS/ApiGateway"
-       },
-       "Period": 300,
-       "Stat": "Sum"
-      },
-      "ReturnData": false
-     }
-    ],
-    "Threshold": 80
-   },
-   "Metadata": {
-    "aws:cdk:path": "RoutingAPIPipelineStack/prod-ap-southeast-1/RoutingAPIStack/RoutingAPI-SEV3-4XXAlarm-ChainId: 137/Resource"
-   }
-  },
-  "RoutingAPISEV34XXAlarmChainId44787BB3A0A9D": {
-   "Type": "AWS::CloudWatch::Alarm",
-   "Properties": {
-    "ComparisonOperator": "GreaterThanOrEqualToThreshold",
-    "EvaluationPeriods": 2,
-    "AlarmActions": [
-     "arn:aws:sns:ap-southeast-1:978958364414:SlackChatbotTopic"
-    ],
-    "AlarmName": "RoutingAPI-SEV3-4XXAlarm-ChainId: 44787",
-    "Metrics": [
-     {
-      "Expression": "100*(response400/invocations)",
-      "Id": "expr_1"
-     },
-     {
-      "Id": "invocations",
-      "MetricStat": {
-       "Metric": {
-        "Dimensions": [
-         {
-          "Name": "ApiName",
-          "Value": "Routing API"
-         }
-        ],
-        "MetricName": "GET_QUOTE_REQUESTED_CHAINID: 44787",
-        "Namespace": "AWS/ApiGateway"
-       },
-       "Period": 300,
-       "Stat": "Sum"
-      },
-      "ReturnData": false
-     },
-     {
-      "Id": "response400",
-      "MetricStat": {
-       "Metric": {
-        "Dimensions": [
-         {
-          "Name": "ApiName",
-          "Value": "Routing API"
-         }
-        ],
-        "MetricName": "GET_QUOTE_400_CHAINID: 44787",
-        "Namespace": "AWS/ApiGateway"
-       },
-       "Period": 300,
-       "Stat": "Sum"
-      },
-      "ReturnData": false
-     }
-    ],
-    "Threshold": 80
-   },
-   "Metadata": {
-    "aws:cdk:path": "RoutingAPIPipelineStack/prod-ap-southeast-1/RoutingAPIStack/RoutingAPI-SEV3-4XXAlarm-ChainId: 44787/Resource"
-   }
-  },
-  "RoutingAPISEV34XXAlarmChainId42220A086E57A": {
-   "Type": "AWS::CloudWatch::Alarm",
-   "Properties": {
-    "ComparisonOperator": "GreaterThanOrEqualToThreshold",
-    "EvaluationPeriods": 2,
-    "AlarmActions": [
-     "arn:aws:sns:ap-southeast-1:978958364414:SlackChatbotTopic"
-    ],
-    "AlarmName": "RoutingAPI-SEV3-4XXAlarm-ChainId: 42220",
-    "Metrics": [
-     {
-      "Expression": "100*(response400/invocations)",
-      "Id": "expr_1"
-     },
-     {
-      "Id": "invocations",
-      "MetricStat": {
-       "Metric": {
-        "Dimensions": [
-         {
-          "Name": "ApiName",
-          "Value": "Routing API"
-         }
-        ],
-        "MetricName": "GET_QUOTE_REQUESTED_CHAINID: 42220",
-        "Namespace": "AWS/ApiGateway"
-       },
-       "Period": 300,
-       "Stat": "Sum"
-      },
-      "ReturnData": false
-     },
-     {
-      "Id": "response400",
-      "MetricStat": {
-       "Metric": {
-        "Dimensions": [
-         {
-          "Name": "ApiName",
-          "Value": "Routing API"
-         }
-        ],
-        "MetricName": "GET_QUOTE_400_CHAINID: 42220",
-        "Namespace": "AWS/ApiGateway"
-       },
-       "Period": 300,
-       "Stat": "Sum"
-      },
-      "ReturnData": false
-     }
-    ],
-    "Threshold": 80
-   },
-   "Metadata": {
-    "aws:cdk:path": "RoutingAPIPipelineStack/prod-ap-southeast-1/RoutingAPIStack/RoutingAPI-SEV3-4XXAlarm-ChainId: 42220/Resource"
-   }
-  },
-  "RoutingAPISEV34XXAlarmChainId56135B294E": {
-   "Type": "AWS::CloudWatch::Alarm",
-   "Properties": {
-    "ComparisonOperator": "GreaterThanOrEqualToThreshold",
-    "EvaluationPeriods": 2,
-    "AlarmActions": [
-     "arn:aws:sns:ap-southeast-1:978958364414:SlackChatbotTopic"
-    ],
-    "AlarmName": "RoutingAPI-SEV3-4XXAlarm-ChainId: 56",
-    "Metrics": [
-     {
-      "Expression": "100*(response400/invocations)",
-      "Id": "expr_1"
-     },
-     {
-      "Id": "invocations",
-      "MetricStat": {
-       "Metric": {
-        "Dimensions": [
-         {
-          "Name": "ApiName",
-          "Value": "Routing API"
-         }
-        ],
-        "MetricName": "GET_QUOTE_REQUESTED_CHAINID: 56",
-        "Namespace": "AWS/ApiGateway"
-       },
-       "Period": 300,
-       "Stat": "Sum"
-      },
-      "ReturnData": false
-     },
-     {
-      "Id": "response400",
-      "MetricStat": {
-       "Metric": {
-        "Dimensions": [
-         {
-          "Name": "ApiName",
-          "Value": "Routing API"
-         }
-        ],
-        "MetricName": "GET_QUOTE_400_CHAINID: 56",
-        "Namespace": "AWS/ApiGateway"
-       },
-       "Period": 300,
-       "Stat": "Sum"
-      },
-      "ReturnData": false
-     }
-    ],
-    "Threshold": 80
-   },
-   "Metadata": {
-    "aws:cdk:path": "RoutingAPIPipelineStack/prod-ap-southeast-1/RoutingAPIStack/RoutingAPI-SEV3-4XXAlarm-ChainId: 56/Resource"
-   }
-  },
-  "RoutingAPISEV34XXAlarmChainId8217D12E0BEE": {
-   "Type": "AWS::CloudWatch::Alarm",
-   "Properties": {
-    "ComparisonOperator": "GreaterThanOrEqualToThreshold",
-    "EvaluationPeriods": 2,
-    "AlarmActions": [
-     "arn:aws:sns:ap-southeast-1:978958364414:SlackChatbotTopic"
-    ],
-    "AlarmName": "RoutingAPI-SEV3-4XXAlarm-ChainId: 8217",
-    "Metrics": [
-     {
-      "Expression": "100*(response400/invocations)",
-      "Id": "expr_1"
-     },
-     {
-      "Id": "invocations",
-      "MetricStat": {
-       "Metric": {
-        "Dimensions": [
-         {
-          "Name": "ApiName",
-          "Value": "Routing API"
-         }
-        ],
-        "MetricName": "GET_QUOTE_REQUESTED_CHAINID: 8217",
-        "Namespace": "AWS/ApiGateway"
-       },
-       "Period": 300,
-       "Stat": "Sum"
-      },
-      "ReturnData": false
-     },
-     {
-      "Id": "response400",
-      "MetricStat": {
-       "Metric": {
-        "Dimensions": [
-         {
-          "Name": "ApiName",
-          "Value": "Routing API"
-         }
-        ],
-        "MetricName": "GET_QUOTE_400_CHAINID: 8217",
-        "Namespace": "AWS/ApiGateway"
-       },
-       "Period": 300,
-       "Stat": "Sum"
-      },
-      "ReturnData": false
-     }
-    ],
-    "Threshold": 80
-   },
-   "Metadata": {
-    "aws:cdk:path": "RoutingAPIPipelineStack/prod-ap-southeast-1/RoutingAPIStack/RoutingAPI-SEV3-4XXAlarm-ChainId: 8217/Resource"
-   }
-  },
-  "RoutingAPISEV34XXAlarmChainId2507EB94355": {
-   "Type": "AWS::CloudWatch::Alarm",
-   "Properties": {
-    "ComparisonOperator": "GreaterThanOrEqualToThreshold",
-    "EvaluationPeriods": 2,
-    "AlarmActions": [
-     "arn:aws:sns:ap-southeast-1:978958364414:SlackChatbotTopic"
-    ],
-    "AlarmName": "RoutingAPI-SEV3-4XXAlarm-ChainId: 250",
-    "Metrics": [
-     {
-      "Expression": "100*(response400/invocations)",
-      "Id": "expr_1"
-     },
-     {
-      "Id": "invocations",
-      "MetricStat": {
-       "Metric": {
-        "Dimensions": [
-         {
-          "Name": "ApiName",
-          "Value": "Routing API"
-         }
-        ],
-        "MetricName": "GET_QUOTE_REQUESTED_CHAINID: 250",
-        "Namespace": "AWS/ApiGateway"
-       },
-       "Period": 300,
-       "Stat": "Sum"
-      },
-      "ReturnData": false
-     },
-     {
-      "Id": "response400",
-      "MetricStat": {
-       "Metric": {
-        "Dimensions": [
-         {
-          "Name": "ApiName",
-          "Value": "Routing API"
-         }
-        ],
-        "MetricName": "GET_QUOTE_400_CHAINID: 250",
-        "Namespace": "AWS/ApiGateway"
-       },
-       "Period": 300,
-       "Stat": "Sum"
-      },
-      "ReturnData": false
-     }
-    ],
-    "Threshold": 80
-   },
-   "Metadata": {
-    "aws:cdk:path": "RoutingAPIPipelineStack/prod-ap-southeast-1/RoutingAPIStack/RoutingAPI-SEV3-4XXAlarm-ChainId: 250/Resource"
-   }
-  },
-  "RoutingAPISEV34XXAlarmChainId100530A5EF6": {
-   "Type": "AWS::CloudWatch::Alarm",
-   "Properties": {
-    "ComparisonOperator": "GreaterThanOrEqualToThreshold",
-    "EvaluationPeriods": 2,
-    "AlarmActions": [
-     "arn:aws:sns:ap-southeast-1:978958364414:SlackChatbotTopic"
-    ],
-    "AlarmName": "RoutingAPI-SEV3-4XXAlarm-ChainId: 100",
-    "Metrics": [
-     {
-      "Expression": "100*(response400/invocations)",
-      "Id": "expr_1"
-     },
-     {
-      "Id": "invocations",
-      "MetricStat": {
-       "Metric": {
-        "Dimensions": [
-         {
-          "Name": "ApiName",
-          "Value": "Routing API"
-         }
-        ],
-        "MetricName": "GET_QUOTE_REQUESTED_CHAINID: 100",
-        "Namespace": "AWS/ApiGateway"
-       },
-       "Period": 300,
-       "Stat": "Sum"
-      },
-      "ReturnData": false
-     },
-     {
-      "Id": "response400",
-      "MetricStat": {
-       "Metric": {
-        "Dimensions": [
-         {
-          "Name": "ApiName",
-          "Value": "Routing API"
-         }
-        ],
-        "MetricName": "GET_QUOTE_400_CHAINID: 100",
-        "Namespace": "AWS/ApiGateway"
-       },
-       "Period": 300,
-       "Stat": "Sum"
-      },
-      "ReturnData": false
-     }
-    ],
-    "Threshold": 80
-   },
-   "Metadata": {
-    "aws:cdk:path": "RoutingAPIPipelineStack/prod-ap-southeast-1/RoutingAPIStack/RoutingAPI-SEV3-4XXAlarm-ChainId: 100/Resource"
-   }
-  },
-  "RoutingAPISEV34XXAlarmChainId43114FDB775B5": {
-   "Type": "AWS::CloudWatch::Alarm",
-   "Properties": {
-    "ComparisonOperator": "GreaterThanOrEqualToThreshold",
-    "EvaluationPeriods": 2,
-    "AlarmActions": [
-     "arn:aws:sns:ap-southeast-1:978958364414:SlackChatbotTopic"
-    ],
-    "AlarmName": "RoutingAPI-SEV3-4XXAlarm-ChainId: 43114",
-    "Metrics": [
-     {
-      "Expression": "100*(response400/invocations)",
-      "Id": "expr_1"
-     },
-     {
-      "Id": "invocations",
-      "MetricStat": {
-       "Metric": {
-        "Dimensions": [
-         {
-          "Name": "ApiName",
-          "Value": "Routing API"
-         }
-        ],
-        "MetricName": "GET_QUOTE_REQUESTED_CHAINID: 43114",
-        "Namespace": "AWS/ApiGateway"
-       },
-       "Period": 300,
-       "Stat": "Sum"
-      },
-      "ReturnData": false
-     },
-     {
-      "Id": "response400",
-      "MetricStat": {
-       "Metric": {
-        "Dimensions": [
-         {
-          "Name": "ApiName",
-          "Value": "Routing API"
-         }
-        ],
-        "MetricName": "GET_QUOTE_400_CHAINID: 43114",
-        "Namespace": "AWS/ApiGateway"
-       },
-       "Period": 300,
-       "Stat": "Sum"
-      },
-      "ReturnData": false
-     }
-    ],
-    "Threshold": 80
-   },
-   "Metadata": {
-    "aws:cdk:path": "RoutingAPIPipelineStack/prod-ap-southeast-1/RoutingAPIStack/RoutingAPI-SEV3-4XXAlarm-ChainId: 43114/Resource"
-   }
-  },
-  "RoutingAPISEV34XXAlarmChainId1284778FE1A6": {
-   "Type": "AWS::CloudWatch::Alarm",
-   "Properties": {
-    "ComparisonOperator": "GreaterThanOrEqualToThreshold",
-    "EvaluationPeriods": 2,
-    "AlarmActions": [
-     "arn:aws:sns:ap-southeast-1:978958364414:SlackChatbotTopic"
-    ],
-    "AlarmName": "RoutingAPI-SEV3-4XXAlarm-ChainId: 1284",
-    "Metrics": [
-     {
-      "Expression": "100*(response400/invocations)",
-      "Id": "expr_1"
-     },
-     {
-      "Id": "invocations",
-      "MetricStat": {
-       "Metric": {
-        "Dimensions": [
-         {
-          "Name": "ApiName",
-          "Value": "Routing API"
-         }
-        ],
-        "MetricName": "GET_QUOTE_REQUESTED_CHAINID: 1284",
-        "Namespace": "AWS/ApiGateway"
-       },
-       "Period": 300,
-       "Stat": "Sum"
-      },
-      "ReturnData": false
-     },
-     {
-      "Id": "response400",
-      "MetricStat": {
-       "Metric": {
-        "Dimensions": [
-         {
-          "Name": "ApiName",
-          "Value": "Routing API"
-         }
-        ],
-        "MetricName": "GET_QUOTE_400_CHAINID: 1284",
-        "Namespace": "AWS/ApiGateway"
-       },
-       "Period": 300,
-       "Stat": "Sum"
-      },
-      "ReturnData": false
-     }
-    ],
-    "Threshold": 80
-   },
-   "Metadata": {
-    "aws:cdk:path": "RoutingAPIPipelineStack/prod-ap-southeast-1/RoutingAPIStack/RoutingAPI-SEV3-4XXAlarm-ChainId: 1284/Resource"
-   }
-  },
   "CDKMetadata": {
    "Type": "AWS::CDK::Metadata",
    "Properties": {
-    "Analytics": "v2:deflate64:H4sIAAAAAAAA/1WQQU/DMAyFfwv3zIwKwbkMicsQaCBxRG6addmSOqqTVVPU/467dmg7+fN7jp7jAp4fYXmHPS90fVg4W0H+iqgParVtJxDvNztqGPKamreOUhjNCw8Kg20wmh5PkDeGYxnsOHCFpdaU2qheTXB08kZQ1KtOkhozRwrIU0qdNi/IRr2buKN6NGe6uHPImQdl0Us8uUmWOiiHvqoRpP80nbfMllrV4/ZYQBbxx1Tlaq3+qWQmbTHK1KC0o1T3GPUOcumw8+d/jDAobhm+KVg97jfc7PORYkjxdrOWagN7vj8+PEGxlGvv2dpFJwex3sBmqn/5kvzJiQEAAA=="
+    "Analytics": "v2:deflate64:H4sIAAAAAAAA/1WPQW/CMAyFfwv31KOctmPXSbswbSqTdpzc1C2BJK7qhApF/e9TKUxw8uf3LL3nDeR5DusVjpLp5phZU0PaBdRHVbZ+ARzlN1nuBNKWu/eBYz+bN54U9qbDQCOeIVUkoejNfHCHhdYcfVBv1Fs+O/JhVu+2XcCOrpEdqYqE46DpFYXUB4U9N7N5pZt7DbnwpAw6SBXbRWZLk7Lo6gahbP0XDc6IGPZqxPa0gVS2/ofqotyqfypEWBsMhv2ktOXYjBj0HlJhcXCXP2aYlHiBb+6NnvtND30+Y+hjeGzmuSE4yNMpf4b8BdargxiTDdEH4wiqZf4BUzwN44oBAAA="
    },
    "Metadata": {
     "aws:cdk:path": "RoutingAPIPipelineStack/prod-ap-southeast-1/RoutingAPIStack/CDKMetadata/Default"

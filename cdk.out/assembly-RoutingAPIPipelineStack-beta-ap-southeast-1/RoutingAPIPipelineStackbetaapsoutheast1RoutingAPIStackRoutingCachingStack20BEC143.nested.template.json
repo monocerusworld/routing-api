@@ -184,13 +184,7 @@
    "Properties": {
     "Code": {
      "S3Bucket": "cdk-hnb659fds-assets-978958364414-ap-southeast-1",
-     "S3Key": "0b7f461e78061f518723b1ba2f196591486022469a00b162b5fcec4de2642a78.zip"
-    },
-    "Role": {
-     "Fn::GetAtt": [
-      "RoutingLambdaRole270B0918",
-      "Arn"
-     ]
+     "S3Key": "61e55f9dd75c327f3bb42053e63dc2c2475315a72076a7425a9966ecd9a4b503.zip"
     },
     "Description": "Pool Cache Lambda for Chain with ChainId 1 and Protocol V3",
     "Environment": {
@@ -213,6 +207,12 @@
      "arn:aws:lambda:ap-southeast-1:580247275435:layer:LambdaInsightsExtension:14"
     ],
     "MemorySize": 1024,
+    "Role": {
+     "Fn::GetAtt": [
+      "RoutingLambdaRole270B0918",
+      "Arn"
+     ]
+    },
     "Runtime": "nodejs14.x",
     "Timeout": 900,
     "TracingConfig": {
@@ -225,7 +225,7 @@
    ],
    "Metadata": {
     "aws:cdk:path": "RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingCachingStack/PoolCacheLambda-ChainId1-ProtocolV3/Resource",
-    "aws:asset:path": "../asset.0b7f461e78061f518723b1ba2f196591486022469a00b162b5fcec4de2642a78",
+    "aws:asset:path": "../asset.61e55f9dd75c327f3bb42053e63dc2c2475315a72076a7425a9966ecd9a4b503",
     "aws:asset:is-bundled": true,
     "aws:asset:property": "Code"
    }
@@ -334,7 +334,6 @@
    "Type": "AWS::CloudWatch::Alarm",
    "Properties": {
     "ComparisonOperator": "GreaterThanOrEqualToThreshold",
-    "EvaluationPeriods": 1,
     "Dimensions": [
      {
       "Name": "FunctionName",
@@ -343,6 +342,7 @@
       }
      }
     ],
+    "EvaluationPeriods": 1,
     "MetricName": "Throttles",
     "Namespace": "AWS/Lambda",
     "Period": 300,
@@ -353,20 +353,14 @@
     "aws:cdk:path": "RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingCachingStack/RoutingAPI-PoolCacheToS3LambdaThrottles-ChainId1-ProtocolV3/Resource"
    }
   },
-  "PoolCacheLambdaChainId42161ProtocolV35CAC2D37": {
+  "PoolCacheLambdaChainId169ProtocolV38461AD2C": {
    "Type": "AWS::Lambda::Function",
    "Properties": {
     "Code": {
      "S3Bucket": "cdk-hnb659fds-assets-978958364414-ap-southeast-1",
-     "S3Key": "0b7f461e78061f518723b1ba2f196591486022469a00b162b5fcec4de2642a78.zip"
+     "S3Key": "61e55f9dd75c327f3bb42053e63dc2c2475315a72076a7425a9966ecd9a4b503.zip"
     },
-    "Role": {
-     "Fn::GetAtt": [
-      "RoutingLambdaRole270B0918",
-      "Arn"
-     ]
-    },
-    "Description": "Pool Cache Lambda for Chain with ChainId 42161 and Protocol V3",
+    "Description": "Pool Cache Lambda for Chain with ChainId 169 and Protocol V3",
     "Environment": {
      "Variables": {
       "POOL_CACHE_BUCKET": {
@@ -376,7 +370,7 @@
        "Ref": "PoolCacheBucket20A883DAA"
       },
       "POOL_CACHE_KEY": "poolCache.json",
-      "chainId": "42161",
+      "chainId": "169",
       "protocol": "V3",
       "timeout": "90000",
       "AWS_NODEJS_CONNECTION_REUSE_ENABLED": "1"
@@ -387,6 +381,12 @@
      "arn:aws:lambda:ap-southeast-1:580247275435:layer:LambdaInsightsExtension:14"
     ],
     "MemorySize": 1024,
+    "Role": {
+     "Fn::GetAtt": [
+      "RoutingLambdaRole270B0918",
+      "Arn"
+     ]
+    },
     "Runtime": "nodejs14.x",
     "Timeout": 900,
     "TracingConfig": {
@@ -398,13 +398,13 @@
     "RoutingLambdaRole270B0918"
    ],
    "Metadata": {
-    "aws:cdk:path": "RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingCachingStack/PoolCacheLambda-ChainId42161-ProtocolV3/Resource",
-    "aws:asset:path": "../asset.0b7f461e78061f518723b1ba2f196591486022469a00b162b5fcec4de2642a78",
+    "aws:cdk:path": "RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingCachingStack/PoolCacheLambda-ChainId169-ProtocolV3/Resource",
+    "aws:asset:path": "../asset.61e55f9dd75c327f3bb42053e63dc2c2475315a72076a7425a9966ecd9a4b503",
     "aws:asset:is-bundled": true,
     "aws:asset:property": "Code"
    }
   },
-  "SchedulePoolCacheChainId42161ProtocolV32927DEA8": {
+  "SchedulePoolCacheChainId169ProtocolV3316EA387": {
    "Type": "AWS::Events::Rule",
    "Properties": {
     "ScheduleExpression": "rate(15 minutes)",
@@ -413,7 +413,7 @@
      {
       "Arn": {
        "Fn::GetAtt": [
-        "PoolCacheLambdaChainId42161ProtocolV35CAC2D37",
+        "PoolCacheLambdaChainId169ProtocolV38461AD2C",
         "Arn"
        ]
       },
@@ -422,32 +422,32 @@
     ]
    },
    "Metadata": {
-    "aws:cdk:path": "RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingCachingStack/SchedulePoolCache-ChainId42161-ProtocolV3/Resource"
+    "aws:cdk:path": "RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingCachingStack/SchedulePoolCache-ChainId169-ProtocolV3/Resource"
    }
   },
-  "SchedulePoolCacheChainId42161ProtocolV3AllowEventRuleRoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackPoolCacheLambdaChainId42161ProtocolV3F303F91B630C9460": {
+  "SchedulePoolCacheChainId169ProtocolV3AllowEventRuleRoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackPoolCacheLambdaChainId169ProtocolV3B7B1850FD33D88E9": {
    "Type": "AWS::Lambda::Permission",
    "Properties": {
     "Action": "lambda:InvokeFunction",
     "FunctionName": {
      "Fn::GetAtt": [
-      "PoolCacheLambdaChainId42161ProtocolV35CAC2D37",
+      "PoolCacheLambdaChainId169ProtocolV38461AD2C",
       "Arn"
      ]
     },
     "Principal": "events.amazonaws.com",
     "SourceArn": {
      "Fn::GetAtt": [
-      "SchedulePoolCacheChainId42161ProtocolV32927DEA8",
+      "SchedulePoolCacheChainId169ProtocolV3316EA387",
       "Arn"
      ]
     }
    },
    "Metadata": {
-    "aws:cdk:path": "RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingCachingStack/SchedulePoolCache-ChainId42161-ProtocolV3/AllowEventRuleRoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackPoolCacheLambdaChainId42161ProtocolV3F303F91B"
+    "aws:cdk:path": "RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingCachingStack/SchedulePoolCache-ChainId169-ProtocolV3/AllowEventRuleRoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackPoolCacheLambdaChainId169ProtocolV3B7B1850F"
    }
   },
-  "RoutingAPISEV4PoolCacheToS3LambdaErrorRateChainId42161ProtocolV3323E6937": {
+  "RoutingAPISEV4PoolCacheToS3LambdaErrorRateChainId169ProtocolV30388E167": {
    "Type": "AWS::CloudWatch::Alarm",
    "Properties": {
     "ComparisonOperator": "GreaterThanOrEqualToThreshold",
@@ -465,7 +465,7 @@
          {
           "Name": "FunctionName",
           "Value": {
-           "Ref": "PoolCacheLambdaChainId42161ProtocolV35CAC2D37"
+           "Ref": "PoolCacheLambdaChainId169ProtocolV38461AD2C"
           }
          }
         ],
@@ -485,7 +485,7 @@
          {
           "Name": "FunctionName",
           "Value": {
-           "Ref": "PoolCacheLambdaChainId42161ProtocolV35CAC2D37"
+           "Ref": "PoolCacheLambdaChainId169ProtocolV38461AD2C"
           }
          }
         ],
@@ -501,22 +501,22 @@
     "Threshold": 50
    },
    "Metadata": {
-    "aws:cdk:path": "RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingCachingStack/RoutingAPI-SEV4-PoolCacheToS3LambdaErrorRate-ChainId42161-ProtocolV3/Resource"
+    "aws:cdk:path": "RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingCachingStack/RoutingAPI-SEV4-PoolCacheToS3LambdaErrorRate-ChainId169-ProtocolV3/Resource"
    }
   },
-  "RoutingAPIPoolCacheToS3LambdaThrottlesChainId42161ProtocolV32EFB0BF5": {
+  "RoutingAPIPoolCacheToS3LambdaThrottlesChainId169ProtocolV35F10C2DE": {
    "Type": "AWS::CloudWatch::Alarm",
    "Properties": {
     "ComparisonOperator": "GreaterThanOrEqualToThreshold",
-    "EvaluationPeriods": 1,
     "Dimensions": [
      {
       "Name": "FunctionName",
       "Value": {
-       "Ref": "PoolCacheLambdaChainId42161ProtocolV35CAC2D37"
+       "Ref": "PoolCacheLambdaChainId169ProtocolV38461AD2C"
       }
      }
     ],
+    "EvaluationPeriods": 1,
     "MetricName": "Throttles",
     "Namespace": "AWS/Lambda",
     "Period": 300,
@@ -524,23 +524,17 @@
     "Threshold": 5
    },
    "Metadata": {
-    "aws:cdk:path": "RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingCachingStack/RoutingAPI-PoolCacheToS3LambdaThrottles-ChainId42161-ProtocolV3/Resource"
+    "aws:cdk:path": "RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingCachingStack/RoutingAPI-PoolCacheToS3LambdaThrottles-ChainId169-ProtocolV3/Resource"
    }
   },
-  "PoolCacheLambdaChainId137ProtocolV3F9742D3A": {
+  "PoolCacheLambdaChainId3441005ProtocolV3AA43CE3A": {
    "Type": "AWS::Lambda::Function",
    "Properties": {
     "Code": {
      "S3Bucket": "cdk-hnb659fds-assets-978958364414-ap-southeast-1",
-     "S3Key": "0b7f461e78061f518723b1ba2f196591486022469a00b162b5fcec4de2642a78.zip"
+     "S3Key": "61e55f9dd75c327f3bb42053e63dc2c2475315a72076a7425a9966ecd9a4b503.zip"
     },
-    "Role": {
-     "Fn::GetAtt": [
-      "RoutingLambdaRole270B0918",
-      "Arn"
-     ]
-    },
-    "Description": "Pool Cache Lambda for Chain with ChainId 137 and Protocol V3",
+    "Description": "Pool Cache Lambda for Chain with ChainId 3441005 and Protocol V3",
     "Environment": {
      "Variables": {
       "POOL_CACHE_BUCKET": {
@@ -550,7 +544,7 @@
        "Ref": "PoolCacheBucket20A883DAA"
       },
       "POOL_CACHE_KEY": "poolCache.json",
-      "chainId": "137",
+      "chainId": "3441005",
       "protocol": "V3",
       "timeout": "90000",
       "AWS_NODEJS_CONNECTION_REUSE_ENABLED": "1"
@@ -561,6 +555,12 @@
      "arn:aws:lambda:ap-southeast-1:580247275435:layer:LambdaInsightsExtension:14"
     ],
     "MemorySize": 1024,
+    "Role": {
+     "Fn::GetAtt": [
+      "RoutingLambdaRole270B0918",
+      "Arn"
+     ]
+    },
     "Runtime": "nodejs14.x",
     "Timeout": 900,
     "TracingConfig": {
@@ -572,13 +572,13 @@
     "RoutingLambdaRole270B0918"
    ],
    "Metadata": {
-    "aws:cdk:path": "RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingCachingStack/PoolCacheLambda-ChainId137-ProtocolV3/Resource",
-    "aws:asset:path": "../asset.0b7f461e78061f518723b1ba2f196591486022469a00b162b5fcec4de2642a78",
+    "aws:cdk:path": "RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingCachingStack/PoolCacheLambda-ChainId3441005-ProtocolV3/Resource",
+    "aws:asset:path": "../asset.61e55f9dd75c327f3bb42053e63dc2c2475315a72076a7425a9966ecd9a4b503",
     "aws:asset:is-bundled": true,
     "aws:asset:property": "Code"
    }
   },
-  "SchedulePoolCacheChainId137ProtocolV330E19FD9": {
+  "SchedulePoolCacheChainId3441005ProtocolV3319FA34D": {
    "Type": "AWS::Events::Rule",
    "Properties": {
     "ScheduleExpression": "rate(15 minutes)",
@@ -587,7 +587,7 @@
      {
       "Arn": {
        "Fn::GetAtt": [
-        "PoolCacheLambdaChainId137ProtocolV3F9742D3A",
+        "PoolCacheLambdaChainId3441005ProtocolV3AA43CE3A",
         "Arn"
        ]
       },
@@ -596,32 +596,32 @@
     ]
    },
    "Metadata": {
-    "aws:cdk:path": "RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingCachingStack/SchedulePoolCache-ChainId137-ProtocolV3/Resource"
+    "aws:cdk:path": "RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingCachingStack/SchedulePoolCache-ChainId3441005-ProtocolV3/Resource"
    }
   },
-  "SchedulePoolCacheChainId137ProtocolV3AllowEventRuleRoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackPoolCacheLambdaChainId137ProtocolV33BD6738C98EA52B6": {
+  "SchedulePoolCacheChainId3441005ProtocolV3AllowEventRuleRoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackPoolCacheLambdaChainId3441005ProtocolV3C008DCD415B02FDE": {
    "Type": "AWS::Lambda::Permission",
    "Properties": {
     "Action": "lambda:InvokeFunction",
     "FunctionName": {
      "Fn::GetAtt": [
-      "PoolCacheLambdaChainId137ProtocolV3F9742D3A",
+      "PoolCacheLambdaChainId3441005ProtocolV3AA43CE3A",
       "Arn"
      ]
     },
     "Principal": "events.amazonaws.com",
     "SourceArn": {
      "Fn::GetAtt": [
-      "SchedulePoolCacheChainId137ProtocolV330E19FD9",
+      "SchedulePoolCacheChainId3441005ProtocolV3319FA34D",
       "Arn"
      ]
     }
    },
    "Metadata": {
-    "aws:cdk:path": "RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingCachingStack/SchedulePoolCache-ChainId137-ProtocolV3/AllowEventRuleRoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackPoolCacheLambdaChainId137ProtocolV33BD6738C"
+    "aws:cdk:path": "RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingCachingStack/SchedulePoolCache-ChainId3441005-ProtocolV3/AllowEventRuleRoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackPoolCacheLambdaChainId3441005ProtocolV3C008DCD4"
    }
   },
-  "RoutingAPISEV4PoolCacheToS3LambdaErrorRateChainId137ProtocolV30A2E4059": {
+  "RoutingAPISEV4PoolCacheToS3LambdaErrorRateChainId3441005ProtocolV3E2322D53": {
    "Type": "AWS::CloudWatch::Alarm",
    "Properties": {
     "ComparisonOperator": "GreaterThanOrEqualToThreshold",
@@ -639,7 +639,7 @@
          {
           "Name": "FunctionName",
           "Value": {
-           "Ref": "PoolCacheLambdaChainId137ProtocolV3F9742D3A"
+           "Ref": "PoolCacheLambdaChainId3441005ProtocolV3AA43CE3A"
           }
          }
         ],
@@ -659,7 +659,7 @@
          {
           "Name": "FunctionName",
           "Value": {
-           "Ref": "PoolCacheLambdaChainId137ProtocolV3F9742D3A"
+           "Ref": "PoolCacheLambdaChainId3441005ProtocolV3AA43CE3A"
           }
          }
         ],
@@ -675,22 +675,22 @@
     "Threshold": 50
    },
    "Metadata": {
-    "aws:cdk:path": "RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingCachingStack/RoutingAPI-SEV4-PoolCacheToS3LambdaErrorRate-ChainId137-ProtocolV3/Resource"
+    "aws:cdk:path": "RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingCachingStack/RoutingAPI-SEV4-PoolCacheToS3LambdaErrorRate-ChainId3441005-ProtocolV3/Resource"
    }
   },
-  "RoutingAPIPoolCacheToS3LambdaThrottlesChainId137ProtocolV3CB586736": {
+  "RoutingAPIPoolCacheToS3LambdaThrottlesChainId3441005ProtocolV3526E568F": {
    "Type": "AWS::CloudWatch::Alarm",
    "Properties": {
     "ComparisonOperator": "GreaterThanOrEqualToThreshold",
-    "EvaluationPeriods": 1,
     "Dimensions": [
      {
       "Name": "FunctionName",
       "Value": {
-       "Ref": "PoolCacheLambdaChainId137ProtocolV3F9742D3A"
+       "Ref": "PoolCacheLambdaChainId3441005ProtocolV3AA43CE3A"
       }
      }
     ],
+    "EvaluationPeriods": 1,
     "MetricName": "Throttles",
     "Namespace": "AWS/Lambda",
     "Period": 300,
@@ -698,355 +698,7 @@
     "Threshold": 5
    },
    "Metadata": {
-    "aws:cdk:path": "RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingCachingStack/RoutingAPI-PoolCacheToS3LambdaThrottles-ChainId137-ProtocolV3/Resource"
-   }
-  },
-  "PoolCacheLambdaChainId42220ProtocolV3A540BDE0": {
-   "Type": "AWS::Lambda::Function",
-   "Properties": {
-    "Code": {
-     "S3Bucket": "cdk-hnb659fds-assets-978958364414-ap-southeast-1",
-     "S3Key": "0b7f461e78061f518723b1ba2f196591486022469a00b162b5fcec4de2642a78.zip"
-    },
-    "Role": {
-     "Fn::GetAtt": [
-      "RoutingLambdaRole270B0918",
-      "Arn"
-     ]
-    },
-    "Description": "Pool Cache Lambda for Chain with ChainId 42220 and Protocol V3",
-    "Environment": {
-     "Variables": {
-      "POOL_CACHE_BUCKET": {
-       "Ref": "PoolCacheBucketD80D665F"
-      },
-      "POOL_CACHE_BUCKET_2": {
-       "Ref": "PoolCacheBucket20A883DAA"
-      },
-      "POOL_CACHE_KEY": "poolCache.json",
-      "chainId": "42220",
-      "protocol": "V3",
-      "timeout": "90000",
-      "AWS_NODEJS_CONNECTION_REUSE_ENABLED": "1"
-     }
-    },
-    "Handler": "index.handler",
-    "Layers": [
-     "arn:aws:lambda:ap-southeast-1:580247275435:layer:LambdaInsightsExtension:14"
-    ],
-    "MemorySize": 1024,
-    "Runtime": "nodejs14.x",
-    "Timeout": 900,
-    "TracingConfig": {
-     "Mode": "Active"
-    }
-   },
-   "DependsOn": [
-    "RoutingLambdaRoleDefaultPolicyB8EDD428",
-    "RoutingLambdaRole270B0918"
-   ],
-   "Metadata": {
-    "aws:cdk:path": "RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingCachingStack/PoolCacheLambda-ChainId42220-ProtocolV3/Resource",
-    "aws:asset:path": "../asset.0b7f461e78061f518723b1ba2f196591486022469a00b162b5fcec4de2642a78",
-    "aws:asset:is-bundled": true,
-    "aws:asset:property": "Code"
-   }
-  },
-  "SchedulePoolCacheChainId42220ProtocolV35873DBAD": {
-   "Type": "AWS::Events::Rule",
-   "Properties": {
-    "ScheduleExpression": "rate(15 minutes)",
-    "State": "ENABLED",
-    "Targets": [
-     {
-      "Arn": {
-       "Fn::GetAtt": [
-        "PoolCacheLambdaChainId42220ProtocolV3A540BDE0",
-        "Arn"
-       ]
-      },
-      "Id": "Target0"
-     }
-    ]
-   },
-   "Metadata": {
-    "aws:cdk:path": "RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingCachingStack/SchedulePoolCache-ChainId42220-ProtocolV3/Resource"
-   }
-  },
-  "SchedulePoolCacheChainId42220ProtocolV3AllowEventRuleRoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackPoolCacheLambdaChainId42220ProtocolV337D0859C6BFC42ED": {
-   "Type": "AWS::Lambda::Permission",
-   "Properties": {
-    "Action": "lambda:InvokeFunction",
-    "FunctionName": {
-     "Fn::GetAtt": [
-      "PoolCacheLambdaChainId42220ProtocolV3A540BDE0",
-      "Arn"
-     ]
-    },
-    "Principal": "events.amazonaws.com",
-    "SourceArn": {
-     "Fn::GetAtt": [
-      "SchedulePoolCacheChainId42220ProtocolV35873DBAD",
-      "Arn"
-     ]
-    }
-   },
-   "Metadata": {
-    "aws:cdk:path": "RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingCachingStack/SchedulePoolCache-ChainId42220-ProtocolV3/AllowEventRuleRoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackPoolCacheLambdaChainId42220ProtocolV337D0859C"
-   }
-  },
-  "RoutingAPISEV4PoolCacheToS3LambdaErrorRateChainId42220ProtocolV3931FC46F": {
-   "Type": "AWS::CloudWatch::Alarm",
-   "Properties": {
-    "ComparisonOperator": "GreaterThanOrEqualToThreshold",
-    "EvaluationPeriods": 12,
-    "Metrics": [
-     {
-      "Expression": "(invocations - errors) < 1",
-      "Id": "expr_1"
-     },
-     {
-      "Id": "invocations",
-      "MetricStat": {
-       "Metric": {
-        "Dimensions": [
-         {
-          "Name": "FunctionName",
-          "Value": {
-           "Ref": "PoolCacheLambdaChainId42220ProtocolV3A540BDE0"
-          }
-         }
-        ],
-        "MetricName": "Invocations",
-        "Namespace": "AWS/Lambda"
-       },
-       "Period": 300,
-       "Stat": "Sum"
-      },
-      "ReturnData": false
-     },
-     {
-      "Id": "errors",
-      "MetricStat": {
-       "Metric": {
-        "Dimensions": [
-         {
-          "Name": "FunctionName",
-          "Value": {
-           "Ref": "PoolCacheLambdaChainId42220ProtocolV3A540BDE0"
-          }
-         }
-        ],
-        "MetricName": "Errors",
-        "Namespace": "AWS/Lambda"
-       },
-       "Period": 300,
-       "Stat": "Sum"
-      },
-      "ReturnData": false
-     }
-    ],
-    "Threshold": 50
-   },
-   "Metadata": {
-    "aws:cdk:path": "RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingCachingStack/RoutingAPI-SEV4-PoolCacheToS3LambdaErrorRate-ChainId42220-ProtocolV3/Resource"
-   }
-  },
-  "RoutingAPIPoolCacheToS3LambdaThrottlesChainId42220ProtocolV3993A49F3": {
-   "Type": "AWS::CloudWatch::Alarm",
-   "Properties": {
-    "ComparisonOperator": "GreaterThanOrEqualToThreshold",
-    "EvaluationPeriods": 1,
-    "Dimensions": [
-     {
-      "Name": "FunctionName",
-      "Value": {
-       "Ref": "PoolCacheLambdaChainId42220ProtocolV3A540BDE0"
-      }
-     }
-    ],
-    "MetricName": "Throttles",
-    "Namespace": "AWS/Lambda",
-    "Period": 300,
-    "Statistic": "Sum",
-    "Threshold": 5
-   },
-   "Metadata": {
-    "aws:cdk:path": "RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingCachingStack/RoutingAPI-PoolCacheToS3LambdaThrottles-ChainId42220-ProtocolV3/Resource"
-   }
-  },
-  "PoolCacheLambdaChainId56ProtocolV3C5BFABFA": {
-   "Type": "AWS::Lambda::Function",
-   "Properties": {
-    "Code": {
-     "S3Bucket": "cdk-hnb659fds-assets-978958364414-ap-southeast-1",
-     "S3Key": "0b7f461e78061f518723b1ba2f196591486022469a00b162b5fcec4de2642a78.zip"
-    },
-    "Role": {
-     "Fn::GetAtt": [
-      "RoutingLambdaRole270B0918",
-      "Arn"
-     ]
-    },
-    "Description": "Pool Cache Lambda for Chain with ChainId 56 and Protocol V3",
-    "Environment": {
-     "Variables": {
-      "POOL_CACHE_BUCKET": {
-       "Ref": "PoolCacheBucketD80D665F"
-      },
-      "POOL_CACHE_BUCKET_2": {
-       "Ref": "PoolCacheBucket20A883DAA"
-      },
-      "POOL_CACHE_KEY": "poolCache.json",
-      "chainId": "56",
-      "protocol": "V3",
-      "timeout": "90000",
-      "AWS_NODEJS_CONNECTION_REUSE_ENABLED": "1"
-     }
-    },
-    "Handler": "index.handler",
-    "Layers": [
-     "arn:aws:lambda:ap-southeast-1:580247275435:layer:LambdaInsightsExtension:14"
-    ],
-    "MemorySize": 1024,
-    "Runtime": "nodejs14.x",
-    "Timeout": 900,
-    "TracingConfig": {
-     "Mode": "Active"
-    }
-   },
-   "DependsOn": [
-    "RoutingLambdaRoleDefaultPolicyB8EDD428",
-    "RoutingLambdaRole270B0918"
-   ],
-   "Metadata": {
-    "aws:cdk:path": "RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingCachingStack/PoolCacheLambda-ChainId56-ProtocolV3/Resource",
-    "aws:asset:path": "../asset.0b7f461e78061f518723b1ba2f196591486022469a00b162b5fcec4de2642a78",
-    "aws:asset:is-bundled": true,
-    "aws:asset:property": "Code"
-   }
-  },
-  "SchedulePoolCacheChainId56ProtocolV326319471": {
-   "Type": "AWS::Events::Rule",
-   "Properties": {
-    "ScheduleExpression": "rate(15 minutes)",
-    "State": "ENABLED",
-    "Targets": [
-     {
-      "Arn": {
-       "Fn::GetAtt": [
-        "PoolCacheLambdaChainId56ProtocolV3C5BFABFA",
-        "Arn"
-       ]
-      },
-      "Id": "Target0"
-     }
-    ]
-   },
-   "Metadata": {
-    "aws:cdk:path": "RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingCachingStack/SchedulePoolCache-ChainId56-ProtocolV3/Resource"
-   }
-  },
-  "SchedulePoolCacheChainId56ProtocolV3AllowEventRuleRoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackPoolCacheLambdaChainId56ProtocolV35DEC5E47B26F6FC7": {
-   "Type": "AWS::Lambda::Permission",
-   "Properties": {
-    "Action": "lambda:InvokeFunction",
-    "FunctionName": {
-     "Fn::GetAtt": [
-      "PoolCacheLambdaChainId56ProtocolV3C5BFABFA",
-      "Arn"
-     ]
-    },
-    "Principal": "events.amazonaws.com",
-    "SourceArn": {
-     "Fn::GetAtt": [
-      "SchedulePoolCacheChainId56ProtocolV326319471",
-      "Arn"
-     ]
-    }
-   },
-   "Metadata": {
-    "aws:cdk:path": "RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingCachingStack/SchedulePoolCache-ChainId56-ProtocolV3/AllowEventRuleRoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackPoolCacheLambdaChainId56ProtocolV35DEC5E47"
-   }
-  },
-  "RoutingAPISEV4PoolCacheToS3LambdaErrorRateChainId56ProtocolV3D719B73A": {
-   "Type": "AWS::CloudWatch::Alarm",
-   "Properties": {
-    "ComparisonOperator": "GreaterThanOrEqualToThreshold",
-    "EvaluationPeriods": 12,
-    "Metrics": [
-     {
-      "Expression": "(invocations - errors) < 1",
-      "Id": "expr_1"
-     },
-     {
-      "Id": "invocations",
-      "MetricStat": {
-       "Metric": {
-        "Dimensions": [
-         {
-          "Name": "FunctionName",
-          "Value": {
-           "Ref": "PoolCacheLambdaChainId56ProtocolV3C5BFABFA"
-          }
-         }
-        ],
-        "MetricName": "Invocations",
-        "Namespace": "AWS/Lambda"
-       },
-       "Period": 300,
-       "Stat": "Sum"
-      },
-      "ReturnData": false
-     },
-     {
-      "Id": "errors",
-      "MetricStat": {
-       "Metric": {
-        "Dimensions": [
-         {
-          "Name": "FunctionName",
-          "Value": {
-           "Ref": "PoolCacheLambdaChainId56ProtocolV3C5BFABFA"
-          }
-         }
-        ],
-        "MetricName": "Errors",
-        "Namespace": "AWS/Lambda"
-       },
-       "Period": 300,
-       "Stat": "Sum"
-      },
-      "ReturnData": false
-     }
-    ],
-    "Threshold": 50
-   },
-   "Metadata": {
-    "aws:cdk:path": "RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingCachingStack/RoutingAPI-SEV4-PoolCacheToS3LambdaErrorRate-ChainId56-ProtocolV3/Resource"
-   }
-  },
-  "RoutingAPIPoolCacheToS3LambdaThrottlesChainId56ProtocolV300C5F115": {
-   "Type": "AWS::CloudWatch::Alarm",
-   "Properties": {
-    "ComparisonOperator": "GreaterThanOrEqualToThreshold",
-    "EvaluationPeriods": 1,
-    "Dimensions": [
-     {
-      "Name": "FunctionName",
-      "Value": {
-       "Ref": "PoolCacheLambdaChainId56ProtocolV3C5BFABFA"
-      }
-     }
-    ],
-    "MetricName": "Throttles",
-    "Namespace": "AWS/Lambda",
-    "Period": 300,
-    "Statistic": "Sum",
-    "Threshold": 5
-   },
-   "Metadata": {
-    "aws:cdk:path": "RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingCachingStack/RoutingAPI-PoolCacheToS3LambdaThrottles-ChainId56-ProtocolV3/Resource"
+    "aws:cdk:path": "RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingCachingStack/RoutingAPI-PoolCacheToS3LambdaThrottles-ChainId3441005-ProtocolV3/Resource"
    }
   },
   "PoolCacheLambdaChainId1ProtocolV2C4BB0AD5": {
@@ -1054,13 +706,7 @@
    "Properties": {
     "Code": {
      "S3Bucket": "cdk-hnb659fds-assets-978958364414-ap-southeast-1",
-     "S3Key": "0b7f461e78061f518723b1ba2f196591486022469a00b162b5fcec4de2642a78.zip"
-    },
-    "Role": {
-     "Fn::GetAtt": [
-      "RoutingLambdaRole270B0918",
-      "Arn"
-     ]
+     "S3Key": "61e55f9dd75c327f3bb42053e63dc2c2475315a72076a7425a9966ecd9a4b503.zip"
     },
     "Description": "Pool Cache Lambda for Chain with ChainId 1 and Protocol V2",
     "Environment": {
@@ -1083,6 +729,12 @@
      "arn:aws:lambda:ap-southeast-1:580247275435:layer:LambdaInsightsExtension:14"
     ],
     "MemorySize": 1024,
+    "Role": {
+     "Fn::GetAtt": [
+      "RoutingLambdaRole270B0918",
+      "Arn"
+     ]
+    },
     "Runtime": "nodejs14.x",
     "Timeout": 900,
     "TracingConfig": {
@@ -1095,7 +747,7 @@
    ],
    "Metadata": {
     "aws:cdk:path": "RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingCachingStack/PoolCacheLambda-ChainId1-ProtocolV2/Resource",
-    "aws:asset:path": "../asset.0b7f461e78061f518723b1ba2f196591486022469a00b162b5fcec4de2642a78",
+    "aws:asset:path": "../asset.61e55f9dd75c327f3bb42053e63dc2c2475315a72076a7425a9966ecd9a4b503",
     "aws:asset:is-bundled": true,
     "aws:asset:property": "Code"
    }
@@ -1204,7 +856,6 @@
    "Type": "AWS::CloudWatch::Alarm",
    "Properties": {
     "ComparisonOperator": "GreaterThanOrEqualToThreshold",
-    "EvaluationPeriods": 1,
     "Dimensions": [
      {
       "Name": "FunctionName",
@@ -1213,6 +864,7 @@
       }
      }
     ],
+    "EvaluationPeriods": 1,
     "MetricName": "Throttles",
     "Namespace": "AWS/Lambda",
     "Period": 300,
@@ -1228,13 +880,7 @@
    "Properties": {
     "Code": {
      "S3Bucket": "cdk-hnb659fds-assets-978958364414-ap-southeast-1",
-     "S3Key": "295a2bf68703a6a29232acdd113301386e89e6e69ee49fa9c14ecd155851af2d.zip"
-    },
-    "Role": {
-     "Fn::GetAtt": [
-      "RoutingLambdaRole270B0918",
-      "Arn"
-     ]
+     "S3Key": "24910e0049fc47c0dd979d678304bd882cf5edfa31bb85656fcfcb8a6f436e60.zip"
     },
     "Description": "IPFS Pool Cache Lambda",
     "Environment": {
@@ -1253,6 +899,12 @@
      "arn:aws:lambda:ap-southeast-1:580247275435:layer:LambdaInsightsExtension:14"
     ],
     "MemorySize": 1024,
+    "Role": {
+     "Fn::GetAtt": [
+      "RoutingLambdaRole270B0918",
+      "Arn"
+     ]
+    },
     "Runtime": "nodejs14.x",
     "Timeout": 900,
     "TracingConfig": {
@@ -1265,7 +917,7 @@
    ],
    "Metadata": {
     "aws:cdk:path": "RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingCachingStack/IpfsPoolCacheLambda/Resource",
-    "aws:asset:path": "../asset.295a2bf68703a6a29232acdd113301386e89e6e69ee49fa9c14ecd155851af2d",
+    "aws:asset:path": "../asset.24910e0049fc47c0dd979d678304bd882cf5edfa31bb85656fcfcb8a6f436e60",
     "aws:asset:is-bundled": true,
     "aws:asset:property": "Code"
    }
@@ -1318,13 +970,7 @@
    "Properties": {
     "Code": {
      "S3Bucket": "cdk-hnb659fds-assets-978958364414-ap-southeast-1",
-     "S3Key": "ce6eab688b6d8ff5a3352750d1f7b2d3eb3589f0c97a6bd1ad247f6f346bbc9e.zip"
-    },
-    "Role": {
-     "Fn::GetAtt": [
-      "RoutingLambdaRole270B0918",
-      "Arn"
-     ]
+     "S3Key": "4b99d9351de36fadc65481154eed99ec466e841b92239f7f1e023a625ca62f46.zip"
     },
     "Description": "Clean IPFS Pool Cache Lambda",
     "Environment": {
@@ -1341,6 +987,12 @@
      "arn:aws:lambda:ap-southeast-1:580247275435:layer:LambdaInsightsExtension:14"
     ],
     "MemorySize": 512,
+    "Role": {
+     "Fn::GetAtt": [
+      "RoutingLambdaRole270B0918",
+      "Arn"
+     ]
+    },
     "Runtime": "nodejs14.x",
     "Timeout": 900,
     "TracingConfig": {
@@ -1353,7 +1005,7 @@
    ],
    "Metadata": {
     "aws:cdk:path": "RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingCachingStack/CleanIpfsPoolCacheLambda/Resource",
-    "aws:asset:path": "../asset.ce6eab688b6d8ff5a3352750d1f7b2d3eb3589f0c97a6bd1ad247f6f346bbc9e",
+    "aws:asset:path": "../asset.4b99d9351de36fadc65481154eed99ec466e841b92239f7f1e023a625ca62f46",
     "aws:asset:is-bundled": true,
     "aws:asset:property": "Code"
    }
@@ -1414,13 +1066,7 @@
    "Properties": {
     "Code": {
      "S3Bucket": "cdk-hnb659fds-assets-978958364414-ap-southeast-1",
-     "S3Key": "101f0022ead0ddbe999e771dfd5a39025acd89da1a5f5571820a2eac30c1b7b9.zip"
-    },
-    "Role": {
-     "Fn::GetAtt": [
-      "RoutingLambdaRole270B0918",
-      "Arn"
-     ]
+     "S3Key": "2a7953772596e45115d39226b99d526d5aca60531e32f2ea9ab9e0361ae29e34.zip"
     },
     "Description": "Token List Cache Lambda",
     "Environment": {
@@ -1436,6 +1082,12 @@
      "arn:aws:lambda:ap-southeast-1:580247275435:layer:LambdaInsightsExtension:14"
     ],
     "MemorySize": 256,
+    "Role": {
+     "Fn::GetAtt": [
+      "RoutingLambdaRole270B0918",
+      "Arn"
+     ]
+    },
     "Runtime": "nodejs14.x",
     "Timeout": 180,
     "TracingConfig": {
@@ -1448,7 +1100,7 @@
    ],
    "Metadata": {
     "aws:cdk:path": "RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingCachingStack/TokenListCacheLambda/Resource",
-    "aws:asset:path": "../asset.101f0022ead0ddbe999e771dfd5a39025acd89da1a5f5571820a2eac30c1b7b9",
+    "aws:asset:path": "../asset.2a7953772596e45115d39226b99d526d5aca60531e32f2ea9ab9e0361ae29e34",
     "aws:asset:is-bundled": true,
     "aws:asset:property": "Code"
    }
@@ -1499,7 +1151,7 @@
   "CDKMetadata": {
    "Type": "AWS::CDK::Metadata",
    "Properties": {
-    "Analytics": "v2:deflate64:H4sIAAAAAAAA/z2Q3W7CMAyFn2X3rmEwwTVM4hJN3QNUIfFY2vxIdQKaorw7SVrt6jvWObYT7/D4gds38eROqqkz+obpShxIfQchJyjGkHiP6RzlRAE+f9yqFpwFUwYtLKbeG6p+45c3Wv7VclEZjLA3JQbnFY2M14ZLdDJo74D3g2CmwHiqWMOYSv9/ps6i2WrmUmWgB7mST31c1xZmkMZH9RRB/mI6GTHbajWRM/TEPs6SoC0pH7xrd2+9q5GhPg9H3jzeD7jblsuMrHU3Rxe0JewXvgBNyrc7NQEAAA=="
+    "Analytics": "v2:deflate64:H4sIAAAAAAAA/z2OzW7CMBCEn4W7s8XlQo+A1COqwgNEi71QJ/6RsjYRsvzulZ2op29WM7uznyClhP0OF+6Unjpr7pCvxJH0LaKaBC48ZD5APic1URSXh9/UijMyFWHQQe6Dpeo3/gRr1LuOqyrCortrHHzQNDJcG76TV9EEL/gwIDNFhlPFFoZ8efj/TL1FszPMJvgi6EU+MuQ+bbXJUhHKhqQXjOoX8sni7KrVRCmiJw5pViRayS3i0/hn292MIup7MPLHSx5BfsF+N7Ix3Zx8NI6gX/kHT8gjyDYBAAA="
    },
    "Metadata": {
     "aws:cdk:path": "RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingCachingStack/CDKMetadata/Default"
@@ -1551,24 +1203,14 @@
     "Ref": "PoolCacheLambdaChainId1ProtocolV32F9F3DC1"
    }
   },
-  "RoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackPoolCacheLambdaChainId42161ProtocolV3B024458DRef": {
+  "RoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackPoolCacheLambdaChainId169ProtocolV3133A15CBRef": {
    "Value": {
-    "Ref": "PoolCacheLambdaChainId42161ProtocolV35CAC2D37"
+    "Ref": "PoolCacheLambdaChainId169ProtocolV38461AD2C"
    }
   },
-  "RoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackPoolCacheLambdaChainId137ProtocolV3F1E1AE10Ref": {
+  "RoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackPoolCacheLambdaChainId3441005ProtocolV3C232468ERef": {
    "Value": {
-    "Ref": "PoolCacheLambdaChainId137ProtocolV3F9742D3A"
-   }
-  },
-  "RoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackPoolCacheLambdaChainId42220ProtocolV31B01180CRef": {
-   "Value": {
-    "Ref": "PoolCacheLambdaChainId42220ProtocolV3A540BDE0"
-   }
-  },
-  "RoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackPoolCacheLambdaChainId56ProtocolV3826D3791Ref": {
-   "Value": {
-    "Ref": "PoolCacheLambdaChainId56ProtocolV3C5BFABFA"
+    "Ref": "PoolCacheLambdaChainId3441005ProtocolV3AA43CE3A"
    }
   },
   "RoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStackRoutingCachingStackPoolCacheLambdaChainId1ProtocolV2FFD53B79Ref": {

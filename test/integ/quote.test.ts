@@ -2,19 +2,17 @@ import { SignerWithAddress } from '@nomiclabs/hardhat-ethers/signers'
 import { AllowanceTransfer, PermitSingle } from '@uniswap/permit2-sdk'
 import { Currency, CurrencyAmount, Ether, Fraction, Token, WETH9 } from '@uniswap/sdk-core'
 import {
-  CEUR_CELO,
-  CEUR_CELO_ALFAJORES,
   ChainId,
-  CUSD_CELO,
-  CUSD_CELO_ALFAJORES,
-  DAI_MAINNET,
   ID_TO_NETWORK_NAME,
   NATIVE_CURRENCY,
   parseAmount,
   SWAP_ROUTER_02_ADDRESSES,
+  USDC_MANTA_TESTNET,
+  USDT_MANTA_TESTNET,
+  USDC_MANTA,
+  USDT_MANTA,
   USDC_MAINNET,
   USDT_MAINNET,
-  WBTC_MAINNET,
 } from '@monocerus/smart-order-router'
 import {
   PERMIT2_ADDRESS,
@@ -37,7 +35,7 @@ import { QuoteResponse } from '../../lib/handlers/schema'
 import { Permit2__factory } from '../../lib/types/ext'
 import { resetAndFundAtBlock } from '../utils/forkAndFund'
 import { getBalance, getBalanceAndApprove } from '../utils/getBalanceAndApprove'
-import { DAI_ON, getAmount, getAmountFromToken, UNI_MAINNET, USDC_ON, USDT_ON, WNATIVE_ON } from '../utils/tokens'
+import { getAmount, getAmountFromToken, USDC_ON, USDT_ON, WNATIVE_ON } from '../utils/tokens'
 
 const { ethers } = hre
 
@@ -191,10 +189,8 @@ describe('quote', function () {
     alice = await resetAndFundAtBlock(alice, block, [
       parseAmount('8000000', USDC_MAINNET),
       parseAmount('5000000', USDT_MAINNET),
-      parseAmount('10', WBTC_MAINNET),
-      parseAmount('1000', UNI_MAINNET),
       parseAmount('4000', WETH9[1]),
-      parseAmount('5000000', DAI_MAINNET),
+
     ])
   })
 
@@ -552,12 +548,12 @@ describe('quote', function () {
             const quoteReq: QuoteQueryParams = {
               tokenInAddress: 'ETH',
               tokenInChainId: 1,
-              tokenOutAddress: 'UNI',
+              tokenOutAddress: 'USDC',
               tokenOutChainId: 1,
               amount:
                 type == 'exactIn'
-                  ? await getAmount(1, type, 'ETH', 'UNI', '10')
-                  : await getAmount(1, type, 'ETH', 'UNI', '10000'),
+                  ? await getAmount(1, type, 'ETH', 'USDC', '10')
+                  : await getAmount(1, type, 'ETH', 'USDC', '10000'),
               type,
               recipient: alice.address,
               slippageTolerance: SLIPPAGE,
@@ -577,13 +573,13 @@ describe('quote', function () {
             const { tokenInBefore, tokenInAfter, tokenOutBefore, tokenOutAfter } = await executeSwap(
               data.methodParameters!,
               Ether.onChain(1),
-              UNI_MAINNET
+              USDC_MAINNET
             )
 
             if (type == 'exactIn') {
               // We've swapped 10 ETH + gas costs
               expect(tokenInBefore.subtract(tokenInAfter).greaterThan(parseAmount('10', Ether.onChain(1)))).to.be.true
-              checkQuoteToken(tokenOutBefore, tokenOutAfter, CurrencyAmount.fromRawAmount(UNI_MAINNET, data.quote))
+              checkQuoteToken(tokenOutBefore, tokenOutAfter, CurrencyAmount.fromRawAmount(USDT_MAINNET, data.quote))
             } else {
               expect(tokenOutAfter.subtract(tokenOutBefore).toExact()).to.equal('10000')
               // Can't easily check slippage for ETH due to gas costs effecting ETH balance.
@@ -620,13 +616,13 @@ describe('quote', function () {
             const { tokenInBefore, tokenInAfter, tokenOutBefore, tokenOutAfter } = await executeSwap(
               data.methodParameters!,
               Ether.onChain(1),
-              UNI_MAINNET
+              USDT_MAINNET
             )
 
             if (type == 'exactIn') {
               // We've swapped 10 ETH + gas costs
               expect(tokenInBefore.subtract(tokenInAfter).greaterThan(parseAmount('10', Ether.onChain(1)))).to.be.true
-              checkQuoteToken(tokenOutBefore, tokenOutAfter, CurrencyAmount.fromRawAmount(UNI_MAINNET, data.quote))
+              checkQuoteToken(tokenOutBefore, tokenOutAfter, CurrencyAmount.fromRawAmount(USDT_MAINNET, data.quote))
             } else {
               expect(tokenOutAfter.subtract(tokenOutBefore).toExact()).to.equal('10000')
               // Can't easily check slippage for ETH due to gas costs effecting ETH balance.
@@ -659,12 +655,12 @@ describe('quote', function () {
             const { tokenInBefore, tokenInAfter, tokenOutBefore, tokenOutAfter } = await executeSwap(
               data.methodParameters!,
               WETH9[1]!,
-              DAI_MAINNET
+              USDT_MAINNET
             )
 
             if (type == 'exactIn') {
               expect(tokenInBefore.subtract(tokenInAfter).toExact()).to.equal('100')
-              checkQuoteToken(tokenOutBefore, tokenOutAfter, CurrencyAmount.fromRawAmount(DAI_MAINNET, data.quote))
+              checkQuoteToken(tokenOutBefore, tokenOutAfter, CurrencyAmount.fromRawAmount(USDT_MAINNET, data.quote))
             } else {
               expect(tokenOutAfter.subtract(tokenOutBefore).toExact()).to.equal('100')
               checkQuoteToken(tokenInBefore, tokenInAfter, CurrencyAmount.fromRawAmount(WETH9[1]!, data.quote))
@@ -1311,13 +1307,13 @@ describe('quote', function () {
               const { tokenInBefore, tokenInAfter, tokenOutBefore, tokenOutAfter } = await executeSwap(
                 data.methodParameters!,
                 Ether.onChain(1),
-                UNI_MAINNET
+                USDT_MAINNET
               )
 
               if (type == 'exactIn') {
                 // We've swapped 10 ETH + gas costs
                 expect(tokenInBefore.subtract(tokenInAfter).greaterThan(parseAmount('10', Ether.onChain(1)))).to.be.true
-                checkQuoteToken(tokenOutBefore, tokenOutAfter, CurrencyAmount.fromRawAmount(UNI_MAINNET, data.quote))
+                checkQuoteToken(tokenOutBefore, tokenOutAfter, CurrencyAmount.fromRawAmount(USDT_MAINNET, data.quote))
               } else {
                 expect(tokenOutAfter.subtract(tokenOutBefore).toExact()).to.equal('10000')
                 // Can't easily check slippage for ETH due to gas costs effecting ETH balance.
@@ -1354,13 +1350,13 @@ describe('quote', function () {
               const { tokenInBefore, tokenInAfter, tokenOutBefore, tokenOutAfter } = await executeSwap(
                 data.methodParameters!,
                 Ether.onChain(1),
-                UNI_MAINNET
+                USDT_MAINNET
               )
 
               if (type == 'exactIn') {
                 // We've swapped 10 ETH + gas costs
                 expect(tokenInBefore.subtract(tokenInAfter).greaterThan(parseAmount('10', Ether.onChain(1)))).to.be.true
-                checkQuoteToken(tokenOutBefore, tokenOutAfter, CurrencyAmount.fromRawAmount(UNI_MAINNET, data.quote))
+                checkQuoteToken(tokenOutBefore, tokenOutAfter, CurrencyAmount.fromRawAmount(USDT_MAINNET, data.quote))
               } else {
                 expect(tokenOutAfter.subtract(tokenOutBefore).toExact()).to.equal('10000')
                 // Can't easily check slippage for ETH due to gas costs effecting ETH balance.
@@ -1394,12 +1390,12 @@ describe('quote', function () {
               const { tokenInBefore, tokenInAfter, tokenOutBefore, tokenOutAfter } = await executeSwap(
                 data.methodParameters!,
                 WETH9[1]!,
-                DAI_MAINNET
+                USDT_MAINNET
               )
 
               if (type == 'exactIn') {
                 expect(tokenInBefore.subtract(tokenInAfter).toExact()).to.equal('100')
-                checkQuoteToken(tokenOutBefore, tokenOutAfter, CurrencyAmount.fromRawAmount(DAI_MAINNET, data.quote))
+                checkQuoteToken(tokenOutBefore, tokenOutAfter, CurrencyAmount.fromRawAmount(USDT_MAINNET, data.quote))
               } else {
                 expect(tokenOutAfter.subtract(tokenOutBefore).toExact()).to.equal('100')
                 checkQuoteToken(tokenInBefore, tokenInAfter, CurrencyAmount.fromRawAmount(WETH9[1]!, data.quote))
@@ -1888,65 +1884,21 @@ describe('quote', function () {
 
   const TEST_ERC20_1: { [chainId in ChainId]: null | Token } = {
     [ChainId.MAINNET]: USDC_ON(1),
-    [ChainId.ROPSTEN]: USDC_ON(ChainId.ROPSTEN),
-    [ChainId.RINKEBY]: USDC_ON(ChainId.RINKEBY),
-    [ChainId.GÖRLI]: USDC_ON(ChainId.GÖRLI),
-    [ChainId.KOVAN]: USDC_ON(ChainId.KOVAN),
-    [ChainId.OPTIMISM]: USDC_ON(ChainId.OPTIMISM),
-    [ChainId.OPTIMISTIC_KOVAN]: USDC_ON(ChainId.OPTIMISTIC_KOVAN),
-    [ChainId.OPTIMISM_GOERLI]: USDC_ON(ChainId.OPTIMISM_GOERLI),
-    [ChainId.ARBITRUM_ONE]: USDC_ON(ChainId.ARBITRUM_ONE),
-    [ChainId.ARBITRUM_RINKEBY]: USDC_ON(ChainId.ARBITRUM_RINKEBY),
-    [ChainId.POLYGON]: USDC_ON(ChainId.POLYGON),
-    [ChainId.POLYGON_MUMBAI]: USDC_ON(ChainId.POLYGON_MUMBAI),
-    [ChainId.CELO]: CUSD_CELO,
-    [ChainId.CELO_ALFAJORES]: CUSD_CELO_ALFAJORES,
-    [ChainId.MOONBEAM]: null,
-    [ChainId.GNOSIS]: null,
-    [ChainId.ARBITRUM_GOERLI]: null,
-    [ChainId.BSC]: USDC_ON(ChainId.BSC),
-    [ChainId.FANTOM]: USDC_ON(ChainId.FANTOM),
-    [ChainId.KLAYTN]: USDC_ON(ChainId.KLAYTN),
-    [ChainId.AVALANCHE]: USDC_ON(ChainId.AVALANCHE),
+    [ChainId.MANTA_TESTNET]: USDC_ON(ChainId.MANTA_TESTNET),
+    [ChainId.MANTA]: USDC_ON(ChainId.MANTA),
   }
 
   const TEST_ERC20_2: { [chainId in ChainId]: Token | null } = {
-    [ChainId.MAINNET]: DAI_ON(1),
-    [ChainId.ROPSTEN]: DAI_ON(ChainId.ROPSTEN),
-    [ChainId.RINKEBY]: DAI_ON(ChainId.RINKEBY),
-    [ChainId.GÖRLI]: DAI_ON(ChainId.GÖRLI),
-    [ChainId.KOVAN]: DAI_ON(ChainId.KOVAN),
-    [ChainId.OPTIMISM]: DAI_ON(ChainId.OPTIMISM),
-    [ChainId.OPTIMISTIC_KOVAN]: DAI_ON(ChainId.OPTIMISTIC_KOVAN),
-    [ChainId.OPTIMISM_GOERLI]: DAI_ON(ChainId.OPTIMISM_GOERLI),
-    [ChainId.ARBITRUM_ONE]: DAI_ON(ChainId.ARBITRUM_ONE),
-    [ChainId.ARBITRUM_RINKEBY]: DAI_ON(ChainId.ARBITRUM_RINKEBY),
-    [ChainId.POLYGON]: DAI_ON(ChainId.POLYGON),
-    [ChainId.POLYGON_MUMBAI]: DAI_ON(ChainId.POLYGON_MUMBAI),
-    [ChainId.CELO]: CEUR_CELO,
-    [ChainId.CELO_ALFAJORES]: CEUR_CELO_ALFAJORES,
-    [ChainId.MOONBEAM]: null,
-    [ChainId.GNOSIS]: null,
-    [ChainId.ARBITRUM_GOERLI]: null,
-    [ChainId.BSC]: USDT_ON(ChainId.BSC),
-    [ChainId.FANTOM]: USDT_ON(ChainId.FANTOM),
-    [ChainId.KLAYTN]: USDT_ON(ChainId.KLAYTN),
-    [ChainId.AVALANCHE]: USDT_ON(ChainId.AVALANCHE),
+    [ChainId.MAINNET]: USDC_ON(1),
+    [ChainId.MANTA_TESTNET]: USDT_ON(ChainId.MANTA_TESTNET),
+    [ChainId.MANTA]: USDT_ON(ChainId.MANTA),
   }
 
   // TODO: Find valid pools/tokens on optimistic kovan and polygon mumbai. We skip those tests for now.
   for (const chain of _.filter(
     SUPPORTED_CHAINS,
     (c) =>
-      c != ChainId.OPTIMISTIC_KOVAN &&
-      c != ChainId.POLYGON_MUMBAI &&
-      c != ChainId.ARBITRUM_RINKEBY &&
-      c != ChainId.ARBITRUM_GOERLI &&
-      c != ChainId.CELO_ALFAJORES &&
-      c != ChainId.KOVAN &&
-      c != ChainId.RINKEBY &&
-      c != ChainId.ROPSTEN &&
-      c != ChainId.GÖRLI
+      c != ChainId.MANTA_TESTNET
   )) {
     for (const type of ['exactIn', 'exactOut']) {
       const erc1 = TEST_ERC20_1[chain]

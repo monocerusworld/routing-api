@@ -203,7 +203,7 @@ export abstract class InjectorSOR<Router, QueryParams> extends Injector<
           v2PoolProvider,
           v3PoolProvider,
           provider,
-          { [ChainId.ARBITRUM_ONE]: 2.5 }
+          { [ChainId.MANTA]: 2.5 }
         )
 
         const ethEstimateGasSimulator = new EthEstimateGasSimulator(chainId, provider, v2PoolProvider, v3PoolProvider)
