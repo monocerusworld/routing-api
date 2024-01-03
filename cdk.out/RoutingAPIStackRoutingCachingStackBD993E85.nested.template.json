@@ -180,7 +180,7 @@
      "S3Bucket": {
       "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
      },
-     "S3Key": "61e55f9dd75c327f3bb42053e63dc2c2475315a72076a7425a9966ecd9a4b503.zip"
+     "S3Key": "ec1df2b8330c06cbf94d1e938ae412cb4eb5d8f432ca044c5ee318ba267129eb.zip"
     },
     "Description": "Pool Cache Lambda for Chain with ChainId 1 and Protocol V3",
     "Environment": {
@@ -232,7 +232,7 @@
    ],
    "Metadata": {
     "aws:cdk:path": "RoutingAPIStack/RoutingCachingStack/PoolCacheLambda-ChainId1-ProtocolV3/Resource",
-    "aws:asset:path": "asset.61e55f9dd75c327f3bb42053e63dc2c2475315a72076a7425a9966ecd9a4b503",
+    "aws:asset:path": "asset.ec1df2b8330c06cbf94d1e938ae412cb4eb5d8f432ca044c5ee318ba267129eb",
     "aws:asset:is-bundled": true,
     "aws:asset:property": "Code"
    }
@@ -367,7 +367,7 @@
      "S3Bucket": {
       "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
      },
-     "S3Key": "61e55f9dd75c327f3bb42053e63dc2c2475315a72076a7425a9966ecd9a4b503.zip"
+     "S3Key": "ec1df2b8330c06cbf94d1e938ae412cb4eb5d8f432ca044c5ee318ba267129eb.zip"
     },
     "Description": "Pool Cache Lambda for Chain with ChainId 169 and Protocol V3",
     "Environment": {
@@ -419,7 +419,7 @@
    ],
    "Metadata": {
     "aws:cdk:path": "RoutingAPIStack/RoutingCachingStack/PoolCacheLambda-ChainId169-ProtocolV3/Resource",
-    "aws:asset:path": "asset.61e55f9dd75c327f3bb42053e63dc2c2475315a72076a7425a9966ecd9a4b503",
+    "aws:asset:path": "asset.ec1df2b8330c06cbf94d1e938ae412cb4eb5d8f432ca044c5ee318ba267129eb",
     "aws:asset:is-bundled": true,
     "aws:asset:property": "Code"
    }
@@ -554,7 +554,7 @@
      "S3Bucket": {
       "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
      },
-     "S3Key": "61e55f9dd75c327f3bb42053e63dc2c2475315a72076a7425a9966ecd9a4b503.zip"
+     "S3Key": "ec1df2b8330c06cbf94d1e938ae412cb4eb5d8f432ca044c5ee318ba267129eb.zip"
     },
     "Description": "Pool Cache Lambda for Chain with ChainId 3441005 and Protocol V3",
     "Environment": {
@@ -606,7 +606,7 @@
    ],
    "Metadata": {
     "aws:cdk:path": "RoutingAPIStack/RoutingCachingStack/PoolCacheLambda-ChainId3441005-ProtocolV3/Resource",
-    "aws:asset:path": "asset.61e55f9dd75c327f3bb42053e63dc2c2475315a72076a7425a9966ecd9a4b503",
+    "aws:asset:path": "asset.ec1df2b8330c06cbf94d1e938ae412cb4eb5d8f432ca044c5ee318ba267129eb",
     "aws:asset:is-bundled": true,
     "aws:asset:property": "Code"
    }
@@ -741,7 +741,7 @@
      "S3Bucket": {
       "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
      },
-     "S3Key": "61e55f9dd75c327f3bb42053e63dc2c2475315a72076a7425a9966ecd9a4b503.zip"
+     "S3Key": "ec1df2b8330c06cbf94d1e938ae412cb4eb5d8f432ca044c5ee318ba267129eb.zip"
     },
     "Description": "Pool Cache Lambda for Chain with ChainId 1 and Protocol V2",
     "Environment": {
@@ -793,7 +793,7 @@
    ],
    "Metadata": {
     "aws:cdk:path": "RoutingAPIStack/RoutingCachingStack/PoolCacheLambda-ChainId1-ProtocolV2/Resource",
-    "aws:asset:path": "asset.61e55f9dd75c327f3bb42053e63dc2c2475315a72076a7425a9966ecd9a4b503",
+    "aws:asset:path": "asset.ec1df2b8330c06cbf94d1e938ae412cb4eb5d8f432ca044c5ee318ba267129eb",
     "aws:asset:is-bundled": true,
     "aws:asset:property": "Code"
    }

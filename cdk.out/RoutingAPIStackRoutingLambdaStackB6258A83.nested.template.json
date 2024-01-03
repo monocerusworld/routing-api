@@ -189,7 +189,7 @@
      "S3Bucket": {
       "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
      },
-     "S3Key": "358d75db6b8e7705d9b315ef2d2d5144848d178c7b7adf6cb30b049d3f25aec1.zip"
+     "S3Key": "95ca93e7fe9a389828d0cd63f4788bdfa7670a6e22b131971a1ea9457039e438.zip"
     },
     "Description": "Routing Lambda",
     "Environment": {
@@ -212,7 +212,8 @@
       "TOKEN_LIST_CACHE_BUCKET": {
        "Ref": "referencetoRoutingAPIStackRoutingCachingStackNestedStackRoutingCachingStackNestedStackResource3F7983BFOutputsRoutingAPIStackRoutingCachingStackTokenListCacheBucket5B090E54Ref"
       },
-      "VERSION": "5"
+      "VERSION": "5",
+      "WEB3_RPC_169": "https://pacific-rpc.manta.network/http"
      }
     },
     "Handler": "index.quoteHandler",
@@ -249,12 +250,12 @@
    ],
    "Metadata": {
     "aws:cdk:path": "RoutingAPIStack/RoutingLambdaStack/RoutingLambda2/Resource",
-    "aws:asset:path": "asset.358d75db6b8e7705d9b315ef2d2d5144848d178c7b7adf6cb30b049d3f25aec1",
+    "aws:asset:path": "asset.95ca93e7fe9a389828d0cd63f4788bdfa7670a6e22b131971a1ea9457039e438",
     "aws:asset:is-bundled": true,
     "aws:asset:property": "Code"
    }
   },
-  "RoutingLambda2CurrentVersion49A1BB942a98c7319e503a637e8df929b9db9409": {
+  "RoutingLambda2CurrentVersion49A1BB941797ce474667742133e9892f7dacda99": {
    "Type": "AWS::Lambda::Version",
    "Properties": {
     "FunctionName": {
@@ -272,7 +273,7 @@
      "S3Bucket": {
       "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
      },
-     "S3Key": "358d75db6b8e7705d9b315ef2d2d5144848d178c7b7adf6cb30b049d3f25aec1.zip"
+     "S3Key": "95ca93e7fe9a389828d0cd63f4788bdfa7670a6e22b131971a1ea9457039e438.zip"
     },
     "Description": "Route to Ratio Lambda",
     "Environment": {
@@ -292,6 +293,7 @@
       "CACHED_ROUTES_TABLE_NAME": {
        "Ref": "referencetoRoutingAPIStackRoutingDatabaseStackNestedStackRoutingDatabaseStackNestedStackResource3AE7BFDEOutputsRoutingAPIStackRoutingDatabaseStackRouteCacheDB5E9EB8B6Ref"
       },
+      "WEB3_RPC_169": "https://pacific-rpc.manta.network/http",
       "AWS_NODEJS_CONNECTION_REUSE_ENABLED": "1"
      }
     },
@@ -329,7 +331,7 @@
    ],
    "Metadata": {
     "aws:cdk:path": "RoutingAPIStack/RoutingLambdaStack/RouteToRatioLambda2/Resource",
-    "aws:asset:path": "asset.358d75db6b8e7705d9b315ef2d2d5144848d178c7b7adf6cb30b049d3f25aec1",
+    "aws:asset:path": "asset.95ca93e7fe9a389828d0cd63f4788bdfa7670a6e22b131971a1ea9457039e438",
     "aws:asset:is-bundled": true,
     "aws:asset:property": "Code"
    }
@@ -422,7 +424,7 @@
     },
     "FunctionVersion": {
      "Fn::GetAtt": [
-      "RoutingLambda2CurrentVersion49A1BB942a98c7319e503a637e8df929b9db9409",
+      "RoutingLambda2CurrentVersion49A1BB941797ce474667742133e9892f7dacda99",
       "Version"
      ]
     },

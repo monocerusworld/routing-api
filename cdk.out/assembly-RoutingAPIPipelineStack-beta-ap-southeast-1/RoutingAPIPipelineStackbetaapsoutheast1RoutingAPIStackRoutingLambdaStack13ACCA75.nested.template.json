@@ -187,7 +187,7 @@
    "Properties": {
     "Code": {
      "S3Bucket": "cdk-hnb659fds-assets-978958364414-ap-southeast-1",
-     "S3Key": "358d75db6b8e7705d9b315ef2d2d5144848d178c7b7adf6cb30b049d3f25aec1.zip"
+     "S3Key": "95ca93e7fe9a389828d0cd63f4788bdfa7670a6e22b131971a1ea9457039e438.zip"
     },
     "Description": "Routing Lambda",
     "Environment": {
@@ -240,12 +240,12 @@
    ],
    "Metadata": {
     "aws:cdk:path": "RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingLambdaStack/RoutingLambda2/Resource",
-    "aws:asset:path": "../asset.358d75db6b8e7705d9b315ef2d2d5144848d178c7b7adf6cb30b049d3f25aec1",
+    "aws:asset:path": "../asset.95ca93e7fe9a389828d0cd63f4788bdfa7670a6e22b131971a1ea9457039e438",
     "aws:asset:is-bundled": true,
     "aws:asset:property": "Code"
    }
   },
-  "RoutingLambda2CurrentVersion49A1BB949dbf8be64e64bee4084415af94bf05d1": {
+  "RoutingLambda2CurrentVersion49A1BB945be961a2f8e24689bbde18dbff7f1933": {
    "Type": "AWS::Lambda::Version",
    "Properties": {
     "FunctionName": {
@@ -261,7 +261,7 @@
    "Properties": {
     "Code": {
      "S3Bucket": "cdk-hnb659fds-assets-978958364414-ap-southeast-1",
-     "S3Key": "358d75db6b8e7705d9b315ef2d2d5144848d178c7b7adf6cb30b049d3f25aec1.zip"
+     "S3Key": "95ca93e7fe9a389828d0cd63f4788bdfa7670a6e22b131971a1ea9457039e438.zip"
     },
     "Description": "Route to Ratio Lambda",
     "Environment": {
@@ -311,7 +311,7 @@
    ],
    "Metadata": {
     "aws:cdk:path": "RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingLambdaStack/RouteToRatioLambda2/Resource",
-    "aws:asset:path": "../asset.358d75db6b8e7705d9b315ef2d2d5144848d178c7b7adf6cb30b049d3f25aec1",
+    "aws:asset:path": "../asset.95ca93e7fe9a389828d0cd63f4788bdfa7670a6e22b131971a1ea9457039e438",
     "aws:asset:is-bundled": true,
     "aws:asset:property": "Code"
    }
@@ -404,7 +404,7 @@
     },
     "FunctionVersion": {
      "Fn::GetAtt": [
-      "RoutingLambda2CurrentVersion49A1BB949dbf8be64e64bee4084415af94bf05d1",
+      "RoutingLambda2CurrentVersion49A1BB945be961a2f8e24689bbde18dbff7f1933",
       "Version"
      ]
     },

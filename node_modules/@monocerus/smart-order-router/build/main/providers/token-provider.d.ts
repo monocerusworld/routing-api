@@ -28,6 +28,7 @@ export declare const USDT_MAINNET: Token;
 export declare const USDC_MANTA_TESTNET: Token;
 export declare const USDT_MANTA_TESTNET: Token;
 export declare const WMANTA_MANTA_TESTNET: Token;
+export declare const CERUS_MANTA: Token;
 export declare const USDT_MANTA: Token;
 export declare const USDC_MANTA: Token;
 export declare class TokenProvider implements ITokenProvider {

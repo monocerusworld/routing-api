@@ -298,7 +298,7 @@
                           "s3Bucket": {
                             "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
                           },
-                          "s3Key": "61e55f9dd75c327f3bb42053e63dc2c2475315a72076a7425a9966ecd9a4b503.zip"
+                          "s3Key": "ec1df2b8330c06cbf94d1e938ae412cb4eb5d8f432ca044c5ee318ba267129eb.zip"
                         },
                         "description": "Pool Cache Lambda for Chain with ChainId 1 and Protocol V3",
                         "environment": {
@@ -569,7 +569,7 @@
                           "s3Bucket": {
                             "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
                           },
-                          "s3Key": "61e55f9dd75c327f3bb42053e63dc2c2475315a72076a7425a9966ecd9a4b503.zip"
+                          "s3Key": "ec1df2b8330c06cbf94d1e938ae412cb4eb5d8f432ca044c5ee318ba267129eb.zip"
                         },
                         "description": "Pool Cache Lambda for Chain with ChainId 169 and Protocol V3",
                         "environment": {
@@ -840,7 +840,7 @@
                           "s3Bucket": {
                             "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
                           },
-                          "s3Key": "61e55f9dd75c327f3bb42053e63dc2c2475315a72076a7425a9966ecd9a4b503.zip"
+                          "s3Key": "ec1df2b8330c06cbf94d1e938ae412cb4eb5d8f432ca044c5ee318ba267129eb.zip"
                         },
                         "description": "Pool Cache Lambda for Chain with ChainId 3441005 and Protocol V3",
                         "environment": {
@@ -1111,7 +1111,7 @@
                           "s3Bucket": {
                             "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
                           },
-                          "s3Key": "61e55f9dd75c327f3bb42053e63dc2c2475315a72076a7425a9966ecd9a4b503.zip"
+                          "s3Key": "ec1df2b8330c06cbf94d1e938ae412cb4eb5d8f432ca044c5ee318ba267129eb.zip"
                         },
                         "description": "Pool Cache Lambda for Chain with ChainId 1 and Protocol V2",
                         "environment": {
@@ -1664,7 +1664,7 @@
                           {
                             "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
                           },
-                          "/03f3226fc7b70862bb04238ae0a833372109381166b2ea1bf7757f6ba74792d6.json"
+                          "/519a6eeaebbb1dae4d4c88cf42afdd20a50355a089744efa8a6f665186ac1470.json"
                         ]
                       ]
                     }
@@ -2105,7 +2105,7 @@
                           "s3Bucket": {
                             "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
                           },
-                          "s3Key": "358d75db6b8e7705d9b315ef2d2d5144848d178c7b7adf6cb30b049d3f25aec1.zip"
+                          "s3Key": "95ca93e7fe9a389828d0cd63f4788bdfa7670a6e22b131971a1ea9457039e438.zip"
                         },
                         "description": "Routing Lambda",
                         "environment": {
@@ -2128,7 +2128,8 @@
                             "TOKEN_LIST_CACHE_BUCKET": {
                               "Ref": "referencetoRoutingAPIStackRoutingCachingStackNestedStackRoutingCachingStackNestedStackResource3F7983BFOutputsRoutingAPIStackRoutingCachingStackTokenListCacheBucket5B090E54Ref"
                             },
-                            "VERSION": "5"
+                            "VERSION": "5",
+                            "WEB3_RPC_169": "https://pacific-rpc.manta.network/http"
                           }
                         },
                         "handler": "index.quoteHandler",
@@ -2245,7 +2246,7 @@
                           "s3Bucket": {
                             "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
                           },
-                          "s3Key": "358d75db6b8e7705d9b315ef2d2d5144848d178c7b7adf6cb30b049d3f25aec1.zip"
+                          "s3Key": "95ca93e7fe9a389828d0cd63f4788bdfa7670a6e22b131971a1ea9457039e438.zip"
                         },
                         "description": "Route to Ratio Lambda",
                         "environment": {
@@ -2265,6 +2266,7 @@
                             "CACHED_ROUTES_TABLE_NAME": {
                               "Ref": "referencetoRoutingAPIStackRoutingDatabaseStackNestedStackRoutingDatabaseStackNestedStackResource3AE7BFDEOutputsRoutingAPIStackRoutingDatabaseStackRouteCacheDB5E9EB8B6Ref"
                             },
+                            "WEB3_RPC_169": "https://pacific-rpc.manta.network/http",
                             "AWS_NODEJS_CONNECTION_REUSE_ENABLED": "1"
                           }
                         },
@@ -2433,7 +2435,7 @@
                         },
                         "functionVersion": {
                           "Fn::GetAtt": [
-                            "RoutingLambda2CurrentVersion49A1BB942a98c7319e503a637e8df929b9db9409",
+                            "RoutingLambda2CurrentVersion49A1BB941797ce474667742133e9892f7dacda99",
                             "Version"
                           ]
                         },
@@ -2655,7 +2657,7 @@
                           {
                             "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
                           },
-                          "/acd53301834787e80896cbf1439af57dc86b9362512878948e17237a1a9c775d.json"
+                          "/017a7ffa957fb4bbea44d6ccec7d35fa7f094cd48448af075d7b4fbc82b3a940.json"
                         ]
                       ]
                     }
@@ -7588,7 +7590,7 @@
                             },
                             "source": {
                               "type": "CODEPIPELINE",
-                              "buildSpec": "{\n  \"version\": \"0.2\",\n  \"phases\": {\n    \"install\": {\n      \"commands\": [\n        \"npm install -g cdk-assets@2\"\n      ]\n    },\n    \"build\": {\n      \"commands\": [\n        \"cdk-assets --path \\\"assembly-RoutingAPIPipelineStack-beta-ap-southeast-1/RoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStack7B527832.assets.json\\\" --verbose publish \\\"61e55f9dd75c327f3bb42053e63dc2c2475315a72076a7425a9966ecd9a4b503:978958364414-ap-southeast-1\\\"\"\n      ]\n    }\n  }\n}"
+                              "buildSpec": "{\n  \"version\": \"0.2\",\n  \"phases\": {\n    \"install\": {\n      \"commands\": [\n        \"npm install -g cdk-assets@2\"\n      ]\n    },\n    \"build\": {\n      \"commands\": [\n        \"cdk-assets --path \\\"assembly-RoutingAPIPipelineStack-beta-ap-southeast-1/RoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStack7B527832.assets.json\\\" --verbose publish \\\"ec1df2b8330c06cbf94d1e938ae412cb4eb5d8f432ca044c5ee318ba267129eb:978958364414-ap-southeast-1\\\"\"\n      ]\n    }\n  }\n}"
                             }
                           }
                         },
@@ -7641,7 +7643,7 @@
                             },
                             "source": {
                               "type": "CODEPIPELINE",
-                              "buildSpec": "{\n  \"version\": \"0.2\",\n  \"phases\": {\n    \"install\": {\n      \"commands\": [\n        \"npm install -g cdk-assets@2\"\n      ]\n    },\n    \"build\": {\n      \"commands\": [\n        \"cdk-assets --path \\\"assembly-RoutingAPIPipelineStack-prod-ap-southeast-1/RoutingAPIPipelineStackprodapsoutheast1RoutingAPIStack515163CA.assets.json\\\" --verbose publish \\\"d00c9dc4e3559be6af5ddf01079a5893abe122656ce627f0d5cbed3a8e0f74e0:978958364414-ap-southeast-1\\\"\"\n      ]\n    }\n  }\n}"
+                              "buildSpec": "{\n  \"version\": \"0.2\",\n  \"phases\": {\n    \"install\": {\n      \"commands\": [\n        \"npm install -g cdk-assets@2\"\n      ]\n    },\n    \"build\": {\n      \"commands\": [\n        \"cdk-assets --path \\\"assembly-RoutingAPIPipelineStack-prod-ap-southeast-1/RoutingAPIPipelineStackprodapsoutheast1RoutingAPIStack515163CA.assets.json\\\" --verbose publish \\\"5ce46e68db7e335c2396c87255bafdee485fdafa7cc5e95853fb4142d29456b1:978958364414-ap-southeast-1\\\"\"\n      ]\n    }\n  }\n}"
                             }
                           }
                         },
@@ -7747,7 +7749,7 @@
                             },
                             "source": {
                               "type": "CODEPIPELINE",
-                              "buildSpec": "{\n  \"version\": \"0.2\",\n  \"phases\": {\n    \"install\": {\n      \"commands\": [\n        \"npm install -g cdk-assets@2\"\n      ]\n    },\n    \"build\": {\n      \"commands\": [\n        \"cdk-assets --path \\\"assembly-RoutingAPIPipelineStack-prod-ap-southeast-1/RoutingAPIPipelineStackprodapsoutheast1RoutingAPIStack515163CA.assets.json\\\" --verbose publish \\\"9b983d66abf5cf634938e19922c4a6ec0e7587e740179fa44c4a2f774bae0654:978958364414-ap-southeast-1\\\"\"\n      ]\n    }\n  }\n}"
+                              "buildSpec": "{\n  \"version\": \"0.2\",\n  \"phases\": {\n    \"install\": {\n      \"commands\": [\n        \"npm install -g cdk-assets@2\"\n      ]\n    },\n    \"build\": {\n      \"commands\": [\n        \"cdk-assets --path \\\"assembly-RoutingAPIPipelineStack-prod-ap-southeast-1/RoutingAPIPipelineStackprodapsoutheast1RoutingAPIStack515163CA.assets.json\\\" --verbose publish \\\"c257fa9203647fb4269ccf5bcd6059b42b91f7cb7fe43f9ef6d3d4ae34ac1385:978958364414-ap-southeast-1\\\"\"\n      ]\n    }\n  }\n}"
                             }
                           }
                         },
@@ -7853,7 +7855,7 @@
                             },
                             "source": {
                               "type": "CODEPIPELINE",
-                              "buildSpec": "{\n  \"version\": \"0.2\",\n  \"phases\": {\n    \"install\": {\n      \"commands\": [\n        \"npm install -g cdk-assets@2\"\n      ]\n    },\n    \"build\": {\n      \"commands\": [\n        \"cdk-assets --path \\\"assembly-RoutingAPIPipelineStack-beta-ap-southeast-1/RoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStack7B527832.assets.json\\\" --verbose publish \\\"24910e0049fc47c0dd979d678304bd882cf5edfa31bb85656fcfcb8a6f436e60:978958364414-ap-southeast-1\\\"\"\n      ]\n    }\n  }\n}"
+                              "buildSpec": "{\n  \"version\": \"0.2\",\n  \"phases\": {\n    \"install\": {\n      \"commands\": [\n        \"npm install -g cdk-assets@2\"\n      ]\n    },\n    \"build\": {\n      \"commands\": [\n        \"cdk-assets --path \\\"assembly-RoutingAPIPipelineStack-beta-ap-southeast-1/RoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStack7B527832.assets.json\\\" --verbose publish \\\"ee078295da53a2948ad8ef406b2d5aff0fcf58065894709be9810fa13d9354ae:978958364414-ap-southeast-1\\\"\"\n      ]\n    }\n  }\n}"
                             }
                           }
                         },
@@ -8012,7 +8014,7 @@
                             },
                             "source": {
                               "type": "CODEPIPELINE",
-                              "buildSpec": "{\n  \"version\": \"0.2\",\n  \"phases\": {\n    \"install\": {\n      \"commands\": [\n        \"npm install -g cdk-assets@2\"\n      ]\n    },\n    \"build\": {\n      \"commands\": [\n        \"cdk-assets --path \\\"assembly-RoutingAPIPipelineStack-beta-ap-southeast-1/RoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStack7B527832.assets.json\\\" --verbose publish \\\"358d75db6b8e7705d9b315ef2d2d5144848d178c7b7adf6cb30b049d3f25aec1:978958364414-ap-southeast-1\\\"\"\n      ]\n    }\n  }\n}"
+                              "buildSpec": "{\n  \"version\": \"0.2\",\n  \"phases\": {\n    \"install\": {\n      \"commands\": [\n        \"npm install -g cdk-assets@2\"\n      ]\n    },\n    \"build\": {\n      \"commands\": [\n        \"cdk-assets --path \\\"assembly-RoutingAPIPipelineStack-beta-ap-southeast-1/RoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStack7B527832.assets.json\\\" --verbose publish \\\"95ca93e7fe9a389828d0cd63f4788bdfa7670a6e22b131971a1ea9457039e438:978958364414-ap-southeast-1\\\"\"\n      ]\n    }\n  }\n}"
                             }
                           }
                         },
@@ -8065,7 +8067,7 @@
                             },
                             "source": {
                               "type": "CODEPIPELINE",
-                              "buildSpec": "{\n  \"version\": \"0.2\",\n  \"phases\": {\n    \"install\": {\n      \"commands\": [\n        \"npm install -g cdk-assets@2\"\n      ]\n    },\n    \"build\": {\n      \"commands\": [\n        \"cdk-assets --path \\\"assembly-RoutingAPIPipelineStack-beta-ap-southeast-1/RoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStack7B527832.assets.json\\\" --verbose publish \\\"52212e826fbe78c06b3d343ef67519e0ed2472bc53ceaa0d26e74a20ef17250e:978958364414-ap-southeast-1\\\"\"\n      ]\n    }\n  }\n}"
+                              "buildSpec": "{\n  \"version\": \"0.2\",\n  \"phases\": {\n    \"install\": {\n      \"commands\": [\n        \"npm install -g cdk-assets@2\"\n      ]\n    },\n    \"build\": {\n      \"commands\": [\n        \"cdk-assets --path \\\"assembly-RoutingAPIPipelineStack-beta-ap-southeast-1/RoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStack7B527832.assets.json\\\" --verbose publish \\\"d80b8f035a543bbe2cdff4bf72c148c21b2fd297324c183090614acca146eee8:978958364414-ap-southeast-1\\\"\"\n      ]\n    }\n  }\n}"
                             }
                           }
                         },
@@ -8171,7 +8173,7 @@
                             },
                             "source": {
                               "type": "CODEPIPELINE",
-                              "buildSpec": "{\n  \"version\": \"0.2\",\n  \"phases\": {\n    \"install\": {\n      \"commands\": [\n        \"npm install -g cdk-assets@2\"\n      ]\n    },\n    \"build\": {\n      \"commands\": [\n        \"cdk-assets --path \\\"assembly-RoutingAPIPipelineStack-beta-ap-southeast-1/RoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStack7B527832.assets.json\\\" --verbose publish \\\"f428ff3122aaf1283e063d4e40e3c7cda25a4bb64f2bc84042fe3b3e1a09f4fb:978958364414-ap-southeast-1\\\"\"\n      ]\n    }\n  }\n}"
+                              "buildSpec": "{\n  \"version\": \"0.2\",\n  \"phases\": {\n    \"install\": {\n      \"commands\": [\n        \"npm install -g cdk-assets@2\"\n      ]\n    },\n    \"build\": {\n      \"commands\": [\n        \"cdk-assets --path \\\"assembly-RoutingAPIPipelineStack-beta-ap-southeast-1/RoutingAPIPipelineStackbetaapsoutheast1RoutingAPIStack7B527832.assets.json\\\" --verbose publish \\\"df62582cbc4a4f1004c5bb138bc6dab7549b6b40fa73758c59fa1cdd5063775e:978958364414-ap-southeast-1\\\"\"\n      ]\n    }\n  }\n}"
                             }
                           }
                         },
@@ -8609,7 +8611,7 @@
                               "aws:cdk:cloudformation:props": {
                                 "code": {
                                   "s3Bucket": "cdk-hnb659fds-assets-978958364414-ap-southeast-1",
-                                  "s3Key": "61e55f9dd75c327f3bb42053e63dc2c2475315a72076a7425a9966ecd9a4b503.zip"
+                                  "s3Key": "ec1df2b8330c06cbf94d1e938ae412cb4eb5d8f432ca044c5ee318ba267129eb.zip"
                                 },
                                 "description": "Pool Cache Lambda for Chain with ChainId 1 and Protocol V3",
                                 "environment": {
@@ -8867,7 +8869,7 @@
                               "aws:cdk:cloudformation:props": {
                                 "code": {
                                   "s3Bucket": "cdk-hnb659fds-assets-978958364414-ap-southeast-1",
-                                  "s3Key": "61e55f9dd75c327f3bb42053e63dc2c2475315a72076a7425a9966ecd9a4b503.zip"
+                                  "s3Key": "ec1df2b8330c06cbf94d1e938ae412cb4eb5d8f432ca044c5ee318ba267129eb.zip"
                                 },
                                 "description": "Pool Cache Lambda for Chain with ChainId 169 and Protocol V3",
                                 "environment": {
@@ -9125,7 +9127,7 @@
                               "aws:cdk:cloudformation:props": {
                                 "code": {
                                   "s3Bucket": "cdk-hnb659fds-assets-978958364414-ap-southeast-1",
-                                  "s3Key": "61e55f9dd75c327f3bb42053e63dc2c2475315a72076a7425a9966ecd9a4b503.zip"
+                                  "s3Key": "ec1df2b8330c06cbf94d1e938ae412cb4eb5d8f432ca044c5ee318ba267129eb.zip"
                                 },
                                 "description": "Pool Cache Lambda for Chain with ChainId 3441005 and Protocol V3",
                                 "environment": {
@@ -9383,7 +9385,7 @@
                               "aws:cdk:cloudformation:props": {
                                 "code": {
                                   "s3Bucket": "cdk-hnb659fds-assets-978958364414-ap-southeast-1",
-                                  "s3Key": "61e55f9dd75c327f3bb42053e63dc2c2475315a72076a7425a9966ecd9a4b503.zip"
+                                  "s3Key": "ec1df2b8330c06cbf94d1e938ae412cb4eb5d8f432ca044c5ee318ba267129eb.zip"
                                 },
                                 "description": "Pool Cache Lambda for Chain with ChainId 1 and Protocol V2",
                                 "environment": {
@@ -9649,7 +9651,7 @@
                               "aws:cdk:cloudformation:props": {
                                 "code": {
                                   "s3Bucket": "cdk-hnb659fds-assets-978958364414-ap-southeast-1",
-                                  "s3Key": "24910e0049fc47c0dd979d678304bd882cf5edfa31bb85656fcfcb8a6f436e60.zip"
+                                  "s3Key": "ee078295da53a2948ad8ef406b2d5aff0fcf58065894709be9810fa13d9354ae.zip"
                                 },
                                 "description": "IPFS Pool Cache Lambda",
                                 "environment": {
@@ -10206,7 +10208,7 @@
                                   {
                                     "Ref": "AWS::URLSuffix"
                                   },
-                                  "/cdk-hnb659fds-assets-978958364414-ap-southeast-1/52212e826fbe78c06b3d343ef67519e0ed2472bc53ceaa0d26e74a20ef17250e.json"
+                                  "/cdk-hnb659fds-assets-978958364414-ap-southeast-1/d80b8f035a543bbe2cdff4bf72c148c21b2fd297324c183090614acca146eee8.json"
                                 ]
                               ]
                             }
@@ -10629,7 +10631,7 @@
                               "aws:cdk:cloudformation:props": {
                                 "code": {
                                   "s3Bucket": "cdk-hnb659fds-assets-978958364414-ap-southeast-1",
-                                  "s3Key": "358d75db6b8e7705d9b315ef2d2d5144848d178c7b7adf6cb30b049d3f25aec1.zip"
+                                  "s3Key": "95ca93e7fe9a389828d0cd63f4788bdfa7670a6e22b131971a1ea9457039e438.zip"
                                 },
                                 "description": "Routing Lambda",
                                 "environment": {
@@ -10760,7 +10762,7 @@
                               "aws:cdk:cloudformation:props": {
                                 "code": {
                                   "s3Bucket": "cdk-hnb659fds-assets-978958364414-ap-southeast-1",
-                                  "s3Key": "358d75db6b8e7705d9b315ef2d2d5144848d178c7b7adf6cb30b049d3f25aec1.zip"
+                                  "s3Key": "95ca93e7fe9a389828d0cd63f4788bdfa7670a6e22b131971a1ea9457039e438.zip"
                                 },
                                 "description": "Route to Ratio Lambda",
                                 "environment": {
@@ -10941,7 +10943,7 @@
                                 },
                                 "functionVersion": {
                                   "Fn::GetAtt": [
-                                    "RoutingLambda2CurrentVersion49A1BB949dbf8be64e64bee4084415af94bf05d1",
+                                    "RoutingLambda2CurrentVersion49A1BB945be961a2f8e24689bbde18dbff7f1933",
                                     "Version"
                                   ]
                                 },
@@ -11272,7 +11274,7 @@
                                   {
                                     "Ref": "AWS::URLSuffix"
                                   },
-                                  "/cdk-hnb659fds-assets-978958364414-ap-southeast-1/f428ff3122aaf1283e063d4e40e3c7cda25a4bb64f2bc84042fe3b3e1a09f4fb.json"
+                                  "/cdk-hnb659fds-assets-978958364414-ap-southeast-1/df62582cbc4a4f1004c5bb138bc6dab7549b6b40fa73758c59fa1cdd5063775e.json"
                                 ]
                               ]
                             }
@@ -13070,7 +13072,7 @@
                               "aws:cdk:cloudformation:props": {
                                 "code": {
                                   "s3Bucket": "cdk-hnb659fds-assets-978958364414-ap-southeast-1",
-                                  "s3Key": "61e55f9dd75c327f3bb42053e63dc2c2475315a72076a7425a9966ecd9a4b503.zip"
+                                  "s3Key": "ec1df2b8330c06cbf94d1e938ae412cb4eb5d8f432ca044c5ee318ba267129eb.zip"
                                 },
                                 "description": "Pool Cache Lambda for Chain with ChainId 1 and Protocol V3",
                                 "environment": {
@@ -13334,7 +13336,7 @@
                               "aws:cdk:cloudformation:props": {
                                 "code": {
                                   "s3Bucket": "cdk-hnb659fds-assets-978958364414-ap-southeast-1",
-                                  "s3Key": "61e55f9dd75c327f3bb42053e63dc2c2475315a72076a7425a9966ecd9a4b503.zip"
+                                  "s3Key": "ec1df2b8330c06cbf94d1e938ae412cb4eb5d8f432ca044c5ee318ba267129eb.zip"
                                 },
                                 "description": "Pool Cache Lambda for Chain with ChainId 169 and Protocol V3",
                                 "environment": {
@@ -13598,7 +13600,7 @@
                               "aws:cdk:cloudformation:props": {
                                 "code": {
                                   "s3Bucket": "cdk-hnb659fds-assets-978958364414-ap-southeast-1",
-                                  "s3Key": "61e55f9dd75c327f3bb42053e63dc2c2475315a72076a7425a9966ecd9a4b503.zip"
+                                  "s3Key": "ec1df2b8330c06cbf94d1e938ae412cb4eb5d8f432ca044c5ee318ba267129eb.zip"
                                 },
                                 "description": "Pool Cache Lambda for Chain with ChainId 3441005 and Protocol V3",
                                 "environment": {
@@ -13862,7 +13864,7 @@
                               "aws:cdk:cloudformation:props": {
                                 "code": {
                                   "s3Bucket": "cdk-hnb659fds-assets-978958364414-ap-southeast-1",
-                                  "s3Key": "61e55f9dd75c327f3bb42053e63dc2c2475315a72076a7425a9966ecd9a4b503.zip"
+                                  "s3Key": "ec1df2b8330c06cbf94d1e938ae412cb4eb5d8f432ca044c5ee318ba267129eb.zip"
                                 },
                                 "description": "Pool Cache Lambda for Chain with ChainId 1 and Protocol V2",
                                 "environment": {
@@ -14134,7 +14136,7 @@
                               "aws:cdk:cloudformation:props": {
                                 "code": {
                                   "s3Bucket": "cdk-hnb659fds-assets-978958364414-ap-southeast-1",
-                                  "s3Key": "24910e0049fc47c0dd979d678304bd882cf5edfa31bb85656fcfcb8a6f436e60.zip"
+                                  "s3Key": "ee078295da53a2948ad8ef406b2d5aff0fcf58065894709be9810fa13d9354ae.zip"
                                 },
                                 "description": "IPFS Pool Cache Lambda",
                                 "environment": {
@@ -14732,7 +14734,7 @@
                                   {
                                     "Ref": "AWS::URLSuffix"
                                   },
-                                  "/cdk-hnb659fds-assets-978958364414-ap-southeast-1/d00c9dc4e3559be6af5ddf01079a5893abe122656ce627f0d5cbed3a8e0f74e0.json"
+                                  "/cdk-hnb659fds-assets-978958364414-ap-southeast-1/5ce46e68db7e335c2396c87255bafdee485fdafa7cc5e95853fb4142d29456b1.json"
                                 ]
                               ]
                             }
@@ -15155,7 +15157,7 @@
                               "aws:cdk:cloudformation:props": {
                                 "code": {
                                   "s3Bucket": "cdk-hnb659fds-assets-978958364414-ap-southeast-1",
-                                  "s3Key": "358d75db6b8e7705d9b315ef2d2d5144848d178c7b7adf6cb30b049d3f25aec1.zip"
+                                  "s3Key": "95ca93e7fe9a389828d0cd63f4788bdfa7670a6e22b131971a1ea9457039e438.zip"
                                 },
                                 "description": "Routing Lambda",
                                 "environment": {
@@ -15286,7 +15288,7 @@
                               "aws:cdk:cloudformation:props": {
                                 "code": {
                                   "s3Bucket": "cdk-hnb659fds-assets-978958364414-ap-southeast-1",
-                                  "s3Key": "358d75db6b8e7705d9b315ef2d2d5144848d178c7b7adf6cb30b049d3f25aec1.zip"
+                                  "s3Key": "95ca93e7fe9a389828d0cd63f4788bdfa7670a6e22b131971a1ea9457039e438.zip"
                                 },
                                 "description": "Route to Ratio Lambda",
                                 "environment": {
@@ -15481,7 +15483,7 @@
                                 },
                                 "functionVersion": {
                                   "Fn::GetAtt": [
-                                    "RoutingLambda2CurrentVersion49A1BB9449d4efca2698bdc5c35a7a78f97fc693",
+                                    "RoutingLambda2CurrentVersion49A1BB943a1e9cad05d83cafa6650235a734ee0c",
                                     "Version"
                                   ]
                                 },
@@ -15812,7 +15814,7 @@
                                   {
                                     "Ref": "AWS::URLSuffix"
                                   },
-                                  "/cdk-hnb659fds-assets-978958364414-ap-southeast-1/9b983d66abf5cf634938e19922c4a6ec0e7587e740179fa44c4a2f774bae0654.json"
+                                  "/cdk-hnb659fds-assets-978958364414-ap-southeast-1/c257fa9203647fb4269ccf5bcd6059b42b91f7cb7fe43f9ef6d3d4ae34ac1385.json"
                                 ]
                               ]
                             }

@@ -11,7 +11,7 @@
        {
         "Ref": "AWS::URLSuffix"
        },
-       "/cdk-hnb659fds-assets-978958364414-ap-southeast-1/d00c9dc4e3559be6af5ddf01079a5893abe122656ce627f0d5cbed3a8e0f74e0.json"
+       "/cdk-hnb659fds-assets-978958364414-ap-southeast-1/5ce46e68db7e335c2396c87255bafdee485fdafa7cc5e95853fb4142d29456b1.json"
       ]
      ]
     }
@@ -109,7 +109,7 @@
        {
         "Ref": "AWS::URLSuffix"
        },
-       "/cdk-hnb659fds-assets-978958364414-ap-southeast-1/9b983d66abf5cf634938e19922c4a6ec0e7587e740179fa44c4a2f774bae0654.json"
+       "/cdk-hnb659fds-assets-978958364414-ap-southeast-1/c257fa9203647fb4269ccf5bcd6059b42b91f7cb7fe43f9ef6d3d4ae34ac1385.json"
       ]
      ]
     }

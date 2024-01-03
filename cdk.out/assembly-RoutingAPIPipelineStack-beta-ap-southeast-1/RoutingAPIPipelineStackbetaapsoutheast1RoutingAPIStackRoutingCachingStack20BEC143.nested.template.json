@@ -184,7 +184,7 @@
    "Properties": {
     "Code": {
      "S3Bucket": "cdk-hnb659fds-assets-978958364414-ap-southeast-1",
-     "S3Key": "61e55f9dd75c327f3bb42053e63dc2c2475315a72076a7425a9966ecd9a4b503.zip"
+     "S3Key": "ec1df2b8330c06cbf94d1e938ae412cb4eb5d8f432ca044c5ee318ba267129eb.zip"
     },
     "Description": "Pool Cache Lambda for Chain with ChainId 1 and Protocol V3",
     "Environment": {
@@ -225,7 +225,7 @@
    ],
    "Metadata": {
     "aws:cdk:path": "RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingCachingStack/PoolCacheLambda-ChainId1-ProtocolV3/Resource",
-    "aws:asset:path": "../asset.61e55f9dd75c327f3bb42053e63dc2c2475315a72076a7425a9966ecd9a4b503",
+    "aws:asset:path": "../asset.ec1df2b8330c06cbf94d1e938ae412cb4eb5d8f432ca044c5ee318ba267129eb",
     "aws:asset:is-bundled": true,
     "aws:asset:property": "Code"
    }
@@ -358,7 +358,7 @@
    "Properties": {
     "Code": {
      "S3Bucket": "cdk-hnb659fds-assets-978958364414-ap-southeast-1",
-     "S3Key": "61e55f9dd75c327f3bb42053e63dc2c2475315a72076a7425a9966ecd9a4b503.zip"
+     "S3Key": "ec1df2b8330c06cbf94d1e938ae412cb4eb5d8f432ca044c5ee318ba267129eb.zip"
     },
     "Description": "Pool Cache Lambda for Chain with ChainId 169 and Protocol V3",
     "Environment": {
@@ -399,7 +399,7 @@
    ],
    "Metadata": {
     "aws:cdk:path": "RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingCachingStack/PoolCacheLambda-ChainId169-ProtocolV3/Resource",
-    "aws:asset:path": "../asset.61e55f9dd75c327f3bb42053e63dc2c2475315a72076a7425a9966ecd9a4b503",
+    "aws:asset:path": "../asset.ec1df2b8330c06cbf94d1e938ae412cb4eb5d8f432ca044c5ee318ba267129eb",
     "aws:asset:is-bundled": true,
     "aws:asset:property": "Code"
    }
@@ -532,7 +532,7 @@
    "Properties": {
     "Code": {
      "S3Bucket": "cdk-hnb659fds-assets-978958364414-ap-southeast-1",
-     "S3Key": "61e55f9dd75c327f3bb42053e63dc2c2475315a72076a7425a9966ecd9a4b503.zip"
+     "S3Key": "ec1df2b8330c06cbf94d1e938ae412cb4eb5d8f432ca044c5ee318ba267129eb.zip"
     },
     "Description": "Pool Cache Lambda for Chain with ChainId 3441005 and Protocol V3",
     "Environment": {
@@ -573,7 +573,7 @@
    ],
    "Metadata": {
     "aws:cdk:path": "RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingCachingStack/PoolCacheLambda-ChainId3441005-ProtocolV3/Resource",
-    "aws:asset:path": "../asset.61e55f9dd75c327f3bb42053e63dc2c2475315a72076a7425a9966ecd9a4b503",
+    "aws:asset:path": "../asset.ec1df2b8330c06cbf94d1e938ae412cb4eb5d8f432ca044c5ee318ba267129eb",
     "aws:asset:is-bundled": true,
     "aws:asset:property": "Code"
    }
@@ -706,7 +706,7 @@
    "Properties": {
     "Code": {
      "S3Bucket": "cdk-hnb659fds-assets-978958364414-ap-southeast-1",
-     "S3Key": "61e55f9dd75c327f3bb42053e63dc2c2475315a72076a7425a9966ecd9a4b503.zip"
+     "S3Key": "ec1df2b8330c06cbf94d1e938ae412cb4eb5d8f432ca044c5ee318ba267129eb.zip"
     },
     "Description": "Pool Cache Lambda for Chain with ChainId 1 and Protocol V2",
     "Environment": {
@@ -747,7 +747,7 @@
    ],
    "Metadata": {
     "aws:cdk:path": "RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingCachingStack/PoolCacheLambda-ChainId1-ProtocolV2/Resource",
-    "aws:asset:path": "../asset.61e55f9dd75c327f3bb42053e63dc2c2475315a72076a7425a9966ecd9a4b503",
+    "aws:asset:path": "../asset.ec1df2b8330c06cbf94d1e938ae412cb4eb5d8f432ca044c5ee318ba267129eb",
     "aws:asset:is-bundled": true,
     "aws:asset:property": "Code"
    }
@@ -880,7 +880,7 @@
    "Properties": {
     "Code": {
      "S3Bucket": "cdk-hnb659fds-assets-978958364414-ap-southeast-1",
-     "S3Key": "24910e0049fc47c0dd979d678304bd882cf5edfa31bb85656fcfcb8a6f436e60.zip"
+     "S3Key": "ee078295da53a2948ad8ef406b2d5aff0fcf58065894709be9810fa13d9354ae.zip"
     },
     "Description": "IPFS Pool Cache Lambda",
     "Environment": {
@@ -917,7 +917,7 @@
    ],
    "Metadata": {
     "aws:cdk:path": "RoutingAPIPipelineStack/beta-ap-southeast-1/RoutingAPIStack/RoutingCachingStack/IpfsPoolCacheLambda/Resource",
-    "aws:asset:path": "../asset.24910e0049fc47c0dd979d678304bd882cf5edfa31bb85656fcfcb8a6f436e60",
+    "aws:asset:path": "../asset.ee078295da53a2948ad8ef406b2d5aff0fcf58065894709be9810fa13d9354ae",
     "aws:asset:is-bundled": true,
     "aws:asset:property": "Code"
    }
